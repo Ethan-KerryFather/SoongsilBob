@@ -2,6 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import {
   FlatList,
+  Pressable,
   ScrollView,
   StyleSheet,
   Text,
@@ -10,8 +11,6 @@ import {
   View,
 } from "react-native";
 import Colors from "../../assets/Colors";
-
-const category = ["한식", "중식", "일식", "아시안", "양식"];
 
 function HomeScreen({}) {
   const navigation = useNavigation();
@@ -39,9 +38,14 @@ function HomeScreen({}) {
         <Text>신입생 여러분을 진심으로 환영합니다 :)</Text>
       </View>
       <View style={styles.lowerContainer}>
-        <View style={styles.itemContainer}>
+        <Pressable
+          style={styles.itemContainer}
+          onPress={() => {
+            navigation.navigate("StoreList", { category: "한식" });
+          }}
+        >
           <Text style={{ fontFamily: "black-sans", fontSize: 40 }}>한식</Text>
-        </View>
+        </Pressable>
         <View style={styles.itemContainer}>
           <Text style={{ fontFamily: "black-sans", fontSize: 40 }}>일식</Text>
         </View>

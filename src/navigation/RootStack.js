@@ -8,6 +8,7 @@ import NotifyScreen from "../ui/notify/screens/NotifyScreen";
 import { AntDesign } from "@expo/vector-icons";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import EventScreen from "../ui/notify/screens/EventScreen";
+import StoreLists from "../ui/store/screens/StoreLists";
 const HomeStack = createNativeStackNavigator();
 const EnvironmentStack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -44,6 +45,7 @@ function HomeStackScreen() {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen name="Home" component={HomeScreen} />
+      <HomeStack.Screen name="StoreList" component={StoreLists} />
     </HomeStack.Navigator>
   );
 }
