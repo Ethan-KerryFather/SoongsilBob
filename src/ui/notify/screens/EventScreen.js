@@ -2,11 +2,11 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import Colors from "../../../../assets/Colors";
 
-function NotifyScreen() {
+function EventScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.notifyContainer}>
-        <Text style={{ fontFamily: "gowun-bold", fontSize: 40 }}>공지</Text>
+        <Text style={{ fontFamily: "gowun-bold", fontSize: 40 }}>이벤트</Text>
       </View>
       <View style={styles.notifyContentContainer}>
         <Text>준비중입니다</Text>
@@ -14,7 +14,7 @@ function NotifyScreen() {
     </View>
   );
 }
-export default NotifyScreen;
+export default EventScreen;
 
 const styles = StyleSheet.create({
   container: {

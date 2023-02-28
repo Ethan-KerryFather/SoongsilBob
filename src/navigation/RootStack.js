@@ -6,9 +6,39 @@ import EnvironmenScreen from "../ui/environment/screens/EnvironmenScreen";
 import Colors from "../../assets/Colors";
 import NotifyScreen from "../ui/notify/screens/NotifyScreen";
 import { AntDesign } from "@expo/vector-icons";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import EventScreen from "../ui/notify/screens/EventScreen";
 const HomeStack = createNativeStackNavigator();
 const EnvironmentStack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+const NotifyTab = createMaterialTopTabNavigator();
+
+function NotificationScreen() {
+  return (
+    <NotifyTab.Navigator>
+      <NotifyTab.Screen
+        name="notify"
+        component={NotifyScreen}
+        options={{
+          title: "공지",
+          tabBarIcon: () => (
+            <AntDesign name="notification" size={30} color="black" />
+          ),
+        }}
+      />
+      <NotifyTab.Screen
+        name="event"
+        component={EventScreen}
+        options={{
+          title: "이벤트",
+          tabBarIcon: () => (
+            <AntDesign name="notification" size={30} color="black" />
+          ),
+        }}
+      />
+    </NotifyTab.Navigator>
+  );
+}
 
 function HomeStackScreen() {
   return (
@@ -46,7 +76,7 @@ function RootStack() {
       />
       <Tab.Screen
         name="notifyTab"
-        component={NotifyScreen}
+        component={NotificationScreen}
         options={{
           tabBarBadge: 3,
           headerShown: false,
