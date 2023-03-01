@@ -39,36 +39,104 @@ function HomeScreen({}) {
       </View>
       <View style={styles.lowerContainer}>
         <Pressable
-          style={styles.itemContainer}
+          style={({ pressed }) =>
+            pressed
+              ? [
+                  styles.itemContainer,
+                  { backgroundColor: Colors.basicColor.magenta },
+                ]
+              : [styles.itemContainer]
+          }
           onPress={() => {
             navigation.navigate("StoreList", { category: "한식" });
           }}
         >
-          <Text style={{ fontFamily: "black-sans", fontSize: 40 }}>한식</Text>
+          <Text style={[styles.normalText, { fontSize: 30 }]}>한식</Text>
         </Pressable>
-        <View style={styles.itemContainer}>
-          <Text style={{ fontFamily: "black-sans", fontSize: 40 }}>일식</Text>
-        </View>
-        <View style={styles.itemContainer}>
-          <Text style={{ fontFamily: "black-sans", fontSize: 40 }}>양식</Text>
-        </View>
-        <View style={styles.itemContainer}>
-          <Text style={{ fontFamily: "black-sans", fontSize: 40 }}>아시안</Text>
-        </View>
-        <View style={styles.itemContainer}>
-          <Text style={{ fontFamily: "black-sans", fontSize: 20 }}>
-            Take-out
-          </Text>
-        </View>
-        <View style={styles.itemContainer}>
-          <Text style={{ fontFamily: "black-sans", fontSize: 40 }}>주점</Text>
-        </View>
-        <View style={styles.itemContainer}>
-          <Text style={{ fontFamily: "black-sans", fontSize: 40 }}>칵테일</Text>
-        </View>
-        <View style={styles.itemContainer}>
-          <Text style={{ fontFamily: "black-sans", fontSize: 40 }}>카페</Text>
-        </View>
+        <Pressable
+          style={({ pressed }) =>
+            pressed
+              ? [
+                  styles.itemContainer,
+                  { backgroundColor: Colors.basicColor.magenta },
+                ]
+              : [styles.itemContainer]
+          }
+        >
+          <Text style={[styles.normalText, { fontSize: 30 }]}>일식</Text>
+        </Pressable>
+        <Pressable
+          style={({ pressed }) =>
+            pressed
+              ? [
+                  styles.itemContainer,
+                  { backgroundColor: Colors.basicColor.magenta },
+                ]
+              : [styles.itemContainer]
+          }
+        >
+          <Text style={[styles.normalText, { fontSize: 30 }]}>양식</Text>
+        </Pressable>
+        <Pressable
+          style={({ pressed }) =>
+            pressed
+              ? [
+                  styles.itemContainer,
+                  { backgroundColor: Colors.basicColor.magenta },
+                ]
+              : [styles.itemContainer]
+          }
+        >
+          <Text style={[styles.normalText, { fontSize: 30 }]}>아시안</Text>
+        </Pressable>
+        <Pressable
+          style={({ pressed }) =>
+            pressed
+              ? [
+                  styles.itemContainer,
+                  { backgroundColor: Colors.basicColor.magenta },
+                ]
+              : [styles.itemContainer]
+          }
+        >
+          <Text style={[styles.normalText, { fontSize: 20 }]}>Take-out</Text>
+        </Pressable>
+        <Pressable
+          style={({ pressed }) =>
+            pressed
+              ? [
+                  styles.itemContainer,
+                  { backgroundColor: Colors.basicColor.magenta },
+                ]
+              : [styles.itemContainer]
+          }
+        >
+          <Text style={[styles.normalText, { fontSize: 30 }]}>주점</Text>
+        </Pressable>
+        <Pressable
+          style={({ pressed }) =>
+            pressed
+              ? [
+                  styles.itemContainer,
+                  { backgroundColor: Colors.basicColor.magenta },
+                ]
+              : [styles.itemContainer]
+          }
+        >
+          <Text style={[styles.normalText, { fontSize: 30 }]}>칵테일</Text>
+        </Pressable>
+        <Pressable
+          style={({ pressed }) =>
+            pressed
+              ? [
+                  styles.itemContainer,
+                  { backgroundColor: Colors.basicColor.magenta },
+                ]
+              : [styles.itemContainer]
+          }
+        >
+          <Text style={[styles.normalText, { fontSize: 30 }]}>카페</Text>
+        </Pressable>
       </View>
     </View>
   );

@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   notifyContainer: {
-    flex: 1,
+    flex: 2,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: Colors.basicColor.magenta,

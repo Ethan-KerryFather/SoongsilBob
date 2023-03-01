@@ -74,6 +74,9 @@ function RootStack() {
             <MaterialCommunityIcons name="rice" size={40} color="black" />
           ),
           tabBarActiveBackgroundColor: Colors.basicColor.magenta,
+          tabBarItemStyle: {
+            borderRadius: 20,
+          },
         }}
       />
       <Tab.Screen
@@ -87,6 +90,9 @@ function RootStack() {
             <AntDesign name="notification" size={40} color="black" />
           ),
           tabBarActiveBackgroundColor: Colors.basicColor.magenta,
+          tabBarItemStyle: {
+            borderRadius: 20,
+          },
         }}
       />
       <Tab.Screen
@@ -99,6 +105,9 @@ function RootStack() {
             <MaterialCommunityIcons name="menu" size={40} color="black" />
           ),
           tabBarActiveBackgroundColor: Colors.basicColor.magenta,
+          tabBarItemStyle: {
+            borderRadius: 20,
+          },
         }}
       />
     </Tab.Navigator>
