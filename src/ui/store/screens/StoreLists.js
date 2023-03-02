@@ -2,6 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import {
   FlatList,
+  Pressable,
   StyleSheet,
   Text,
   useWindowDimensions,
@@ -28,9 +29,21 @@ function StoreLists({ route }) {
         }}
         data={stores.korean}
         renderItem={({ item }) => {
-          console.log(JSON.stringify(item));
           return (
-            <View style={[styles.itemContainer, { width: width * 0.8 }]}>
+            <Pressable
+              style={[styles.itemContainer, { width: width * 0.8 }]}
+              onPress={() => {
+                navigation.navigate("StorePage", {
+                  storeInfo: {
+                    name: item.name,
+                    price: item.price,
+                    area: item.area,
+                    description: item.description,
+                  },
+                  location: item.location,
+                });
+              }}
+            >
               <Text style={[styles.normalText, { fontSize: 30 }]}>
                 {item.name}
               </Text>
@@ -40,7 +53,7 @@ function StoreLists({ route }) {
               <Text style={[styles.normalText, { fontSize: 15 }]}>
                 가격대 {item.price}
               </Text>
-            </View>
+            </Pressable>
           );
         }}
       />

@@ -1,4 +1,4 @@
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
 import React from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import Colors from "../../../../assets/Colors";
@@ -16,11 +16,17 @@ function NotifyScreen() {
           backgroundColor: Colors.basicColor.gray,
           padding: 10,
           borderRadius: 10,
+          opacity: 0.7,
         }}
       >
-        <Text>사장님 공지추가</Text>
+        <Text style={styles.normalText}>사장님 공지추가</Text>
         <Pressable style={({ pressed }) => (pressed ? [] : [{}])}>
-          <MaterialCommunityIcons name="plus" size={40} color="blue" />
+          <Entypo
+            name="squared-plus"
+            size={40}
+            color="black"
+            style={{ margin: 3 }}
+          />
         </Pressable>
       </View>
       <View style={styles.notifyContainer}>
@@ -46,5 +52,9 @@ const styles = StyleSheet.create({
   },
   notifyContentContainer: {
     flex: 10,
+  },
+  //
+  normalText: {
+    fontFamily: "gowun-regular",
   },
 });

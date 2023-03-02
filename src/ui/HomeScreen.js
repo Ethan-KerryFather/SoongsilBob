@@ -35,7 +35,12 @@ function HomeScreen({}) {
         </Text>
       </View>
       <View style={styles.middleContainer}>
-        <Text>신입생 여러분을 진심으로 환영합니다 :)</Text>
+        <Text style={[styles.normalText, { fontSize: 15 }]}>
+          신입생 여러분을 진심으로 환영합니다 :)
+        </Text>
+        <Text style={[styles.normalText, { fontSize: 15 }]}>
+          정상적인 작동을 위해 Google Map 설치가 필요합니다
+        </Text>
       </View>
       <View style={styles.lowerContainer}>
         <Pressable
@@ -99,7 +104,7 @@ function HomeScreen({}) {
               : [styles.itemContainer]
           }
         >
-          <Text style={[styles.normalText, { fontSize: 20 }]}>Take-out</Text>
+          <Text style={[styles.normalText, { fontSize: 23 }]}>패스트푸드</Text>
         </Pressable>
         <Pressable
           style={({ pressed }) =>
@@ -111,7 +116,7 @@ function HomeScreen({}) {
               : [styles.itemContainer]
           }
         >
-          <Text style={[styles.normalText, { fontSize: 30 }]}>주점</Text>
+          <Text style={[styles.normalText, { fontSize: 30 }]}>술집</Text>
         </Pressable>
         <Pressable
           style={({ pressed }) =>
@@ -123,7 +128,7 @@ function HomeScreen({}) {
               : [styles.itemContainer]
           }
         >
-          <Text style={[styles.normalText, { fontSize: 30 }]}>칵테일</Text>
+          <Text style={[styles.normalText, { fontSize: 25 }]}>치킨/피자</Text>
         </Pressable>
         <Pressable
           style={({ pressed }) =>
