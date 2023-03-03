@@ -10,7 +10,9 @@
       "image": "./assets/splash2.png",
       "resizeMode": "contain"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -18,7 +20,14 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.ACCESS_BACKGROUND_LOCATION"
+      ],
+      "package": "com.limsoft0401.SoongsilBob"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -31,6 +40,11 @@
           "isAndroidBackgroundLocationEnabled": "숭실밥집이 위치권한을 요청합니다:)"
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "168ce610-520e-4c98-b954-4236e6fc5a69"
+      }
+    }
   }
 }
