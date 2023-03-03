@@ -1,15 +1,21 @@
 import { FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { View, Text, Pressable, StyleSheet, Linking } from "react-native";
 import MapView, { Marker, Polyline } from "react-native-maps";
 import Colors from "../../../../assets/Colors";
 
 function StorePage({ route }) {
   const navigation = useNavigation();
+
   const [storeInfo, setStoreInfo] = useState(route.params.storeInfo);
   const [location, setLocation] = useState(route.params.location);
-  const [userLocation, setUserLocation] = useState();
+  // 컴포넌트 보여줄때 한번 위치 초기화
+  const [userLocation, setUserLocation] = useState({
+    latitude: route.params.latitude,
+    longtitude: route.params.longtitude,
+  });
+
   function callToStore(storeNumber) {
     Linking.openURL(`tel:${storeNumber}`);
   }
@@ -19,6 +25,7 @@ function StorePage({ route }) {
       title: storeInfo.name,
     });
   }, [navigation]);
+
   return (
     <View style={styles.container}>
       <View style={[styles.upperContainer]}>
@@ -97,7 +104,10 @@ function StorePage({ route }) {
           <Polyline
             coordinates={[
               { latitude: location.Y, longitude: location.X },
-              { latitude: location.Y + 0.001, longitude: location.X + 0.001 },
+              {
+                latitude: userLocation.latitude,
+                longitude: userLocation.longtitude,
+              },
             ]}
             strokeColor="#000"
             strokeWidth={6}

@@ -27,7 +27,12 @@ function EventScreen() {
         <Text style={{ fontFamily: "gowun-bold", fontSize: 40 }}>이벤트</Text>
       </View>
       <View style={styles.notifyContentContainer}>
-        <Text>준비중입니다</Text>
+        <Text style={{ fontSize: 25, fontFamily: "gowun-bold" }}>
+          숭실밥집들과 진행하는 이벤트!
+        </Text>
+        <Text style={{ fontSize: 20, fontFamily: "gowun-bold" }}>
+          준비중입니다
+        </Text>
       </View>
     </View>
   );
@@ -46,5 +51,7 @@ const styles = StyleSheet.create({
   },
   notifyContentContainer: {
     flex: 10,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

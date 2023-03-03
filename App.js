@@ -10,6 +10,8 @@ import * as Location from "expo-location";
 function App() {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
+
+  // 폰트 로딩
   const [fontsLoaded] = useFonts({
     "black-sans": require("./assets/font/black-sans.ttf"),
     "gowun-bold": require("./assets/font/gowun-bold.ttf"),
@@ -31,7 +33,8 @@ function App() {
       }
 
       let location = await Location.getCurrentPositionAsync({
-        timeInterval: 5000,
+        distanceInterval: 10,
+        timeInterval: 3000,
       });
       setLocation(location);
     })();
@@ -41,12 +44,13 @@ function App() {
   if (errorMsg) {
     text = errorMsg;
   } else if (location) {
+    // location 가져와서 객체화
     text = JSON.stringify(location);
   }
 
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) {
-      console.log("font loaded..");
+      console.log("폰트를 가져왔어요");
       SplashScreen.hideAsync();
     }
   }, [fontsLoaded]);
