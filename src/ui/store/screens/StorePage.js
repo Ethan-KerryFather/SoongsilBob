@@ -1,6 +1,7 @@
 import { FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useLayoutEffect, useState } from "react";
+import { ScrollView } from "react-native";
 import { View, Text, Pressable, StyleSheet, Linking } from "react-native";
 import MapView, { Marker, Polyline } from "react-native-maps";
 import Colors from "../../../../assets/Colors";
@@ -28,7 +29,10 @@ function StorePage({ route }) {
 
   return (
     <View style={styles.container}>
-      <View style={[styles.upperContainer]}>
+      <ScrollView
+        style={[styles.upperContainer]}
+        contentContainerStyle={{ alignItems: "center" }}
+      >
         <View style={[styles.textContainer, { paddingTop: 10 }]}>
           <Text style={[styles.boldText, { fontSize: 30 }]}>
             {storeInfo.name}
@@ -68,7 +72,7 @@ function StorePage({ route }) {
             <FontAwesome name="phone" size={40} color="black" />
           </Pressable>
         </View>
-      </View>
+      </ScrollView>
       <View style={styles.middleContainer}>
         <MapView
           style={styles.mapView}
@@ -126,7 +130,7 @@ const styles = StyleSheet.create({
   },
   upperContainer: {
     flex: 1,
-    alignItems: "center",
+
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
     backgroundColor: Colors.basicColor.magentaTrans1,

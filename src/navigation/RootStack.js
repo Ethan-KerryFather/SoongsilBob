@@ -56,7 +56,11 @@ function HomeStackScreen() {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen name="Home" component={HomeScreen} />
-      <HomeStack.Screen name="StoreList" component={StoreLists} />
+      <HomeStack.Screen
+        name="StoreList"
+        component={StoreLists}
+        initialParams={myLocation}
+      />
       <HomeStack.Screen
         name="StorePage"
         component={StorePage}
