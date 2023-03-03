@@ -10,6 +10,8 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 import EventScreen from "../ui/notify/screens/EventScreen";
 import StoreLists from "../ui/store/screens/StoreLists";
 import StorePage from "../ui/store/screens/StorePage";
+import { useRoute } from "@react-navigation/native";
+
 const HomeStack = createNativeStackNavigator();
 const EnvironmentStack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -43,11 +45,21 @@ function NotificationScreen() {
 }
 
 function HomeStackScreen() {
+  const route = useRoute();
+  const myLocation = {
+    latitude: route.params.myLocation.location.coords.latitude,
+    longtitude: route.params.myLocation.location.coords.longitude,
+  };
+  console.log(myLocation);
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen name="Home" component={HomeScreen} />
       <HomeStack.Screen name="StoreList" component={StoreLists} />
-      <HomeStack.Screen name="StorePage" component={StorePage} />
+      <HomeStack.Screen
+        name="StorePage"
+        component={StorePage}
+        initialParams={myLocation}
+      />
     </HomeStack.Navigator>
   );
 }
@@ -63,7 +75,7 @@ function EnvironmentScreen() {
   );
 }
 
-function RootStack() {
+function RootStack({ userLocation }) {
   return (
     <Tab.Navigator>
       <Tab.Screen
@@ -80,6 +92,7 @@ function RootStack() {
             borderRadius: 20,
           },
         }}
+        initialParams={{ myLocation: userLocation }}
       />
       <Tab.Screen
         name="notifyTab"

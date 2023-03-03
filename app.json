@@ -22,6 +22,15 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "숭실밥집이 위치권한을 요청합니다:)",
+          "isAndroidBackgroundLocationEnabled": "숭실밥집이 위치권한을 요청합니다:)"
+        }
+      ]
+    ]
   }
 }

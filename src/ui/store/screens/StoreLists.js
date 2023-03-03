@@ -38,6 +38,7 @@ function StoreLists({ route }) {
                     name: item.name,
                     price: item.price,
                     area: item.area,
+                    workingTime: item.workingTime,
                     description: item.description,
                   },
                   location: item.location,

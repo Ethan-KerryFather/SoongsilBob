@@ -2,14 +2,14 @@ import { FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { View, Text, Pressable, StyleSheet, Linking } from "react-native";
-import MapView, { Marker } from "react-native-maps";
+import MapView, { Marker, Polyline } from "react-native-maps";
 import Colors from "../../../../assets/Colors";
 
 function StorePage({ route }) {
   const navigation = useNavigation();
   const [storeInfo, setStoreInfo] = useState(route.params.storeInfo);
   const [location, setLocation] = useState(route.params.location);
-
+  const [userLocation, setUserLocation] = useState();
   function callToStore(storeNumber) {
     Linking.openURL(`tel:${storeNumber}`);
   }
@@ -38,8 +38,20 @@ function StorePage({ route }) {
             </Text>
           </View>
           <Text style={[styles.normalText, { fontSize: 20 }]}>
+            영업시간 {storeInfo.workingTime}
+          </Text>
+          <View
+            style={{
+              borderWidth: 0.3,
+              borderBottomColor: "black",
+              borderStyle: "dotted",
+              marginVertical: 3,
+            }}
+          />
+          <Text style={[styles.normalText, { fontSize: 20 }]}>
             {storeInfo.description}
           </Text>
+
           <Pressable
             onPress={() => {
               callToStore("01097499705");
@@ -65,14 +77,30 @@ function StorePage({ route }) {
             latitudeDelta: 0.0009,
             longitudeDelta: 0.0007,
           }}
+          onUserLocationChange={(event) => {
+            setUserLocation({
+              latitude: event.nativeEvent.coordinate.latitude,
+              longtitude: event.nativeEvent.coordinate.longitude,
+            });
+          }}
+          userLocationUpdateInterval={10000}
           liteMode={false}
-          mapType="mutedStandard"
           scrollEnabled={true}
+          showsUserLocation={true}
+          showsMyLocationButton={true}
         >
           <Marker
             coordinate={{ latitude: location.Y, longitude: location.X }}
             title="목적지"
             description={storeInfo.name}
+          />
+          <Polyline
+            coordinates={[
+              { latitude: location.Y, longitude: location.X },
+              { latitude: location.Y + 0.001, longitude: location.X + 0.001 },
+            ]}
+            strokeColor="#000"
+            strokeWidth={6}
           />
         </MapView>
       </View>
@@ -101,6 +129,7 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "center",
     paddingLeft: 20,
+    paddingRight: 20,
   },
   mapView: {
     flex: 1,
