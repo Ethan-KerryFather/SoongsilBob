@@ -50,18 +50,18 @@ function App() {
     text = JSON.stringify(location);
   }
 
-  const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded) {
-      console.log("폰트를 가져왔어요");
-      // SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded]);
-
+  if (fontsLoaded) {
+    console.log("font check");
+    SplashScreen.hideAsync();
+  }
   if (!fontsLoaded) return null;
-
-  SplashScreen.preventAutoHideAsync();
   return (
-    <View style={styles.container} onLayout={onLayoutRootView}>
+    <View
+      style={styles.container}
+      onLayout={() => {
+        SplashScreen.preventAutoHideAsync();
+      }}
+    >
       {location ? (
         <View style={styles.upperContainer}>
           <NavigationContainer>
