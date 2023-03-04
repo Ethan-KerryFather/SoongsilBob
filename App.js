@@ -8,60 +8,52 @@ import { useCallback, useEffect, useLayoutEffect, useState } from "react";
 import * as Location from "expo-location";
 
 function App() {
+  SplashScreen.preventAutoHideAsync();
+
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
+  const [fontLoaded, setFontLoaded] = useState(false);
 
-  // 폰트 로딩
   const [fontsLoaded] = useFonts({
     "black-sans": require("./assets/font/black-sans.ttf"),
-    "gowun-bold": require("./assets/font/gowun-bold.ttf"),
+
     "gowun-regular": require("./assets/font/gowun-regular.ttf"),
+    "gowun-bold": require("./assets/font/gowun-bold.ttf"),
   });
+
+  // 위치권한 요청
+  useEffect(() => {
+    try {
+      getLocation();
+    } catch (error) {
+      console.log(error);
+    } finally {
+      SplashScreen.hideAsync();
+    }
+  }, []);
 
   if (location !== null) {
     console.log("위치를 가져온 상태에요");
   }
 
-  // 위치권한 요청
-  useEffect(() => {
-    (async () => {
-      let { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== "granted") {
-        setErrorMsg("위치 권한을 거부하셨습니다:(");
-        return;
-      }
-      console.log("위치 가져오기 시작");
-
-      let location = await Location.getCurrentPositionAsync({
-        distanceInterval: 10,
-        timeInterval: 100000,
-        accuracy: Location.Accuracy.Balanced,
-      });
-      console.log("위치 가져오기 완료");
-      setLocation(location);
-    })();
-  }, []);
-
-  let text = "Waiting..";
-  if (errorMsg) {
-    text = errorMsg;
-  } else if (location) {
-    // location 가져와서 객체화
-    text = JSON.stringify(location);
+  async function getLocation() {
+    let { status } = await Location.requestForegroundPermissionsAsync();
+    if (status !== "granted") {
+      setErrorMsg("위치권한 문제발생");
+      return;
+    }
+    console.log("위치 가져오기 시작");
+    let location = await Location.getCurrentPositionAsync({
+      distanceInterval: 10,
+      timeInterval: 100000,
+      accuracy: Location.Accuracy.Balanced,
+    });
+    console.log("위치 가져오기 완료");
+    setLocation(location);
   }
 
-  if (fontsLoaded) {
-    console.log("font check");
-    SplashScreen.hideAsync();
-  }
-  if (!fontsLoaded) return null;
   return (
-    <View
-      style={styles.container}
-      onLayout={() => {
-        SplashScreen.preventAutoHideAsync();
-      }}
-    >
+    <View style={styles.container}>
       {location ? (
         <View style={styles.upperContainer}>
           <NavigationContainer>
@@ -77,16 +69,7 @@ function App() {
             backgroundColor: "white",
           }}
         >
-          <Image source={require("./assets/horseIcon.png")} />
-          <Text style={{ fontFamily: "gowun-bold", fontSize: 30 }}>
-            밥 차리는 중..
-          </Text>
-          <Text style={{ fontFamily: "gowun-bold", fontSize: 20 }}>
-            숭밥은 위치권한을 필요로 합니다:)
-          </Text>
-          <Text style={{ fontFamily: "gowun-bold", fontSize: 20 }}>
-            꺼놓으셨다면 켜시고 앱을 재실행해주세요
-          </Text>
+          <Text style={{ fontSize: 30 }}>밥 차리는 중..</Text>
         </View>
       )}
     </View>
