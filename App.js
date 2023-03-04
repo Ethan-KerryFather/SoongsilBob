@@ -19,23 +19,25 @@ function App() {
   });
 
   if (location !== null) {
-    console.log("위치를 가져왔어요");
+    console.log("위치를 가져온 상태에요");
   }
 
   // 위치권한 요청
-  useLayoutEffect(() => {
+  useEffect(() => {
     (async () => {
-      console.log("위치 가져오기 시작");
       let { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== "granted") {
         setErrorMsg("위치 권한을 거부하셨습니다:(");
         return;
       }
+      console.log("위치 가져오기 시작");
 
       let location = await Location.getCurrentPositionAsync({
         distanceInterval: 10,
-        timeInterval: 3000,
+        timeInterval: 100000,
+        accuracy: Location.Accuracy.Balanced,
       });
+      console.log("위치 가져오기 완료");
       setLocation(location);
     })();
   }, []);
@@ -51,14 +53,13 @@ function App() {
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) {
       console.log("폰트를 가져왔어요");
-      SplashScreen.hideAsync();
+      // SplashScreen.hideAsync();
     }
   }, [fontsLoaded]);
 
   if (!fontsLoaded) return null;
 
   SplashScreen.preventAutoHideAsync();
-
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
       {location ? (

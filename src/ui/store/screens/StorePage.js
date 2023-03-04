@@ -55,7 +55,7 @@ function StorePage({ route }) {
             style={{
               borderWidth: 0.3,
               borderBottomColor: "black",
-              borderStyle: "dotted",
+              borderStyle: "solid",
               marginVertical: 3,
             }}
           />
@@ -75,7 +75,6 @@ function StorePage({ route }) {
       </ScrollView>
       <View style={styles.middleContainer}>
         <MapView
-          apiKey="AIzaSyA8w7s_aPtbNIXRQ_fjM2Y-1zZ3fEiE4W0"
           style={styles.mapView}
           initialRegion={{
             latitude: location.Y,

@@ -10,9 +10,7 @@
       "image": "./assets/splash2.png",
       "resizeMode": "contain"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -27,7 +25,12 @@
         "android.permission.FOREGROUND_SERVICE",
         "android.permission.ACCESS_BACKGROUND_LOCATION"
       ],
-      "package": "com.limsoft0401.SoongsilBob"
+      "package": "com.limsoft0401.SoongsilBob",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyA8w7s_aPtbNIXRQ_fjM2Y-1zZ3fEiE4W0"
+        }
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"

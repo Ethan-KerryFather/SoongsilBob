@@ -34,14 +34,7 @@ function HomeScreen({}) {
           숭실밥집
         </Text>
       </View>
-      <View style={styles.middleContainer}>
-        <Text style={[styles.normalText, { fontSize: 15 }]}>
-          신입생 여러분을 진심으로 환영합니다 :)
-        </Text>
-        <Text style={[styles.normalText, { fontSize: 15 }]}>
-          정상적인 작동을 위해 Google Map 설치가 필요합니다
-        </Text>
-      </View>
+      <View style={styles.middleContainer}></View>
       <View style={styles.lowerContainer}>
         <Pressable
           style={({ pressed }) =>
