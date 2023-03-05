@@ -1,11 +1,24 @@
 import { Entypo } from "@expo/vector-icons";
-import React from "react";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
+import {
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+  Touchable,
+  TouchableOpacity,
+} from "react-native";
 import Colors from "../../../../assets/Colors";
+import DragModal from "../../DragModal";
 
 function NotifyScreen() {
+  const [isDragModalVisible, setDragModalVisible] = useState(true);
   return (
     <View style={styles.container}>
+      <DragModal visible={isDragModalVisible}>
+        <Text>DragModal</Text>
+      </DragModal>
+
       <View
         style={{
           position: "absolute",
@@ -32,6 +45,7 @@ function NotifyScreen() {
       <View style={styles.notifyContainer}>
         <Text style={{ fontFamily: "gowun-bold", fontSize: 40 }}>공지</Text>
       </View>
+
       <View style={styles.notifyContentContainer}>
         <Text style={{ fontSize: 25, fontFamily: "gowun-bold" }}>
           숭실밥집 알림!
