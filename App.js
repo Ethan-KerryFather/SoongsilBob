@@ -26,7 +26,7 @@ function App() {
     try {
       getLocation();
     } catch (error) {
-      console.log(error);
+      console.log("error");
     } finally {
       SplashScreen.hideAsync();
     }
@@ -37,19 +37,28 @@ function App() {
   }
 
   async function getLocation() {
+    await console.log("권한을 가져옵니다");
+
     let { status } = await Location.requestForegroundPermissionsAsync();
+    await console.log("권한을 가져왔습니다");
     if (status !== "granted") {
       setErrorMsg("위치권한 문제발생");
       return;
     }
-    console.log("위치 가져오기 시작");
-    let location = await Location.getCurrentPositionAsync({
-      distanceInterval: 10,
-      timeInterval: 100000,
-      accuracy: Location.Accuracy.Balanced,
-    });
-    console.log("위치 가져오기 완료");
-    setLocation(location);
+
+    await console.log("위치 가져오기 시작");
+    try {
+      let location = await Location.getCurrentPositionAsync({
+        distanceInterval: 10,
+        timeInterval: 100000,
+        accuracy: Location.Accuracy.Balanced,
+      });
+      setLocation(location);
+    } catch (error) {
+      console.log(error);
+    }
+
+    await console.log("위치 가져오기 완료");
   }
 
   return (
