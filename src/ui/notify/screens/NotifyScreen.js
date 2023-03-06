@@ -15,10 +15,6 @@ function NotifyScreen() {
   const [isDragModalVisible, setDragModalVisible] = useState(true);
   return (
     <View style={styles.container}>
-      <DragModal visible={isDragModalVisible}>
-        <Text>DragModal</Text>
-      </DragModal>
-
       <View
         style={{
           position: "absolute",

@@ -4,18 +4,28 @@ import RootStack from "./src/navigation/RootStack";
 import Colors from "./assets/Colors";
 import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
-import { useCallback, useEffect, useLayoutEffect, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import * as Location from "expo-location";
 import useLocation from "./src/hooks/useLocation";
-function App() {
-  SplashScreen.preventAutoHideAsync();
+// gesture handler 등록
+import "react-native-gesture-handler";
 
+SplashScreen.preventAutoHideAsync();
+
+function App() {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
   const [fontsLoaded] = useFonts({
     "black-sans": require("./assets/font/black-sans.ttf"),
     "gowun-regular": require("./assets/font/gowun-regular.ttf"),
     "gowun-bold": require("./assets/font/gowun-bold.ttf"),
+    MaterialCommunityIcons: require("@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"),
   });
 
   // 위치권한 요청
@@ -26,6 +36,7 @@ function App() {
     } catch (error) {
       console.log("error");
     }
+
     return () => {};
   }, []);
 
@@ -47,7 +58,6 @@ function App() {
         })
           .then((location) => {
             console.log("위치 가져오기 완료\n위치 데이터: ");
-            console.log(JSON.stringify(location));
             setLocation(location);
           })
           .catch((error) => console.log(error));
@@ -90,11 +100,11 @@ function App() {
             backgroundColor: "white",
           }}
         >
-          <Text style={{ fontSize: 30 }}>밥 차리는 중..</Text>
-          <Text style={{ fontSize: 30 }}>
+          <Text style={{ fontSize: 20 }}>밥 차리는 중..</Text>
+          <Text style={{ fontSize: 15 }}>
             사용자 위치 업데이트가 원활하지 않을 때가 있습니다.
           </Text>
-          <Text style={{ fontSize: 30 }}>종료 후 재시작해주세요:)</Text>
+          <Text style={{ fontSize: 15 }}>종료 후 재시작해주세요:)</Text>
         </View>
       </View>
     );
