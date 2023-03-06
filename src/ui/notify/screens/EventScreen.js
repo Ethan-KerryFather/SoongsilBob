@@ -1,12 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, View, Pressable } from "react-native";
+import { StyleSheet, Text, View, Pressable, Linking } from "react-native";
 import Colors from "../../../../assets/Colors";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
 
 function EventScreen() {
   return (
     <View style={styles.container}>
-      <View
+      <Pressable
         style={{
           position: "absolute",
           bottom: 10,
@@ -16,22 +16,28 @@ function EventScreen() {
           backgroundColor: Colors.basicColor.gray,
           padding: 10,
           borderRadius: 10,
+          zIndex: 1,
+        }}
+        onPress={() => {
+          console.log("clicked");
+          Linking.openURL("https://forms.gle/Rw8rduVAd26maDxm8");
         }}
       >
-        <Text>사장님 이벤트추가</Text>
-        <Pressable style={({ pressed }) => (pressed ? [] : [{}])}>
-          <MaterialCommunityIcons name="plus" size={40} color="blue" />
-        </Pressable>
-      </View>
+        <Text style={{ fontFamily: "gowun-regular" }}>사장님 이벤트추가</Text>
+
+        <Entypo
+          name="squared-plus"
+          size={40}
+          color="black"
+          style={{ margin: 3 }}
+        />
+      </Pressable>
       <View style={styles.notifyContainer}>
         <Text style={{ fontFamily: "gowun-bold", fontSize: 40 }}>이벤트</Text>
       </View>
       <View style={styles.notifyContentContainer}>
         <Text style={{ fontSize: 25, fontFamily: "gowun-bold" }}>
-          숭실밥집들과 진행하는 이벤트!
-        </Text>
-        <Text style={{ fontSize: 20, fontFamily: "gowun-bold" }}>
-          준비중입니다
+          등록된 이벤트가 없습니다
         </Text>
       </View>
     </View>

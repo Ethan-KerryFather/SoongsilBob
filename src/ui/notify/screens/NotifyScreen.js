@@ -7,6 +7,7 @@ import {
   View,
   Touchable,
   TouchableOpacity,
+  Linking,
 } from "react-native";
 import Colors from "../../../../assets/Colors";
 import DragModal from "../../DragModal";
@@ -15,7 +16,7 @@ function NotifyScreen() {
   const [isDragModalVisible, setDragModalVisible] = useState(true);
   return (
     <View style={styles.container}>
-      <View
+      <Pressable
         style={{
           position: "absolute",
           bottom: 10,
@@ -25,29 +26,29 @@ function NotifyScreen() {
           backgroundColor: Colors.basicColor.gray,
           padding: 10,
           borderRadius: 10,
-          opacity: 0.7,
+          zIndex: 1,
+        }}
+        onPress={() => {
+          console.log("clicked");
+          Linking.openURL("https://forms.gle/Rw8rduVAd26maDxm8");
         }}
       >
-        <Text style={styles.normalText}>사장님 공지추가</Text>
-        <Pressable style={({ pressed }) => (pressed ? [] : [{}])}>
-          <Entypo
-            name="squared-plus"
-            size={40}
-            color="black"
-            style={{ margin: 3 }}
-          />
-        </Pressable>
-      </View>
+        <Text style={{ fontFamily: "gowun-regular" }}>사장님 공지추가</Text>
+
+        <Entypo
+          name="squared-plus"
+          size={40}
+          color="black"
+          style={{ margin: 3 }}
+        />
+      </Pressable>
       <View style={styles.notifyContainer}>
         <Text style={{ fontFamily: "gowun-bold", fontSize: 40 }}>공지</Text>
       </View>
 
       <View style={styles.notifyContentContainer}>
         <Text style={{ fontSize: 25, fontFamily: "gowun-bold" }}>
-          숭실밥집 알림!
-        </Text>
-        <Text style={{ fontSize: 20, fontFamily: "gowun-bold" }}>
-          준비중입니다
+          등록된 공지가 없습니다
         </Text>
       </View>
     </View>
