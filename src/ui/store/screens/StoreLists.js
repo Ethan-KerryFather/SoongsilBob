@@ -25,6 +25,17 @@ function StoreLists({ route }) {
     });
   }, [navigation]);
 
+  const getCategoryStores = (category) => {
+    switch (category) {
+      case "한식":
+        return stores.korean;
+      case "양식":
+        return stores.western;
+      default:
+        return [];
+    }
+  };
+
   return (
     <View style={styles.container}>
       <FlatList
@@ -33,7 +44,8 @@ function StoreLists({ route }) {
           alignItems: "center",
           justifyContent: "center",
         }}
-        data={stores.korean}
+        //data={stores.korean}
+        data={getCategoryStores(route.params.category)}
         renderItem={({ item }) => {
           return (
             <Pressable
@@ -51,27 +63,41 @@ function StoreLists({ route }) {
                 });
               }}
             >
-              <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <View
+                style={{
+                  flexDirection: "column",
+                  alignItems: "center",
+                  borderBottomWidth: 0.5,
+                  borderBottomColor: "black",
+                  paddingBottom: 5,
+                  marginBottom: 5,
+                }}
+              >
                 <Text style={[styles.normalText, { fontSize: 25 }]}>
-                  {item.name} -
+                  {item.name}
                 </Text>
-                <Ionicons
-                  name="star"
-                  color="red"
-                  size={15}
-                  style={{ paddingLeft: 5 }}
-                />
-                <Text> 10</Text>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    paddingVertical: 10,
+                    alignSelf: "flex-start",
+                    paddingLeft: 10,
+                  }}
+                >
+                  <Ionicons
+                    name="star"
+                    color="red"
+                    size={15}
+                    style={{ paddingLeft: 5 }}
+                  />
+                  <Text> 10</Text>
+                </View>
               </View>
 
               <Text style={[styles.normalText, { fontSize: 15 }]}>
-                {item.area}
-              </Text>
-              <Text style={[styles.normalText, { fontSize: 15 }]}>
-                가격대 {item.price}
-              </Text>
-              <Text style={[styles.normalText, { fontSize: 15 }]}>
-                내 위치에서{" "}
+                {item.area}근처에 있어요
+                {"\n"}가격대는{item.price}이에요
+                {"\n"}내 위치에서{" "}
                 {GetDistance(
                   latitude,
                   longtitude,
@@ -105,6 +131,8 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
     borderRadius: 10,
+    borderColor: Colors.basicColor.magenta,
+    borderWidth: 1,
   },
   //
   normalText: {

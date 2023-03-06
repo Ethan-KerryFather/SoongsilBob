@@ -129,6 +129,9 @@ function HomeScreen({}) {
                 ]
               : [styles.itemContainer]
           }
+          onPress={() => {
+            navigation.navigate("StoreList", { category: "일식" });
+          }}
         >
           <Text style={[styles.normalText, { fontSize: 30 }]}>일식</Text>
         </Pressable>
@@ -141,6 +144,9 @@ function HomeScreen({}) {
                 ]
               : [styles.itemContainer]
           }
+          onPress={() => {
+            navigation.navigate("StoreList", { category: "양식" });
+          }}
         >
           <Text style={[styles.normalText, { fontSize: 30 }]}>양식</Text>
         </Pressable>
@@ -153,6 +159,9 @@ function HomeScreen({}) {
                 ]
               : [styles.itemContainer]
           }
+          onPress={() => {
+            navigation.navigate("StoreList", { category: "아시안" });
+          }}
         >
           <Text style={[styles.normalText, { fontSize: 30 }]}>아시안</Text>
         </Pressable>
@@ -165,6 +174,9 @@ function HomeScreen({}) {
                 ]
               : [styles.itemContainer]
           }
+          onPress={() => {
+            navigation.navigate("StoreList", { category: "패스트푸드" });
+          }}
         >
           <Text style={[styles.normalText, { fontSize: 23 }]}>패스트푸드</Text>
         </Pressable>
@@ -177,6 +189,9 @@ function HomeScreen({}) {
                 ]
               : [styles.itemContainer]
           }
+          onPress={() => {
+            navigation.navigate("StoreList", { category: "술집" });
+          }}
         >
           <Text style={[styles.normalText, { fontSize: 30 }]}>술집</Text>
         </Pressable>
@@ -189,6 +204,9 @@ function HomeScreen({}) {
                 ]
               : [styles.itemContainer]
           }
+          onPress={() => {
+            navigation.navigate("StoreList", { category: "치킨/피자" });
+          }}
         >
           <Text style={[styles.normalText, { fontSize: 25 }]}>치킨/피자</Text>
         </Pressable>
@@ -201,6 +219,9 @@ function HomeScreen({}) {
                 ]
               : [styles.itemContainer]
           }
+          onPress={() => {
+            navigation.navigate("StoreList", { category: "카페" });
+          }}
         >
           <Text style={[styles.normalText, { fontSize: 30 }]}>카페</Text>
         </Pressable>
