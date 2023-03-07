@@ -1,35 +1,26 @@
 import { Entypo } from "@expo/vector-icons";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Pressable,
   StyleSheet,
   Text,
   View,
-  Touchable,
-  TouchableOpacity,
   Linking,
+  FlatList,
+  useWindowDimensions,
 } from "react-native";
 import Colors from "../../../../assets/Colors";
-import DragModal from "../../DragModal";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../../../FirebaseConfig";
 
 function NotifyScreen() {
-  const [isDragModalVisible, setDragModalVisible] = useState(true);
+  const [notify, setNotify] = useState([]);
+
   return (
     <View style={styles.container}>
       <Pressable
-        style={{
-          position: "absolute",
-          bottom: 10,
-          right: 10,
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: Colors.basicColor.gray,
-          padding: 10,
-          borderRadius: 10,
-          zIndex: 1,
-        }}
+        style={styles.notifyAddBtn}
         onPress={() => {
-          console.log("clicked");
           Linking.openURL("https://forms.gle/Rw8rduVAd26maDxm8");
         }}
       >
@@ -47,7 +38,7 @@ function NotifyScreen() {
       </View>
 
       <View style={styles.notifyContentContainer}>
-        <Text style={{ fontSize: 25, fontFamily: "gowun-bold" }}>
+        <Text style={{ fontSize: 25, fontFamily: "gowun-regular" }}>
           등록된 공지가 없습니다
         </Text>
       </View>
@@ -71,6 +62,19 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  //
+  notifyAddBtn: {
+    position: "absolute",
+    bottom: 10,
+    right: 10,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: Colors.basicColor.gray,
+    padding: 10,
+    borderRadius: 10,
+    zIndex: 1,
+  },
+
   //
   normalText: {
     fontFamily: "gowun-regular",

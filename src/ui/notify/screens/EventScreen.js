@@ -36,7 +36,7 @@ function EventScreen() {
         <Text style={{ fontFamily: "gowun-bold", fontSize: 40 }}>이벤트</Text>
       </View>
       <View style={styles.notifyContentContainer}>
-        <Text style={{ fontSize: 25, fontFamily: "gowun-bold" }}>
+        <Text style={{ fontSize: 25, fontFamily: "gowun-regular" }}>
           등록된 이벤트가 없습니다
         </Text>
       </View>

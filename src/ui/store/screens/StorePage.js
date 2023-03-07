@@ -1,4 +1,4 @@
-import { FontAwesome } from "@expo/vector-icons";
+import { Ionicons, FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { ScrollView } from "react-native";
@@ -39,9 +39,14 @@ function StorePage({ route }) {
           </Text>
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <View style={styles.iconContainer}>
-              <FontAwesome name="star" color="red" size={30} />
+              <Ionicons
+                name="star"
+                color="red"
+                size={20}
+                style={{ paddingLeft: 5 }}
+              />
             </View>
-            <Text style={[styles.boldText, { fontSize: 20 }]}> x 81</Text>
+            <Text style={[styles.normalText, { fontSize: 20 }]}> 10</Text>
             <Text
               style={[styles.normalText, { fontSize: 20, paddingLeft: 30 }]}
             >

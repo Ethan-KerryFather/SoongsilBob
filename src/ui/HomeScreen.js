@@ -66,7 +66,6 @@ function HomeScreen({}) {
               flex: 1,
               justifyContent: "flex-start",
               alignItems: "center",
-              paddingLeft: 30,
               flexDirection: "row",
               opacity: 1,
             }}
@@ -81,7 +80,6 @@ function HomeScreen({}) {
                 padding: 20,
                 borderRadius: 20,
                 borderColor: "blue",
-
                 backgroundColor: Colors.basicColor.gray,
               }}
             >
@@ -133,7 +131,7 @@ function HomeScreen({}) {
             navigation.navigate("StoreList", { category: "일식" });
           }}
         >
-          <Text style={[styles.normalText, { fontSize: 30 }]}>일식</Text>
+          <Text style={[styles.normalText, { fontSize: 25 }]}>일식/중식</Text>
         </Pressable>
         <Pressable
           style={({ pressed }) =>
@@ -175,10 +173,10 @@ function HomeScreen({}) {
               : [styles.itemContainer]
           }
           onPress={() => {
-            navigation.navigate("StoreList", { category: "패스트푸드" });
+            navigation.navigate("StoreList", { category: "테이크아웃" });
           }}
         >
-          <Text style={[styles.normalText, { fontSize: 23 }]}>패스트푸드</Text>
+          <Text style={[styles.normalText, { fontSize: 23 }]}>테이크아웃</Text>
         </Pressable>
         <Pressable
           style={({ pressed }) =>
@@ -266,6 +264,8 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.basicColor.gray,
     borderRadius: 20,
     margin: "1%",
+    borderWidth: 0.5,
+    borderColor: Colors.basicColor.magenta,
   },
   bottomsheet: {
     flex: 1,

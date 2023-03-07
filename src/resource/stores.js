@@ -12,6 +12,15 @@
 const stores = {
   korean: [
     {
+      name: "청년다방",
+      area: "중문",
+      workingTime: "11:00-21:00, 20:10 lastOrder",
+      price: "15000원-",
+      location: { X: 126.956059, Y: 37.4952261 },
+      description:
+        "다들 아는 떡볶이 맛집! 항상 사람이 많다. 아싸라 많이 못가봤지만, 먹고 너무 맛있어서 눈물날뻔.. 오짱 짱..",
+    },
+    {
       name: "신의주찹쌀순대",
       area: "중문",
       workingTime: "24시간",
@@ -87,9 +96,10 @@ const stores = {
       name: "내가찜한닭",
       area: "중문",
       price: "20000원~50000원",
-      workingTime: "10am - 9pm",
+      workingTime: "10:00-21:00",
       location: { X: 126.956421, Y: 37.4951722 },
-      description: "혼자는 힘듦 ",
+      description:
+        "혼자 갈만한 곳은 아니다! 여러명이 가는 것을 추천하며, 정말 맛있다. 참고로 로제 좋아하면 로제 파스타찜닭 꼭 먹어보길",
     },
     {
       name: "논두렁갈비",
@@ -100,14 +110,6 @@ const stores = {
       description:
         "갈비집으로서 고기와 점심 저녁 메뉴로 묵은지 김치찜과 김치찌개가 일품",
     },
-    {
-      name: "아리랑컵밥",
-      area: "중문",
-      price: "10000원~20000원",
-      workingTime: "10:00-21:00, 매주 일요일 휴무",
-      location: { X: 126.95632, Y: 37.4944423 },
-      description: "간단하게 빨리 먹을 수 있는 컵밥집",
-    },
   ],
   western: [
     {
@@ -117,6 +119,14 @@ const stores = {
       price: "40000원-",
       location: { X: 126.957756, Y: 37.4946141 },
       description: "스테이크, 파스타 맛집, 식객남녀 잘먹었습니다 시즌3 출연",
+    },
+    {
+      name: "뚝배기 스파게티",
+      area: "중문",
+      workingTime: "10:30-20:30, 매주 일요일 휴무",
+      price: "7000원-",
+      location: { X: 126.958989, Y: 37.4946506 },
+      description: "가성비 좋은 스파게티 집",
     },
     {
       name: "샤로스톤",
@@ -142,8 +152,201 @@ const stores = {
       location: { X: 126.95099, Y: 37.5000444 },
       description: "스테이크, 파스타, 버거, 프라이 모두 커버가능한 맛집",
     },
+    {
+      name: "펍캐리온",
+      area: "정문",
+      workingTime: "16:00-24:00, 23:00 lastOrder",
+      price: "19000원-30000원",
+      location: { X: 126.953583, Y: 37.4958649 },
+      description:
+        "양이 많고, 사장님이 친절한 파스타/피자 맛집, 비싸도 양이 엄청 혜자라는 말이 많다",
+    },
   ],
-  asian: [],
+  asian: [
+    {
+      name: "고렝",
+      area: "중문",
+      workingTime: "11:00-22:00, 오후3:00-5:00 break",
+      price: "5500원-10000원",
+      location: { X: 126.958751, Y: 37.4944613 },
+      description: "숭실대 유일한 태국퓨전음식점, 불향 가득한 팟타이가 일품",
+    },
+  ],
+  takeout: [
+    {
+      name: "지지고 숭실대점",
+      area: "중문",
+      workingTime: "11:00-22:00, 토요일 영업시간 변경가능",
+      price: "4000원-",
+      location: { X: 126.956704, Y: 37.4951273 },
+      description:
+        "그거알아? 지지고는 숭실대가 본점!, 지지고가 처음이라면 0단계나 0.5단계 먹는 것을 추천! 0.5단계도 꽤 맵다!",
+    },
+    {
+      name: "밀플랜비 숭실대점",
+      area: "중문",
+      workingTime: "11:00-21:00, 20:45 lastOrder",
+      price: "5500원-10000원",
+      location: { X: 126.956388, Y: 37.4948208 },
+      description: "부리또 맛집",
+    },
+    {
+      name: "맥도날드 숭실대점",
+      area: "중문",
+      workingTime: "24시간",
+      price: "5000원-",
+      location: { X: 126.956885, Y: 37.4950913 },
+      description: "맥 도 날 드",
+    },
+    {
+      name: "아리랑컵밥",
+      area: "중문",
+      price: "10000원~20000원",
+      workingTime: "10:00-21:00, 매주 일요일 휴무",
+      location: { X: 126.95632, Y: 37.4944423 },
+      description: "간단하게 빨리 먹을 수 있는 컵밥집",
+    },
+    {
+      name: "수수&핫커리 핫도그",
+      area: "정문",
+      workingTime: "11:00-23:00",
+      price: "1500원-",
+      location: { X: 126.953888, Y: 37.4955947 },
+      description: "할머니가 운영하시는 핫도그집, 가성비 좋고 맛있음!",
+    },
+  ],
+  chickenPizza: [
+    {
+      name: "피자스쿨 숭실대점",
+      area: "정문",
+      workingTime: "12:10-22:55, 수요일만 16:00-22:15",
+      price: "10900원-",
+      location: { X: 126.953525, Y: 37.496928 },
+      description: "모두가 다 아는 피자스쿨, 전화로 미리 주문하고 가면 편하다",
+    },
+    {
+      name: "리얼후라이",
+      area: "중문",
+      workingTime: "16:00-01:00",
+      price: "18000원-",
+      location: { X: 126.955143, Y: 37.4953339 },
+      description: "정말 맛있음. 정말 맛있음. 정말 맛있음. ",
+    },
+    {
+      name: "미쳐버린파닭",
+      area: "정보관",
+      workingTime: "16:00-02:30, 매주 일요일 휴무",
+      price: "16000원-",
+      location: { X: 126.960538, Y: 37.494543 },
+      description: "숭실대 거의 유일한 파닭집?!, 깔끔하니 먹기 좋다",
+    },
+    {
+      name: "BHC치킨 숭실대점",
+      area: "중문",
+      workingTime: "12:00-24:00",
+      price: "20000원-",
+      location: { X: 126.957439, Y: 37.4949383 },
+      description: "뿌링클 먹을래?",
+    },
+    {
+      name: "디디치킨",
+      area: "중문",
+      workingTime: "15:00-02:00",
+      price: "18000원-",
+      location: { X: 126.956704, Y: 37.4951273 },
+      description:
+        "중문 횡단보도 바로 앞에 있는 치킨집, 여러가지 맛을 먹을 수 있는 것이 장점",
+    },
+    {
+      name: "맛닭꼬 숭실대입구역점",
+      area: "정문",
+      workingTime: "14:00-01:00",
+      price: "9900원-",
+      location: { X: 126.952722, Y: 37.4980179 },
+      description:
+        "최근 오픈함! 가성비 좋고, 사장님이 친절하다는 리뷰가 다수 보임",
+    },
+    {
+      name: "푸라닭 상도1동점",
+      area: "정문",
+      workingTime: "12:00-01:00",
+      price: "16900원-",
+      location: { X: 126.951783, Y: 37.4988104 },
+      description:
+        "치킨 포장 하나도 굉장히 고급스럽게 담아서 줘서 놀람, 순살치킨을 닭가슴살이 아닌 오로지 통다리살만 넣는다고 한다",
+    },
+  ],
+  alcohol: [],
+  cafe: [],
+  japanese: [
+    {
+      name: "황궁",
+      area: "중문",
+      workingTime: "11:00-21:00",
+      price: "5000원-",
+      location: { X: 126.95831, Y: 37.4948936 },
+      description: "싸고 맛있는 중국집! 밥이 공짜? 요일메뉴 구성이 좋다",
+    },
+    {
+      name: "연래춘",
+      area: "중문",
+      workingTime: "09:00-21:00",
+      price: "5000원-",
+      location: { X: 126.956648, Y: 37.4949741 },
+      description: "싸고 맛있다! 매장이 넓어서 쾌적하게 먹을 수 있음",
+    },
+    {
+      name: "취향",
+      area: "중문",
+      workingTime: "10:30-20:30",
+      price: "7000원-",
+      location: { X: 126.955143, Y: 37.4953339 },
+      description: "괜찮은 중국집",
+    },
+    {
+      name: "긴자료코 숭실대입구점",
+      area: "중문",
+      workingTime: "11:00-21:00",
+      price: "8500원-",
+      location: { X: 126.95563, Y: 37.495271 },
+      description:
+        "모든 메뉴가 고급지고, 돈까스가 정말 푸짐하다. 명란크림우동도 일품",
+    },
+    {
+      name: "철탄 함바그 텐동",
+      area: "중문",
+      workingTime: "11:00-24:00",
+      price: "10000원-",
+      location: { X: 126.957541, Y: 37.494623 },
+      description: "고급진 분위기, 텐동 맛있음, 하이볼도 한잔 먹어보라구~",
+    },
+    {
+      name: "숑숑돈까스 숭실대점",
+      area: "중문",
+      workingTime: "10:30-22:00, 매주 토요일 휴무",
+      price: "9000원-",
+      location: { X: 126.958152, Y: 37.4949206 },
+      description:
+        "맛있는 돈까스를 제대로 먹어보고 싶으면 방문해보길! 테이블마다 키오스크가 있어서 주문하기 편하다. ",
+    },
+    {
+      name: "은화수식당 숭실대점",
+      area: "중문",
+      workingTime: "11:00-20:30, 20:10 lastOrder, 매주 토일 휴무",
+      price: "8500원-",
+      location: { X: 126.957123, Y: 37.4950643 },
+      description: "깔끔하니 가성비 좋고 구성 좋은 돈까스집",
+    },
+    {
+      name: "멘동",
+      area: "중문",
+      workingTime: "11:00-20:00, 토요일은 14:30까지, 일요일 휴무",
+      price: "7500원-",
+      location: { X: 126.956614, Y: 37.4947848 },
+      description:
+        "[멘동]은 면과 덮밥이라는 의미를 갖고있으며, 면과 덮밥이 맛있는 [멘동]입니다.제대로 된 재료로 소박하고 착한 메뉴를 만들어내기 위해 오랜동안 R&D하여 만들어낸 야심찬 브랜드입니다.",
+    },
+  ],
 };
 
 export default stores;

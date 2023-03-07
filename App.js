@@ -79,7 +79,7 @@ function App() {
     });
   };
 
-  if (location) {
+  if (location && fontsLoaded) {
     return (
       <View style={styles.container}>
         <View style={styles.upperContainer}>

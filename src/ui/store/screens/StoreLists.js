@@ -31,6 +31,18 @@ function StoreLists({ route }) {
         return stores.korean;
       case "양식":
         return stores.western;
+      case "아시안":
+        return stores.asian;
+      case "치킨/피자":
+        return stores.chickenPizza;
+      case "테이크아웃":
+        return stores.takeout;
+      case "술집":
+        return stores.alcohol;
+      case "카페":
+        return stores.cafe;
+      case "일식":
+        return stores.japanese;
       default:
         return [];
     }
@@ -76,6 +88,9 @@ function StoreLists({ route }) {
                 <Text style={[styles.normalText, { fontSize: 25 }]}>
                   {item.name}
                 </Text>
+                <Text style={[styles.normalText, { fontSize: 10 }]}>
+                  {item.description}
+                </Text>
                 <View
                   style={{
                     flexDirection: "row",
@@ -96,7 +111,7 @@ function StoreLists({ route }) {
 
               <Text style={[styles.normalText, { fontSize: 15 }]}>
                 {item.area}근처에 있어요
-                {"\n"}가격대는{item.price}이에요
+                {"\n"}가격대는 {item.price}이에요
                 {"\n"}내 위치에서{" "}
                 {GetDistance(
                   latitude,
