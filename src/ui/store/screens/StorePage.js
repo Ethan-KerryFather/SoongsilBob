@@ -1,14 +1,14 @@
-import { Ionicons, FontAwesome } from "@expo/vector-icons";
+import { Ionicons, FontAwesome, EvilIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useLayoutEffect, useState } from "react";
-import { ScrollView } from "react-native";
+import { ScrollView, useWindowDimensions, Image } from "react-native";
 import { View, Text, Pressable, StyleSheet, Linking } from "react-native";
 import MapView, { Marker, Polyline } from "react-native-maps";
 import Colors from "../../../../assets/Colors";
 
 function StorePage({ route }) {
   const navigation = useNavigation();
-
+  const { width } = useWindowDimensions("window");
   const [storeInfo, setStoreInfo] = useState(route.params.storeInfo);
   const [location, setLocation] = useState(route.params.location);
   // 컴포넌트 보여줄때 한번 위치 초기화
@@ -29,32 +29,39 @@ function StorePage({ route }) {
 
   return (
     <View style={styles.container}>
-      <ScrollView
-        style={[styles.upperContainer]}
-        contentContainerStyle={{ alignItems: "center" }}
-      >
+      <View style={[styles.upperContainer, { paddingBottom: 30 }]}>
+        <View style={{ position: "absolute", right: width / 2, bottom: 0 }}>
+          <EvilIcons name="arrow-down" color="black" size={30} />
+        </View>
         <View style={[styles.textContainer, { paddingTop: 10 }]}>
-          <Text style={[styles.boldText, { fontSize: 30 }]}>
+          <Text style={[styles.boldText, { fontSize: 25, letterSpacing: 1 }]}>
             {storeInfo.name}
           </Text>
-          <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <View style={styles.iconContainer}>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "flex-start",
+            }}
+          >
+            <View style={[styles.iconContainer, { flexDirection: "row" }]}>
               <Ionicons
                 name="star"
                 color="red"
                 size={20}
                 style={{ paddingLeft: 5 }}
               />
+              <Text style={[styles.normalText, { fontSize: 20 }]}> 10</Text>
             </View>
-            <Text style={[styles.normalText, { fontSize: 20 }]}> 10</Text>
+
             <Text
               style={[styles.normalText, { fontSize: 20, paddingLeft: 30 }]}
             >
               {storeInfo.price}
             </Text>
           </View>
-          <Text style={[styles.normalText, { fontSize: 20 }]}>
-            영업시간 {storeInfo.workingTime}
+          <Text style={[styles.normalText, { fontSize: 20, paddingLeft: 5 }]}>
+            {storeInfo.workingTime}
           </Text>
           <View
             style={{
@@ -64,9 +71,11 @@ function StorePage({ route }) {
               marginVertical: 3,
             }}
           />
-          <Text style={[styles.normalText, { fontSize: 20 }]}>
-            {storeInfo.description}
-          </Text>
+          <View style={{ marginVertical: 10 }}>
+            <Text style={[styles.normalText, { fontSize: 15 }]}>
+              {storeInfo.description}
+            </Text>
+          </View>
 
           <Pressable
             onPress={() => {
@@ -74,10 +83,14 @@ function StorePage({ route }) {
             }}
             style={{ position: "absolute", top: 15, right: 20 }}
           >
-            <FontAwesome name="phone" size={40} color="black" />
+            <FontAwesome
+              name="phone"
+              size={30}
+              color={Colors.basicColor.magenta}
+            />
           </Pressable>
         </View>
-      </ScrollView>
+      </View>
       <View style={styles.middleContainer}>
         <MapView
           style={styles.mapView}
@@ -109,7 +122,20 @@ function StorePage({ route }) {
             coordinate={{ latitude: location.Y, longitude: location.X }}
             title="목적지"
             description={storeInfo.name}
-          />
+          >
+            <View>
+              <Text>여기야!</Text>
+              <Image
+                source={require("../../../../assets/horseIcon.png")}
+                style={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: 40,
+                  opacity: 0.8,
+                }}
+              />
+            </View>
+          </Marker>
           <Polyline
             coordinates={[
               { latitude: location.Y, longitude: location.X },
@@ -118,8 +144,9 @@ function StorePage({ route }) {
                 longitude: userLocation.longtitude,
               },
             ]}
-            strokeColor="#000"
-            strokeWidth={6}
+            strokeColor={"red"}
+            strokeWidth={10}
+            lineDashPattern={[10, 10]}
           />
         </MapView>
       </View>
@@ -134,11 +161,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   upperContainer: {
-    flex: 1,
-
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
-    backgroundColor: Colors.basicColor.magentaTrans1,
+    backgroundColor: Colors.basicColor.grayTrans1,
   },
   middleContainer: {
     flex: 3,

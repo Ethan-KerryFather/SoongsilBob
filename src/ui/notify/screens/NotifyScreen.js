@@ -10,8 +10,6 @@ import {
   useWindowDimensions,
 } from "react-native";
 import Colors from "../../../../assets/Colors";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../../../FirebaseConfig";
 
 function NotifyScreen() {
   const [notify, setNotify] = useState([]);

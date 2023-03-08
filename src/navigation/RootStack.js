@@ -128,7 +128,7 @@ function RootStack({ userLocation }) {
         name="notifyTab"
         component={NotificationScreen}
         options={{
-          tabBarBadge: 3,
+          tabBarBadge: 1,
           headerShown: false,
           tabBarShowLabel: false,
           tabBarIcon: () => (

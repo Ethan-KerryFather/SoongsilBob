@@ -53,6 +53,11 @@ function EnvironmenScreen() {
             </Pressable>
           </Text>
         </View>
+        <View style={styles.itemContainer}>
+          <Text style={styles.normalText}>
+            가게 소개에 개인적인 의견이 포함될 수 있습니다
+          </Text>
+        </View>
       </View>
       <View style={styles.subContainer}>
         <View
