@@ -1,12 +1,14 @@
 import { Ionicons, FontAwesome, EvilIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { ScrollView, useWindowDimensions, Image } from "react-native";
 import { View, Text, Pressable, StyleSheet, Linking } from "react-native";
 import MapView, { Marker, Polyline } from "react-native-maps";
 import Colors from "../../../../assets/Colors";
+import BottomSheet from "react-native-gesture-bottom-sheet";
 
 function StorePage({ route }) {
+  const bottomSheet = useRef();
   const navigation = useNavigation();
   const { width } = useWindowDimensions("window");
   const [storeInfo, setStoreInfo] = useState(route.params.storeInfo);
@@ -25,11 +27,12 @@ function StorePage({ route }) {
     navigation.setOptions({
       title: storeInfo.name,
     });
+    bottomSheet.current.show();
   }, [navigation]);
 
   return (
     <View style={styles.container}>
-      <View style={[styles.upperContainer, { paddingBottom: 30 }]}>
+      {/* <View style={[styles.upperContainer, { paddingBottom: 30 }]}>
         <View style={{ position: "absolute", right: width / 2, bottom: 0 }}>
           <EvilIcons name="arrow-down" color="black" size={30} />
         </View>
@@ -90,7 +93,77 @@ function StorePage({ route }) {
             />
           </Pressable>
         </View>
-      </View>
+      </View> */}
+      <BottomSheet
+        ref={bottomSheet}
+        onOpen={() => {
+          console.log("on Open");
+        }}
+        height={300}
+      >
+        <View style={[styles.upperContainer, { paddingBottom: 30 }]}>
+          <View style={{ position: "absolute", right: width / 2, bottom: 0 }}>
+            <EvilIcons name="arrow-down" color="black" size={30} />
+          </View>
+          <View style={[styles.textContainer, { paddingTop: 10 }]}>
+            <Text style={[styles.boldText, { fontSize: 25, letterSpacing: 1 }]}>
+              {storeInfo.name}
+            </Text>
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "flex-start",
+              }}
+            >
+              <View style={[styles.iconContainer, { flexDirection: "row" }]}>
+                <Ionicons
+                  name="star"
+                  color="red"
+                  size={20}
+                  style={{ paddingLeft: 5 }}
+                />
+                <Text style={[styles.normalText, { fontSize: 20 }]}> 11</Text>
+              </View>
+
+              <Text
+                style={[styles.normalText, { fontSize: 20, paddingLeft: 30 }]}
+              >
+                {storeInfo.price}
+              </Text>
+            </View>
+            <Text style={[styles.normalText, { fontSize: 20, paddingLeft: 5 }]}>
+              {storeInfo.workingTime}
+            </Text>
+            <View
+              style={{
+                borderWidth: 0.3,
+                borderBottomColor: "black",
+                borderStyle: "solid",
+                marginVertical: 3,
+              }}
+            />
+            <View style={{ marginVertical: 10 }}>
+              <Text style={[styles.normalText, { fontSize: 15 }]}>
+                {storeInfo.description}
+              </Text>
+            </View>
+
+            <Pressable
+              onPress={() => {
+                callToStore("01097499705");
+              }}
+              style={{ position: "absolute", top: 15, right: 20 }}
+            >
+              <FontAwesome
+                name="phone"
+                size={30}
+                color={Colors.basicColor.magenta}
+              />
+            </Pressable>
+          </View>
+        </View>
+      </BottomSheet>
       <View style={styles.middleContainer}>
         <MapView
           style={styles.mapView}
@@ -166,7 +239,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.basicColor.grayTrans1,
   },
   middleContainer: {
-    flex: 3,
+    flex: 1,
   },
   //
   textContainer: {

@@ -21,7 +21,7 @@ function StoreLists({ route }) {
 
   useEffect(() => {
     navigation.setOptions({
-      title: `숭밥 ${route.params.category}코너`,
+      title: `숭밥${route.params.category}코너`,
     });
   }, [navigation]);
 
