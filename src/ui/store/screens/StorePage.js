@@ -1,4 +1,4 @@
-import { Ionicons, FontAwesome, EvilIcons } from "@expo/vector-icons";
+import { Ionicons, FontAwesome, EvilIcons, Entypo } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { ScrollView, useWindowDimensions, Image } from "react-native";
@@ -32,135 +32,77 @@ function StorePage({ route }) {
 
   return (
     <View style={styles.container}>
-      {/* <View style={[styles.upperContainer, { paddingBottom: 30 }]}>
-        <View style={{ position: "absolute", right: width / 2, bottom: 0 }}>
-          <EvilIcons name="arrow-down" color="black" size={30} />
-        </View>
-        <View style={[styles.textContainer, { paddingTop: 10 }]}>
-          <Text style={[styles.boldText, { fontSize: 25, letterSpacing: 1 }]}>
-            {storeInfo.name}
-          </Text>
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "flex-start",
-            }}
-          >
-            <View style={[styles.iconContainer, { flexDirection: "row" }]}>
-              <Ionicons
-                name="star"
-                color="red"
-                size={20}
-                style={{ paddingLeft: 5 }}
-              />
-              <Text style={[styles.normalText, { fontSize: 20 }]}> 10</Text>
-            </View>
-
-            <Text
-              style={[styles.normalText, { fontSize: 20, paddingLeft: 30 }]}
-            >
-              {storeInfo.price}
-            </Text>
-          </View>
-          <Text style={[styles.normalText, { fontSize: 20, paddingLeft: 5 }]}>
-            {storeInfo.workingTime}
-          </Text>
-          <View
-            style={{
-              borderWidth: 0.3,
-              borderBottomColor: "black",
-              borderStyle: "solid",
-              marginVertical: 3,
-            }}
-          />
-          <View style={{ marginVertical: 10 }}>
-            <Text style={[styles.normalText, { fontSize: 15 }]}>
-              {storeInfo.description}
-            </Text>
-          </View>
-
-          <Pressable
-            onPress={() => {
-              callToStore("01097499705");
-            }}
-            style={{ position: "absolute", top: 15, right: 20 }}
-          >
-            <FontAwesome
-              name="phone"
-              size={30}
-              color={Colors.basicColor.magenta}
-            />
-          </Pressable>
-        </View>
-      </View> */}
       <BottomSheet
         ref={bottomSheet}
         onOpen={() => {
-          console.log("on Open");
+          console.log("bottom sheet open");
         }}
-        height={300}
+        onClose={() => {
+          console.log("bottom sheet close");
+        }}
+        height={400}
       >
-        <View style={[styles.upperContainer, { paddingBottom: 30 }]}>
-          <View style={{ position: "absolute", right: width / 2, bottom: 0 }}>
-            <EvilIcons name="arrow-down" color="black" size={30} />
-          </View>
-          <View style={[styles.textContainer, { paddingTop: 10 }]}>
-            <Text style={[styles.boldText, { fontSize: 25, letterSpacing: 1 }]}>
+        <View style={styles.bottomSheetView}>
+          <EvilIcons
+            name="close"
+            color="black"
+            size={25}
+            style={{ position: "absolute", top: 12, right: 12 }}
+          />
+          <View style={{ alignItems: "center", paddingTop: 15 }}>
+            <View
+              style={{
+                alignItems: "flex-start",
+                width: "100%",
+                paddingLeft: 30,
+                paddingTop: 5,
+                paddingBottom: 10,
+                borderBottomWidth: 0.3,
+                borderBottomColor: "black",
+              }}
+            >
+              <Text style={{ fontFamily: "gowun-bold", fontSize: 15 }}>
+                store정보
+              </Text>
+            </View>
+
+            <Text
+              style={{
+                fontFamily: "gowun-regular",
+                fontSize: 25,
+                paddingTop: 10,
+              }}
+            >
               {storeInfo.name}
             </Text>
             <View
               style={{
                 flexDirection: "row",
                 alignItems: "center",
-                justifyContent: "flex-start",
+                width: "100%",
+                paddingLeft: 30,
+                paddingTop: 10,
+                paddingBottom: 10,
               }}
             >
-              <View style={[styles.iconContainer, { flexDirection: "row" }]}>
-                <Ionicons
-                  name="star"
-                  color="red"
-                  size={20}
-                  style={{ paddingLeft: 5 }}
-                />
-                <Text style={[styles.normalText, { fontSize: 20 }]}> 11</Text>
+              <View style={{ flexDirection: "row" }}>
+                <View
+                  style={{ justifyContent: "center", alignItems: "center" }}
+                >
+                  <Entypo name="star" size={20} color="red" />
+                </View>
+                <Text style={[styles.normalText, { fontSize: 15 }]}> 10</Text>
               </View>
 
-              <Text
-                style={[styles.normalText, { fontSize: 20, paddingLeft: 30 }]}
-              >
-                {storeInfo.price}
+              <Text style={[styles.normalText, { paddingLeft: 30 }]}>
+                {storeInfo.area}
               </Text>
             </View>
-            <Text style={[styles.normalText, { fontSize: 20, paddingLeft: 5 }]}>
-              {storeInfo.workingTime}
-            </Text>
-            <View
-              style={{
-                borderWidth: 0.3,
-                borderBottomColor: "black",
-                borderStyle: "solid",
-                marginVertical: 3,
-              }}
-            />
-            <View style={{ marginVertical: 10 }}>
-              <Text style={[styles.normalText, { fontSize: 15 }]}>
-                {storeInfo.description}
-              </Text>
+          </View>
+          <View style={{}}>
+            <View style={{ paddingLeft: 30, paddingRight: 20 }}>
+              <Text style={styles.normalText}>{storeInfo.description}</Text>
             </View>
-
-            <Pressable
-              onPress={() => {
-                callToStore("01097499705");
-              }}
-              style={{ position: "absolute", top: 15, right: 20 }}
-            >
-              <FontAwesome
-                name="phone"
-                size={30}
-                color={Colors.basicColor.magenta}
-              />
-            </Pressable>
           </View>
         </View>
       </BottomSheet>
@@ -234,12 +176,18 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   upperContainer: {
+    height: "100%",
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
     backgroundColor: Colors.basicColor.grayTrans1,
   },
   middleContainer: {
     flex: 1,
+  },
+  bottomSheetView: {
+    flex: 1,
+    width: "100%",
+    backgroundColor: "white",
   },
   //
   textContainer: {
