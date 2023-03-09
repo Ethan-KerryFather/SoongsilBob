@@ -70,6 +70,7 @@ function StoreLists({ route }) {
                     area: item.area,
                     workingTime: item.workingTime,
                     description: item.description,
+                    imageList: item.imageList,
                   },
                   location: item.location,
                 });

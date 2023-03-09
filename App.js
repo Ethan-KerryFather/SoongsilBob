@@ -1,21 +1,15 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import RootStack from "./src/navigation/RootStack";
 import Colors from "./assets/Colors";
 import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
-import {
-  useCallback,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
+import { useEffect, useState } from "react";
 import * as Location from "expo-location";
-import useLocation from "./src/hooks/useLocation";
 // gesture handler 등록
 import "react-native-gesture-handler";
-
+// react native paper
+import { Provider as PaperProvider } from "react-native-paper";
 SplashScreen.preventAutoHideAsync();
 
 function App() {
@@ -81,13 +75,15 @@ function App() {
 
   if (location && fontsLoaded) {
     return (
-      <View style={styles.container}>
-        <View style={styles.upperContainer}>
-          <NavigationContainer>
-            <RootStack userLocation={{ location }} />
-          </NavigationContainer>
+      <PaperProvider>
+        <View style={styles.container}>
+          <View style={styles.upperContainer}>
+            <NavigationContainer>
+              <RootStack userLocation={{ location }} />
+            </NavigationContainer>
+          </View>
         </View>
-      </View>
+      </PaperProvider>
     );
   } else {
     return (

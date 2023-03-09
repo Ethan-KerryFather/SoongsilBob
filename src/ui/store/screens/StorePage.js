@@ -1,7 +1,7 @@
-import { Ionicons, FontAwesome, EvilIcons, Entypo } from "@expo/vector-icons";
+import { EvilIcons, Entypo } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { ScrollView, useWindowDimensions, Image } from "react-native";
+import React, { useEffect, useRef, useState } from "react";
+import { useWindowDimensions, Image, Animated } from "react-native";
 import { View, Text, Pressable, StyleSheet, Linking } from "react-native";
 import MapView, { Marker, Polyline } from "react-native-maps";
 import Colors from "../../../../assets/Colors";
@@ -10,14 +10,30 @@ import BottomSheet from "react-native-gesture-bottom-sheet";
 function StorePage({ route }) {
   const bottomSheet = useRef();
   const navigation = useNavigation();
-  const { width } = useWindowDimensions("window");
+  const { width, height } = useWindowDimensions("window");
   const [storeInfo, setStoreInfo] = useState(route.params.storeInfo);
   const [location, setLocation] = useState(route.params.location);
+  const [isBottomsheetShowed, setIsBottomsheetShowed] = useState(true);
   // 컴포넌트 보여줄때 한번 위치 초기화
   const [userLocation, setUserLocation] = useState({
     latitude: route.params.latitude,
     longtitude: route.params.longtitude,
   });
+  const translateY = useRef(new Animated.Value(0)).current;
+
+  const startAnimation = () => {
+    Animated.timing(translateY, {
+      toValue: 100,
+      duration: 1000,
+      useNativeDriver: true, // native driver 사용 시 성능이 향상됩니다.
+    }).start(() => {
+      Animated.timing(translateY, {
+        toValue: 10,
+        duration: 1000,
+        useNativeDriver: true,
+      }).start();
+    });
+  };
 
   function callToStore(storeNumber) {
     Linking.openURL(`tel:${storeNumber}`);
@@ -27,28 +43,60 @@ function StorePage({ route }) {
     navigation.setOptions({
       title: storeInfo.name,
     });
+
     bottomSheet.current.show();
   }, [navigation]);
 
+  useEffect(() => {
+    if (isBottomsheetShowed == false) {
+      startAnimation();
+    }
+  }, [isBottomsheetShowed]);
+
   return (
     <View style={styles.container}>
+      {!isBottomsheetShowed && (
+        <Animated.View
+          style={{
+            justifyContent: "center",
+            alignItems: "center",
+            position: "absolute",
+            bottom: 10,
+            right: 10,
+            zIndex: 1,
+            transform: [{ translateY }],
+          }}
+        >
+          <Pressable
+            onPress={() => {
+              bottomSheet.current.show();
+              setIsBottomsheetShowed(true);
+            }}
+          >
+            <EvilIcons name="arrow-up" size={70} color="black" />
+          </Pressable>
+        </Animated.View>
+      )}
       <BottomSheet
         ref={bottomSheet}
         onOpen={() => {
           console.log("bottom sheet open");
         }}
-        onClose={() => {
-          console.log("bottom sheet close");
-        }}
-        height={400}
+        onClose={() => {}}
+        height={height * 0.7}
       >
         <View style={styles.bottomSheetView}>
-          <EvilIcons
-            name="close"
-            color="black"
-            size={25}
-            style={{ position: "absolute", top: 12, right: 12 }}
-          />
+          <Pressable
+            style={{ position: "absolute", top: 12, right: 12, zIndex: 1 }}
+            onPress={() => {
+              bottomSheet.current.close();
+              console.log("bottom sheet close");
+              setIsBottomsheetShowed(false);
+            }}
+          >
+            <EvilIcons name="close" color="black" size={25} />
+          </Pressable>
+
           <View style={{ alignItems: "center", paddingTop: 15 }}>
             <View
               style={{
@@ -99,10 +147,46 @@ function StorePage({ route }) {
               </Text>
             </View>
           </View>
+          <View style={{ paddingLeft: 30, paddingBottom: 10 }}>
+            <Text style={styles.normalText}>
+              운영시간 | {storeInfo.workingTime}
+            </Text>
+          </View>
           <View style={{}}>
             <View style={{ paddingLeft: 30, paddingRight: 20 }}>
               <Text style={styles.normalText}>{storeInfo.description}</Text>
             </View>
+          </View>
+          <View
+            style={{
+              flexDirection: "row",
+              flexWrap: "wrap",
+              width: "90%",
+              alignSelf: "center",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginTop: 20,
+            }}
+          >
+            {storeInfo.imageList.map((item, index) => {
+              return (
+                <Image
+                  key={index}
+                  source={{ uri: item }}
+                  style={{
+                    width: "30%",
+                    height: 100,
+                    borderRadius: 10,
+                    marginTop: 10,
+                  }}
+                  onLoad={() => (
+                    <View>
+                      <Text>로딩중</Text>
+                    </View>
+                  )}
+                />
+              );
+            })}
           </View>
         </View>
       </BottomSheet>
