@@ -307,6 +307,17 @@ const stores = {
       location: { X: 126.953583, Y: 37.4958649 },
       description:
         "양이 많고, 사장님이 친절한 파스타/피자 맛집, 비싸도 양이 엄청 혜자라는 말이 많다",
+      imageList: [
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA0MjlfMjc3%2FMDAxNjUxMjI1MTQyMTAy.zt6VZezZ_ORNUHGhwOd4XRkdHtH2-R-guDiUIjOzifog.Nt0PdNib9ImDsqLF4fnVdIeLu3ZxTtAZHCobGddq93wg.JPEG.hosoo2000%2F20220416_193508.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221216_115%2F1671167645243gw2PW_JPEG%2F20221211_193340.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA4MTlfMjQg%2FMDAxNjYwODkyNzcxNzUx.A0aclVfo3m8zXKFJE_GyB7rjNSaB39I54xLJnZDGk5wg.dWak7YCR0ujoL9xkPcqB2TwxQ7pIGfwZXMYLBZIafO0g.JPEG.foruser1%2F20220818%25A3%25DF190042.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTExMTBfMzkg%2FMDAxNjM2NTI3MzE0NjQ1.jtqgCgi8O3L34-2cr4281K--dsuMTOmSM5PTkIgsnw4g.iGq5iMcZqUOjMeJee_Yifd2CJhT36HZMBq02_8zknFgg.JPEG.kkkjw107%2F20211028%25A3%25DF184317.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA4MDJfMjk3%2FMDAxNjU5NDIzOTc4NTcx.pHFD5VCOFbH1jxkOqJkxLWJXdAz4tEgntwYJcQijIIgg.PFCzuBlaS9wFCw4eFLADwnE-68WoB2knn8Ptf5kk2vsg.JPEG.hey__a%2FIMG_3489.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTExMjFfMTM1%2FMDAxNTc0MzE2OTgzMjI1.mf8ssCdCSL1kgH_LbSToUe0Sx7ac-KfOsQy3_9i-BmQg.9LlZ6EBobQPWvOR5BGkxyXC_PykuCqGOlFC2yIfQchsg.JPEG.dladhkdfkr%2F%25BC%25FE%25BD%25C7%25B4%25EB_%25B8%25C0%25C1%25FD_%252844%2529.JPG",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA4MDJfMjgx%2FMDAxNjU5NDIzOTgwMDIx.yuh_Hkdcn80GpDZVnXzj6NAhzLw9uhTweVx_wLnxbdUg.lcotPioPEKaMxESHooVlwn1YD4sr8M1Qejj7WNRcDEUg.JPEG.hey__a%2FIMG_3490.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTExMDNfMjE3%2FMDAxNjM1OTA4MDI1OTk1.dgAxVdw1IB8X4vNCvvOSPhNoG5NLpdpV72OYjdOaY78g.dE-2n1A9VdSPCnPhglN3ygaTGgZrpxvi4xf97BWvXyYg.JPEG.zzang4295%2FKakaoTalk_20211028_193655200_02.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAxMDRfMTQw%2FMDAxNjcyODMwMDE0ODcx.tttESSAi6NHW5YtXSz_z4Bp-FtD_n0yj5KIr_gWitk4g.RZJHQVH7lvHeeE3TyezwYfw1h4OrotQFcD5Nrv_jamsg.JPEG.grlznzn7%2FIMG%25A3%25DF20230104%25A3%25DF181903%25A3%25DF283.jpg",
+      ],
     },
   ],
   asian: [
@@ -327,7 +338,16 @@ const stores = {
       price: "4000원-",
       location: { X: 126.956704, Y: 37.4951273 },
       description:
-        "그거알아? 지지고는 숭실대가 본점!, 지지고가 처음이라면 0단계나 0.5단계 먹는 것을 추천! 0.5단계도 꽤 맵다!",
+        "그거알아? 지지고는 숭실대가 본점!, 지지고가 처음이라면 0단계나 0.5단계 먹는 것을 추천! 0.5단계도 꽤 맵다! 양도 많은 편이라구!",
+      imageList: [
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200418_167%2F1587193096732WpyeB_JPEG%2FZ5ynlwGQDx5Yjr4fSHem9tD1.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEyMDlfMjY1%2FMDAxNjcwNTcyMDg5MDcx.xKYTq2b4pzDHxgTHlyjSiNvmR8Xb8fSuvV9qY_4k4C8g.VSUTzq9OCt4PY6akEyygaKGHcbocBH7SeRpnivVFpd8g.JPEG%2FFA168DAD-B25C-4C93-B32F-87043549B520.jpeg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEyMDRfMjIz%2FMDAxNjcwMTM4NTM0Njgz.ziQr32CKEQRZ8ok_0z9D9Kp_cqie_wM9S_EvMiUMpI8g.QuVGWo4ljuRyJTeJ5EKZU0HjAkB8zSrTD-E6ZsSi1fYg.JPEG%2FB6331C9A-3A37-4522-B506-8240026737FB.jpeg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20220326_19%2F16482776784427G5Ev_JPEG%2Fupload_a7f5f276c2c9e8bd4d9a765981647b98.jpeg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjAxMTRfNTIg%2FMDAxNjQyMDkwNjMyNDU3.WT43s628aGcvESdLmnK7gIfIAv-kTuDw89enjnFGDkwg.lKZC3z9-ynWX1aNPtZnSV57v20gmeArK2tJDhGQZsPQg.JPEG.alsl5027%2FIMG_8506.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20141109_168%2Filuiou_14155091743609C9xq_JPEG%2F20141107_182453.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxNzA4MjhfNDQg%2FMDAxNTAzOTA2ODczNTA3.lb86EfK8weKqbavWvEbJWFiUR4zEOl9fKj3-AgsgJC4g.68i7VtEXjpuaG7Gz4ptbVar1MH7uXLQrxgK53wD9oqMg.JPEG.lifeofpotato%2F20170822_141610.jpg",
+      ],
     },
     {
       name: "밀플랜비 숭실대점",
