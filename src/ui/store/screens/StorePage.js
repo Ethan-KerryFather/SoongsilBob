@@ -82,7 +82,9 @@ function StorePage({ route }) {
         onOpen={() => {
           console.log("bottom sheet open");
         }}
-        onClose={() => {}}
+        onClose={() => {
+          console.log("bottom close event");
+        }}
         height={height * 0.7}
       >
         <View style={styles.bottomSheetView}>
@@ -161,7 +163,7 @@ function StorePage({ route }) {
             style={{
               flexDirection: "row",
               flexWrap: "wrap",
-              width: "90%",
+              width: "95%",
               alignSelf: "center",
               justifyContent: "space-between",
               alignItems: "center",
@@ -243,9 +245,9 @@ function StorePage({ route }) {
                 longitude: userLocation.longtitude,
               },
             ]}
-            strokeColor={"red"}
-            strokeWidth={10}
-            lineDashPattern={[10, 10]}
+            strokeColor={"black"}
+            strokeWidth={7}
+            lineDashPattern={[5, 10]}
           />
         </MapView>
       </View>
