@@ -1,4 +1,4 @@
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "../ui/HomeScreen";
@@ -12,9 +12,12 @@ import StoreLists from "../ui/store/screens/StoreLists";
 import StorePage from "../ui/store/screens/StorePage";
 import { useRoute } from "@react-navigation/native";
 import RankingHome from "../ui/ranking/RankingHome";
+import UnivFoodScreen from "../ui/univFood/UnivFoodScreen";
+
 const HomeStack = createNativeStackNavigator();
 const EnvironmentStack = createNativeStackNavigator();
 const RankingStack = createNativeStackNavigator();
+const UnivFoodStack = createNativeStackNavigator();
 
 const Tab = createBottomTabNavigator();
 const NotifyTab = createMaterialTopTabNavigator();
@@ -70,10 +73,18 @@ function HomeStackScreen() {
   );
 }
 
+function UnivFoodScreens() {
+  return (
+    <UnivFoodStack.Navigator>
+      <UnivFoodStack.Screen name="Home" component={UnivFoodScreen} />
+    </UnivFoodStack.Navigator>
+  );
+}
+
 function RankingScreen() {
   return (
     <RankingStack.Navigator>
-      <HomeStack.Screen name="Home" component={RankingHome} />
+      <RankingStack.Screen name="Home" component={RankingHome} />
     </RankingStack.Navigator>
   );
 }
@@ -107,6 +118,21 @@ function RootStack({ userLocation }) {
           },
         }}
         initialParams={{ myLocation: userLocation }}
+      />
+      <Tab.Screen
+        name="UnivFoodTab"
+        component={UnivFoodScreens}
+        options={{
+          headerShown: false,
+          tabBarShowLabel: false,
+          tabBarIcon: () => (
+            <MaterialIcons name="food-bank" size={40} color="black" />
+          ),
+          tabBarActiveBackgroundColor: Colors.basicColor.magenta,
+          tabBarItemStyle: {
+            borderRadius: 20,
+          },
+        }}
       />
       <Tab.Screen
         name="rankingTab"
