@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import axios from "axios";
 import * as cheerio from "cheerio";
 import { Divider } from "react-native-paper";
-
+import styled from "styled-components";
+import { RFPercentage } from "react-native-responsive-fontsize";
 function UnivFoodScreen({ navigation }) {
-  const [lunchMenu1, setLunchMenu1] = useState("로딩중");
-  const [lunchMenu2, setLunchMenu2] = useState("로딩중");
-  const [dodamLunch, setDodamLunch] = useState("로딩중");
+  const [studentLunch, setStudentLunch] = useState({
+    lunch1: "로딩중",
+    lunch2: "로딩중",
+  });
+  const [dodamLunch, setDodamLunch] = useState({
+    lunch1: "로딩중",
+    lunch2: "로딩중",
+    dinner1: "로딩중",
+  });
   useEffect(() => {
     navigation.setOptions({
       headerShown: false,
@@ -21,18 +28,37 @@ function UnivFoodScreen({ navigation }) {
           "body > div.sub_layout > div.sub_mid > div.smid > div.detail_center > div > table > tbody > tr:nth-child(5) > td > table > tbody > tr:nth-child(3) > td:nth-child(1) > table > tbody > tr > td > div "
         );
 
-        setLunchMenu1(element1.text());
+        setStudentLunch({ lunch1: element1.text() });
 
         const element2 = cheerioedHtml(
           "body > div.sub_layout > div.sub_mid > div.smid > div.detail_center > div > table > tbody > tr:nth-child(5) > td > table > tbody > tr:nth-child(3) > td:nth-child(2) > table > tbody > tr > td:nth-child(1) > div"
         );
 
-        setLunchMenu2(element2.text());
+        setStudentLunch((prevState) => ({
+          ...prevState,
+          lunch2: element2.text(),
+        }));
 
         const element3 = cheerioedHtml(
           "body > div.sub_layout > div.sub_mid > div.smid > div.detail_center > div > table > tbody > tr:nth-child(7) > td > table > tbody > tr:nth-child(3) > td:nth-child(1) > table > tbody > tr > td:nth-child(1) > div"
         );
-        setDodamLunch(element3.text());
+        setDodamLunch({ lunch1: element3.text() });
+
+        const element4 = cheerioedHtml(
+          "body > div.sub_layout > div.sub_mid > div.smid > div.detail_center > div > table > tbody > tr:nth-child(7) > td > table > tbody > tr:nth-child(3) > td:nth-child(2) > table > tbody > tr > td:nth-child(1) > div"
+        );
+        setDodamLunch((prevState) => ({
+          ...prevState,
+          lunch2: element4.text(),
+        }));
+
+        const element5 = cheerioedHtml(
+          "body > div.sub_layout > div.sub_mid > div.smid > div.detail_center > div > table > tbody > tr:nth-child(7) > td > table > tbody > tr:nth-child(3) > td:nth-child(3) > table > tbody > tr > td:nth-child(1)  > div"
+        );
+        setDodamLunch((prevState) => ({
+          ...prevState,
+          dinner1: element5.text(),
+        }));
       })
       .catch((error) => {
         console.log(error);
@@ -43,18 +69,31 @@ function UnivFoodScreen({ navigation }) {
     };
   }, []);
 
-  console.log("univ food screen");
   return (
     <SafeAreaView style={[styles.container]}>
-      <Text>학생식당</Text>
-      <Text>점심 1코너</Text>
-      <Text>{lunchMenu1}</Text>
-      <Divider />
-      <Text>점심 2코너</Text>
-      <Text>{lunchMenu2}</Text>
-      <Divider />
-      <Text>도담 점심 1코너</Text>
-      <Text>{dodamLunch}</Text>
+      <ScrollView>
+        <View>
+          <BigTitle>학생식당</BigTitle>
+          <SmallTitle>점심 1코너</SmallTitle>
+          <NormalText>{studentLunch.lunch1}</NormalText>
+          <Divider />
+          <SmallTitle>점심 2코너</SmallTitle>
+          <NormalText>{studentLunch.lunch2}</NormalText>
+        </View>
+
+        <Divider />
+        <View>
+          <BigTitle>도담식당</BigTitle>
+          <SmallTitle>점심 1코너</SmallTitle>
+          <NormalText>{dodamLunch.lunch1}</NormalText>
+          <Divider />
+          <SmallTitle>점심 2코너</SmallTitle>
+          <NormalText>{dodamLunch.lunch2}</NormalText>
+          <Divider />
+          <SmallTitle>저녁 1코너</SmallTitle>
+          <NormalText>{dodamLunch.dinner1}</NormalText>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -64,6 +103,28 @@ export default UnivFoodScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingVertical: 50,
+    paddingTop: 30,
+  },
+  //
+  //
+  normalText: {
+    fontFamily: "gowun-regular",
   },
 });
+
+const BigTitle = styled(Text)`
+  font-family: "gowun-bold";
+  font-size: ${RFPercentage(3.5)}px;
+  text-align: center;
+`;
+
+const SmallTitle = styled(Text)`
+  font-family: "gowun-bold";
+  font-size: ${RFPercentage(2.3)}px;
+  text-align: center;
+`;
+
+const NormalText = styled(Text)`
+  font-family: "gowun-regular";
+  font-size: ${RFPercentage(2)}px;
+`;
