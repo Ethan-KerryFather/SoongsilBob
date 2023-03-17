@@ -5,6 +5,7 @@ import { Avater, Button, Card } from "react-native-paper";
 import { RFPercentage } from "react-native-responsive-fontsize";
 
 function FoodCard({ title, text, imageUrl }) {
+  console.log(imageUrl);
   return (
     <View style={styles.container}>
       <Card mode="elevated">

@@ -27,9 +27,11 @@ function UnivFoodScreen({ navigation }) {
         // 어차피 블록 단위여서 곧 사라짐
         fetchImageUrl()
           .then((imageUrl) => {
-            console.log(imageUrl);
             setStudentLunch((prevState) => {
-              return { lunch1: { imageUrl: imageUrl, menu: "로딩중" } };
+              return {
+                ...prevState,
+                lunch1: { imageUrl: imageUrl, ...prevState.lunch1 },
+              };
             });
           })
           .catch((error) => {
@@ -44,19 +46,26 @@ function UnivFoodScreen({ navigation }) {
         );
 
         // lunch1의 imageUrl은 유지하고 menu만 바꿈
-        setStudentLunch((prevState) => ({
-          ...prevState,
-          lunch1: { ...prevState.lunch1, menu: element1.text() },
-        }));
+        setStudentLunch((prevState) => {
+          return {
+            ...prevState,
+            lunch1: {
+              ...prevState.lunch1,
+              menu: element1.text(),
+            },
+          };
+        });
 
         const element2 = cheerioedHtml(
           "body > div.sub_layout > div.sub_mid > div.smid > div.detail_center > div > table > tbody > tr:nth-child(5) > td > table > tbody > tr:nth-child(3) > td:nth-child(2) > table > tbody > tr > td:nth-child(1) > div"
         );
 
-        setStudentLunch((prevState) => ({
-          ...prevState,
-          lunch2: element2.text(),
-        }));
+        setStudentLunch((prevState) => {
+          return {
+            ...prevState,
+            lunch2: element2.text(),
+          };
+        });
 
         const element3 = cheerioedHtml(
           "body > div.sub_layout > div.sub_mid > div.smid > div.detail_center > div > table > tbody > tr:nth-child(7) > td > table > tbody > tr:nth-child(3) > td:nth-child(1) > table > tbody > tr > td:nth-child(1) > div"
@@ -87,7 +96,6 @@ function UnivFoodScreen({ navigation }) {
       console.log("clean up");
     };
   }, []);
-  console.log(JSON.stringify(studentLunch.lunch1));
 
   // fetch studentlunch1
   const fetchImageUrl = async () => {
@@ -96,10 +104,11 @@ function UnivFoodScreen({ navigation }) {
         "https://soongguri.com/main.php?mkey=2&w=3"
       );
       const $ = cheerio.load(response.data);
-      const imageUrl = $(
-        "body > div.sub_layout > div.sub_mid > div.smid > div.detail_center > div > table > tbody > tr:nth-child(5) > td > table > tbody > tr:nth-child(3) > td:nth-child(1) > table > tbody > tr > td:nth-child(2) > img"
-      ).attr("src");
-      return imageUrl;
+      const imageUrl = $('img[src*="menu_file"]').attr("src");
+      const baseUrl = $("base").attr("href");
+      const absoluteUrl = baseUrl + imageUrl;
+      console.log(`가져온 imageUrl : ${absoluteUrl}`);
+      return absoluteUrl;
     } catch (error) {
       console.error(error);
       return null;
