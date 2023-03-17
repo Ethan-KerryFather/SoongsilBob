@@ -3,8 +3,10 @@ import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import axios from "axios";
 import * as cheerio from "cheerio";
 import { Divider } from "react-native-paper";
-import styled from "styled-components";
-import { RFPercentage } from "react-native-responsive-fontsize";
+import { BigTitle } from "../../styled/styledComponents";
+import { ActivityIndicator, MD2Colors } from "react-native-paper";
+import FoodCard from "./components/FoodCard";
+
 function UnivFoodScreen({ navigation }) {
   const [studentLunch, setStudentLunch] = useState({
     lunch1: "로딩중",
@@ -22,13 +24,30 @@ function UnivFoodScreen({ navigation }) {
     axios
       .get("https://soongguri.com/main.php?mkey=2&w=3")
       .then((response) => {
+        // 어차피 블록 단위여서 곧 사라짐
+        fetchImageUrl()
+          .then((imageUrl) => {
+            console.log(imageUrl);
+            setStudentLunch((prevState) => {
+              return { lunch1: { imageUrl: imageUrl, menu: "로딩중" } };
+            });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+
+        // parsing
         const html = response.data;
         const cheerioedHtml = cheerio.load(html);
         const element1 = cheerioedHtml(
           "body > div.sub_layout > div.sub_mid > div.smid > div.detail_center > div > table > tbody > tr:nth-child(5) > td > table > tbody > tr:nth-child(3) > td:nth-child(1) > table > tbody > tr > td > div "
         );
 
-        setStudentLunch({ lunch1: element1.text() });
+        // lunch1의 imageUrl은 유지하고 menu만 바꿈
+        setStudentLunch((prevState) => ({
+          ...prevState,
+          lunch1: { ...prevState.lunch1, menu: element1.text() },
+        }));
 
         const element2 = cheerioedHtml(
           "body > div.sub_layout > div.sub_mid > div.smid > div.detail_center > div > table > tbody > tr:nth-child(5) > td > table > tbody > tr:nth-child(3) > td:nth-child(2) > table > tbody > tr > td:nth-child(1) > div"
@@ -68,30 +87,68 @@ function UnivFoodScreen({ navigation }) {
       console.log("clean up");
     };
   }, []);
+  console.log(JSON.stringify(studentLunch.lunch1));
+
+  // fetch studentlunch1
+  const fetchImageUrl = async () => {
+    try {
+      const response = await axios.get(
+        "https://soongguri.com/main.php?mkey=2&w=3"
+      );
+      const $ = cheerio.load(response.data);
+      const imageUrl = $(
+        "body > div.sub_layout > div.sub_mid > div.smid > div.detail_center > div > table > tbody > tr:nth-child(5) > td > table > tbody > tr:nth-child(3) > td:nth-child(1) > table > tbody > tr > td:nth-child(2) > img"
+      ).attr("src");
+      return imageUrl;
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
+  };
 
   return (
     <SafeAreaView style={[styles.container]}>
       <ScrollView>
         <View>
           <BigTitle>학생식당</BigTitle>
-          <SmallTitle>점심 1코너</SmallTitle>
-          <NormalText>{studentLunch.lunch1}</NormalText>
+          {studentLunch === "로딩중" ? (
+            <ActivityIndicator animating={true} color={MD2Colors.red800} />
+          ) : (
+            <FoodCard
+              title="점심1코너"
+              text={studentLunch.lunch1.menu}
+              imageUrl={studentLunch.lunch1.imageUrl}
+            />
+          )}
+
           <Divider />
-          <SmallTitle>점심 2코너</SmallTitle>
-          <NormalText>{studentLunch.lunch2}</NormalText>
+          {studentLunch === "로딩중" ? (
+            <ActivityIndicator animating={true} color={MD2Colors.red800} />
+          ) : (
+            <FoodCard title="점심2코너" text={studentLunch.lunch2} />
+          )}
         </View>
 
         <Divider />
         <View>
           <BigTitle>도담식당</BigTitle>
-          <SmallTitle>점심 1코너</SmallTitle>
-          <NormalText>{dodamLunch.lunch1}</NormalText>
+          {studentLunch === "로딩중" ? (
+            <ActivityIndicator animating={true} color={MD2Colors.red800} />
+          ) : (
+            <FoodCard title="점심1코너" text={dodamLunch.lunch1} />
+          )}
           <Divider />
-          <SmallTitle>점심 2코너</SmallTitle>
-          <NormalText>{dodamLunch.lunch2}</NormalText>
+          {studentLunch === "로딩중" ? (
+            <ActivityIndicator animating={true} color={MD2Colors.red800} />
+          ) : (
+            <FoodCard title="점심2코너" text={dodamLunch.lunch2} />
+          )}
           <Divider />
-          <SmallTitle>저녁 1코너</SmallTitle>
-          <NormalText>{dodamLunch.dinner1}</NormalText>
+          {studentLunch === "로딩중" ? (
+            <ActivityIndicator animating={true} color={MD2Colors.red800} />
+          ) : (
+            <FoodCard title="저녁1코너" text={dodamLunch.dinner1} />
+          )}
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -111,20 +168,3 @@ const styles = StyleSheet.create({
     fontFamily: "gowun-regular",
   },
 });
-
-const BigTitle = styled(Text)`
-  font-family: "gowun-bold";
-  font-size: ${RFPercentage(3.5)}px;
-  text-align: center;
-`;
-
-const SmallTitle = styled(Text)`
-  font-family: "gowun-bold";
-  font-size: ${RFPercentage(2.3)}px;
-  text-align: center;
-`;
-
-const NormalText = styled(Text)`
-  font-family: "gowun-regular";
-  font-size: ${RFPercentage(2)}px;
-`;
