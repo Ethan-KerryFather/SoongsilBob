@@ -3,9 +3,18 @@ import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import axios from "axios";
 import * as cheerio from "cheerio";
 import { Divider } from "react-native-paper";
-import { BigTitle } from "../../styled/styledComponents";
+import {
+  BigTitle,
+  SmallSmallText,
+  SmallSmallTitle,
+  SmallText,
+  SmallTitle,
+} from "../../styled/styledComponents";
 import { ActivityIndicator, MD2Colors } from "react-native-paper";
 import FoodCard from "./components/FoodCard";
+import { RFPercentage } from "react-native-responsive-fontsize";
+import Colors from "../../../assets/Colors";
+import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 
 function UnivFoodScreen({ navigation }) {
   const [studentLunch, setStudentLunch] = useState({
@@ -118,46 +127,59 @@ function UnivFoodScreen({ navigation }) {
   return (
     <SafeAreaView style={[styles.container]}>
       <ScrollView>
-        <View>
-          <BigTitle>학생식당</BigTitle>
-          {studentLunch === "로딩중" ? (
-            <ActivityIndicator animating={true} color={MD2Colors.red800} />
-          ) : (
-            <FoodCard
-              title="점심1코너"
-              text={studentLunch.lunch1.menu}
-              imageUrl={studentLunch.lunch1.imageUrl}
-            />
-          )}
+        <View style={styles.upperContainer}>
+          <BigTitle>숭실밥집</BigTitle>
+          <MaterialCommunityIcons name="silverware-spoon" size={30} />
+        </View>
+        <View style={styles.foodCardWrapper}>
+          <View>
+            <View style={styles.menuTitle}>
+              <BigTitle style={styles.bigTitle}>학생식당</BigTitle>
+              <SmallTitle>Students Cafeteria</SmallTitle>
+              <SmallText>학생회관 지하1층</SmallText>
+            </View>
 
-          <Divider />
-          {studentLunch === "로딩중" ? (
-            <ActivityIndicator animating={true} color={MD2Colors.red800} />
-          ) : (
-            <FoodCard title="점심2코너" text={studentLunch.lunch2} />
-          )}
+            {studentLunch === "로딩중" ? (
+              <ActivityIndicator animating={true} color={MD2Colors.red800} />
+            ) : (
+              <FoodCard
+                title="점심1코너"
+                text={studentLunch.lunch1.menu}
+                imageUrl={studentLunch.lunch1.imageUrl}
+              />
+            )}
+
+            {studentLunch === "로딩중" ? (
+              <ActivityIndicator animating={true} color={MD2Colors.red800} />
+            ) : (
+              <FoodCard title="점심2코너" text={studentLunch.lunch2} />
+            )}
+          </View>
         </View>
 
-        <Divider />
         <View>
-          <BigTitle>도담식당</BigTitle>
-          {studentLunch === "로딩중" ? (
-            <ActivityIndicator animating={true} color={MD2Colors.red800} />
-          ) : (
-            <FoodCard title="점심1코너" text={dodamLunch.lunch1} />
-          )}
-          <Divider />
-          {studentLunch === "로딩중" ? (
-            <ActivityIndicator animating={true} color={MD2Colors.red800} />
-          ) : (
-            <FoodCard title="점심2코너" text={dodamLunch.lunch2} />
-          )}
-          <Divider />
-          {studentLunch === "로딩중" ? (
-            <ActivityIndicator animating={true} color={MD2Colors.red800} />
-          ) : (
-            <FoodCard title="저녁1코너" text={dodamLunch.dinner1} />
-          )}
+          <View style={styles.foodCardWrapper}>
+            <View style={styles.menuTitle}>
+              <BigTitle style={styles.bigTitle}>도담식당</BigTitle>
+              <SmallTitle>Dodam Cafeteria</SmallTitle>
+              <SmallText>신양관 2층</SmallText>
+            </View>
+            {studentLunch === "로딩중" ? (
+              <ActivityIndicator animating={true} color={MD2Colors.red800} />
+            ) : (
+              <FoodCard title="점심1코너" text={dodamLunch.lunch1} />
+            )}
+            {studentLunch === "로딩중" ? (
+              <ActivityIndicator animating={true} color={MD2Colors.red800} />
+            ) : (
+              <FoodCard title="점심2코너" text={dodamLunch.lunch2} />
+            )}
+            {studentLunch === "로딩중" ? (
+              <ActivityIndicator animating={true} color={MD2Colors.red800} />
+            ) : (
+              <FoodCard title="저녁1코너" text={dodamLunch.dinner1} />
+            )}
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -170,8 +192,29 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 30,
+    backgroundColor: "white",
+  },
+  upperContainer: {
+    alignItems: "center",
+    paddingLeft: RFPercentage(2),
+    paddingTop: RFPercentage(2),
+    paddingBottom: RFPercentage(2),
+    flexDirection: "row",
   },
   //
+  bigTitle: {},
+  foodCardWrapper: {
+    backgroundColor: Colors.basicColor.magentaTrans2,
+    borderRadius: 20,
+    width: "95%",
+    alignSelf: "center",
+    marginBottom: RFPercentage(5),
+  },
+  menuTitle: {
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  },
   //
   normalText: {
     fontFamily: "gowun-regular",

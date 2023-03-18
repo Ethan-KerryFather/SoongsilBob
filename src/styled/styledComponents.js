@@ -16,6 +16,12 @@ export const SmallTitle = styled(Text)`
   text-align: center;
 `;
 
+export const SmallSmallTitle = styled(Text)`
+  font-family: "gowun-bold";
+  font-size: ${RFPercentage(1.6)}px;
+  text-align: center;
+`;
+
 export const NormalText = styled(Text)`
   font-family: "gowun-regular";
   font-size: ${RFPercentage(2)}px;
@@ -24,4 +30,9 @@ export const NormalText = styled(Text)`
 export const SmallText = styled(Text)`
   font-family: "gowun-regular";
   font-size: ${RFPercentage(1.6)}px;
+`;
+
+export const SmallSmallText = styled(Text)`
+  font-family: "gowun-regular";
+  font-size: ${RFPercentage(1.3)}px;
 `;
