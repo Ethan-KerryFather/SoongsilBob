@@ -13,6 +13,7 @@ import {
 } from "react-native";
 import Colors from "../../assets/Colors";
 import BottomSheet from "react-native-gesture-bottom-sheet";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 function HomeScreen({}) {
   const navigation = useNavigation();
@@ -101,6 +102,7 @@ function HomeScreen({}) {
           숭실밥집
         </Text>
       </View>
+
       <View style={styles.middleContainer}></View>
       <View style={styles.lowerContainer}>
         <Pressable

@@ -1,7 +1,7 @@
 import { EvilIcons, Entypo, Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useRef, useState } from "react";
-import { useWindowDimensions, Image, Animated } from "react-native";
+import { useWindowDimensions, Image, Animated, ScrollView } from "react-native";
 import { View, Text, Pressable, StyleSheet, Linking } from "react-native";
 import MapView, { Marker, Polyline } from "react-native-maps";
 import Colors from "../../../../assets/Colors";
@@ -59,6 +59,7 @@ function StorePage({ route }) {
       </View>
 
       <BottomSheet
+        draggable={false}
         ref={bottomSheet}
         onOpen={() => {
           console.log("bottom sheet open");
@@ -66,7 +67,7 @@ function StorePage({ route }) {
         onClose={() => {
           console.log("bottom close event");
         }}
-        height={height * 0.7}
+        height={height * 0.9}
       >
         <View style={styles.bottomSheetView}>
           <Pressable
