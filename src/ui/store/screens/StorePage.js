@@ -1,4 +1,4 @@
-import { EvilIcons, Entypo, Ionicons } from "@expo/vector-icons";
+import { EvilIcons, Entypo, Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useRef, useState } from "react";
 import { useWindowDimensions, Image, Animated } from "react-native";
@@ -96,16 +96,26 @@ function StorePage({ route }) {
                 store정보
               </Text>
             </View>
+            <View style={{ width: "100%", alignItems: "center" }}>
+              <Pressable
+                style={{ position: "absolute", right: 10, zIndex: 2, top: 10 }}
+                onPress={() => {
+                  console.log("call btn");
+                }}
+              >
+                <MaterialIcons name="call" color="black" size={40} />
+              </Pressable>
+              <Text
+                style={{
+                  fontFamily: "gowun-regular",
+                  fontSize: 25,
+                  paddingTop: 10,
+                }}
+              >
+                {storeInfo.name}
+              </Text>
+            </View>
 
-            <Text
-              style={{
-                fontFamily: "gowun-regular",
-                fontSize: 25,
-                paddingTop: 10,
-              }}
-            >
-              {storeInfo.name}
-            </Text>
             <View
               style={{
                 flexDirection: "row",
