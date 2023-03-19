@@ -5,7 +5,7 @@ import HomeScreen from "../ui/HomeScreen";
 import EnvironmenScreen from "../ui/environment/screens/EnvironmenScreen";
 import Colors from "../../assets/Colors";
 import NotifyScreen from "../ui/notify/screens/NotifyScreen";
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign, Entypo } from "@expo/vector-icons";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import EventScreen from "../ui/notify/screens/EventScreen";
 import StoreLists from "../ui/store/screens/StoreLists";
@@ -138,7 +138,6 @@ function RootStack({ userLocation }) {
         name="rankingTab"
         component={RankingScreen}
         options={{
-          tabBarBadge: 1,
           headerShown: false,
           tabBarShowLabel: false,
           tabBarIcon: () => (
@@ -154,11 +153,10 @@ function RootStack({ userLocation }) {
         name="notifyTab"
         component={NotificationScreen}
         options={{
-          tabBarBadge: 1,
           headerShown: false,
           tabBarShowLabel: false,
           tabBarIcon: () => (
-            <AntDesign name="notification" size={40} color="black" />
+            <MaterialIcons name="notifications" size={40} color="black" />
           ),
           tabBarActiveBackgroundColor: Colors.basicColor.magenta,
           tabBarItemStyle: {
@@ -172,9 +170,7 @@ function RootStack({ userLocation }) {
         options={{
           headerShown: false,
           tabBarShowLabel: false,
-          tabBarIcon: () => (
-            <MaterialCommunityIcons name="menu" size={40} color="black" />
-          ),
+          tabBarIcon: () => <Entypo name="menu" size={40} color="black" />,
           tabBarActiveBackgroundColor: Colors.basicColor.magenta,
           tabBarItemStyle: {
             borderRadius: 20,

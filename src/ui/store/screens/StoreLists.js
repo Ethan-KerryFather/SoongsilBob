@@ -3,6 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 import React, { useState, useEffect } from "react";
 import {
   FlatList,
+  Image,
   Pressable,
   StyleSheet,
   Text,
@@ -26,26 +27,53 @@ function StoreLists({ route }) {
   }, [navigation]);
 
   const getCategoryStores = (category) => {
+    let storesArray = [];
     switch (category) {
       case "한식":
-        return stores.korean;
+        storesArray = stores.korean;
+        break;
       case "양식":
-        return stores.western;
+        storesArray = stores.western;
+        break;
       case "아시안":
-        return stores.asian;
+        storesArray = stores.asian;
+        break;
       case "치킨/피자":
-        return stores.chickenPizza;
+        storesArray = stores.chickenPizza;
+        break;
       case "테이크아웃":
-        return stores.takeout;
+        storesArray = stores.takeout;
+        break;
       case "술집":
-        return stores.alcohol;
+        storesArray = stores.alcohol;
+        break;
       case "카페":
-        return stores.cafe;
+        storesArray = stores.cafe;
+        break;
       case "일식":
-        return stores.japanese;
+        storesArray = stores.japanese;
+        break;
       default:
-        return [];
+        storesArray = [];
     }
+
+    storesArray.sort((a, b) => {
+      const distanceA = GetDistance(
+        latitude,
+        longtitude,
+        a.location.Y,
+        a.location.X
+      );
+      const distanceB = GetDistance(
+        latitude,
+        longtitude,
+        b.location.Y,
+        b.location.X
+      );
+      return distanceA - distanceB;
+    });
+
+    return storesArray;
   };
 
   return (
@@ -61,7 +89,7 @@ function StoreLists({ route }) {
         renderItem={({ item }) => {
           return (
             <Pressable
-              style={[styles.itemContainer, { width: width * 0.8 }]}
+              style={[styles.itemContainer, { width: width * 0.86 }]}
               onPress={() => {
                 navigation.navigate("StorePage", {
                   storeInfo: {
@@ -76,6 +104,12 @@ function StoreLists({ route }) {
                 });
               }}
             >
+              <View style={styles.itemImageView}>
+                <Image
+                  source={{ uri: item.imageList[0] }}
+                  style={styles.itemImage}
+                />
+              </View>
               <View
                 style={{
                   flexDirection: "column",
@@ -106,7 +140,7 @@ function StoreLists({ route }) {
                     size={15}
                     style={{ paddingLeft: 5 }}
                   />
-                  <Text> 10</Text>
+                  <Text> 0</Text>
                 </View>
               </View>
 
@@ -135,15 +169,27 @@ export default StoreLists;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingVertical: 20,
+    backgroundColor: "white",
   },
   //
+  itemImageView: {
+    width: "100%",
+    height: 150,
+    resizeMode: "cover",
+    marginBottom: 10,
+  },
+  itemImage: {
+    width: "100%",
+    height: "100%",
+    borderRadius: 3,
+  },
+
   flatListContainer: {
     flex: 1,
   },
   itemContainer: {
     padding: 20,
-    backgroundColor: Colors.basicColor.gray,
+    backgroundColor: Colors.basicColor.magentaTrans2,
     marginTop: 10,
     marginBottom: 10,
     borderRadius: 10,

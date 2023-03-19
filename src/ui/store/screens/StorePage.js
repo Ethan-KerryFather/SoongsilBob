@@ -1,4 +1,4 @@
-import { EvilIcons, Entypo } from "@expo/vector-icons";
+import { EvilIcons, Entypo, Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useRef, useState } from "react";
 import { useWindowDimensions, Image, Animated } from "react-native";
@@ -19,21 +19,6 @@ function StorePage({ route }) {
     latitude: route.params.latitude,
     longtitude: route.params.longtitude,
   });
-  const translateY = useRef(new Animated.Value(0)).current;
-
-  const startAnimation = () => {
-    Animated.timing(translateY, {
-      toValue: 100,
-      duration: 1000,
-      useNativeDriver: true, // native driver 사용 시 성능이 향상됩니다.
-    }).start(() => {
-      Animated.timing(translateY, {
-        toValue: 10,
-        duration: 1000,
-        useNativeDriver: true,
-      }).start();
-    });
-  };
 
   function callToStore(storeNumber) {
     Linking.openURL(`tel:${storeNumber}`);
@@ -47,36 +32,32 @@ function StorePage({ route }) {
     bottomSheet.current.show();
   }, [navigation]);
 
-  useEffect(() => {
-    if (isBottomsheetShowed == false) {
-      startAnimation();
-    }
-  }, [isBottomsheetShowed]);
-
   return (
     <View style={styles.container}>
-      {!isBottomsheetShowed && (
-        <Animated.View
-          style={{
-            justifyContent: "center",
-            alignItems: "center",
-            position: "absolute",
-            bottom: 10,
-            right: 10,
-            zIndex: 1,
-            transform: [{ translateY }],
+      <View
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          position: "absolute",
+          bottom: 10,
+          right: 10,
+          zIndex: 1,
+        }}
+      >
+        <Pressable
+          onPress={() => {
+            bottomSheet.current.show();
+            setIsBottomsheetShowed(true);
           }}
         >
-          <Pressable
-            onPress={() => {
-              bottomSheet.current.show();
-              setIsBottomsheetShowed(true);
-            }}
-          >
-            <EvilIcons name="arrow-up" size={70} color="black" />
-          </Pressable>
-        </Animated.View>
-      )}
+          <Ionicons
+            name="information-circle"
+            size={70}
+            color={Colors.basicColor.magentaTrans1}
+          />
+        </Pressable>
+      </View>
+
       <BottomSheet
         ref={bottomSheet}
         onOpen={() => {
@@ -141,7 +122,7 @@ function StorePage({ route }) {
                 >
                   <Entypo name="star" size={20} color="red" />
                 </View>
-                <Text style={[styles.normalText, { fontSize: 15 }]}> 10</Text>
+                <Text style={[styles.normalText, { fontSize: 15 }]}> 0</Text>
               </View>
 
               <Text style={[styles.normalText, { paddingLeft: 30 }]}>

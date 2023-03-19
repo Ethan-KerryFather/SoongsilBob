@@ -233,6 +233,7 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "white",
   },
   upperContainer: {
     flex: 4,
@@ -261,7 +262,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: "42%",
     height: "20%",
-    backgroundColor: Colors.basicColor.gray,
+    backgroundColor: Colors.basicColor.magentaTrans2,
     borderRadius: 20,
     margin: "1%",
     borderWidth: 0.5,
