@@ -59,7 +59,7 @@ function StorePage({ route }) {
       </View>
 
       <BottomSheet
-        draggable={false}
+        draggable={true}
         ref={bottomSheet}
         onOpen={() => {
           console.log("bottom sheet open");
