@@ -1,6 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React, { useState, useEffect } from "react";
+import { Snackbar } from "react-native-paper";
 import {
   FlatList,
   Image,
@@ -10,15 +11,21 @@ import {
   useWindowDimensions,
   View,
 } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
+import { RFPercentage } from "react-native-responsive-fontsize";
 import Colors from "../../../../assets/Colors";
 import stores from "../../../resource/stores";
+import { SmallTitle } from "../../../styled/styledComponents";
 import { GetDistance } from "./components/GetDistance";
+import CustomSnackbar from "../../../styled/CustomSnackbar";
 
 function StoreLists({ route }) {
   // 컴포넌트 보여줄때 한번 위치 초기화
   const navigation = useNavigation();
   const { width } = useWindowDimensions("window");
   const { latitude, longtitude } = route.params;
+  const [arrangeMode, setArrangeMode] = useState("거리순");
+  const [snackbarVisible, setSnackbarVisible] = useState(false);
 
   useEffect(() => {
     navigation.setOptions({
@@ -57,28 +64,71 @@ function StoreLists({ route }) {
         storesArray = [];
     }
 
-    storesArray.sort((a, b) => {
-      const distanceA = GetDistance(
-        latitude,
-        longtitude,
-        a.location.Y,
-        a.location.X
-      );
-      const distanceB = GetDistance(
-        latitude,
-        longtitude,
-        b.location.Y,
-        b.location.X
-      );
-      return distanceA - distanceB;
-    });
+    if (arrangeMode === "거리순") {
+      storesArray.sort((a, b) => {
+        const distanceA = GetDistance(
+          latitude,
+          longtitude,
+          a.location.Y,
+          a.location.X
+        );
+        const distanceB = GetDistance(
+          latitude,
+          longtitude,
+          b.location.Y,
+          b.location.X
+        );
+        return distanceA - distanceB;
+      });
+    }
 
     return storesArray;
   };
 
   return (
     <View style={styles.container}>
+      <CustomSnackbar
+        visible={snackbarVisible}
+        setVisible={setSnackbarVisible}
+      />
       <FlatList
+        ListHeaderComponent={
+          <View
+            style={{
+              marginTop: 20,
+              marginBottom: 10,
+              alignSelf: "flex-end",
+              width: "100%",
+              height: RFPercentage(5),
+            }}
+          >
+            <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+            >
+              <Pressable
+                style={
+                  arrangeMode === "거리순"
+                    ? [
+                        styles.arrangeSelectIcon,
+                        { backgroundColor: Colors.basicColor.magenta },
+                      ]
+                    : [styles.arrangeSelectIcon]
+                }
+              >
+                <SmallTitle>가까운밥집부터</SmallTitle>
+              </Pressable>
+              <Pressable
+                style={styles.arrangeSelectIcon}
+                onPress={() => {
+                  setSnackbarVisible(true);
+                }}
+              >
+                <SmallTitle>인기많은밥집부터</SmallTitle>
+              </Pressable>
+            </ScrollView>
+          </View>
+        }
         style={styles.flatListContainer}
         contentContainerStyle={{
           alignItems: "center",
@@ -89,7 +139,12 @@ function StoreLists({ route }) {
         renderItem={({ item }) => {
           return (
             <Pressable
-              style={[styles.itemContainer, { width: width * 0.86 }]}
+              style={[
+                styles.itemContainer,
+                {
+                  width: width * 0.86,
+                },
+              ]}
               onPress={() => {
                 navigation.navigate("StorePage", {
                   storeInfo: {
@@ -196,6 +251,18 @@ const styles = StyleSheet.create({
     borderColor: Colors.basicColor.magenta,
     borderWidth: 1,
   },
+  arrangeSelectIcon: {
+    backgroundColor: "white",
+    paddingHorizontal: 10,
+    height: "100%",
+    borderRadius: 30,
+    alignItems: "center",
+    justifyContent: "center",
+    marginHorizontal: RFPercentage(1),
+    borderColor: "black",
+    borderWidth: 2,
+  },
+
   //
   normalText: {
     fontFamily: "gowun-regular",

@@ -26,7 +26,6 @@ function App() {
     const applyLocationAndHideSplash = async () => {
       try {
         await getLocation();
-        await SplashScreen.hideAsync();
       } catch (error) {
         console.log("error", error);
       }
@@ -44,8 +43,8 @@ function App() {
           return;
         }
 
-        console.log("위치 권한 이상 없음");
-        console.log("위치를 가져옵니다");
+        await console.log("위치 권한 이상 없음");
+        await console.log("위치를 가져옵니다");
         try {
           return await Location.getCurrentPositionAsync({
             distanceInterval: 10,
@@ -77,6 +76,7 @@ function App() {
   };
 
   if (location && fontsLoaded) {
+    SplashScreen.hideAsync();
     return (
       <PaperProvider>
         <View style={styles.container}>

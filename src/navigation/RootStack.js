@@ -13,6 +13,7 @@ import StorePage from "../ui/store/screens/StorePage";
 import { useRoute } from "@react-navigation/native";
 import RankingHome from "../ui/ranking/RankingHome";
 import UnivFoodScreen from "../ui/univFood/UnivFoodScreen";
+import { RFPercentage } from "react-native-responsive-fontsize";
 
 const HomeStack = createNativeStackNavigator();
 const EnvironmentStack = createNativeStackNavigator();
@@ -24,7 +25,7 @@ const NotifyTab = createMaterialTopTabNavigator();
 
 function NotificationScreen() {
   return (
-    <NotifyTab.Navigator>
+    <NotifyTab.Navigator style={{ paddingTop: 30 }}>
       <NotifyTab.Screen
         name="notify"
         component={NotifyScreen}
@@ -33,6 +34,9 @@ function NotificationScreen() {
           tabBarIcon: () => (
             <AntDesign name="notification" size={30} color="black" />
           ),
+          tabBarStyle: {
+            height: RFPercentage(10),
+          },
         }}
       />
       <NotifyTab.Screen
