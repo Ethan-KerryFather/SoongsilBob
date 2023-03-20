@@ -142,7 +142,7 @@ function StoreLists({ route }) {
               style={[
                 styles.itemContainer,
                 {
-                  width: width * 0.86,
+                  width: width * 0.9,
                 },
               ]}
               onPress={() => {
@@ -159,11 +159,46 @@ function StoreLists({ route }) {
                 });
               }}
             >
-              <View style={styles.itemImageView}>
-                <Image
-                  source={{ uri: item.imageList[0] }}
-                  style={styles.itemImage}
-                />
+              <View
+                style={{
+                  alignSelf: "center",
+                  width: "100%",
+                  height: 150,
+                  resizeMode: "cover",
+                  marginBottom: 10,
+                  flexDirection: "row",
+                  borderWidth: 2,
+                  borderColor: "white",
+                }}
+              >
+                <View
+                  style={{ flex: 2, borderRightColor: "white", borderWidth: 2 }}
+                >
+                  <Image
+                    source={{ uri: item.imageList[0] }}
+                    style={styles.itemImage}
+                  />
+                </View>
+                <View style={{ flex: 1 }}>
+                  <View
+                    style={{
+                      flex: 1,
+                      borderBottomColor: "white",
+                      borderBottomWidth: 2,
+                    }}
+                  >
+                    <Image
+                      source={{ uri: item.imageList[1] }}
+                      style={styles.itemImage}
+                    />
+                  </View>
+                  <View style={{ flex: 1 }}>
+                    <Image
+                      source={{ uri: item.imageList[2] }}
+                      style={styles.itemImage}
+                    />
+                  </View>
+                </View>
               </View>
               <View
                 style={{
