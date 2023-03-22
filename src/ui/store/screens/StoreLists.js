@@ -142,7 +142,7 @@ function StoreLists({ route }) {
               style={[
                 styles.itemContainer,
                 {
-                  width: width * 0.9,
+                  width: width * 1,
                 },
               ]}
               onPress={() => {
@@ -172,7 +172,11 @@ function StoreLists({ route }) {
                 }}
               >
                 <View
-                  style={{ flex: 2, borderRightColor: "white", borderWidth: 2 }}
+                  style={{
+                    flex: 2,
+                    borderRightColor: "white",
+                    borderRightWidth: 2,
+                  }}
                 >
                   <Image
                     source={{ uri: item.imageList[0] }}

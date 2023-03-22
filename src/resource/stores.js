@@ -29,6 +29,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAyMjVfMTgy%2FMDAxNjc3Mjg5OTY3MTEw.aH-NvGAps9xihy1y8pP_b2g_J2BiUSUPe32VOIMDGWQg.8Yc8_XvwE1Q_2hidke1LTY_kUs2FAxjE3xrNTZrydegg.JPEG%2F20230223_123146.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221007_263%2F1665113263778RNeQY_JPEG%2F%25C4%25DC%25C5%25D9%25C3%25F7_%252849%2529.jpg",
       ],
+      phoneNum: "02-823-7319",
     },
     {
       name: "신의주찹쌀순대",
@@ -45,6 +46,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20220403_264%2F1648982546612uwS3f_JPEG%2Fupload_ae0db58de47d7fe417a092c8e217e54a.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fsearch.pstatic.net%2Fcommon%2F%3FautoRotate%3Dtrue%26quality%3D95%26type%3Dw750%26src%3Dhttps%253A%252F%252Fmyplace-phinf.pstatic.net%252F20220403_117%252F1648982555399xGxnQ_JPEG%252Fupload_58786233ffd49c0b534e08752a0077cd.jpg",
       ],
+      phoneNum: "02-822-5862",
     },
     {
       name: "상도명태명가",
@@ -61,6 +63,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAyMThfOTAg%2FMDAxNjc2NzIzMDQ3MDU4.xeE5fUKNh-o5qilJGnxecMlmX6XFMuZjd1vu33PcshMg.gcfgD_Xdov1qg4OfulDGAtcBQ7E3fjq6k-yOZCZolFAg.JPEG%2F20230127_125811.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAyMDhfMTcy%2FMDAxNjc1ODUyODczMzI4.jietn9PS59HeqMb8B4If5s0tJMF_5ER8QlHA4o3wICIg.DmiKpXesY2d1bNHpsF50r5G1d0KzTqUxr4lB_ryG6JMg.JPEG%2F20230208_135220.jpg",
       ],
+      phoneNum: "02-823-6700",
     },
     {
       name: "사리원",
@@ -77,6 +80,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAyMThfMTM4%2FMDAxNjc2NzAyMzIxMjE1.jPsmJohJltmTjHbicyiw42Xx1cRUvJtMI2rzRFRaQYQg.SvNhRvZsH8RugT8Z9sR6H-SrPjjrY21ZRqf6YzimDlog.JPEG%2F82DB476C-6BDA-476A-8BFA-CD6D57272512.jpeg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fsearch.pstatic.net%2Fcommon%2F%3FautoRotate%3Dtrue%26quality%3D95%26type%3Dw750%26src%3Dhttps%253A%252F%252Fpup-review-phinf.pstatic.net%252FMjAyMzAyMThfNDIg%252FMDAxNjc2NzAyMzIxNDk2.3dQk2ZgEaNPeVG6_a69A1-0ciy7eBTaOie7hCbxaLQMg.GwXxDl3ypVcJONbTfGItNmwInC3SZFuQLVrd7zjx3ZYg.JPEG%252F658D90EC-465C-4881-9583-66CC87CDDA1D.jpeg",
       ],
+      phoneNum: "0507-1368-6022",
     },
     {
       name: "손칼국수",
@@ -94,6 +98,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAxMjZfMjg3%2FMDAxNjc0NzIxNTI1NDA5.MaJ2IbfmAP7vY1fSbxLCniQy2zc3TR7jqtzRN8bECdQg.TyWzGkJEu21n5CLl9xzcj79mfXcNZ8ywM-mFPPnzeV4g.JPEG%2F20230126_114706.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEyMjlfMjY0%2FMDAxNjcyMzE3OTM1Mjcw.Az5qwJzVutIBjA6Awo0_xNJfYOGqOLOIkXjQmWEJ_rAg.Io9VJYNNXw4i3aNoyy_9HazyM-xWpJLKcMGkVu2kfDsg.JPEG%2F075D9134-94CB-4DE6-AED5-DC2BCC9FC38F.jpeg",
       ],
+      phoneNum: "02-816-3473",
     },
     {
       name: "상도국수",
@@ -110,6 +115,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAxMjhfMjY5%2FMDAxNjc0ODg2NDM5ODE3.ETSx5O-v4snoUAc5gCdfEa7ZOYrN9A6FN9-6Pafy2aYg.O7x6XOPoooJzDU_UcXlKi7b6LpJr6cWTCKvrOJQVp9Mg.JPEG%2F20230128_141645.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAxMDRfMzAw%2FMDAxNjcyODI0ODc4NzUx.VJN6gVOl6_0CB_lmQV_T31_1oHnZya5NnoReu8LXqDcg.epkH4fBqz6FT-cONl7gbah1zTeJ9O6377ZwIwi-jWfkg.JPEG%2FECCFF723-8E9F-4D40-B064-B6E46F4D4DD5.jpeg",
       ],
+      phoneNum: "02-886-7089",
     },
     {
       name: "명태촌",
@@ -126,6 +132,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEwMzFfMjc1%2FMDAxNjY3MjE0NTYzMDg0.8ZAHGFkVgDoOErptYQkTaexIH8TVYXnV_aHxenTCApYg.X_INnViMuNbOgi8-z-5iPkpLWCx624uEr8LdpWEJ-Bkg.JPEG%2F20221031_191249.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEwMDRfNzQg%2FMDAxNjY0ODU2MjYyNDY3.ZUpdx6JoAqaeHyRjbaazRGlI38w3flrI05F3Dw_003sg.E09J6jDQoIhdfc8hcenkKxFwZ1sTKDItRXsBYx6eOLkg.JPEG%2F20221003_184058.jpg",
       ],
+      phoneNum: "02-815-2322",
     },
     {
       name: "더진국",
@@ -142,6 +149,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fsearch.pstatic.net%2Fcommon%2F%3FautoRotate%3Dtrue%26quality%3D95%26type%3Dw750%26src%3Dhttps%253A%252F%252Fpup-review-phinf.pstatic.net%252FMjAyMzAzMDhfMzcg%252FMDAxNjc4MjczMTA1ODQz.qNcSNSYt3cz9cJS5Rb1DZICZ9nQiGTJ0osJA_qYv4msg.RzbV_YRJwywVw1IRY4LUFkRdWac9AeoX-3BP0s5Ng4og.JPEG%252FBC4E91D7-6D5C-45C7-B159-96E2AD409B52.jpeg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fsearch.pstatic.net%2Fcommon%2F%3FautoRotate%3Dtrue%26quality%3D95%26type%3Dw750%26src%3Dhttps%253A%252F%252Fpup-review-phinf.pstatic.net%252FMjAyMzAzMDhfMjI0%252FMDAxNjc4MjczMTEwNDQ2.DZx5baG-QHQ5VhuJUUEKzUuBMTgVF9CK8IF-QmggYtog.5a3csCom9iwGOkJeKyIqA4LDGFh0exeKSeazh5E8vvUg.JPEG%252FE7251EA5-469B-4963-A8AF-65046459DC32.jpeg",
       ],
+      phoneNum: "0507-1417-1502",
     },
     {
       name: "밀알식당",
@@ -158,6 +166,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjExMzBfMTIg%2FMDAxNjY5NzY5NDQzNjcw.ARAwGb_ip3FlMRGDee5d8-RWffaAjlfeBCN85dK3BYAg.r9JaxJi4SpGABywSiHK-C7-urstIHN5V6EvcRG-U4twg.JPEG%2F18D0065A-5338-475E-9F7D-34F30CE94216.jpeg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEwMzBfMjI4%2FMDAxNjY3MDYzNDEyMTAw.lMD_1g_WqJI8yBlphnavJijNxIxUtTf9Z0hS7hRjAcYg.N83sP46xOZwNjehdvcno8smreapHkaUVv_TFVQKgQRIg.JPEG%2F20221024_153916.jpg",
       ],
+      phoneNum: "",
     },
     {
       name: "명품고향삼계탕",
@@ -174,6 +183,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEyMTlfNzIg%2FMDAxNjcxNDEyMzc1MzIw.dsJwy_18EKc9fzqDobW5ubqh2_sgd-3rIEff1_R522Ig.a8qMePMmXhkcmVsb1HWkehjVcmM9U-3vEEErQvmisPEg.JPEG%2F1000007022.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fsearch.pstatic.net%2Fcommon%2F%3FautoRotate%3Dtrue%26quality%3D95%26type%3Dw750%26src%3Dhttps%253A%252F%252Fpup-review-phinf.pstatic.net%252FMjAyMjEyMTlfMjEx%252FMDAxNjcxNDEyMzczOTg5.gqNDL2V_tMB5YKiWolEniFRlnsQYJTEaV1BEryV4s6og.V0Wgl0v2DyhotR1flmT8ntWov-DaGJL9DwDzaB-JhE8g.JPEG%252F1000007023.jpg",
       ],
+      phoneNum: "02-812-7745",
     },
     {
       name: "내가찜한닭",
@@ -192,6 +202,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjExMDlfMjI1%2FMDAxNjY3OTcyMTMxNzU1.vliCv8unmvdUT6NN_n8bHH1tSAn9r6vnWpSyR799m0sg.InLvL4TknO1-dHx8S1SDssUQjldkDagBCcaD45KnD4Ag.JPEG%2F20221103_123911.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fsearch.pstatic.net%2Fcommon%2F%3FautoRotate%3Dtrue%26quality%3D95%26type%3Dw750%26src%3Dhttps%253A%252F%252Fpup-review-phinf.pstatic.net%252FMjAyMjExMDlfMjM2%252FMDAxNjY3OTcyMTMxMzg3.-SGk5_Hefnv1V0O4orpG3BAYvouFoDn0hEhHutdBNjog.LO0iwqvWHxORQJRyA9klc1I4Cvbk78YOomtzFPfbr2Mg.JPEG%252F20221103_122615.jpg",
       ],
+      phoneNum: "0507-1434-1252",
     },
     {
       name: "논두렁갈비",
@@ -209,6 +220,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjA3MDdfMjg5%2FMDAxNjU3MTY0NTYzNzIw.Z69kFz1ojN1guFXwV7wB1XFVlPnPv9WGp65v6DjKAu8g.33rO91RQ89Etrl9BE_u28_v2EIL8EbKu3xO_sSSeqQAg.JPEG%2Fupload_77d3f517987218a15f4551d522d05374.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAxMjdfMTQ3%2FMDAxNjc0Nzk0ODQ3NDgx.WRf0XgqLtUqGLiQuppanl3XFqz-p0ygxavUvJXNxvx4g.rq7IA2qRBgn4dlLczubQUxUwDKqIa1SiMfyufXVHEQkg.JPEG%2F20230127_133906.jpg",
       ],
+      phoneNum: "02-815-1065",
     },
   ],
   western: [
@@ -228,6 +240,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fsearch.pstatic.net%2Fcommon%2F%3FautoRotate%3Dtrue%26quality%3D95%26type%3Dw750%26src%3Dhttps%253A%252F%252Fpup-review-phinf.pstatic.net%252FMjAyMzAyMjdfMjAy%252FMDAxNjc3NTAyMDI5OTE2.-SCayrp8smFTLnEy1A4e5rZvZhkvH70vWtr3YU9VEd4g._O8mR8Lshc7kXV_47r2jPF5274qlE2Mubn-LR2VFwscg.JPEG%252F66304E91-131F-4E0C-9EDA-F977A2BAA643.jpeg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fsearch.pstatic.net%2Fcommon%2F%3FautoRotate%3Dtrue%26quality%3D95%26type%3Dw750%26src%3Dhttps%253A%252F%252Fpup-review-phinf.pstatic.net%252FMjAyMzAyMjdfMjkz%252FMDAxNjc3NTAyMDI5NTk3.D_KzutD6_wNOEjMRhSbKZMwxhlND2uFVBuX5-TPmfX0g.sf_I6qzfv_KyMDa0gmQQ6-B3lgdwi1IGXessUF4GB6Ag.JPEG%252FBE2B81C7-9BB3-4522-9D48-AF3B23B03455.jpeg",
       ],
+      phoneNum: "0507-1385-0504",
     },
     {
       name: "뚝배기 스파게티",
@@ -245,6 +258,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjA0MjVfMTY0%2FMDAxNjUwODU3MDMyNDgy.QaM-P9hx9Rn2XvnJVvOiNdW_HSDhy36Jhho_ra3FY9Eg.Nwm-DoTUf6jlzubUGSd8BX_rsvjUjPZpLYMPxqDuQnIg.JPEG%2Fupload_c13e2b7fbf382a4726953dad211860a1.jpeg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20211005_298%2F16334062615873hI7l_JPEG%2Fupload_5ec27b5b32a838ca1c0c6bd156431152.jpeg",
       ],
+      phoneNum: "",
     },
     {
       name: "샤로스톤",
@@ -264,6 +278,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjAxMTJfMzYg%2FMDAxNjQxOTU1ODY5MzQ4.YHkyac_zb0vKo6rsrXkGXrMenvXCPGWKJ1Ui0TCTusog.JD2FbHwyy2T1csAyvStPWZms6hmAemFxBv8FIGCeMNog.JPEG.raie0863%2FIMG_5084.jpg",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxNzA2MDdfMTU0%2FMDAxNDk2ODI5OTQ5OTM4.YlNFZ-6OffY2rnVrwHze7VW1bZCW294Vrgd0VBZX4gIg._nOqynuv_1IshbR4lVUPKDiI5LriD2O7lfzpR1q1ZW0g.JPEG.baby5me%2FIMG_3932.jpg",
       ],
+      phoneNum: "0507-1448-1616",
     },
     {
       name: "휘게",
@@ -283,6 +298,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjA4MDhfMjAx%2FMDAxNjU5OTI5MzQwMDgx.uPUTeeoB96rbbSMNhc2b2zIHCvJtl4AHw-LlMGLtVWEg.66CxrdUirWVVSJd0vJOjo6pWikbQM5uVV6guGO1-sqYg.JPEG%2Fupload_08885e6ccaf3ce7e624ac79edafb18cd.jpeg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEwMjNfMTc4%2FMDAxNjY2NDkyMzg3OTg0.rFjjIX97DwMvpherHWeTKBWchTfSO8q44AC7MZdIQysg.IAwg5digmDm_JiGGzioSSy3AKFSBKTBWQd6kT0DfFn8g.JPEG%2F91602ADB-B4D2-4140-BC4D-A562667FB637.jpeg",
       ],
+      phoneNum: "0507-1346-1232",
     },
     {
       name: "프라이밋 스테이크 하우스",
@@ -300,6 +316,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjAxMzFfMTkw%2FMDAxNjQzNjMxMTI1MTQ5.h32lPJqbzznXr8nuW8ceiVa9Fn7f-O95tKFtdypWgZUg.p04WvZQCR0FSuw8yG3Pfd46ckKc-mfQCuOBAYXun_OUg.JPEG.nowgnoy%2F20220121%25A3%25DF193726.jpg",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA1MjNfMTUw%2FMDAxNjUzMjk0NDA0NDIw.i_K7dY3_tcnOZQm-qDv1GBmzHi48e09-ugS-GoWtRTog.yd1AcRFnI8tLWfUcwmlKY0orZQA-2KqKyJtONViUdHIg.JPEG.anellolim%2FIMG_6965.JPG",
       ],
+      phoneNum: "02-823-6446",
     },
     {
       name: "펍캐리온",
@@ -320,6 +337,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTExMDNfMjE3%2FMDAxNjM1OTA4MDI1OTk1.dgAxVdw1IB8X4vNCvvOSPhNoG5NLpdpV72OYjdOaY78g.dE-2n1A9VdSPCnPhglN3ygaTGgZrpxvi4xf97BWvXyYg.JPEG.zzang4295%2FKakaoTalk_20211028_193655200_02.jpg",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAxMDRfMTQw%2FMDAxNjcyODMwMDE0ODcx.tttESSAi6NHW5YtXSz_z4Bp-FtD_n0yj5KIr_gWitk4g.RZJHQVH7lvHeeE3TyezwYfw1h4OrotQFcD5Nrv_jamsg.JPEG.grlznzn7%2FIMG%25A3%25DF20230104%25A3%25DF181903%25A3%25DF283.jpg",
       ],
+      phoneNum: "02-823-5360",
     },
   ],
   asian: [
@@ -338,6 +356,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEyMDlfODMg%2FMDAxNjcwNTg1ODYyNjkx.VtYlnnOkCF8uQIFplBEqIL-IsH6BoMxcEJk_j1HR_X4g.XGFpHoGbSEp4i_AcvdqwoE4_3e25-E-FP_WOCoe1RQUg.JPEG%2F8FD6B48C-85B6-44E4-BE8F-2A21EB99571C.jpeg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEwMzFfMjMz%2FMDAxNjY3MTQ0MjkxMDEy.moei6mYothZdrCLx37M5xcqskzTFj2xEieHJ6g1eoesg.5SxSNoLUMNXEWRHSyg7jDxjrs0d8Tzj_aknogO7aJbkg.JPEG%2FAB328E04-C4D1-4DC9-9EFC-350A8E83D15E.jpeg",
       ],
+      phoneNum: "070-8621-0906",
     },
   ],
   takeout: [
@@ -358,6 +377,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20141109_168%2Filuiou_14155091743609C9xq_JPEG%2F20141107_182453.jpg",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxNzA4MjhfNDQg%2FMDAxNTAzOTA2ODczNTA3.lb86EfK8weKqbavWvEbJWFiUR4zEOl9fKj3-AgsgJC4g.68i7VtEXjpuaG7Gz4ptbVar1MH7uXLQrxgK53wD9oqMg.JPEG.lifeofpotato%2F20170822_141610.jpg",
       ],
+      phoneNum: "02-6012-8246",
     },
     {
       name: "밀플랜비 숭실대점",
@@ -374,6 +394,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20210511_226%2F1620695130627KmlVC_JPEG%2Fupload_a50e077f5e6a635e2105baa3fffbb40b.jpeg",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA0MjBfMzUg%2FMDAxNjUwNDQxODE0MzQ0.E0e6rsgLVyV6l6VaaUXJb0tbj2R-ppgUnOgr3Q_8-qEg.jblqIyOCxAb9MbC1xuKEJfo7PNzK_mJwWzXBHoMzwLYg.JPEG.mmmc999%2FKakaoTalk_20220420_112405084_09.jpg",
       ],
+      phoneNum: "010-9100-2536",
     },
     {
       name: "맥도날드 숭실대점",
@@ -390,6 +411,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEyMTNfMTMz%2FMDAxNjcwOTA3MTAxNzg1.G0oBMkvsD4_HcMAE89K_3T2SGZc9WsbVMrR044oRRQcg.D1RM4Gjm3xmwiK7ej5UIljNpsrdCjVWxbUPrDV6vTJ4g.JPEG%2F20221213_122854.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEyMDJfMjE5%2FMDAxNjY5OTY2NTg4MDk0.SubkNAS0ZNHZU9l7GjiIdUOwKDKr3tMv8wGFYyMnv2cg.k3q-WjCPJAmyETfTPl7Puj8rD6zzPXlguCJ23jlcgq0g.JPEG%2F20221202_161232.jpg",
       ],
+      phoneNum: "070-7209-0593",
     },
     {
       name: "아리랑컵밥",
@@ -404,6 +426,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODA0MTRfODkg%2FMDAxNTIzNjQxOTQ1Njcx.juAgKWk9eKd_hSLoOcISygjLgJ5zgGfdfm2xMN9ZUUkg.wj8dZOVfDmCNu1fLlMiAn_g86R74awlc6tjrpji9cIAg.JPEG.uq07%2FIMG_5391.jpg",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA0MjRfMTcx%2FMDAxNjE5MjYxMTI4MjM0.IvwaImafdI7UdAWBL9RaM52RZC2bdlVWrRs0uw1C-pIg.ccAPnV1Fw7_s1UvrBcPGZLltJ8_QGr0qtw0Gh8K1eTgg.JPEG.ckgksthf2005%2FIMG_3214.jpg",
       ],
+      phoneNum: "0507-1307-8244",
     },
     {
       name: "수수&핫커리 핫도그",
@@ -421,6 +444,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20201017_287%2F1602913800850csXKO_JPEG%2Fupload_c09a50e358865db44e4ea0a79ceda567.jpeg",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTAzMThfNzIg%2FMDAxNjE2MDc1NzE4Njgy.A6mUdLl-GOtAFgTZL7k5BjvL9Pp5qRuOHaOtldQdyVYg.sy8xdczI1mc55gU0IxmzKBMPBUzn_upZssECiQnWoKYg.JPEG.angiehong%2F1616074649865.jpg",
       ],
+      phoneNum: "02-811-0233",
     },
   ],
   chickenPizza: [
@@ -439,6 +463,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA2MjdfMzcg%2FMDAxNjU2Mjg3MjY2NDMx._O0HhQTlB7zycqm1IRyMketqcKk4QqDTDOcb08o2jOEg.981Ez7M4dFUrurEhMvURanr9c2CD2MacbQYI0V8y9Z8g.JPEG.angiehong%2F1.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20220101_259%2F1641025900411lNK0V_JPEG%2Fupload_980a4a69cdc4496f12c39b25244a2a2b.jpg",
       ],
+      phoneNum: "02-824-1182",
     },
     {
       name: "리얼후라이",
@@ -455,6 +480,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20201125_230%2F1606272377477RMJ66_JPEG%2Fupload_5b07126a66c8d7cf9128238989773203.jpeg",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODEwMjJfOTYg%2FMDAxNTQwMjE1NzMxOTg3.Rz_MBrZKamLxkp-wks-4JJzept0h8fCAzi57IPnwnecg.OEvI7b8DWPpFitNNDWmEqzmUHEKjSFLC44h1sv_opr4g.JPEG.nowgnoy%2F20181018_201628.jpg",
       ],
+      phoneNum: "02-3280-8292",
     },
     {
       name: "미쳐버린파닭",
@@ -471,6 +497,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20130321_169%2Ftackhyun88_1363871278525vCdnJ_JPEG%2FIMG_0477.JPG",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20130321_162%2Ftackhyun88_1363871275409ayvrt_JPEG%2FIMG_0453.JPG",
       ],
+      phoneNum: "02-822-9294",
     },
     {
       name: "BHC치킨 숭실대점",
@@ -487,6 +514,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODEyMDNfMTAz%2FMDAxNTQzODQ4NTI5MTgx.O1dr7AVVsepsvVo6-OaqPCZ8VJvP_1vPB5L_kSPCqa0g.j7Ocnny8GLLThvlk-Y7poTlVc0drQmvCz4b8Eg0vMR4g.JPEG.wyzj01%2F20181128_185151.jpg",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTAxMjVfMTM5%2FMDAxNjExNTM4MDU0ODQ1.75t1GwXUpNIjP8Zaic3tynwBB7oLz_dGF0u4V9_IOj4g.36-x1soaM_hgQi0YbmhBmOBUjdTkCfmaLokZqF52Ubgg.JPEG.pokju104%2FIMG_2432.jpg",
       ],
+      phoneNum: "02-815-8799",
     },
     {
       name: "디디치킨",
@@ -504,6 +532,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20150325_19%2Ftopslugger84_1427266049480Gi4Se_JPEG%2F%25B4%25DE%25C4%25DE%25C7%25D1_%25C4%25A1%25C5%25B2_%25B5%25F0%25B5%25F0%25C4%25A1%25C5%25B2_%25C7%25E3%25B4%25CF%25B9%25F6%25C5%25CD_4.JPG",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODExMDlfMTE5%2FMDAxNTQxNzQ5NTcwMzAw.xBrOkmZD8Zesb5VKCPTvVk_qFgEhL1LbjIcmNY47DLQg.NWWWbHAPfalOD8TP1zpoS-OhhNOpd-VGRbXaflAze-4g.JPEG.judy4883%2FIMG_4437.jpg",
       ],
+      phoneNum: "02-817-9992",
     },
     {
       name: "맛닭꼬 숭실대입구역점",
@@ -521,6 +550,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEyMTFfMjc3%2FMDAxNjcwNzU0MzkyODg4.URxlEVj22GDfW4VjD6IpSTj_fjxG2IGDn5NMqC7Mj8Yg.NWOhPk_1loHqeteSpqlN80W5jZS8ShUhLWxfA_chtY0g.JPEG.nunmunai%2FIMG_3975.jpg",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEyMTFfMjU2%2FMDAxNjcwNzU0MzkxNTgw.BYAxX3wJ_3ZZXOlVY4ngS1pJ0DPmZ9YoaHlRXPCPAF4g.dKxy1FBZwIuUzSHULyK_sbwJjBZR5LCC7yEC-lLIIC0g.JPEG.nunmunai%2FIMG_3972.jpg",
       ],
+      phoneNum: "02-3280-3492",
     },
     {
       name: "푸라닭 상도1동점",
@@ -538,6 +568,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjA5MTRfMjEx%2FMDAxNjYzMTYyNzM0MTU0.Wb830FbHzFivoKtkY5iJ7REsKEhscorJ8K87HPskVGog.IzK3SfjvdjDgdTB7kthmFymTN68niFXZZPuP2WWn32kg.JPEG%2F9617C07F-2C95-4BE3-A2B0-97D0E1F315E2.jpeg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20190906_121%2F15677552212347mPpp_JPEG%2FPpFQ5O9ZT5s52qluteZzh6IQ.jpg",
       ],
+      phoneNum: "02-823-9206",
     },
   ],
   alcohol: [
@@ -560,6 +591,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEyMDRfMTQz%2FMDAxNjcwMDgzMTQ0OTcx.pigetfF0B-hC1EhZUt7GUVqZYgTExce2wIGNjON4YcIg.b561zQ14GLNQEwx0cQWhpPbJA8dUlKkF00Lyai1NBDsg.JPEG%2F20221204_001319.jpg",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA1MjFfOTAg%2FMDAxNjUzMDYwMjg0MzU1.qBAI6G386L3n6Zl3MbqBhOXzgE1v2Rs29mGlLBcqNhUg.5Z4OppkI_IM52jh1ZQlFsaq6aVnklD3f_-OL2SSwMQkg.JPEG.ywoo121%2FIMG_3913.jpg",
       ],
+      phoneNum: "02-823-9206",
     },
     {
       name: "으리으리",
@@ -581,6 +613,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTExMjVfMTcw%2FMDAxNTc0NjM4NjQxNzQ0.tGQCGDEAP-Sx_u8fifEeyyQ4ljImp1_Iz-2To6yqqjIg.I_eyA4Q1rnq7lXNvLYYEOf9Kd5BPl4TlWmaaItfH-xcg.JPEG.ruddygaeng%2F1574638641186.jpg",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTEyMDlfMyAg%2FMDAxNTc1ODk5NDQ0MDQ3.sRi2XCJaF30Gqy_BAyyTm7XWFUvBtNDFyfsG7E1Oq1cg.SfUcknj_npF0K04YzTLlpL8zbaN1HYIN7ZM8KsRxd0Mg.JPEG.by_ongdew%2F1575899442974.jpg",
       ],
+      phoneNum: "0507-1404-4028",
     },
     {
       name: "파동추야",
@@ -600,6 +633,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20220401_288%2F1648783769992MOmUC_JPEG%2Fupload_34e28ba351ec5fe8350cc4a7c568e3dd.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20211008_226%2F16336937171487KIr9_JPEG%2Fupload_ca046eaec27518eca91285e05f17047a.jpeg",
       ],
+      phoneNum: "02-822-5988",
     },
     {
       name: "생활맥주 숭실대입구역점",
@@ -617,6 +651,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjExMjFfMjcx%2FMDAxNjY5MDQyMTUwNzE3.3CcZMHqjP7XkUOHR00pqg1VNapswLtwkYtz4awb8jyAg.97zrQxI_a0DG6jxO0NKkUhQZfs0zVQOMuCzt08k944gg.JPEG%2F564E28B9-94CD-4A89-9C56-762B42611061.jpeg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjA2MTZfMjYy%2FMDAxNjU1Mzc5NzU5OTE2.2XTzh1O9XAF5dsZSG00VkNrL76ZUjNz_ZDTvnPNSFDQg.Lh0EUx80WuYN9RnAfvlEST1EGkLnApYl5Vlr1xczngog.JPEG%2Fupload_c572f8dee29a587bd893ae4a581195ed.jpeg",
       ],
+      phoneNum: "02-815-5761",
     },
     {
       name: "28청춘포차",
@@ -633,6 +668,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjExMThfMjMy%2FMDAxNjY4NzgwNTg5OTk0.WGGvDq9DuN6F1c9jAiq6AhYrMA4Q9Cha5x_pICxtkQcg.DN10KHnzFY1eX-nNxIwztIfObCP_U3DpEdRu581nSUwg.JPEG.woney3984%2FIMG_9766.jpg",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODA5MDVfMjE5%2FMDAxNTM2MDgxNjExOTYz.EBVNU-3hApqvqJGEPy1On3IBY7kjMN6uGjGvWPtcBsEg.t0RwqNIKZcsehLT8tAeuuhXBOrhRd4nx7ed3PVugDVYg.JPEG.tkdwns5261%2FKakaoTalk_Moim_4YZ8WGDrorVJPWf0CUgN0F50CiYutP.jpg",
       ],
+      phoneNum: "010-4729-3567",
     },
     {
       name: "블루힐",
@@ -649,6 +685,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjExMThfMjMy%2FMDAxNjY4NzgwNTg5OTk0.WGGvDq9DuN6F1c9jAiq6AhYrMA4Q9Cha5x_pICxtkQcg.DN10KHnzFY1eX-nNxIwztIfObCP_U3DpEdRu581nSUwg.JPEG.woney3984%2FIMG_9766.jpg",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODA5MDVfMjE5%2FMDAxNTM2MDgxNjExOTYz.EBVNU-3hApqvqJGEPy1On3IBY7kjMN6uGjGvWPtcBsEg.t0RwqNIKZcsehLT8tAeuuhXBOrhRd4nx7ed3PVugDVYg.JPEG.tkdwns5261%2FKakaoTalk_Moim_4YZ8WGDrorVJPWf0CUgN0F50CiYutP.jpg",
       ],
+      phoneNum: "02-821-2446",
     },
     {
       name: "역전할머니맥주 숭실대점",
@@ -668,6 +705,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAzMDZfMTM4%2FMDAxNjc4MTA3MjM1NDgw.twpppZBi_ist7B9E_Cpi_R1mvuBv1netrxW2FbiAUBwg.4uRGc-wGlthioN2RyfNjcM1DDn-SlzRltB7cRisQEkQg.JPEG.rxbeeca%2FIMG_1117.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAxMjlfMjcg%2FMDAxNjc0OTkzNzk3OTYy.ylYMVld9ak3_QwGRZDzy9xz5sUgzqPZl_Z1igizIpzEg.hENbGkAX7wvtcJ0qNY6bTupL0vFGXIyTRfxaI5v4oYAg.JPEG%2FAD7CB93C-34CE-40A5-9E4D-CE3DCD58B80A.jpeg",
       ],
+      phoneNum: "0507-1373-1982",
     },
     {
       name: "민속주점 상투골",
@@ -684,6 +722,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20150831_51%2F1440999851648t8tEH_JPEG%2F13160700_5.jpg",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20150430_54%2Fvini2u_1430397863194RKGfQ_JPEG%2F20150430_190513.jpg",
       ],
+      phoneNum: "02-822-2958",
     },
     {
       name: "봉구비어 숭실대입구역점",
@@ -703,9 +742,140 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODA1MjRfMTcx%2FMDAxNTI3MTM4NTkxNTEz.2QQKte1TJ9lPDKHMS118nc9BNwXRcP7FyOJG1RGWmo4g.GS6TNem69F0jIuR-_GV9py0U8mO3oPuiyaZW-pbnj1kg.JPEG.ldh7145%2FKakaoTalk_Moim_4NBYYgQk3eTy5fB2UBNWG3CacpTkJQ.jpg",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODAxMTFfMjkw%2FMDAxNTE1NjQyMTk5MzMy.FpAkRlOVyb0fKWl_cteCEHUsgPYEY2K9onx92YBW52wg.OwtdeYqvptfglovjot9ag5VcBxD-6Hw407PAs67VwKUg.JPEG.meke_meke%2F1515629024487.jpg",
       ],
+      phoneNum: "0507-1404-4354",
     },
   ],
-  cafe: [],
+  cafe: [
+    {
+      name: "오갈미",
+      area: "정문",
+      workingTime: "10:00-20:00, 매주 일월화 휴무",
+      price: "2000원-",
+      location: { X: 126.951025, Y: 37.4982605 },
+      description: "디저드 맛집! 빵 종류가 매우 다양하고 이쁘게 생겼다.",
+      imageList: [
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA2MThfNzAg%2FMDAxNjU1NTIxMzg4ODY3.9z5b-YvL9owTZsvMegb0IIRPcyJbrf_ed_OoKKDtjjIg.S59E4l--FMTfXxIUKUjtV_019CpmN0sc905ibOt9zNIg.JPEG.gim263%2FIMG_3444.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA4MTlfNTEg%2FMDAxNjI5MzQyOTkwMjIz.Wm54TECJF8rXn3sVEhDyC08u8icSvRa2cMlEhM3zmwIg.0CcJjRzBwOcfJTnbRECROe6RUEAUXIBRd7EwGj6Go0og.JPEG.rypy27%2FIMG_4322.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20220106_140%2F1641465840885sScHg_JPEG%2Fupload_1e5675d9eb7433246c51d1062b3c98c7.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMDlfNjUg%2FMDAxNjc4MzMyNTczODMw.888QtUH-MT6xuAhiYNx9RbPViv0437GxUUMeqQ9uAVsg.y4V1LX89hwgAgMxUPSL0ul5VeKOWZLhkFCbUXugSbb4g.JPEG%2F20230309_122713.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMDRfMTU4%2FMDAxNjc3OTAzNzQzNjQy.C_Ayal32uVVl9cwwP9ovCodagDHqwtZeyB1gaHcfQNUg.TEJBCzDdqOIIOD6wQ74Fh3zNy7-4zX6gtpiKh321-TAg.JPEG%2F82A01849-B4BC-4995-9C03-81F2BD9CB90D.jpeg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMDRfMjA2%2FMDAxNjc3OTAzNzQzMjYw.Eev8zB9w57ev4mQ8TddFU_26LUCiiLgtC-EEZa9Ltvgg.KMB1hK2EuWVSM-pJK_sqx31yZrHlEDDhCBS4zzBzCmkg.JPEG%2FEEC90857-6B03-439B-A3BB-3AE65C3F49C6.jpeg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTEyMTFfMjM1%2FMDAxNjM5MjI3OTAzNDky.c8LuJBQGo0EQKp0oRwVGLF1KeXNh-byYW1TiI9eS5sAg.daGqhkxejoFFC-fGqAn7-VrmfRuYvOyx9_PpWhQaglMg.JPEG.ryustore9799%2FFCCC365C-0C48-4949-B4A6-DFC21FFE4019-23380-0000029F799287B8.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAxMDdfNSAg%2FMDAxNjczMDk1NTQ4OTk2.uXbAigEoWuZlOYKaAZ1CIUR8Ry6sZuDlbCdTmJ28U3kg.sqAu-Ts4sFKJpnZmzO6872DOKYYr64_8-tWTGyEk71Mg.JPEG.rladbal6935%2FIMG_1817.jpg",
+      ],
+      phoneNum: "0507-1373-5532",
+    },
+    {
+      name: "개러지 로스터",
+      area: "상도역 5번 출구에서 376m",
+      workingTime: "08:00-21:00, 20:45 lastOrder",
+      price: "4000원-",
+      location: { X: 126.95073, Y: 37.5005939 },
+      description:
+        "1인이 운영하는 로스터리 매장입니다. 각종 원두, 드립백을 판매하며 잠시 쉬었다 갈 수 있는 공간이 있습니다. 대부분의 음료는 디카페인으로 주문가능합니다. 테이크아웃은 1000원 할인되며 개인컵 이용시 500원 할인이 제공되고 있습니다.",
+      imageList: [
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220609_3%2F1654777956016RVRX6_JPEG%2F%25C0%25CE%25BD%25BA%25C5%25B8.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA5MDRfOTMg%2FMDAxNjYyMjgzNTQ4Mzc5.litU1j3dqBakVA1z_KcQZRRqNqbHiRExiTCbpNeHCSYg.JQcexuAodAnSk3JuIkHRdAQNTShOhq203qWgAm8IUBYg.JPEG.allin_jseolyvv%2FIMG_3362.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA5MDRfMTI1%2FMDAxNjYyMzAwMjQ4NjMy.KOt5kDuoq2B7opjQFGnm6m2yxAmydBo8pPeKwngLK8kg.EzISNpGoeHvToWj7K5jow0PCV2JD4U2NEiUInUEm5xQg.JPEG.ggggg91004%2F1662300239909.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220921_156%2F1663760508820ML29F_JPEG%2FA3F28892-AB94-41CF-89B3-C9A49024D0DB.JPG",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220722_299%2F1658446416755aPNll_JPEG%2FIMG_9011_%25BA%25B9%25BB%25E7.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMTJfMzAg%2FMDAxNjc4NjE2Njg4NzYw.piA9yFavf9lT8tNBQSa2mYcdxDis2zgyUzVCbZnjTvIg.l9x4VGzRaeCML-VE155Q0sGGezP1wMl8pc5B38DoU04g.JPEG%2F6C69882B-9030-4867-88C8-F643C0D01D67.jpeg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMDlfMTY1%2FMDAxNjc4MzU3NTczMDUz.eWKrHRb-ahdAcVqG8dW2m75AKCdMfC2Ya7brWCQxPPwg.OWJM061rREc2R-DVeoxkjTacfMH0PpwU_P-LO0NuAHEg.JPEG%2F1FB810B7-A5BE-4033-96E2-7488C9AFBF20.jpeg",
+      ],
+      phoneNum: "0506-881-1590",
+    },
+    {
+      name: "케이크팝",
+      area: "중문",
+      workingTime: "11:00-21:00",
+      price: "3000원-",
+      location: { X: 126.957439, Y: 37.4949383 },
+      description: "",
+      imageList: [
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20210910_276%2F163120756361346hdk_JPEG%2F9RVulnPcxsQfiZ5UskebnJ7W.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20210909_157%2F163117485937219XvB_JPEG%2Fx4oR88CYF-DMzdymHPbMncfm.jpeg.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20190418_35%2F1555562854413AEmDs_JPEG%2FPN7lkiq3_hXebl5ZWZH3VY_C.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAyMjFfMzUg%2FMDAxNjc2OTU5MDc0OTM5.K0CRwiACoK5X3GbnqHa1IG46V6dbyY2Z27gAEq31ohQg.Q0kG_vZMchVJ3S2iwFg3sRmGNbTvJprlmVP3rsq6zYkg.JPEG%2FC77E8EF9-77E3-44F0-8756-73F5963E5722.jpeg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTExMTdfMiAg%2FMDAxNjM3MTQ0MDA4NzQw.dc44-ppo4TsTDiOh23uzo5SA_Uus9YwpepyU16tBdxAg._-J6W2XdgT3gBzybIxIOhExMj2hIk8F6MB74WhGTFksg.JPEG.eksrhgo3%2FKakaoTalk_Photo_2021-11-17-16-55-22_010.jpeg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20190418_220%2F1555562859589H0aqj_JPEG%2FSlClHgswY0MHB5RWoPaB9fAj.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAyMTJfMjc5%2FMDAxNjc2MTc4MDUxNDc4.JJ9UfRQ0yZqFIAL6ymEim56K0mFE0n0G99QYZA2e22Ig.rEuKSAT7KD7K-HfshaZLcHXMs45Icu_Fryh1qPx3JTUg.JPEG%2F20230126_154949.jpg",
+      ],
+      phoneNum: "02-825-8799",
+    },
+    {
+      name: "달쿠마",
+      area: "중문",
+      workingTime: "11:00-20:00, 월화 휴무",
+      price: "4000원-",
+      location: { X: 126.954307, Y: 37.4941262 },
+      description:
+        "안녕하세요. 언덕 위 작은 과자점 달쿠마입니다. 매장 내 모든 디저트는 매장에서 직접 정성껏 만들고 있습니다. 그날의 라인업은 인스타그램에서 확인하실 수 있습니다. 단체주문 및 홀케이크 주문은 3일 이전에 확인해주세요",
+      imageList: [
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20210131_45%2F1612030583893PHREa_JPEG%2FgHsFGODu7t1a64cQVesND-DG.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20210131_170%2F1612030624821bt82W_JPEG%2FCwFn2dEyEuZ_etvHVdGVkpT4.JPG.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEyMjlfNjkg%2FMDAxNjcyMzA0MjM2NjY3.zSnd-mtEn-97k_a7_f9iUqgGn9I0iukf-iow2mQB5Ncg.mB0HGmqFST42yTOxkidnFMZqqww-y01vqV4yNnpdBegg.JPEG%2F20221229_144621.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAzMThfMTIz%2FMDAxNjc5MTExNzg3NzUx.ERhrB_TkbzsU1y-e_PM3JLr1rB7CWIr9yaUJZB6k_T4g.og9Bb4tBpyDXleHFH5yl3ZCwMmJdP_kC8HKf8BV9ITkg.JPEG.woney3984%2Foutput_2107488542.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAxMDVfMzcg%2FMDAxNjcyOTI3MDQxNTIy.ga6q8tLWa3EKUi-s6y4Z5Mb2qVQlfShOWLUZdbNjTHkg.6F_FZAgJBlN-Rhv4Dwf24jSGawDj4tlak380WMOEzhQg.JPEG%2F2ED86A66-E95C-4748-A330-4416E39CBE9A.jpeg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA2MDNfMTk4%2FMDAxNjIyNjQ5NTc4NDE5.6XTrfsc9fV3IKW12TchY-QrWUUnAnOzkD0CBw7LGPbsg.h-Wc9L1I5tuRUUP2zjmN2weAX1qqi3YjwGEWAzaz_OAg.JPEG.ziziunniejin%2FIMG_7060.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200219_22%2F1582094084951S2fVM_JPEG%2FMW34toYYup2-68aoC009Nstn.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEyMjdfODcg%2FMDAxNjcyMTE4NTUwNzkw.2hCk0VTwj9UFVsApfQ2vJvI7sI4QcPialc8uJL9VCYQg.GXOpYy6NO7pYalqIQTw-nbOjVONba9bea1eJoS7FtQMg.JPEG%2F20221227_100415.jpg,",
+      ],
+      phoneNum: "0507-1497-2001",
+    },
+    {
+      name: "슈니퐁당",
+      area: "중문",
+      workingTime: "",
+      price: "3500원-",
+      location: { X: 126.957439, Y: 37.4949383 },
+      description:
+        "*차원이 다른 제대로 만든 크레이프 안녕하세요, 저희는 식품생명공학자, 디저트전문 제과제빵사가 오랜기간 연구하고 운영하고 있는정통 크레이프 전문점입니다. 저희 크레이프는 정성을 가득 담아 가장 좋은 재료를 엄선하여 비법의 10가지 이상의 재료를 황금비율로 배합하여 하룻밤 숙성한 쫀득하고 부드러운 크레페 반죽입니다.직접 만든 수제쇼콜라소스와 하루2번 이상 새로 휘핑한 부드러운 수제생크림, 쫀득한빵, 그리고 신선한 제철과일의 조합으로 입안의 행복을 선사해드리겠습니다.",
+      imageList: [
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAyMDdfMTg4%2FMDAxNjc1NzYzNzgzNTA4.dp2HrYd8zxynyUIJ34Fb1aSm0njyi8WGPPc_StpctuYg.8P_n42CwokHms4qYQCpaLtYtar9_RFaek6JdioAOOyMg.JPEG.144767%2F20230203%25A3%25DF170932.jpg",
+      ],
+      phoneNum: "",
+    },
+    {
+      name: "미학당",
+      area: "정보관 위",
+      workingTime: "11:00-20:00, 월화 휴무",
+      price: "4000원-",
+      location: { X: 126.960538, Y: 37.494543 },
+      description: "",
+      imageList: [
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200831_167%2F15988058506004wolJ_JPEG%2FKakaoTalk_20200831_014243865.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220804_190%2F1659622953127DvvtQ_JPEG%2FKakaoTalk_20220804_232023908.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220804_154%2F1659622985051Nyti9_JPEG%2FKakaoTalk_20220804_191300834.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMTRfMjAx%2FMDAxNjc4Nzk1ODc3MDE2.1TjS3FEwRokAjgAZipnmoqx04DXl67mgfJxVAbzWG0Ig.jGmeVB3klry_FJsiSxoGHXOBoGFRG3AeBt7MbCvrD6cg.JPEG%2F8091398B-3F96-4C33-BE92-EDA81032EFDB.jpeg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMTlfMTE4%2FMDAxNjc5MTg1OTUyODM4.ZDJKlrdRymWBZRwA8r69tBixgs8Cmw6BvcKE9yu-VRcg.DR_fQLHI5TMcoWWybG4RpEMPIsFbH6iJ-11gZEiLpy4g.JPEG%2F37940C2D-431E-425B-B856-A62E657046BF.jpeg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAyMjVfMTIy%2FMDAxNjc3MjkwMjI0OTk2.DSiNiE-7luBYeKVMBpwb6-tIHiZAyLGMgiqrUkVqROkg.9PdlWm1wIIKHyckica-AOB67W5pDBm4szSsTqc3VJzog.JPEG%2F20230223_184826.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAyMjVfMjI3%2FMDAxNjc3MjkwMjQzMTA3.A9kY_BxMnlcGinIyk4iRcklTY0nK1XUYa0wG1DUH7O8g.0eZg06tC5vmX1Mlkog3XE6WcaoOlUlisp0p2Uzx4jfIg.JPEG%2F20230223_133100.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDEwMDhfMTc0%2FMDAxNjAyMTQ5NzE4Nzk2.l2BLCLu_Cqn3EQxRUZq8buG_jVk1kK87-g-N2Szmnrcg.HI9CIMZ-EA9__hFEyj9TK8gR26OsL74y5Y0ZYrIX5xcg.JPEG.aintadult%2FIMG_6130.jpg",
+      ],
+      phoneNum: "0507-1497-2001",
+    },
+    {
+      name: "가춘",
+      area: "정문",
+      workingTime: "10:00-21:30, 토일 휴무",
+      price: "3000원-",
+      location: { X: 126.953525, Y: 37.496928 },
+      description:
+        "소금단팥빵이 예술이라는 리뷰가 많다. 진짜진짜진짜 맛있다고 한다. ",
+      imageList: [
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221208_291%2F16705000371241fnPh_JPEG%2F59A38B13-C3B2-49D3-AF70-6856962510D7.jpeg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221208_198%2F1670500037007P2dwx_JPEG%2F22B4CBF3-E572-4999-B9C2-C51AFE1BD1C0.jpeg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221208_171%2F16705000680049VqJy_JPEG%2F022E1A54-8CB2-44BB-9569-C9E72A71990E.jpeg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMTZfMTgw%2FMDAxNjc4OTQxMTMwNzA4.pwqaizNcz-KPP9K-Jq3pkNoNuf6bfQMuLeiiL8wt8Cog.cEFzAu7BBedvnjb2N6ukvEgOYkxERy12ZBgQS7NwZNUg.JPEG%2F20230316_121055.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMTRfMTg3%2FMDAxNjc4NzkzNTg5Mzkz.e4PD4T4HFOUzvhAEGy00pZdn1AZlMehiBY6lJGU7tjEg.bEGkmdfqmYITCs8UMTPNyb4CHJ3OXt_UKP1O5XjHdPog.JPEG%2F1678793576442.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMDhfMzUg%2FMDAxNjc4Mjg0MzQ2Mzcw.fEK57VtJ2poNz2kyG4HJ0bO1KKI2aAgvt76B30WUawIg.iTzIFf9g8U4RkOZKhnv72pvn3lWvR9nQTeykuopti9Qg.JPEG%2F28F93D9C-4AB8-40D4-9636-D0D6981C6AFE.jpeg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjAzMzFfMTEy%2FMDAxNjQ4NzM1MjQxMjc4.t5Saq5CCBEMwq0ejZbZL1TDxJx0b0AgNLgRi5DS5NQUg.9Cm2Z_LOBVO6JUb7hMLT0dqr46I5MrvH42Eqz07Fp74g.JPEG.rnwndud0626%2F20220319%25A3%25DF145224.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTEwMDdfNzEg%2FMDAxNTcwNDU2Mjc1ODM5.5a5apv7isFRfXMQTcPBxnkX4j9N_jDNbwELymQxq7xkg.9WQsGinWuykQOvf-wIZshsX_FD80IIW8bPaHZKITy1Ig.JPEG.kingsister73%2F1570454736876.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221208_211%2F16705000372875MJbb_JPEG%2FE1CA19B9-4AA6-4F4A-BB7A-0FBDB41E0F60.jpeg",
+      ],
+      phoneNum: "0507-1438-3653",
+    },
+  ],
   japanese: [
     {
       name: "황궁",
@@ -723,6 +893,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODAyMDJfMTg3%2FMDAxNTE3NTUyOTc1NTgy.AbfIcf_cn54KbpxiFxdiewHhYREsWvrsfUbS7DBy5ywg.pTYMdB4a41JKfE6SO7ParuIApma3Im_RhUmX7PyZZ_Ug.JPEG.lolooii%2FKakaoTalk_20180202_010757119.jpg",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA1MzBfMjc0%2FMDAxNjIyMzUyNjg5ODc4._f12x--tm4UQVshPJdNYb0SupkDhlrC0Y7gBr0f-0sEg.e-Sag7tWNdBOtPvlOcWLEsf7kBJZARxGUAGK8WnCiA8g.JPEG.boyoon0125%2F1622352386805.jpg",
       ],
+      phoneNum: "032-363-2777",
     },
     {
       name: "연래춘",
@@ -742,6 +913,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20220421_294%2F1650532402277LNl2Y_JPEG%2Fupload_0ad911d5821d3cb2759879057b145c7d.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20220421_65%2F1650532426286cgQ6J_JPEG%2Fupload_4c56b2ef54d3ec07cfbe37e4af411e1a.jpg",
       ],
+      phoneNum: "032-363-2777",
     },
     {
       name: "취향",
@@ -755,6 +927,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAyMDRfNzcg%2FMDAxNjc1NTA2NDQ0MjE2.cBWeWGK3-fX-UqKb5ZHCdrU72o6dN4OlyfwFvmU6DNsg.yoEbqCHCQmU5-uPTBgTvH2yR9uyyJyxshMQs4VLpXVQg.JPEG%2F20230204_121525.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjA4MTFfODkg%2FMDAxNjYwMjAyNzk4NDEy.NadNGlNC5T41ft_qgIs7ykeA5_VOMxrblPzoR18yl8sg.R07Pvd3yrNenQD7xn74DEBcbitp12z8UyN3tUsoshI0g.JPEG%2Fupload_124b6b7061e065f1ed5e84a55f04195b.jpg",
       ],
+      phoneNum: "0507-1412-5513",
     },
     {
       name: "긴자료코 숭실대입구점",
@@ -775,6 +948,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjExMTRfMjU1%2FMDAxNjY4NDI4MjM2NTA3.Oi0JhPvnwsMVXED3YdfHW-gzOmvvB3DtYdqap2LxCwkg.NI3fjTP_VjwiWhrkMocp1LlOGZIF_cMFb323EmGr3eYg.PNG.mj_616%2Fimage.png",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjExMDZfNzYg%2FMDAxNjY3NzM4NDQ5MTk0.TWx2hW1QTD3dvRAFO1ufHX62V7bFr_yZcgcdKZYKoVsg.OboJuc8me0Pm54KTfPoc-HpJJTeZwoq3qvOh2Jp8Z4Ig.JPEG.always_stay_home%2FSlide8.JPG",
       ],
+      phoneNum: "02-816-8160",
     },
     {
       name: "철탄 함바그 텐동",
@@ -794,6 +968,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjExMThfMjcz%2FMDAxNjY4Nzc0ODA1MjI0.mXiYdui8Cc1DTpsCJgFw6TlVx24trsbE42TIWiHZ3aYg.5-5pU71aHn2s3weBrrvUBqdbPxYBed9mC8-pT_fBA4Eg.JPEG%2F20221102_124454_HDR.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjExMThfMjg0%2FMDAxNjY4Nzc0ODA1NjA5.Q6odGxv2aVtH5XHvUKh-KzTgNhjUYEqGQ5O3yWr_NxMg.ojR6tNcRJB-juCylPoGeC-6HusYpp1wWERj4mH8irMYg.JPEG%2F20221102_124458_HDR.jpg",
       ],
+      phoneNum: "0507-1305-0504",
     },
     {
       name: "숑숑돈까스 숭실대점",
@@ -812,6 +987,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMTJfNzkg%2FMDAxNjc4NjE0MzE3MTM5.07wbowiFcSwXhO3z1KPe_u2dxk3CHPICMa5RWP0rc3wg.N6Dkei1Q40bHgHHEAUIZG3HsmTkfJstZYm2HwHZVOC0g.JPEG%2F1FF0E416-5E12-4FDA-B554-71D59FA295A2.jpeg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMTJfODMg%2FMDAxNjc4NjE0MzE3NzQ0._B3vdkcxM2kvrQcEOWbM8EJxsSRb1aG-ZHZmF9Hx58Mg._9aFvOgIPa6JvuMy-jOKmrQCYz2Y1I31CAJtmDF2LLgg.JPEG%2F25FED7FC-FDA9-4B80-A19D-50FC28D98F54.jpeg",
       ],
+      phoneNum: "02-3280-3944",
     },
     {
       name: "은화수식당 숭실대점",
@@ -830,6 +1006,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODA5MDhfMjQz%2FMDAxNTM2MzQwNDAyNjE2.igAS4cO_duAqUmhz1hqL2aZ2k47vN6A6-3UBxBC11r8g.2RzyWcD_zmbnZrgE50VigQc_lu7CYOEQGZ2-q5B0Q2kg.JPEG.tkdwns5261%2FKakaoTalk_Moim_4YZ8WGDrorVLydrmUTybTHRdTHR5Gp.jpg",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA5MTBfMTkw%2FMDAxNjMxMjM1OTc0MDAy.kLmp-ab1oP1G8WZ-BR0HiP62eWBt_ug9uJ1UyM7B7Ogg.DZqDayCYDCsJMN5NYsFEs3c504iNKNsm9SVi5nmYGLEg.JPEG.lovelymi_%2FIMG_1965.jpg",
       ],
+      phoneNum: "02-3280-3944",
     },
     {
       name: "멘동",
@@ -850,6 +1027,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20150831_109%2F144101033058726czm_JPEG%2FSUBMIT_1363326537370_31818931.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjExMjhfNjIg%2FMDAxNjY5NjM0NTIzMTY2.niYy0SriHzAEW-1ZMZAHkqQO5BFRwjUkGh76D6JMUQUg.u9HE3IVMipLr7n-pwpR4PWkeb9sFNUwugENgHCO5d6gg.JPEG%2F1669633766446.jpg",
       ],
+      phoneNum: "02-821-2146",
     },
   ],
 };
