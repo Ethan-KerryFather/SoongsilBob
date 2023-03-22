@@ -823,13 +823,33 @@ const stores = {
       phoneNum: "0507-1497-2001",
     },
     {
+      name: "투썸플레이스",
+      area: "중문",
+      workingTime: "",
+      price: "4500원-",
+      location: { X: 126.957439, Y: 37.4949383 },
+      description: "10:00-22:00, 21:45 lastOrder ",
+      imageList: [
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTEyMjFfOCAg%2FMDAxNjQwMDEzMDIyOTk4.2Plah2urYunzHeGDP0CSlhE1N9sXUEL5t5VriCYT4jog.Ymv3KLjWUhl_QDV1dHkUldfhvLgXMUr5Yw6GM4VIZu0g.PNG.kokokoshin%2Fimage.png",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxNzA3MjVfMjgx%2FMDAxNTAwOTM4MTMyOTc2.OsoA-8rqW6QtGwzJ7dQICRzIO8zYW9zKntXMMn_651Ug.seU8I3NEDO2LGLYGLX9_s124i_Q1WZSR6_9GRyEWb6Qg.JPEG.hyangmicg999%2F2e0ad4c2-635d-459f-856d-2fbf9f5dab28.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTEyMjFfMTU0%2FMDAxNjQwMDEzMDY5MjAy.XV9ZkoPY71Ycw9UEEJNcKPa4UuQOsV9Yp9jsuiiAg0sg.TRqsXG5i7qs1jxMGV-r91CnXYCxhvGZttgWu9YGw53Qg.PNG.kokokoshin%2Fimage.png",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTEyMjFfNzkg%2FMDAxNjQwMDEzMDUzOTc2.ocoLCa-7woCH3WaQ6kak9dKdJDc_e7PYuC3K6dI7J2Yg.fQo1iISAtNHQc3LHxKcaYKC46AwvtyhjTS7da6m6tHAg.PNG.kokokoshin%2Fimage.png",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEyMjRfMTU1%2FMDAxNjcxODcwNjMyMjcx.W0izGWqX7iQ6Btdiefyp1PLj1xOx88593jTsk0pKO6Mg.WS-NY_eIMdOzSHfJk-0xun-9SLocBH5-dbwjWvo6bdgg.JPEG.144767%2F1671870576250.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEyMjRfMTAg%2FMDAxNjcxODcwMTg0ODY1.2TDtJn5NmY9lJ3YcoDAjEBURvlltJ0bHBV-okkFoELgg.726ihyx9pg1gQSGLDhcJQo1Zs6m7zbtd2W6bSMShQD0g.JPEG.144767%2F1671870179458.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEyMjRfMTE0%2FMDAxNjcxODcwNjI5NzQ3.E4nvK2rVmuPrL8cAn1u85C63YXxTbzSG_IMyC3HhuzMg.B3jdFhDC7AGKQAvMmbytBhQBLIe-ZcMlR5I0Qa2lUmkg.JPEG.144767%2F1671870576519.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODAyMTBfMjIg%2FMDAxNTE4MjE5NDE1NDcx.bTS4bviCx2LPpSWelCsWCSxRMjNklFgBhKZoxpInLnEg.UAuW02B7U8ME9rPIrtmvSY5TI-L2BoE0uPA3OX4P_ugg.JPEG.july773%2FIMG_9293.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTEwMTVfNTgg%2FMDAxNTcxMDY1Mzk2MDk3.qG_BatP6aLnWUg9kd4HnhpKh47PXvxOSmNs5oBh4sAsg.aWZTu7uXVWmbNkEsz-xcqcWroi1DQi44_1OIyglfzh4g.JPEG.jjoooni1004%2FIMG_7262.jpg",
+      ],
+      phoneNum: "010-8425-0246",
+    },
+    {
       name: "슈니퐁당",
       area: "중문",
       workingTime: "",
       price: "3500원-",
       location: { X: 126.957439, Y: 37.4949383 },
       description:
-        "*차원이 다른 제대로 만든 크레이프 안녕하세요, 저희는 식품생명공학자, 디저트전문 제과제빵사가 오랜기간 연구하고 운영하고 있는정통 크레이프 전문점입니다. 저희 크레이프는 정성을 가득 담아 가장 좋은 재료를 엄선하여 비법의 10가지 이상의 재료를 황금비율로 배합하여 하룻밤 숙성한 쫀득하고 부드러운 크레페 반죽입니다.직접 만든 수제쇼콜라소스와 하루2번 이상 새로 휘핑한 부드러운 수제생크림, 쫀득한빵, 그리고 신선한 제철과일의 조합으로 입안의 행복을 선사해드리겠습니다.",
+        "*차원이 다른 제대로 만든 크레이프 안녕하세요, 저희는 식품생명공학자, 디저트전문 제과제빵사가 오랜기간 연구하고 운영하고 있는 정통 크레이프 전문점입니다. 저희 크레이프는 정성을 가득 담아 가장 좋은 재료를 엄선하여 비법의 10가지 이상의 재료를 황금비율로 배합하여 하룻밤 숙성한 쫀득하고 부드러운 크레페 반죽입니다.직접 만든 수제쇼콜라소스와 하루2번 이상 새로 휘핑한 부드러운 수제생크림, 쫀득한빵, 그리고 신선한 제철과일의 조합으로 입안의 행복을 선사해드리겠습니다.",
       imageList: [
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAyMDdfMTg4%2FMDAxNjc1NzYzNzgzNTA4.dp2HrYd8zxynyUIJ34Fb1aSm0njyi8WGPPc_StpctuYg.8P_n42CwokHms4qYQCpaLtYtar9_RFaek6JdioAOOyMg.JPEG.144767%2F20230203%25A3%25DF170932.jpg",
       ],
@@ -853,6 +873,27 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDEwMDhfMTc0%2FMDAxNjAyMTQ5NzE4Nzk2.l2BLCLu_Cqn3EQxRUZq8buG_jVk1kK87-g-N2Szmnrcg.HI9CIMZ-EA9__hFEyj9TK8gR26OsL74y5Y0ZYrIX5xcg.JPEG.aintadult%2FIMG_6130.jpg",
       ],
       phoneNum: "0507-1497-2001",
+    },
+    {
+      name: "하우스무드",
+      area: "중문-정보관 사이",
+      workingTime:
+        "08:00-22:00, 토요일은 11:00-, 일요일 12:00-, 공휴일 12:00-21:00",
+      price: "4500원-",
+      location: { X: 126.958751, Y: 37.4944613 },
+      description:
+        "디자인과 휴식이 어우러진 모두의 휴식공간 하우스무드입니다:)",
+      imageList: [
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220606_86%2F1654485412467Jrmms_JPEG%2F20220524_195156.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220922_175%2F1663827928388u5nDY_JPEG%2FKakaoTalk_20220920_165320307_08.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220606_160%2F1654485563655UlDwo_JPEG%2F20220522_220349.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMjJfNDkg%2FMDAxNjc5NDYwOTM0NDM3.IxJD7Q4sqjHYqlBKuc32qyJIwJo5ZfDg0Yzav3IOXpQg.ugEUa3eF_mRY88BCjALhsHwTS8NQUgdgjBOcRCSAh0wg.JPEG%2F20230319_140844.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMjJfMTU4%2FMDAxNjc5NDYwOTM0NzEz.n50Quw_EEX6yrAF5IBX41ZHeLPg254Ntd3VKZEKXGl4g.At-akIqQFhczrok0QPznpxytRLlsKxPLeBvtgt9sVKog.JPEG%2F20230319_140331.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMjJfMjg4%2FMDAxNjc5NDYwOTM0NDY0.kGp408XesHpK0RnIs0iDyTZIqtTRdDxBAqQRkGi584kg.OZDwa4Cjjo295DUehsjW38sNIU2pGPJBL2QIJyno6AUg.JPEG%2F20230319_140342.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjExMjBfMjg1%2FMDAxNjY4ODcyOTcxNzUy.Q040XdOiStY-sZ9qv3AYCnKQE3ZKbUT7Xuwsr3q-IZYg.tgI6DqISzPsM4kLP5ZN-8C9g3THXCHTdLl3GzqFV5bsg.JPEG.dpgiddl%2FIMG_6154.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEyMDhfMTQ4%2FMDAxNjcwNDkyNzk0NDgz.Mqh3G4rMjBZpbW2HLwrkG-Y4GYQYKFzkdPdInoYlggMg.fyjTfkb2f-Xs6DgVhoXHNAON9tuiSnkbs4lvPV6jOBUg.JPEG.jfcmonkey3%2FKakaoTalk_20221208_180308035.jpg",
+      ],
+      phoneNum: "0507-1319-9404",
     },
     {
       name: "가춘",

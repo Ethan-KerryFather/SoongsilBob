@@ -37,6 +37,7 @@
     "react-native-tab-view": "^3.4.1",
     "react-native-vector-icons": "^9.2.0",
     "react-native-webview": "11.26.0",
+    "react-native-wheel-of-fortune": "^1.5.4",
     "styled-components": "^5.3.9"
   },
   "devDependencies": {

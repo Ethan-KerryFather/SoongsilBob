@@ -14,6 +14,7 @@ import { useRoute } from "@react-navigation/native";
 import RankingHome from "../ui/ranking/RankingHome";
 import UnivFoodScreen from "../ui/univFood/UnivFoodScreen";
 import { RFPercentage } from "react-native-responsive-fontsize";
+import RouletteScreen from "../ui/roulette/RouletteScreen";
 
 const HomeStack = createNativeStackNavigator();
 const EnvironmentStack = createNativeStackNavigator();
@@ -73,6 +74,7 @@ function HomeStackScreen() {
         component={StorePage}
         initialParams={myLocation}
       />
+      <HomeStack.Screen name="RouletteScreen" component={RouletteScreen} />
     </HomeStack.Navigator>
   );
 }

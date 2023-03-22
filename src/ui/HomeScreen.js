@@ -91,7 +91,13 @@ function HomeScreen({}) {
           </View>
         </View>
       </BottomSheet>
-      <View style={styles.upperContainer}>
+      <Pressable
+        style={styles.upperContainer}
+        onPress={() => {
+          console.log("routtlete");
+          navigation.navigate("RouletteScreen", { category: "밥집 정하기" });
+        }}
+      >
         <Text
           style={{
             fontFamily: "gowun-bold",
@@ -101,7 +107,7 @@ function HomeScreen({}) {
         >
           숭실밥집
         </Text>
-      </View>
+      </Pressable>
 
       <View style={styles.middleContainer}></View>
       <View style={styles.lowerContainer}>
