@@ -43,17 +43,17 @@ function App() {
           return;
         }
 
-        await console.log("위치 권한 이상 없음");
-        await console.log("위치를 가져옵니다");
+        console.log("위치 권한 이상 없음");
+        console.log("위치를 가져옵니다");
         try {
           return await Location.getCurrentPositionAsync({
             distanceInterval: 10,
             timeInterval: 20000,
             accuracy: Location.Accuracy.Balanced,
           })
-            .then((location) => {
+            .then(async (location) => {
               console.log("위치 가져오기 완료\n위치 데이터: ");
-              setLocation(location);
+              await setLocation(location);
             })
             .catch((error) => console.log(error));
         } catch (error) {

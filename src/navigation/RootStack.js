@@ -15,6 +15,13 @@ import RankingHome from "../ui/ranking/RankingHome";
 import UnivFoodScreen from "../ui/univFood/UnivFoodScreen";
 import { RFPercentage } from "react-native-responsive-fontsize";
 import RouletteScreen from "../ui/roulette/RouletteScreen";
+import {
+  Image,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  View,
+} from "react-native";
 
 const HomeStack = createNativeStackNavigator();
 const EnvironmentStack = createNativeStackNavigator();
@@ -25,34 +32,62 @@ const Tab = createBottomTabNavigator();
 const NotifyTab = createMaterialTopTabNavigator();
 
 function NotificationScreen() {
+  const images = [
+    "https://photos.app.goo.gl/sqW6q1Jt74GDU8Hp6",
+    "https://lh3.googleusercontent.com/pw/AMWts8B6dSZJSsIsFY3iExPMEQ51M8KGAmjc_Dt59NkClNdPY0SOnTmLOCVWz0CjAnMgXgOYZ9M-uXMzSupiC6_GFq-2ucEoiqUt0ZGUgHTld7fVlwZLZiMC9qXdynGQrwEF30ahdvSzGvo1iYK670kiaBc=w933-h933-s-no?authuser=0",
+  ];
   return (
-    <NotifyTab.Navigator style={{ paddingTop: 30 }}>
-      <NotifyTab.Screen
-        name="notify"
-        component={NotifyScreen}
-        options={{
-          title: "공지",
-          tabBarIcon: () => (
-            <AntDesign name="notification" size={30} color="black" />
-          ),
-          tabBarStyle: {
-            height: RFPercentage(10),
-          },
-        }}
-      />
-      <NotifyTab.Screen
-        name="event"
-        component={EventScreen}
-        options={{
-          title: "이벤트",
-          tabBarIcon: () => (
-            <AntDesign name="notification" size={30} color="black" />
-          ),
-        }}
-      />
-    </NotifyTab.Navigator>
+    <View style={notificationStyles.container}>
+      <View style={{ height: RFPercentage(30) }}>
+        <Image
+          source={{ uri: images[1] }}
+          style={{ width: "100%", height: "100%" }}
+          resizeMode="stretch"
+        />
+      </View>
+      <View style={{ flex: 1 }}>
+        <NotifyTab.Navigator
+          style={{ flex: 1 }}
+          tabBarPosition="top"
+          screenOptions={{
+            tabBarStyle: {
+              height: RFPercentage(6),
+              justifyContent: "flex-start",
+            },
+            tabBarIndicatorContainerStyle: {
+              backgroundColor: Colors.basicColor.magentaTrans2,
+            },
+            tabBarActiveTintColor: "black",
+            tabBarLabelStyle: {
+              fontSize: 15,
+              fontFamily: "gowun-bold",
+            },
+            tabBarBounces: true,
+          }}
+        >
+          <NotifyTab.Screen
+            name="notify"
+            component={NotifyScreen}
+            options={{
+              title: "공지",
+            }}
+          />
+          <NotifyTab.Screen
+            name="event"
+            component={EventScreen}
+            options={{
+              title: "이벤트",
+            }}
+          />
+        </NotifyTab.Navigator>
+      </View>
+    </View>
   );
 }
+
+const notificationStyles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: "white" },
+});
 
 function HomeStackScreen() {
   const route = useRoute();

@@ -1,6 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useRef } from "react";
 import { View, Text, StyleSheet, Pressable } from "react-native";
+//@ts-ignore
 import SlotMachine from "react-native-slot-machine";
 
 function RouletteScreen({ route }) {
@@ -13,10 +14,14 @@ function RouletteScreen({ route }) {
     });
   }, [navigation]);
 
-  const slotRef = useRef(null);
+  const slotRef = useRef();
 
   const startSlot = () => {
-    slotRef.current.spin();
+    if (slotRef.current) {
+      slotRef.current.spin();
+    } else {
+      console.log("slotRef is null");
+    }
   };
 
   return (
@@ -48,7 +53,11 @@ function RouletteScreen({ route }) {
         reelConfig={{ tension: 200, friction: 10, mass: 0.5 }}
         style={{ height: 600 }}
       />
-      <Pressable onPress={startSlot}>
+      <Pressable
+        onPress={() => {
+          startSlot();
+        }}
+      >
         <Text>시작</Text>
       </Pressable>
     </View>
