@@ -58,7 +58,7 @@ function App() {
             .catch((error) => console.log(error));
         } catch (error) {
           console.log("에러발생. 재시도");
-          return Location.getCurrentPositionAsync({
+          return await Location.getCurrentPositionAsync({
             distanceInterval: 10,
             timeInterval: 20000,
             accuracy: Location.Accuracy.Balanced,
