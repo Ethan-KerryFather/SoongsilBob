@@ -23,57 +23,79 @@ function App() {
   });
   // 위치권한 요청
   useEffect(() => {
-    const applyLocationAndHideSplash = async () => {
+    const getLocationAsync = async () => {
+      console.log("권한을 체크합니다");
+      const { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== "granted") {
+        setErrorMsg("위치 권한 문제 발생");
+        return;
+      }
+      console.log("위치 권한 이상 없음");
+      console.log("위치를 가져옵니다");
       try {
-        await getLocation();
+        const location = await Location.getCurrentPositionAsync({
+          distanceInterval: 10,
+          timeInterval: 20000,
+          accuracy: Location.Accuracy.Balanced,
+        });
+        console.log("위치 가져오기 완료\n위치 데이터: ");
+        setLocation(location);
       } catch (error) {
-        console.log("error", error);
+        console.log("에러발생. 재시도");
+        const location = await Location.getCurrentPositionAsync({
+          distanceInterval: 10,
+          timeInterval: 20000,
+          accuracy: Location.Accuracy.Balanced,
+        });
+        console.log("위치 가져오기 완료\n위치 데이터: ");
+        console.log(JSON.stringify(location));
+        setLocation(location);
+      } finally {
+        SplashScreen.hideAsync();
       }
     };
-    applyLocationAndHideSplash();
-    return () => {};
+    getLocationAsync();
+    return () => {
+      setLocation(null);
+      setErrorMsg(null);
+    };
   }, []);
 
-  const getLocation = async () => {
-    console.log("권한을 체크합니다");
-    await Location.requestForegroundPermissionsAsync().then(
-      async ({ status }) => {
-        if (status !== "granted") {
-          setErrorMsg("위치 권한 문제 발생");
-          return;
-        }
-
-        console.log("위치 권한 이상 없음");
-        console.log("위치를 가져옵니다");
-        try {
-          return await Location.getCurrentPositionAsync({
-            distanceInterval: 10,
-            timeInterval: 20000,
-            accuracy: Location.Accuracy.Balanced,
-          })
-            .then(async (location) => {
-              console.log("위치 가져오기 완료\n위치 데이터: ");
-              await setLocation(location);
-            })
-            .catch((error) => console.log(error));
-        } catch (error) {
-          console.log("에러발생. 재시도");
-          return await Location.getCurrentPositionAsync({
-            distanceInterval: 10,
-            timeInterval: 20000,
-            accuracy: Location.Accuracy.Balanced,
-          })
-            .then((location) => {
-              console.log("위치 가져오기 완료\n위치 데이터: ");
-              console.log(JSON.stringify(location));
-              setLocation(location);
-            })
-            .catch((error) => console.log(error));
-        } finally {
-        }
-      }
-    );
-  };
+  // const getLocation = async () => {
+  //   console.log("권한을 체크합니다");
+  //   const { status } = await Location.requestForegroundPermissionsAsync();
+  //   if (status !== "granted") {
+  //     setErrorMsg("위치 권한 문제 발생");
+  //     return;
+  //   }
+  //   console.log("위치 권한 이상 없음");
+  //   console.log("위치를 가져옵니다");
+  //   try {
+  //     Location.getCurrentPositionAsync({
+  //       distanceInterval: 10,
+  //       timeInterval: 20000,
+  //       accuracy: Location.Accuracy.Balanced,
+  //     })
+  //       .then((location) => {
+  //         console.log("위치 가져오기 완료\n위치 데이터: ");
+  //         setLocation(location);
+  //       })
+  //       .catch((error) => console.log(error));
+  //   } catch (error) {
+  //     console.log("에러발생. 재시도");
+  //     Location.getCurrentPositionAsync({
+  //       distanceInterval: 10,
+  //       timeInterval: 20000,
+  //       accuracy: Location.Accuracy.Balanced,
+  //     })
+  //       .then((location) => {
+  //         console.log("위치 가져오기 완료\n위치 데이터: ");
+  //         console.log(JSON.stringify(location));
+  //         setLocation(location);
+  //       })
+  //       .catch((error) => console.log(error));
+  //   }
+  // };
 
   if (location && fontsLoaded) {
     SplashScreen.hideAsync();
