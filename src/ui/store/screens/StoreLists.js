@@ -1,7 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React, { useState, useEffect } from "react";
-import { Snackbar } from "react-native-paper";
 import {
   FlatList,
   Image,

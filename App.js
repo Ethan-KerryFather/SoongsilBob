@@ -19,6 +19,7 @@ function App() {
   const [fontsLoaded] = useFonts({
     "gowun-regular": require("./assets/font/gowun-regular.ttf"),
     "gowun-bold": require("./assets/font/gowun-bold.ttf"),
+    "black-sans": require("./assets/font/black-sans.ttf"),
     MaterialCommunityIcons: require("@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"),
   });
   // 위치권한 요청

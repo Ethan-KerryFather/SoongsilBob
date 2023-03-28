@@ -26,7 +26,10 @@ export const NormalText = styled(Text)`
   font-family: "gowun-regular";
   font-size: ${RFPercentage(2)}px;
 `;
-
+export const BigText = styled(Text)`
+  font-family: "gowun-regular";
+  font-size: ${RFPercentage(4)}px;
+`;
 export const SmallText = styled(Text)`
   font-family: "gowun-regular";
   font-size: ${RFPercentage(1.6)}px;
