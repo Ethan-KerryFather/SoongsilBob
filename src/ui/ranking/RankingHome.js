@@ -16,7 +16,7 @@ import stores from "../../resource/stores";
 
 function RankingHome({ navigation }) {
   const foodStores = (category) => {
-    return stores.asian;
+    return stores.western;
   };
 
   useEffect(() => {
@@ -65,7 +65,28 @@ function RankingHome({ navigation }) {
           </Pressable>
         </Pressable>
         <View>
-          <FlatList data={foodStores} renderItem={}/>
+          <FlatList
+            horizontal={true}
+            data={foodStores()}
+            renderItem={({ item }) => {
+              return (
+                <View
+                  style={{
+                    width: RFPercentage(13),
+                    height: RFPercentage(13),
+                    backgroundColor: "gray",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    marginRight: 10,
+                    marginLeft: 10,
+                    borderRadius: 20,
+                  }}
+                >
+                  <Text>{item.name}</Text>
+                </View>
+              );
+            }}
+          />
         </View>
       </View>
     </SafeAreaView>
