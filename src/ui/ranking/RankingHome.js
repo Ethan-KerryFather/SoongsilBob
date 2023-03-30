@@ -19,6 +19,7 @@ import stores from "../../resource/stores";
 function RankingHome({ navigation }) {
   const foodStores = (category) => {
     return stores.western;
+    return stores.western;
   };
 
   useEffect(() => {
