@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import axios from "axios";
-import RenderHTML from "react-native-render-html";
 import * as cheerio from "cheerio";
-import { ScrollView } from "react-native-gesture-handler";
 
 const NotifyScreen = () => {
   const [source, setSource] = useState(null);
-  const noticeList = [];
   useEffect(() => {
     axios
       .get("https://scatch.ssu.ac.kr/%ea%b3%b5%ec%a7%80%ec%82%ac%ed%95%ad/")
@@ -25,11 +22,11 @@ const NotifyScreen = () => {
   }, []);
 
   return (
-    <ScrollView style={styles.container}>
+    <View style={styles.container}>
       <View>
         <Text>{source}</Text>
       </View>
-    </ScrollView>
+    </View>
   );
 };
 
