@@ -9,5 +9,6 @@ export default Color = {
     magentaTrans2: "#d7533e20",
     green: "#c9e9e4",
     greenTrans1: "#c9e9e440",
+    gold: "#FFD700",
   },
 };

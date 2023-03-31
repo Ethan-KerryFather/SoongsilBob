@@ -6,20 +6,27 @@ import {
   SafeAreaView,
   ScrollView,
   StyleSheet,
-  Text,
+  StatusBar,
   View,
 } from "react-native";
 import Colors from "../../../assets/Colors";
-import { BigText, BigTitle, SmallTitle } from "../../styled/styledComponents";
+import {
+  BigText,
+  BigTitle,
+  SmallText,
+  SmallTitle,
+} from "../../styled/styledComponents";
 import { Feather } from "@expo/vector-icons";
 import { RFPercentage } from "react-native-responsive-fontsize";
-import { Avatar } from "react-native-paper";
+import { Avatar, Divider } from "react-native-paper";
 import stores from "../../resource/stores";
+import { Entypo } from "@expo/vector-icons";
 
 function RankingHome({ navigation }) {
+  const statusBarHeight = StatusBar.currentHeight;
+
   const foodStores = (category) => {
-    return stores.western;
-    return stores.western;
+    return stores[category];
   };
 
   useEffect(() => {
@@ -31,7 +38,7 @@ function RankingHome({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView stickyHeaderIndices={[1]}>
-        <View style={styles.upperContainer}>
+        <View style={[styles.upperContainer, { paddingTop: statusBarHeight }]}>
           <View style={{ alignItems: "flex-start" }}>
             <Avatar.Image
               size={RFPercentage(8)}
@@ -41,11 +48,21 @@ function RankingHome({ navigation }) {
             <BigText style={{ color: "white" }}>4000</BigText>
           </View>
 
-          <View style={{ position: "absolute", right: 20, top: 30 }}>
+          <Pressable
+            style={{ position: "absolute", right: 20, top: 30 }}
+            onPress={() => {
+              console.log("menu");
+            }}
+          >
             <Feather name="menu" size={40} color="black" />
-          </View>
+          </Pressable>
         </View>
-        <Pressable>
+        <Pressable
+          onPress={() => {
+            console.log("pressed");
+            navigation.navigate("Alliance");
+          }}
+        >
           <View
             style={{
               flexDirection: "row",
@@ -75,19 +92,25 @@ function RankingHome({ navigation }) {
           <View>
             <FlatList
               horizontal={true}
-              data={foodStores()}
+              data={[
+                ...foodStores("alcohol"),
+                ...foodStores("western"),
+                ...foodStores("asian"),
+                ...foodStores("cafe"),
+              ]}
               showsHorizontalScrollIndicator={false}
-              renderItem={({ item }) => {
+              renderItem={({ item, index }) => {
                 return (
                   <ImageBackground
                     source={{ uri: item.imageList[3] }}
                     style={{
                       marginLeft: 10,
                       marginRight: 10,
-                      borderRadius: 20,
+                      borderRadius: 12,
                       overflow: "hidden",
                     }}
                     resizeMode="cover"
+                    key={index}
                   >
                     <View
                       style={{
@@ -96,10 +119,11 @@ function RankingHome({ navigation }) {
                         backgroundColor: Colors.basicColor.grayTrans1,
                         alignItems: "center",
                         justifyContent: "center",
-                        padding: 2,
                       }}
                     >
-                      <Text style={{ color: "white" }}>{item.name}</Text>
+                      <SmallTitle style={{ color: "white", fontSize: 20 }}>
+                        {item.name}
+                      </SmallTitle>
                     </View>
                   </ImageBackground>
                 );
@@ -107,6 +131,7 @@ function RankingHome({ navigation }) {
             />
           </View>
         </View>
+        <Divider style={{ marginTop: 50 }} />
         <View>
           <View
             style={{
@@ -114,45 +139,60 @@ function RankingHome({ navigation }) {
               alignItems: "flex-start",
               paddingLeft: 10,
               marginTop: RFPercentage(3),
+              marginBottom: RFPercentage(1),
             }}
           >
-            <SmallTitle>숭밥랭킹</SmallTitle>
+            <BigTitle>숭밥랭킹</BigTitle>
           </View>
           <View style={{ width: "100%", alignSelf: "center" }}>
-            <FlatList
-              data={foodStores()}
-              showsHorizontalScrollIndicator={false}
-              style={{ marginTop: 30 }}
-              renderItem={({ item, index }) => {
-                return (
-                  <ImageBackground
-                    source={{ uri: item.imageList[3] }}
+            {foodStores("western").map((item, index) => {
+              return (
+                <ImageBackground
+                  source={{ uri: item.imageList[3] }}
+                  style={{
+                    marginBottom: 30,
+                    flexDirection: "row",
+                  }}
+                  resizeMode="cover"
+                >
+                  {Array(5 - index)
+                    .fill()
+                    .map((_, index) => {
+                      return (
+                        <View
+                          style={{
+                            position: "absolute",
+                            top: 2,
+                            left: index * 30 + 2,
+                          }}
+                          key={index}
+                        >
+                          <Entypo
+                            name="star"
+                            color={Colors.basicColor.gold}
+                            size={40}
+                          />
+                        </View>
+                      );
+                    })}
+
+                  <View
                     style={{
-                      overflow: "hidden",
-                      marginBottom: 30,
+                      width: "100%",
+                      height: RFPercentage(30),
+                      alignItems: "flex-end",
+                      justifyContent: "flex-end",
+                      padding: 2,
                     }}
-                    resizeMode="cover"
                   >
-                    <View
-                      style={{
-                        width: "100%",
-                        height: RFPercentage(18),
-                        alignItems: "flex-end",
-                        justifyContent: "flex-end",
-                        padding: 2,
-                      }}
-                    >
-                      <SmallTitle style={{ color: "white" }}>
-                        {index + 1}위
-                      </SmallTitle>
-                      <BigTitle style={{ color: "white" }}>
-                        {item.name}
-                      </BigTitle>
-                    </View>
-                  </ImageBackground>
-                );
-              }}
-            />
+                    <SmallTitle style={{ color: "white" }}>
+                      {index + 1}위
+                    </SmallTitle>
+                    <BigTitle style={{ color: "white" }}>{item.name}</BigTitle>
+                  </View>
+                </ImageBackground>
+              );
+            })}
           </View>
         </View>
       </ScrollView>
@@ -174,10 +214,18 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     paddingLeft: 30,
     paddingBottom: 10,
-    paddingTop: 30,
   },
   lowerContainer: {
     flex: 3.3,
     borderRadius: 30,
+  },
+  drawer: {
+    width: "70%",
+    height: "100%",
+    backgroundColor: "#fff",
+    position: "absolute",
+    zIndex: 3,
+    paddingTop: 50,
+    paddingLeft: 20,
   },
 });

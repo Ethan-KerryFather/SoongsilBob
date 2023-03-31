@@ -14,6 +14,7 @@ import {
 import Colors from "../../assets/Colors";
 import BottomSheet from "react-native-gesture-bottom-sheet";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { RFPercentage } from "react-native-responsive-fontsize";
 
 function HomeScreen({}) {
   const navigation = useNavigation();
@@ -30,6 +31,23 @@ function HomeScreen({}) {
   }, [navigation]);
   return (
     <View style={styles.container}>
+      <Pressable
+        style={{
+          position: "absolute",
+          right: 10,
+          bottom: 10,
+          zIndex: 1,
+        }}
+        onPress={() => {
+          navigation.navigate("Check");
+        }}
+      >
+        <Image
+          source={require("../../assets/identificationIcon.png")}
+          resizeMode="cover"
+          style={{ height: RFPercentage(10), width: RFPercentage(10) }}
+        />
+      </Pressable>
       <BottomSheet hasDraggableIcon ref={bottomSheet} height={300}>
         <View style={styles.bottomsheet}>
           <View

@@ -15,13 +15,9 @@ import RankingHome from "../ui/ranking/RankingHome";
 import UnivFoodScreen from "../ui/univFood/UnivFoodScreen";
 import { RFPercentage } from "react-native-responsive-fontsize";
 import RouletteScreen from "../ui/roulette/RouletteScreen";
-import {
-  Image,
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  View,
-} from "react-native";
+import { Image, StyleSheet, View } from "react-native";
+import AllianceScreen from "../ui/ranking/AllianceScreen";
+import Check from "../ui/check/Check";
 
 const HomeStack = createNativeStackNavigator();
 const EnvironmentStack = createNativeStackNavigator();
@@ -110,6 +106,7 @@ function HomeStackScreen() {
         initialParams={myLocation}
       />
       <HomeStack.Screen name="RouletteScreen" component={RouletteScreen} />
+      <HomeStack.Screen name="Check" component={Check} />
     </HomeStack.Navigator>
   );
 }
@@ -126,6 +123,7 @@ function RankingScreen() {
   return (
     <RankingStack.Navigator>
       <RankingStack.Screen name="Home" component={RankingHome} />
+      <RankingStack.Screen name="Alliance" component={AllianceScreen} />
     </RankingStack.Navigator>
   );
 }
