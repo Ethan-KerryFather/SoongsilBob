@@ -8,7 +8,7 @@ function CustomModal({ imageUrl, isVisible }) {
       <View style={styles.imageWrapper}>
         <Image
           source={{ uri: imageUrl }}
-          style={{ width: "80%", height: "50%" }}
+          style={{ width: "80%", height: "50%", borderRadius: 30 }}
           resizeMode="cover"
         />
       </View>

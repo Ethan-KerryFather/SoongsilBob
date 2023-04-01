@@ -7,6 +7,7 @@ import MapView, { Marker, Polyline } from "react-native-maps";
 import Colors from "../../../../assets/Colors";
 import BottomSheet from "react-native-gesture-bottom-sheet";
 import CustomModal from "../../customComponent/CustomModal";
+import { RFPercentage } from "react-native-responsive-fontsize";
 
 function StorePage({ route, navigation }) {
   const bottomSheet = useRef();
@@ -17,6 +18,7 @@ function StorePage({ route, navigation }) {
   const [modalShowed, setModalShowed] = useState(false);
   const [imageUrl, setImageUrl] = useState("");
   const [isPressNow, setIsPressNow] = useState(false);
+  const [bottomSheetHeight, setBottomSheetHeight] = useState(0);
   // 컴포넌트 보여줄때 한번 위치 초기화
   const [userLocation, setUserLocation] = useState({
     latitude: route.params.latitude,
@@ -63,17 +65,24 @@ function StorePage({ route, navigation }) {
       </View>
 
       <BottomSheet
+        snapPoints={[50, bottomSheetHeight]}
         draggable={true}
         ref={bottomSheet}
+        initialSnap={1}
         onOpen={() => {
           console.log("bottom sheet open");
         }}
         onClose={() => {
           console.log("bottom close event");
         }}
-        height={height * 0.9}
+        height={height * 0.8}
       >
-        <View style={styles.bottomSheetView}>
+        <View
+          style={styles.bottomSheetView}
+          onLayout={({ nativeEvent }) => {
+            setBottomSheetHeight(nativeEvent.layout.height);
+          }}
+        >
           <Pressable
             style={{ position: "absolute", top: 12, right: 12, zIndex: 1 }}
             onPress={() => {
@@ -105,7 +114,7 @@ function StorePage({ route, navigation }) {
               <Pressable
                 style={{ position: "absolute", right: 10, zIndex: 2, top: 10 }}
                 onPress={() => {
-                  console.log("call btn");
+                  callToStore(storeInfo.storeNumber);
                 }}
               >
                 <MaterialIcons name="call" color="black" size={40} />
@@ -124,11 +133,11 @@ function StorePage({ route, navigation }) {
             <View
               style={{
                 flexDirection: "row",
-                alignItems: "center",
                 width: "100%",
                 paddingLeft: 30,
                 paddingTop: 10,
                 paddingBottom: 10,
+                alignItems: "center",
               }}
             >
               <View style={{ flexDirection: "row" }}>

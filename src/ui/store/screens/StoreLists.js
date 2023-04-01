@@ -153,6 +153,7 @@ function StoreLists({ route }) {
                     workingTime: item.workingTime,
                     description: item.description,
                     imageList: item.imageList,
+                    storeNumber: item.phoneNum,
                   },
                   location: item.location,
                 });
