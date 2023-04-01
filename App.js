@@ -37,7 +37,7 @@ function App() {
         const location = await Location.getCurrentPositionAsync({
           distanceInterval: 10,
           timeInterval: 20000,
-          accuracy: Location.Accuracy.Balanced,
+          accuracy: Location.Accuracy.Highest,
         });
         console.log("위치 가져오기 완료\n위치 데이터: ");
         await setLocation(location);

@@ -154,6 +154,7 @@ function RankingHome({ navigation }) {
                     flexDirection: "row",
                   }}
                   resizeMode="cover"
+                  key={index}
                 >
                   {Array(5 - index)
                     .fill()
