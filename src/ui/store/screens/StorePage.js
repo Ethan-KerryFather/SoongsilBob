@@ -6,14 +6,17 @@ import { View, Text, Pressable, StyleSheet, Linking } from "react-native";
 import MapView, { Marker, Polyline } from "react-native-maps";
 import Colors from "../../../../assets/Colors";
 import BottomSheet from "react-native-gesture-bottom-sheet";
+import CustomModal from "../../customComponent/CustomModal";
 
-function StorePage({ route }) {
+function StorePage({ route, navigation }) {
   const bottomSheet = useRef();
-  const navigation = useNavigation();
   const { width, height } = useWindowDimensions("window");
   const [storeInfo, setStoreInfo] = useState(route.params.storeInfo);
   const [location, setLocation] = useState(route.params.location);
   const [isBottomsheetShowed, setIsBottomsheetShowed] = useState(true);
+  const [modalShowed, setModalShowed] = useState(false);
+  const [imageUrl, setImageUrl] = useState("");
+  const [isPressNow, setIsPressNow] = useState(false);
   // 컴포넌트 보여줄때 한번 위치 초기화
   const [userLocation, setUserLocation] = useState({
     latitude: route.params.latitude,
@@ -34,6 +37,7 @@ function StorePage({ route }) {
 
   return (
     <View style={styles.container}>
+      <CustomModal imageUrl={imageUrl} isVisible={modalShowed} />
       <View
         style={{
           justifyContent: "center",
@@ -164,21 +168,45 @@ function StorePage({ route }) {
           >
             {storeInfo.imageList.map((item, index) => {
               return (
-                <Image
-                  key={index}
-                  source={{ uri: item }}
+                <Pressable
                   style={{
                     width: "30%",
                     height: 100,
                     borderRadius: 10,
                     marginTop: 10,
+                    overflow: "hidden",
                   }}
-                  onLoad={() => (
-                    <View>
-                      <Text>로딩중</Text>
-                    </View>
-                  )}
-                />
+                  onLongPress={() => {
+                    console.log("long press");
+                    setImageUrl(item);
+                    setIsPressNow(!isPressNow);
+                    setModalShowed(!modalShowed);
+                  }}
+                  onPressOut={() => {
+                    if (isPressNow === true) {
+                      console.log("touch end");
+                      setImageUrl("");
+                      setModalShowed(!modalShowed);
+                      setIsPressNow(!isPressNow);
+                    } else {
+                      console.log("another touchout case");
+                    }
+                  }}
+                >
+                  <Image
+                    key={index}
+                    source={{ uri: item }}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                    }}
+                    onLoad={() => (
+                      <View>
+                        <Text>로딩중</Text>
+                      </View>
+                    )}
+                  />
+                </Pressable>
               );
             })}
           </View>

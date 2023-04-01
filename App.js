@@ -4,7 +4,7 @@ import RootStack from "./src/navigation/RootStack";
 import Colors from "./assets/Colors";
 import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import * as Location from "expo-location";
 // gesture handler 등록
 import "react-native-gesture-handler";
@@ -23,7 +23,7 @@ function App() {
     MaterialCommunityIcons: require("@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"),
   });
   // 위치권한 요청
-  useEffect(() => {
+  useLayoutEffect(() => {
     const getLocationAsync = async () => {
       console.log("권한을 체크합니다");
       const { status } = await Location.requestForegroundPermissionsAsync();
@@ -33,29 +33,16 @@ function App() {
       }
       console.log("위치 권한 이상 없음");
       console.log("위치를 가져옵니다");
-      try {
-        const location = await Location.getCurrentPositionAsync({
-          distanceInterval: 10,
-          timeInterval: 20000,
-          accuracy: Location.Accuracy.Highest,
-        });
-        console.log("위치 가져오기 완료\n위치 데이터: ");
-        await setLocation(location);
-      } catch (error) {
-        console.log("에러발생. 재시도");
-        const location = await Location.getCurrentPositionAsync({
-          distanceInterval: 10,
-          timeInterval: 20000,
-          accuracy: Location.Accuracy.Balanced,
-        });
-        console.log("위치 가져오기 완료\n위치 데이터: ");
-        console.log(JSON.stringify(location));
-        setLocation(location);
-      } finally {
-        SplashScreen.hideAsync();
-      }
+      const location = await Location.getCurrentPositionAsync({
+        distanceInterval: 10,
+        timeInterval: 20000,
+        accuracy: Location.Accuracy.Highest,
+      });
+      console.log("위치 가져오기 완료\n위치 데이터: ");
+      setLocation(location);
     };
     getLocationAsync();
+    SplashScreen.hideAsync();
     return () => {
       setLocation(null);
       setErrorMsg(null);
@@ -86,7 +73,6 @@ function App() {
             backgroundColor: "white",
           }}
         >
-          <Text style={{ fontSize: 20 }}>밥 차리는 중..</Text>
           <Text style={{ fontSize: 15 }}>
             사용자 위치 업데이트가 원활하지 않을 때가 있습니다.
           </Text>

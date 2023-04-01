@@ -18,6 +18,7 @@ import RouletteScreen from "../ui/roulette/RouletteScreen";
 import { Image, StyleSheet, View } from "react-native";
 import AllianceScreen from "../ui/ranking/AllianceScreen";
 import Check from "../ui/check/Check";
+import Check2 from "../ui/check/Check2";
 
 const HomeStack = createNativeStackNavigator();
 const EnvironmentStack = createNativeStackNavigator();
@@ -107,6 +108,7 @@ function HomeStackScreen() {
       />
       <HomeStack.Screen name="RouletteScreen" component={RouletteScreen} />
       <HomeStack.Screen name="Check" component={Check} />
+      <HomeStack.Screen name="Check2" component={Check2} />
     </HomeStack.Navigator>
   );
 }

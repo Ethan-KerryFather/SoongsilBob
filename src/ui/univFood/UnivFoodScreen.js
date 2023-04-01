@@ -26,7 +26,6 @@ function UnivFoodScreen({ navigation }) {
     axios
       .get("https://soongguri.com/main.php?mkey=2&w=3")
       .then((response) => {
-        // 어차피 블록 단위여서 곧 사라짐
         fetchImageUrl()
           .then((imageUrl) => {
             setStudentLunch((prevState) => {

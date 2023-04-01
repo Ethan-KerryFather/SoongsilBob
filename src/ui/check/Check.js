@@ -68,18 +68,18 @@ function Check({ navigation }) {
           style={{
             width: "90%",
             height: "30%",
-            backgroundColor: "#0000ffcc",
+            backgroundColor: Colors.basicColor.magentaTrans1,
             alignItems: "center",
             justifyContent: "center",
             borderRadius: 20,
-            borderColor: "purple",
-            borderWidth: 2,
+            borderColor: "black",
+            borderWidth: 0.5,
           }}
           onPress={() => {
-            navigation.pop();
+            navigation.navigate("Check2");
           }}
         >
-          <BigTitle style={{ color: "white", letterSpacing: 3 }}>
+          <BigTitle style={{ color: "black", letterSpacing: 3 }}>
             확인하였습니다
           </BigTitle>
         </Pressable>
