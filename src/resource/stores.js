@@ -15,7 +15,7 @@ const stores = {
   korean: [
     {
       name: "청년다방",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서165m",
       workingTime: "11:00-21:00, 20:10 lastOrder",
       price: "15000원-",
       location: { X: 126.956059, Y: 37.4952261 },
@@ -33,7 +33,7 @@ const stores = {
     },
     {
       name: "신의주찹쌀순대",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서227m",
       workingTime: "24시간",
       price: "10000원-20000원",
       location: { X: 126.957021, Y: 37.4949201 },
@@ -50,7 +50,7 @@ const stores = {
     },
     {
       name: "상도명태명가",
-      area: "정문",
+      area: "정문\n숭실대입구역 3번 출구에서466m",
       price: "10000원-20000원",
       workingTime: "11:30-22:00, 오후4:00-5:00 break",
       location: { X: 126.951205, Y: 37.4994589 },
@@ -67,7 +67,7 @@ const stores = {
     },
     {
       name: "사리원",
-      area: "정문",
+      area: "정문\n상도역 1번 출구에서484m",
       price: "10000원-20000원",
       workingTime: "11:00-21:00, 오후3:30-4:30 break",
       location: { X: 126.950618, Y: 37.4991433 },
@@ -84,7 +84,7 @@ const stores = {
     },
     {
       name: "손칼국수",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서329m",
       price: "7000원-10000원",
       workingTime: "미상",
       location: { X: 126.957835, Y: 37.4949655 },
@@ -102,7 +102,7 @@ const stores = {
     },
     {
       name: "상도국수",
-      area: "정문",
+      area: "정문\n숭실대입구역 3번 출구에서250m",
       price: "10000원~20000원",
       workingTime: "11:30-19:30, 오후2:30-4:30 break, 오후7시 lastOrder",
       location: { X: 126.95331, Y: 37.4973514 },
@@ -119,7 +119,7 @@ const stores = {
     },
     {
       name: "명태촌",
-      area: "정문",
+      area: "정문\n숭실대입구역 2번 출구에서116m",
       price: "10000원~20000원",
       workingTime: "1,3,5번째 주 일요일 휴무",
       location: { X: 126.952983, Y: 37.496207 },
@@ -136,7 +136,7 @@ const stores = {
     },
     {
       name: "더진국",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서223m",
       price: "10000원~20000원",
       workingTime: "24시간",
       location: { X: 126.95693, Y: 37.4947489 },
@@ -153,12 +153,13 @@ const stores = {
     },
     {
       name: "밀알식당",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서190m",
       price: "5500원-7000원",
       workingTime: "미상",
       location: { X: 126.956421, Y: 37.4951722 },
       description: "중문 횡단보도 바로 앞에 있는 가성비 맛집",
       imageList: [
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200418_224%2F1587189698720Uipwq_JPEG%2FRVUW6EGFn1LThMoFCfnLDo60.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEyMTZfMTEx%2FMDAxNjcxMTc2ODYwMzUz.Ip912mCTZ9nSFOg7tF-5ogxyqxN3_EQ9pU8VUBgl-aMg.IlNXwvuBuda1_zNovwEPY5paDA-ife8IAmYjcnPuLsUg.JPEG%2F1000005105.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fsearch.pstatic.net%2Fcommon%2F%3FautoRotate%3Dtrue%26quality%3D95%26type%3Dw750%26src%3Dhttps%253A%252F%252Fpup-review-phinf.pstatic.net%252FMjAyMjEyMTZfMTk3%252FMDAxNjcxMTc2ODkzNTA4.kf0LGT6y4jxGAPcAat579FdFq5RaE6LvYqNjvn_8NdQg.kiKeNzCYmf10I-APWQOruK6yJYto7KWq7V8ITuDVpOQg.JPEG%252F1000005104.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEyMTJfMjAz%2FMDAxNjcwNzc4MzA5OTA5.qthdrElVUkEAQO6aVkhmsR3FucKtUV7IVwdulJw-47wg.JAfmvdvOZzeehgq9uN-7KxqMOfTgUJPPdsO_mNcQCd0g.JPEG%2F20221208_123617.jpg",
@@ -170,7 +171,7 @@ const stores = {
     },
     {
       name: "명품고향삼계탕",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서209m",
       price: "10000원~20000원",
       workingTime: "10:00-20:00",
       location: { X: 126.956783, Y: 37.4947669 },
@@ -187,7 +188,7 @@ const stores = {
     },
     {
       name: "내가찜한닭",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서190m",
       price: "20000원~50000원",
       workingTime: "10:00-21:00",
       location: { X: 126.956421, Y: 37.4951722 },
@@ -206,7 +207,7 @@ const stores = {
     },
     {
       name: "논두렁갈비",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서237m",
       price: "8000원~19000원",
       workingTime: "9:30-21:00",
       location: { X: 126.957066, Y: 37.4946769 },
@@ -226,7 +227,7 @@ const stores = {
   western: [
     {
       name: "스톤504 스테이크하우스",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서304m",
       workingTime: "11:00-22:30, 22:00 lastOrder",
       price: "40000원-",
       location: { X: 126.957756, Y: 37.4946141 },
@@ -244,7 +245,7 @@ const stores = {
     },
     {
       name: "뚝배기 스파게티",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서433m",
       workingTime: "10:30-20:30, 매주 일요일 휴무",
       price: "7000원-",
       location: { X: 126.958989, Y: 37.4946506 },
@@ -262,7 +263,7 @@ const stores = {
     },
     {
       name: "샤로스톤",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서92m",
       workingTime: "11:30-21:30, 21:00 lastOrder",
       price: "15000원-",
       location: { X: 126.955313, Y: 37.4951267 },
@@ -282,7 +283,7 @@ const stores = {
     },
     {
       name: "휘게",
-      area: "정문",
+      area: "정문\n숭실대입구역 2번 출구에서464m",
       workingTime: "10:00-22:00, 오후3:30-5:00 break, 매주 월요일 휴무",
       price: "15000원-30000원",
       location: { X: 126.951105, Y: 37.4973775 },
@@ -302,7 +303,7 @@ const stores = {
     },
     {
       name: "프라이밋 스테이크 하우스",
-      area: "정문",
+      area: "정문\n상도역 5번 출구에서445m",
       workingTime: "12:00-21:00, 오후3:00-5:30 break",
       price: "15000원-30000원",
       location: { X: 126.95099, Y: 37.5000444 },
@@ -320,7 +321,7 @@ const stores = {
     },
     {
       name: "펍캐리온",
-      area: "정문",
+      area: "정문\n숭실대입구역 2번 출구에서39m",
       workingTime: "16:00-24:00, 23:00 lastOrder",
       price: "19000원-30000원",
       location: { X: 126.953583, Y: 37.4958649 },
@@ -343,11 +344,12 @@ const stores = {
   asian: [
     {
       name: "고렝",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서382m",
       workingTime: "11:00-22:00, 오후3:00-5:00 break",
       price: "5500원-10000원",
       location: { X: 126.958751, Y: 37.4944613 },
-      description: "숭실대 유일한 태국퓨전음식점, 불향 가득한 팟타이가 일품",
+      description:
+        "숭실대입구역에 위치한 아시아 레스토랑 GORENG입니다.\n다년간의 현지여행경험을 바탕으로 요리를 만들고 신메뉴를 개발합니다.\nGORENG은 맛과 멋을 추구하며 색다른 경험과 행복한 시간을 만들어드리겠습니다.",
       imageList: [
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20180212_294%2F1518432918581Gfsti_JPEG%2F-BMW8XZ9qSg6wb8bqTI8HhA1.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20180212_77%2F151843291870960veM_JPEG%2FIypYC7xgjaPWYZZhLl88YVCR.jpg",
@@ -362,12 +364,12 @@ const stores = {
   takeout: [
     {
       name: "지지고 숭실대점",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서221m",
       workingTime: "11:00-22:00, 토요일 영업시간 변경가능",
       price: "4000원-",
       location: { X: 126.956704, Y: 37.4951273 },
       description:
-        "그거알아? 지지고는 숭실대가 본점!, 지지고가 처음이라면 0단계나 0.5단계 먹는 것을 추천! 0.5단계도 꽤 맵다! 양도 많은 편이라구!",
+        "즉석 철판 라이스, 누들이 컵안에 담겨 나오는 컵푸드 전문점 지지고의 숭실대점입니다.",
       imageList: [
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200418_167%2F1587193096732WpyeB_JPEG%2FZ5ynlwGQDx5Yjr4fSHem9tD1.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEyMDlfMjY1%2FMDAxNjcwNTcyMDg5MDcx.xKYTq2b4pzDHxgTHlyjSiNvmR8Xb8fSuvV9qY_4k4C8g.VSUTzq9OCt4PY6akEyygaKGHcbocBH7SeRpnivVFpd8g.JPEG%2FFA168DAD-B25C-4C93-B32F-87043549B520.jpeg",
@@ -381,11 +383,11 @@ const stores = {
     },
     {
       name: "밀플랜비 숭실대점",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서198m",
       workingTime: "11:00-21:00, 20:45 lastOrder",
       price: "5500원-10000원",
       location: { X: 126.956388, Y: 37.4948208 },
-      description: "부리또 맛집",
+      description: "안녕하세요 밀플랜비 숭실대점입니다",
       imageList: [
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEyMjJfMjc2%2FMDAxNjcxNjkyMTk5NjA1.oa0yqUyfG6Qw6eSyx6UKgCHwfHPYFU7J8v5hhRGA58og.pKNiHTjMwA-xlWz4uynDNxC-FZDQ7PJnsI3o7y9Slmsg.JPEG%2FScreenshot_20221222_155600_Instagram.jpg",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDA2MTNfMTgy%2FMDAxNTkyMDU4MDEyNjIy.6TtxVd9hzbaSMLugumXU7xdZ2JsgcZL3Dl1byNSaDwEg.1Am2Pawe3tXv2aIrpg9c4s55ZR529hQkZQ_KjzlsKTwg.JPEG.alexj1005%2FSDC13496.JPG",
@@ -419,7 +421,8 @@ const stores = {
       price: "10000원~20000원",
       workingTime: "10:00-21:00, 매주 일요일 휴무",
       location: { X: 126.95632, Y: 37.4944423 },
-      description: "간단하게 빨리 먹을 수 있는 컵밥집",
+      description:
+        "조미료 NO! 대기시간NO! 부담스런 가격 NO!\n고객을 생각하는 엄마와 같은 컵밥 아리랑컵밥입니다!",
       imageList: [
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200418_229%2F1587198830782PKS8e_JPEG%2FKWVRZJVc1ZidTSjIg9aJprNO.jpg",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA5MTlfMTgw%2FMDAxNjYzNTE0NTAyNDQ1.hUMTXUZ0DSj2AmC9UnS5GhMEqpvJBAyt-UBNbqORscMg.Uza7j8yd-9kokkIwXaSZMvMs0deuAaFAJL49zCLiEnwg.JPEG.gloriamok%2FIMG_0306.jpg",
@@ -430,7 +433,7 @@ const stores = {
     },
     {
       name: "수수&핫커리 핫도그",
-      area: "정문",
+      area: "정문\n숭실대입구역 2번 출구에서19m",
       workingTime: "11:00-23:00",
       price: "1500원-",
       location: { X: 126.953888, Y: 37.4955947 },
@@ -450,7 +453,7 @@ const stores = {
   chickenPizza: [
     {
       name: "피자스쿨 숭실대점",
-      area: "정문",
+      area: "정문\n숭실대입구역 3번 출구에서111m",
       workingTime: "12:10-22:55, 수요일만 16:00-22:15",
       price: "10900원-",
       location: { X: 126.953525, Y: 37.496928 },
@@ -467,7 +470,7 @@ const stores = {
     },
     {
       name: "리얼후라이",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서85m",
       workingTime: "16:00-01:00",
       price: "18000원-",
       location: { X: 126.955143, Y: 37.4953339 },
@@ -484,7 +487,7 @@ const stores = {
     },
     {
       name: "미쳐버린파닭",
-      area: "정보관",
+      area: "정보관\n숭실대입구역 4번 출구에서612m",
       workingTime: "16:00-02:30, 매주 일요일 휴무",
       price: "16000원-",
       location: { X: 126.960538, Y: 37.494543 },
@@ -501,7 +504,7 @@ const stores = {
     },
     {
       name: "BHC치킨 숭실대점",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서291m",
       workingTime: "12:00-24:00",
       price: "20000원-",
       location: { X: 126.957439, Y: 37.4949383 },
@@ -518,7 +521,7 @@ const stores = {
     },
     {
       name: "디디치킨",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서221m",
       workingTime: "15:00-02:00",
       price: "18000원-",
       location: { X: 126.956704, Y: 37.4951273 },
@@ -536,7 +539,7 @@ const stores = {
     },
     {
       name: "맛닭꼬 숭실대입구역점",
-      area: "정문",
+      area: "정문\n숭실대입구역 3번 출구에서310m",
       workingTime: "14:00-01:00",
       price: "9900원-",
       location: { X: 126.952722, Y: 37.4980179 },
@@ -554,7 +557,7 @@ const stores = {
     },
     {
       name: "푸라닭 상도1동점",
-      area: "정문",
+      area: "정문\n숭실대입구역 3번 출구에서378m",
       workingTime: "12:00-01:00",
       price: "16900원-",
       location: { X: 126.951783, Y: 37.4988104 },
@@ -574,7 +577,7 @@ const stores = {
   alcohol: [
     {
       name: "스팅 Sting",
-      area: "중문 스타벅스 옆 건물",
+      area: "중문 스타벅스 옆 건물\n숭실대입구역 4번 출구에서92m",
       workingTime: "17:00-02:00, 일요일 휴무",
       price: "7500원-",
       location: { X: 126.955279, Y: 37.4953159 },
@@ -595,7 +598,7 @@ const stores = {
     },
     {
       name: "으리으리",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서253m",
       workingTime:
         "11:00-22:00, 오후3시-5시 break, 21:15 lastOrder, 토/일 휴무",
       price: "9900원-",
@@ -617,7 +620,7 @@ const stores = {
     },
     {
       name: "파동추야",
-      area: "정문",
+      area: "정문\n숭실대입구역 2번 출구에서101m",
       workingTime: "16:00-02:00, 일요일 휴무",
       price: "12000원-",
       location: { X: 126.953028, Y: 37.4959187 },
@@ -637,7 +640,7 @@ const stores = {
     },
     {
       name: "생활맥주 숭실대입구역점",
-      area: "정문",
+      area: "정문\n숭실대입구역 3번 출구에서241m",
       workingTime: "15:30-02:00, 주말은 14:00오픈",
       price: "8000원-",
       location: { X: 126.953073, Y: 37.4976036 },
@@ -655,7 +658,7 @@ const stores = {
     },
     {
       name: "28청춘포차",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서165m",
       workingTime: "16:00-02:00",
       price: "5000원-",
       location: { X: 126.956059, Y: 37.4952261 },
@@ -672,7 +675,7 @@ const stores = {
     },
     {
       name: "블루힐",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서149m",
       workingTime: "16:00-02:00",
       price: "12000원-",
       location: { X: 126.955924, Y: 37.4952531 },
@@ -689,7 +692,7 @@ const stores = {
     },
     {
       name: "역전할머니맥주 숭실대점",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서273m",
       workingTime: "16:00-02:00",
       price: "7000원-",
       location: { X: 126.95736, Y: 37.49465 },
@@ -709,7 +712,7 @@ const stores = {
     },
     {
       name: "민속주점 상투골",
-      area: "정문, 숭실대 4번출구 앞",
+      area: "정문\n실대입구역 4번 출구에서26m",
       workingTime: "17:00-02:00, 01:30 lastOrder, 매주 일요일 정기휴무",
       price: "10000원-",
       location: { X: 126.954872, Y: 37.4952257 },
@@ -726,11 +729,12 @@ const stores = {
     },
     {
       name: "봉구비어 숭실대입구역점",
-      area: "정문",
+      area: "정문\n숭실대입구역 2번 출구에서93m",
       workingTime: "17:30-01:00",
       price: "3500원-",
       location: { X: 126.953289, Y: 37.4958737 },
-      description: "가성비 깡패! 봉구비어!",
+      description:
+        "봉구비어 숭실대입구역점은 하이트/동원푸드/수성주류와 함께합니다",
       imageList: [
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200510_56%2F1589080762906iWJuj_JPEG%2FeCgTntISuyAFvkQtHfH3ZYHi.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAxMDFfMTc1%2FMDAxNjcyNTcyMzU4NDcy.RwB2-QNWyrnMBWvNM6Xc2cTil3j8WTFcEVSGGMTZjRAg.e5t6t_yo1IUYu7eAJnfOmymqn55lr3DEUln9OuJIvfMg.JPEG%2F20221229_122635.jpg",
@@ -748,7 +752,7 @@ const stores = {
   cafe: [
     {
       name: "오갈미",
-      area: "정문",
+      area: "정문\n숭실대입구역 2번 출구에서445m",
       workingTime: "10:00-20:00, 매주 일월화 휴무",
       price: "2000원-",
       location: { X: 126.951025, Y: 37.4982605 },
@@ -766,8 +770,29 @@ const stores = {
       phoneNum: "0507-1373-5532",
     },
     {
+      name: "카페빌리지",
+      area: "중문\n숭실대입구역 4번 출구에서211m",
+      workingTime: "07:00-20:30, 20:00 lastOrder, 2,4주차 일요일 휴무",
+      price: "아메리카노 3000원",
+      location: { X: 126.95632, Y: 37.4944423 },
+      description:
+        "커피와 수제청 음료, 크로플 맛집 시그니처 메뉴인 버터크림라떼와 말차슈페너 맛있어요!",
+      imageList: [
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220920_88%2F1663652763560Uslkk_JPEG%2F6701D156-7AC4-449E-ADC0-0D6F0716C5D4.jpeg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220920_225%2F166365276384879bV1_JPEG%2FAE823794-A838-420D-A51E-7CEA45886D2D.jpeg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220920_52%2F1663653220103CTGCi_JPEG%2Fimage.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA0MDFfMjc4%2FMDAxNjgwMzMxNTE2MDQ5.fE8qAo0nOlTP0JShF6nMXQ9z7PMJdFXQTm7bAnyogxYg.Ar-0YObOG5NRkKn-_QtX7FnagCTnBV76BBTZUndJ0SYg.JPEG%2F20230401_152138.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA0MDFfMjEg%2FMDAxNjgwMzIzMDUwMjg3.JTNH_h9JARwZKoUsP8y2fZHv2a37W0ip-BQO__Oj3y8g.cMON24qk2gYs6HWKmtNOVVd_TQPtZ4aaYytrtqLVL50g.JPEG%2FAC9F8EFC-36FE-4286-A30E-FD227DC00B49.jpeg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMjlfMjM3%2FMDAxNjgwMDg4MzQ3MjM2.HwZGDGd47pwVbqBSHYyNnM8dESxcADlFG0SYk0t6wLgg.Gzzi-_GNzZmuQ2Kibo6M4yGUkrYEzpIJeC4FlIC4lFwg.JPEG%2FC129A3D6-1A45-4D74-BD48-7A51527B3CF4.jpeg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEyMjNfODcg%2FMDAxNjcxODA0OTE1MTA0.rfZsHBtmclj0K6dTSjwXLx7k4GEGxYTOkrrMDAQGDAQg.OkKecj1H1ECu141sfm1rDBE6IfspEm11flLTI4go-MQg.JPEG.woney3984%2Foutput_1972949426.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEwMjlfMjYg%2FMDAxNjY3MDAzNDEyNjgw.7dUyonWsfvuKMiajziBgT8EpwvpwhtdN3aOjVK6kzIMg.OCjWIex7wGwtrcy9ZBLA-yvYPBxOhMeLN4L1T0-GUiUg.JPEG.bje486486%2FKakaoTalk_20221027_111514076_01.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221002_37%2F1664673052856AEP7D_JPEG%2F%25C6%25F7%25B8%25CB%25BA%25AF%25C8%25AF%25C5%25A9%25B1%25E2%25BA%25AF%25C8%25AF%25C5%25A9%25B1%25E2%25BA%25AF%25C8%25AF%25B4%25D9%25BF%25EE%25B7%25CE%25B5%25E5.jpg",
+      ],
+      phoneNum: "0507-1383-1058",
+    },
+    {
       name: "개러지 로스터",
-      area: "상도역 5번 출구에서 376m",
+      area: "정문\n상도역 5번 출구에서 376m",
       workingTime: "08:00-21:00, 20:45 lastOrder",
       price: "4000원-",
       location: { X: 126.95073, Y: 37.5005939 },
@@ -786,7 +811,7 @@ const stores = {
     },
     {
       name: "케이크팝",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서291m",
       workingTime: "11:00-21:00",
       price: "3000원-",
       location: { X: 126.957439, Y: 37.4949383 },
@@ -804,7 +829,7 @@ const stores = {
     },
     {
       name: "달쿠마",
-      area: "중문",
+      area: "중문\n숭실대입구역 1번 출구에서190m",
       workingTime: "11:00-20:00, 월화 휴무",
       price: "4000원-",
       location: { X: 126.954307, Y: 37.4941262 },
@@ -823,8 +848,29 @@ const stores = {
       phoneNum: "0507-1497-2001",
     },
     {
+      name: "eea cafe",
+      area: "중문\n숭실대입구역 4번 출구에서322m",
+      workingTime: "11:00-20:00, 일 휴무",
+      price: "아메리카노 4.5",
+      location: { X: 126.957666, Y: 37.4943257 },
+      description:
+        "eea카페는 품질높고 맛 좋은 스페셜티 커피를 제공합니다. 궁금한사항이 있으시면 전화문의주세요:)",
+      imageList: [
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220812_170%2F1660278223989QsrJS_JPEG%2FFB8B4A26-F33E-44F2-A3C3-7B3DECFE715D.jpeg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMjFfMjcz%2FMDAxNjc5MzkzODg2MzE5.U5ef71zAOluq0l6KwUmTmK4Ya8NRLTBpT7eE5smQivYg.5Gh2rlUq2pqAXtVnhRyIqtjMNBSWKJrdC487cVSGOhsg.JPEG%2F4C6E6D7E-712A-4C9C-99E8-24BDC8A7ACBC.jpeg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20201012_57%2F1602478812274fpjJy_JPEG%2F2u1tnsl5BbfNAhtnky7TNotL.jpeg.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAxMjFfOTMg%2FMDAxNjc0MzAyMjU1Mjcy.a2wlJqZ0BZN8kAIGPQ7l65Y4DfLfj33BhDpCSpbI8kYg.Jshd9jlGqfynX3WJgnkHM1mw73GFjsY2BGsJ8C_ZDUAg.JPEG.wjdgk97%2FIMG_1121.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200214_169%2F1581609040821T3J5W_JPEG%2FK3n5Xj10eN9Jp51OQt93VJOd.jpeg.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20201012_82%2F1602478873250Sct0L_JPEG%2FjPHBzHbF3NHpsqexdTJZtDcB.jpeg.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAyMDFfNDQg%2FMDAxNjc1MjM3NjI0OTY2.mgCeOU0p14UvnV81lMxYSHHkdTONZ05vPF_Ijg232X0g.WZdY07cM6Wtd1koxlRlhmc-0AEEFXfF7ga9QAuXGKLwg.JPEG%2FD7BF5F9B-63F4-46A1-AD2C-0E83CD79F344.jpeg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjExMDVfMTAw%2FMDAxNjY3NjI1MTA1MjM5.gpiEwlx6x9U5iaWjOfZmjEVh7LcRsGmjIGim2FuHmBUg.e87QcDhGpk4sRhoQccF7NyByBVr5RXYafuVXRmXMQv4g.JPEG.woney3984%2FIMG_9174.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA5MTdfMjEx%2FMDAxNjYzMzU3NjUzOTI5.KbiAiEdU9LCLJlZ1Lbm2u6H3KCO_GJ0ONY1foHJYDoAg.3gX75evS_clP0LvKGQeOno-9CvsqmI8XjNd86UXpAdEg.JPEG.kkimming__%2F20220916_190922.jpg",
+      ],
+      phoneNum: "0507-1391-1181",
+    },
+    {
       name: "투썸플레이스",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서389m",
       workingTime: "",
       price: "4500원-",
       location: { X: 126.957439, Y: 37.4949383 },
@@ -844,7 +890,7 @@ const stores = {
     },
     {
       name: "슈니퐁당",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서291m",
       workingTime: "",
       price: "3500원-",
       location: { X: 126.957439, Y: 37.4949383 },
@@ -856,8 +902,48 @@ const stores = {
       phoneNum: "",
     },
     {
+      name: "스터디어스 스터디카페 상도",
+      area: "정문\n숭실대입구역 4번 출구에서216m",
+      workingTime: "24시간, 휴무없음",
+      price: "3500원-",
+      location: { X: 126.957282, Y: 37.4934156 },
+      description:
+        "[STUDIUS(학구적인,공부를열심히 하는) 상도점은 친환경 목재로 제작한 따뜻한 우드톤의 인테리어와 국내 최고를 자랑하는 넓은 책상과 친환경 실내 정화 시스템, 친환경 실내 조명으로 오랜시간 공부해도 눈과 몸의 피로를 최소화 하였으며, 답답한 1인독서실 형태가 아닌 모든 좌석이 개방형이면서 독립석같은 프리미엄 스터디공간입니다.",
+      imageList: [
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMjlfMjEz%2FMDAxNjgwMDg5NTk1NzQ5.D_Uztfp0K7ID2r2qMGQQaBgMoo3d7uRzz6qEYH5YtH8g.axVP9JQu5gsyeAinB6-YL_TKhcNquCLnrJxoK58UvfEg.JPEG%2F20230319_132947.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAzMTJfMTcx%2FMDAxNjc4NTgwMTc4OTU2.tstF6A-xkNSGfjlecSrbqt1zQklVH0P3t1CEtJUPH2kg.Z3yvLuklPxpMDAp3jlyIGdpWqUXnbQVo1kyse7po9F0g.JPEG.jesuslove_0191%2FIMG_0732.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMTFfMTk3%2FMDAxNjc4NTEzODM2OTU0.QY2XRx7vu49qfTfrYNXounE6TsvodooCPQFFpHg_74Ig.t2cNFuQMlab8fcfHRN6QeArwd9EctNXR3nRsEGSaLFEg.JPEG%2F1678513826003.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMDRfMTUg%2FMDAxNjc3OTE1Mjc2NTMy.-juoBS1N-e1zSmqJj6XclQql_eQPOCJTR0T-KgkaGPsg.QXNQJkhVqSQkGfnJuKFePgQk20Rmr-5bJjfIdz17XIwg.JPEG%2F1677915266966.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAyMThfMjkg%2FMDAxNjc2NjgzNDk3MTMz.9PM9FvM8aHUQdNF6Zl7L0wwOuQ62r2DofBH8qKg7onAg._Rcy767X__L4fVzR5BNOf1pNzgybo7ZSeYfAdpD-Hg0g.JPEG%2F525551E6-4A4A-4833-A7B0-99501C28FBEA.jpeg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230307_53%2F1678190860341a6aGH_JPEG%2F1678190729219.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230227_33%2F1677464315747g1FH8_JPEG%2F1677464157476.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230129_230%2F1674986565549mkhGs_JPEG%2FKakaoTalk_20230129_185946727_25.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230204_298%2F1675453731012EObOd_JPEG%2FKakaoTalk_20230202_184749412_02.jpg",
+      ],
+      phoneNum: "0507-1332-1351",
+    },
+    {
+      name: "앙러뷰케이크",
+      area: "정문\n숭실대입구역 4번 출구에서 232m",
+      workingTime: "09:00-19:00, 주말5pm마감 ,매주 월 휴무",
+      price: "백일떡/돌떡/생일떡: 변동\n2호 떡케이크: 79,000원",
+      location: { X: 126.957282, Y: 37.4934156 },
+      description:
+        "앙금떡케이크/백일떡/돌떡/생일떡/답례 전문 앙러뷰케이크입니다",
+      imageList: [
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230325_113%2F1679715306841rtyhK_JPEG%2F20230325_094040.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230321_105%2F1679361138358HTRxa_JPEG%2F20230319_101042.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230311_184%2F1678498893075Pqh49_JPEG%2F20230309_081514.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230311_234%2F1678498892643wuHhh_JPEG%2F20230311_084814.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230221_141%2F1676942533820zmNMJ_JPEG%2F20230219_094110.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230218_111%2F1676723835771E3hJc_JPEG%2F20230218_080916.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230218_198%2F1676723835847EbhB6_JPEG%2F20230215_133246.jpg",
+      ],
+      phoneNum: "0507-1419-1253",
+    },
+    {
       name: "미학당",
-      area: "정보관 위",
+      area: "정보관 위\n숭실대입구역 4번 출구에서612m",
       workingTime: "11:00-20:00, 월화 휴무",
       price: "4000원-",
       location: { X: 126.960538, Y: 37.494543 },
@@ -875,8 +961,23 @@ const stores = {
       phoneNum: "0507-1497-2001",
     },
     {
+      name: "카페봄봄",
+      area: "중문 횡단보도 바로 앞\n숭실대입구역 4번 출구에서 190m",
+      workingTime: "",
+      price: "아메리카노 1300원\n헤이즐럿 아메리카노 1800원",
+      location: { X: 126.956421, Y: 37.4951722 },
+      description: "중문에서 가장 가까운 카페, 메뉴가 매우 다양함",
+      imageList: [
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA1MjJfMTQ5%2FMDAxNjUzMTgyNDMyNDQ3.9joRLXPSOzwBpSAv8WBMHvFLcD9aKeDbpdWZIdxNTVsg.BbkY-FAAjXkms3u0EKoarnbUxp1bNNH3-iRIh_Ql1XMg.JPEG.7qkr7%2FIMG_8201.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20210627_133%2F16247223388173MFhq_JPEG%2Fupload_1fec732fa2118b670bb3a0a3d7865c6d.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEyMDNfMjI3%2FMDAxNjcwMDQ2NTY2MDc5.Vb3EyU4H6RJK9VeVzxzGmFS_HCEtdsIsdffO3m2bShgg.2asTis8ywWsr1Q-owmExfmgX-l-csjoetSIa6QsYJhIg.JPEG%2F2CE62B15-FA80-44C5-A4F7-7B0F26910A3E.jpeg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjA5MjFfNzMg%2FMDAxNjYzNzI5OTI1MjUy.nEuCOOgVZzSpEazHhE68s4jS9T2L7AF5LiuQylzttFwg.RVfeTjJYgA-arx2e4N2IKzSSv3x4yNtXq_5c6yzH4G4g.JPEG%2F20220920_102354.jpg",
+      ],
+      phoneNum: "02-816-6700",
+    },
+    {
       name: "하우스무드",
-      area: "중문-정보관 사이",
+      area: "중문-정보관 사이\n숭실대입구역 4번 출구에서382m",
       workingTime:
         "08:00-22:00, 토요일은 11:00-, 일요일 12:00-, 공휴일 12:00-21:00",
       price: "4500원-",
@@ -897,7 +998,7 @@ const stores = {
     },
     {
       name: "가춘",
-      area: "정문",
+      area: "정문\n숭실대입구역 3번 출구에서111m",
       workingTime: "10:00-21:30, 토일 휴무",
       price: "3000원-",
       location: { X: 126.953525, Y: 37.496928 },
@@ -919,12 +1020,12 @@ const stores = {
   ],
   japanese: [
     {
-      name: "황궁",
-      area: "중문",
+      name: "황궁쟁반짜장",
+      area: "중문\n숭실대입구역 4번 출구에서370m",
       workingTime: "11:00-21:00",
       price: "5000원-",
       location: { X: 126.95831, Y: 37.4948936 },
-      description: "싸고 맛있는 중국집! 밥이 공짜? 요일메뉴 구성이 좋다",
+      description: "상도동 숭실대 중화요리맛집 황궁쟁반짜장입니다",
       imageList: [
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20160120_86%2F1453258758335KhmJG_JPEG%2F176070518938181_0.jpeg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEyMDVfNTYg%2FMDAxNjcwMjE4NTIzMDQx.KGA0-Ahq5Tl8bhRezuwd4b7zgATZw82m6puYVmSgHWkg.MaSJTz6Bl309qx1MRVHxUpEoojtlpB5Lbo-8t4YLJlAg.JPEG%2F89106B9D-E193-4F03-9260-EB30A11B1984.jpeg",
@@ -934,15 +1035,15 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODAyMDJfMTg3%2FMDAxNTE3NTUyOTc1NTgy.AbfIcf_cn54KbpxiFxdiewHhYREsWvrsfUbS7DBy5ywg.pTYMdB4a41JKfE6SO7ParuIApma3Im_RhUmX7PyZZ_Ug.JPEG.lolooii%2FKakaoTalk_20180202_010757119.jpg",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA1MzBfMjc0%2FMDAxNjIyMzUyNjg5ODc4._f12x--tm4UQVshPJdNYb0SupkDhlrC0Y7gBr0f-0sEg.e-Sag7tWNdBOtPvlOcWLEsf7kBJZARxGUAGK8WnCiA8g.JPEG.boyoon0125%2F1622352386805.jpg",
       ],
-      phoneNum: "032-363-2777",
+      phoneNum: "02-822-5575",
     },
     {
       name: "연래춘",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서203m",
       workingTime: "09:00-21:00",
       price: "5000원-",
       location: { X: 126.956648, Y: 37.4949741 },
-      description: "싸고 맛있다! 매장이 넓어서 쾌적하게 먹을 수 있음",
+      description: "숭실대 학생들만 아는 맛집, 연래춘입니다",
       imageList: [
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20150901_236%2F1441041595942xG31q_JPEG%2FSUBMIT_1374220618270_32873229.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20150901_127%2F14410415961643uPr5_JPEG%2FSUBMIT_1374220616723_32873229.jpg",
@@ -958,7 +1059,7 @@ const stores = {
     },
     {
       name: "취향",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서85m",
       workingTime: "10:30-20:30",
       price: "7000원-",
       location: { X: 126.955143, Y: 37.4953339 },
@@ -972,7 +1073,7 @@ const stores = {
     },
     {
       name: "긴자료코 숭실대입구점",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서125m",
       workingTime: "11:00-21:00",
       price: "8500원-",
       location: { X: 126.95563, Y: 37.495271 },
@@ -993,7 +1094,7 @@ const stores = {
     },
     {
       name: "철탄 함바그 텐동",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서301m",
       workingTime: "11:00-24:00",
       price: "10000원-",
       location: { X: 126.957541, Y: 37.494623 },
@@ -1013,7 +1114,7 @@ const stores = {
     },
     {
       name: "숑숑돈까스 숭실대점",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서356m",
       workingTime: "10:30-22:00, 매주 토요일 휴무",
       price: "9000원-",
       location: { X: 126.958152, Y: 37.4949206 },
@@ -1021,7 +1122,6 @@ const stores = {
         "맛있는 돈까스를 제대로 먹어보고 싶으면 방문해보길! 테이블마다 키오스크가 있어서 주문하기 편하다. 개인적으로 학교에서 제일 갈만한 돈까스집이라고 생각한다 ",
       imageList: [
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220505_10%2F1651721394502v1h7h_JPEG%2FKakaoTalk_20220505_122858715_01.jpg",
-        ,
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220505_246%2F1651721394542DQiSC_JPEG%2FKakaoTalk_20220505_122858715.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220311_20%2F1646964939489UXE1k_JPEG%2F%25B9%25DA%25C7%25FD%25B9%25CE_20220308_084553_3.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMTJfMTE2%2FMDAxNjc4NjE0MzIzMzY3.frZfemCOMHcf9acmh2ZUOjuPkyNkJnZe5E0B8xqk6r4g.l1QQvtlr-_LJTSARtCvsQrl56G2GtKRE8DqxZVaNmrYg.JPEG%2F2C22EDE1-4213-4323-891C-C654A584E134.jpeg",
@@ -1032,7 +1132,7 @@ const stores = {
     },
     {
       name: "은화수식당 숭실대점",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서262m",
       workingTime: "11:00-20:30, 20:10 lastOrder, 매주 토일 휴무",
       price: "8500원-",
       location: { X: 126.957123, Y: 37.4950643 },
@@ -1051,7 +1151,7 @@ const stores = {
     },
     {
       name: "멘동",
-      area: "중문",
+      area: "중문\n숭실대입구역 4번 출구에서204m",
       workingTime: "11:00-20:00, 토요일은 14:30까지, 일요일 휴무",
       price: "7500원-",
       location: { X: 126.956614, Y: 37.4947848 },

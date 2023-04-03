@@ -11,7 +11,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 function UnivFoodScreen({ navigation }) {
   const [studentLunch, setStudentLunch] = useState({
-    lunch1: "로딩중",
+    lunch1: { menu: "로딩중" },
     lunch2: "로딩중",
   });
   const [dodamLunch, setDodamLunch] = useState({

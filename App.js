@@ -4,6 +4,7 @@ import RootStack from "./src/navigation/RootStack";
 import Colors from "./assets/Colors";
 import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
+
 import { useEffect, useLayoutEffect, useState } from "react";
 import * as Location from "expo-location";
 // gesture handler 등록
@@ -15,34 +16,46 @@ SplashScreen.preventAutoHideAsync();
 function App() {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
-
   const [fontsLoaded] = useFonts({
     "gowun-regular": require("./assets/font/gowun-regular.ttf"),
     "gowun-bold": require("./assets/font/gowun-bold.ttf"),
     "black-sans": require("./assets/font/black-sans.ttf"),
     MaterialCommunityIcons: require("@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"),
   });
+
   // 위치권한 요청
   useLayoutEffect(() => {
     const getLocationAsync = async () => {
-      console.log("권한을 체크합니다");
-      const { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== "granted") {
-        setErrorMsg("위치 권한 문제 발생");
-        return;
+      try {
+        console.log("권한 체크를 시작합니다");
+        const { status } = await Location.requestForegroundPermissionsAsync();
+        // if (status !== "granted") {
+        //   setErrorMsg("위치 권한 문제 발생");
+        //   return;
+        // }
+        if (status === "granted") console.log("권한에 이상이 없습니다");
+      } catch {
+        console.log(errorMsg);
+        console.log("위치 권한을 받아오는 것에 문제가 생겼습니다.");
       }
-      console.log("위치 권한 이상 없음");
-      console.log("위치를 가져옵니다");
+
+      console.log("위치 데이터를 가져옵니다. ");
       const location = await Location.getCurrentPositionAsync({
         distanceInterval: 10,
         timeInterval: 20000,
         accuracy: Location.Accuracy.Highest,
       });
       console.log("위치 가져오기 완료\n위치 데이터: ");
-      setLocation(location);
+
+      nextLocation(location);
     };
+
+    function nextLocation(location) {
+      setLocation(location);
+      SplashScreen.hideAsync();
+    }
+
     getLocationAsync();
-    SplashScreen.hideAsync();
     return () => {
       setLocation(null);
       setErrorMsg(null);
@@ -50,7 +63,6 @@ function App() {
   }, []);
 
   if (location && fontsLoaded) {
-    SplashScreen.hideAsync();
     return (
       <PaperProvider>
         <View style={styles.container}>
