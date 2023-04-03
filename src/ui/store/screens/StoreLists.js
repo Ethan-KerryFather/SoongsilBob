@@ -1,4 +1,4 @@
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, SimpleLineIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React, { useState, useEffect } from "react";
 import {
@@ -14,9 +14,15 @@ import { ScrollView } from "react-native-gesture-handler";
 import { RFPercentage } from "react-native-responsive-fontsize";
 import Colors from "../../../../assets/Colors";
 import stores from "../../../resource/stores";
-import { SmallTitle } from "../../../styled/styledComponents";
+import {
+  BigText,
+  BigTitle,
+  SmallText,
+  SmallTitle,
+} from "../../../styled/styledComponents";
 import { GetDistance } from "./components/GetDistance";
 import CustomSnackbar from "../../../styled/CustomSnackbar";
+import { Divider } from "react-native-paper";
 
 function StoreLists({ route }) {
   // 컴포넌트 보여줄때 한번 위치 초기화
@@ -136,6 +142,7 @@ function StoreLists({ route }) {
         //data={stores.korean}
         data={getCategoryStores(route.params.category)}
         renderItem={({ item }) => {
+          if (item.menu.length !== 0) console.log(item.menu[1][1]);
           return (
             <Pressable
               style={[
@@ -159,11 +166,23 @@ function StoreLists({ route }) {
                 });
               }}
             >
+              <View>
+                <SmallTitle>
+                  나로부터{" "}
+                  {GetDistance(
+                    latitude,
+                    longtitude,
+                    item.location.Y,
+                    item.location.X
+                  ).toFixed(2)}
+                  km 떨어져있어요
+                </SmallTitle>
+              </View>
               <View
                 style={{
                   alignSelf: "center",
                   width: "100%",
-                  height: 150,
+                  height: RFPercentage(25),
                   resizeMode: "cover",
                   marginBottom: 10,
                   flexDirection: "row",
@@ -206,26 +225,31 @@ function StoreLists({ route }) {
               </View>
               <View
                 style={{
+                  paddingTop: 10,
                   flexDirection: "column",
                   alignItems: "center",
-                  borderBottomWidth: 0.5,
-                  borderBottomColor: "black",
                   paddingBottom: 5,
                   marginBottom: 5,
+                  paddingLeft: 10,
+                  paddingRight: 10,
                 }}
               >
-                <Text style={[styles.normalText, { fontSize: 25 }]}>
+                <Text
+                  style={[styles.normalText, { fontSize: 25, marginBottom: 8 }]}
+                >
                   {item.name}
                 </Text>
-                <Text style={[styles.normalText, { fontSize: 10 }]}>
+                <Text
+                  style={[styles.normalText, { fontSize: 13, marginBottom: 8 }]}
+                >
                   {item.description}
                 </Text>
+
                 <View
                   style={{
                     flexDirection: "row",
-                    paddingVertical: 10,
+
                     alignSelf: "flex-start",
-                    paddingLeft: 10,
                   }}
                 >
                   <Ionicons
@@ -237,19 +261,101 @@ function StoreLists({ route }) {
                   <Text> 0</Text>
                 </View>
               </View>
-
-              <Text style={[styles.normalText, { fontSize: 15 }]}>
-                {item.area}근처에 있어요
-                {"\n"}가격대는 {item.price}이에요
-                {"\n"}내 위치에서{" "}
-                {GetDistance(
-                  latitude,
-                  longtitude,
-                  item.location.Y,
-                  item.location.X
-                ).toFixed(2)}
-                km 떨어져있어요
-              </Text>
+              <View
+                style={{
+                  margin: 10,
+                  width: "95%",
+                  alignSelf: "center",
+                  backgroundColor: "white",
+                  borderRadius: 20,
+                  borderWidth: 3,
+                  borderColor: Colors.basicColor.magentaTrans1,
+                }}
+              >
+                <View>
+                  <View
+                    style={{
+                      marginTop: RFPercentage(3),
+                      marginBottom: RFPercentage(2),
+                      alignSelf: "center",
+                    }}
+                  >
+                    <View
+                      style={{
+                        height: 30,
+                        backgroundColor: "yellow",
+                        opacity: 0.5,
+                        justifyContent: "center",
+                        zIndex: 1,
+                      }}
+                    >
+                      <Text
+                        style={{
+                          fontFamily: "black-sans",
+                          fontSize: 20,
+                          color: "black",
+                          zIndex: 1,
+                        }}
+                      >
+                        MENU
+                      </Text>
+                    </View>
+                  </View>
+                  <View
+                    style={{
+                      borderBottomWidth: 0.5,
+                      width: "95%",
+                      alignSelf: "center",
+                      borderBottomColor: "black",
+                    }}
+                  />
+                  <View
+                    style={{
+                      alignItems: "center",
+                      marginBottom: RFPercentage(5),
+                    }}
+                  >
+                    {item.menu.length !== 0 &&
+                      item.menu.map((item) => {
+                        return (
+                          <View
+                            style={{
+                              flexDirection: "row",
+                              width: "80%",
+                              justifyContent: "space-between",
+                              marginBottom: RFPercentage(1),
+                              marginTop: RFPercentage(2.5),
+                            }}
+                          >
+                            <SmallTitle>{item[0]}</SmallTitle>
+                            <BigText
+                              style={{ textDecorationLine: "underline" }}
+                            >
+                              {item[1]}
+                            </BigText>
+                          </View>
+                        );
+                      })}
+                  </View>
+                </View>
+              </View>
+              <View style={{ padding: 20 }}>
+                <View style={{ alignSelf: "center", marginBottom: 30 }}>
+                  <SmallTitle>밥집 살펴보기</SmallTitle>
+                </View>
+                <Text style={[styles.normalText, { fontSize: 15 }]}>
+                  {item.area} 근처에 있어요
+                  {"\n"}가격대는 {item.price}이에요
+                  {"\n"}내 위치에서{" "}
+                  {GetDistance(
+                    latitude,
+                    longtitude,
+                    item.location.Y,
+                    item.location.X
+                  ).toFixed(2)}
+                  km 떨어져있어요
+                </Text>
+              </View>
             </Pressable>
           );
         }}
@@ -282,7 +388,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   itemContainer: {
-    padding: 20,
+    // padding: 20,
     backgroundColor: Colors.basicColor.magentaTrans2,
     marginTop: 10,
     marginBottom: 10,
