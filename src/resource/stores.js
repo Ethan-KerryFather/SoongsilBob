@@ -31,8 +31,9 @@ const stores = {
       ],
       phoneNum: "02-823-7319",
       menu: [
-        ["마라이징떡볶이", "21500"],
-        ["감자돌이 떡볶이", "17500"],
+        ["마라이징떡볶이", "21,500"],
+        ["차새대떡볶이(중)", "23,500"],
+        ["버터갈릭감자튀김", "5,500"],
       ],
     },
     {
@@ -51,15 +52,15 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fsearch.pstatic.net%2Fcommon%2F%3FautoRotate%3Dtrue%26quality%3D95%26type%3Dw750%26src%3Dhttps%253A%252F%252Fmyplace-phinf.pstatic.net%252F20220403_117%252F1648982555399xGxnQ_JPEG%252Fupload_58786233ffd49c0b534e08752a0077cd.jpg",
       ],
       phoneNum: "02-822-5862",
-      menu: [],
+      menu: [["순대국", "9,000"]],
     },
     {
-      name: "상도명태명가",
+      name: "상도명태명가 본점",
       area: "정문\n숭실대입구역 3번 출구에서466m",
       price: "10000원-20000원",
       workingTime: "11:30-22:00, 오후4:00-5:00 break",
       location: { X: 126.951205, Y: 37.4994589 },
-      description: "평범한 순대국집, 반찬은 무제한",
+      description: "명태맛집, 양념 진짜 맛있다 공기밥에 비벼먹으면 그곳이 천국",
       imageList: [
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMDRfMTkw%2FMDAxNjc3OTE2OTE1NjEz.sqd7BgptlaXSAkjlJ72OSBFXNPC1eycLch1-xM8XmeQg.UZ325O1e4j9gSts3AThBxeHcfWJ4f8LfzX-p7W9kvMgg.JPEG%2FBD0838A6-8F6D-4C86-92C3-0C59EC40C751.jpeg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fsearch.pstatic.net%2Fcommon%2F%3FautoRotate%3Dtrue%26quality%3D95%26type%3Dw750%26src%3Dhttps%253A%252F%252Fpup-review-phinf.pstatic.net%252FMjAyMzAzMDRfMjg2%252FMDAxNjc3OTE2OTE1OTE3.yMdDv_fJO8sLJxjQYB9F0_Qr5QnirOc9i3AqA1KRmLIg.YIgXOUoOSpCC7VzYbaDgjLHBv8wt3aTp05lK30V1VrQg.JPEG%252F48EC8819-CB7E-4E06-82FE-AB32420D78B1.jpeg",
@@ -69,7 +70,12 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAyMDhfMTcy%2FMDAxNjc1ODUyODczMzI4.jietn9PS59HeqMb8B4If5s0tJMF_5ER8QlHA4o3wICIg.DmiKpXesY2d1bNHpsF50r5G1d0KzTqUxr4lB_ryG6JMg.JPEG%2F20230208_135220.jpg",
       ],
       phoneNum: "02-823-6700",
-      menu: [],
+      menu: [
+        ["맵콤명태조림(소)", "33,000"],
+        ["맵콤명태조림(중)", "48,000"],
+        ["맵콤명태조림(대)", "65,000"],
+        ["해물칼국수", "9,000"],
+      ],
     },
     {
       name: "사리원",
@@ -77,7 +83,8 @@ const stores = {
       price: "10000원-20000원",
       workingTime: "11:00-21:00, 오후3:30-4:30 break",
       location: { X: 126.950618, Y: 37.4991433 },
-      description: "평범한 순대국집, 반찬은 무제한",
+      description:
+        "동작구 상도동에서 1999년부터 영업 중인 근본 맛집\n놀라운토요일 205회, 22.03.26 만두전골 출연",
       imageList: [
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMDZfMTcx%2FMDAxNjc4MDQwMDQyODA1.7jS1p_dsZbQYjfNg0EqfKNrJVFT7JK1fKIp7pLmb9dIg.BV8ZtdVCnjCi0BA1IQlReI8A3zrx2CjyjMJcfA0s5WIg.JPEG%2F20230219_142539.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAyMTlfMjg0%2FMDAxNjc2ODEyNTM3NTU4.3BARb6Ny75eVBLvGYNLmUkcYc73ILoESHlKxLGXy0n0g.O7b5fyVI5zbDDBMhtBzgYP__Gp4CkskND8-nwRlK5jMg.JPEG%2F59FE4E65-3907-466C-8123-C666986ED6FB.jpeg",
@@ -87,7 +94,12 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fsearch.pstatic.net%2Fcommon%2F%3FautoRotate%3Dtrue%26quality%3D95%26type%3Dw750%26src%3Dhttps%253A%252F%252Fpup-review-phinf.pstatic.net%252FMjAyMzAyMThfNDIg%252FMDAxNjc2NzAyMzIxNDk2.3dQk2ZgEaNPeVG6_a69A1-0ciy7eBTaOie7hCbxaLQMg.GwXxDl3ypVcJONbTfGItNmwInC3SZFuQLVrd7zjx3ZYg.JPEG%252F658D90EC-465C-4881-9583-66CC87CDDA1D.jpeg",
       ],
       phoneNum: "0507-1368-6022",
-      menu: [],
+      menu: [
+        ["만둣국", "11,000"],
+        ["열두냉면", "11,000"],
+        ["만두전골(대)", "45,000"],
+        ["접시만두(대)", "12,000"],
+      ],
     },
     {
       name: "손칼국수",
@@ -106,7 +118,13 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEyMjlfMjY0%2FMDAxNjcyMzE3OTM1Mjcw.Az5qwJzVutIBjA6Awo0_xNJfYOGqOLOIkXjQmWEJ_rAg.Io9VJYNNXw4i3aNoyy_9HazyM-xWpJLKcMGkVu2kfDsg.JPEG%2F075D9134-94CB-4DE6-AED5-DC2BCC9FC38F.jpeg",
       ],
       phoneNum: "02-816-3473",
-      menu: [],
+      menu: [
+        ["칼국수", "6,500"],
+        ["닭도리탕", "20,000"],
+        ["뼈해장국", "7,500"],
+        ["철판떡볶이(2인분기본)", "11,000"],
+        ["감자탕(대)", "20,000"],
+      ],
     },
     {
       name: "상도국수",
@@ -124,7 +142,13 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAxMDRfMzAw%2FMDAxNjcyODI0ODc4NzUx.VJN6gVOl6_0CB_lmQV_T31_1oHnZya5NnoReu8LXqDcg.epkH4fBqz6FT-cONl7gbah1zTeJ9O6377ZwIwi-jWfkg.JPEG%2FECCFF723-8E9F-4D40-B064-B6E46F4D4DD5.jpeg",
       ],
       phoneNum: "02-886-7089",
-      menu: [],
+      menu: [
+        ["멸치국수", "6,000"],
+        ["비빔국수", "7,000"],
+        ["황태칼국수", "8,000"],
+        ["열무국수(여름한정)", "7,000"],
+        ["날씬멸치김밥", "1,500"],
+      ],
     },
     {
       name: "명태촌",
@@ -142,7 +166,14 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEwMDRfNzQg%2FMDAxNjY0ODU2MjYyNDY3.ZUpdx6JoAqaeHyRjbaazRGlI38w3flrI05F3Dw_003sg.E09J6jDQoIhdfc8hcenkKxFwZ1sTKDItRXsBYx6eOLkg.JPEG%2F20221003_184058.jpg",
       ],
       phoneNum: "02-815-2322",
-      menu: [],
+      menu: [
+        ["매콤명태조림(대)", "55,000"],
+
+        ["매콤명태조림(중)", "45,000"],
+
+        ["매콤명태조림(소)", "33,000"],
+        ["대구지리탕(대)", "55,000"],
+      ],
     },
     {
       name: "더진국",
@@ -160,7 +191,16 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fsearch.pstatic.net%2Fcommon%2F%3FautoRotate%3Dtrue%26quality%3D95%26type%3Dw750%26src%3Dhttps%253A%252F%252Fpup-review-phinf.pstatic.net%252FMjAyMzAzMDhfMjI0%252FMDAxNjc4MjczMTEwNDQ2.DZx5baG-QHQ5VhuJUUEKzUuBMTgVF9CK8IF-QmggYtog.5a3csCom9iwGOkJeKyIqA4LDGFh0exeKSeazh5E8vvUg.JPEG%252FE7251EA5-469B-4963-A8AF-65046459DC32.jpeg",
       ],
       phoneNum: "0507-1417-1502",
-      menu: [],
+      menu: [
+        ["수육국밥", "8,000"],
+
+        ["순대국밥", "8,000"],
+
+        ["얼큰국밥", "8,500"],
+        ["명태회냉면", "8,000"],
+
+        ["직화물냉면", "8,000"],
+      ],
     },
     {
       name: "밀알식당",
@@ -179,7 +219,12 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEwMzBfMjI4%2FMDAxNjY3MDYzNDEyMTAw.lMD_1g_WqJI8yBlphnavJijNxIxUtTf9Z0hS7hRjAcYg.N83sP46xOZwNjehdvcno8smreapHkaUVv_TFVQKgQRIg.JPEG%2F20221024_153916.jpg",
       ],
       phoneNum: "",
-      menu: [],
+      menu: [
+        ["북어국", "5,500"],
+        ["육개장", "5,500"],
+        ["제육덮밥", "5,000"],
+        ["부대찌개", "5,000"],
+      ],
     },
     {
       name: "명품고향삼계탕",
@@ -197,7 +242,12 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fsearch.pstatic.net%2Fcommon%2F%3FautoRotate%3Dtrue%26quality%3D95%26type%3Dw750%26src%3Dhttps%253A%252F%252Fpup-review-phinf.pstatic.net%252FMjAyMjEyMTlfMjEx%252FMDAxNjcxNDEyMzczOTg5.gqNDL2V_tMB5YKiWolEniFRlnsQYJTEaV1BEryV4s6og.V0Wgl0v2DyhotR1flmT8ntWov-DaGJL9DwDzaB-JhE8g.JPEG%252F1000007023.jpg",
       ],
       phoneNum: "02-812-7745",
-      menu: [],
+      menu: [
+        ["고려삼계탕", "14,000"],
+        ["명품반계탕", "8,000"],
+        ["명품순대국", "8,000"],
+        ["뚝배기불고기", "8,000"],
+      ],
     },
     {
       name: "내가찜한닭",
@@ -217,7 +267,12 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fsearch.pstatic.net%2Fcommon%2F%3FautoRotate%3Dtrue%26quality%3D95%26type%3Dw750%26src%3Dhttps%253A%252F%252Fpup-review-phinf.pstatic.net%252FMjAyMjExMDlfMjM2%252FMDAxNjY3OTcyMTMxMzg3.-SGk5_Hefnv1V0O4orpG3BAYvouFoDn0hEhHutdBNjog.LO0iwqvWHxORQJRyA9klc1I4Cvbk78YOomtzFPfbr2Mg.JPEG%252F20221103_122615.jpg",
       ],
       phoneNum: "0507-1434-1252",
-      menu: [],
+      menu: [
+        ["순살안동찜닭(소)", "23,000"],
+        ["순살안동찜닭(중)", "30,000"],
+        ["로제파스타찜닭(소)", "25,000"],
+        ["로제파스타짐닭(대)", "42,000"],
+      ],
     },
     {
       name: "논두렁갈비",
@@ -236,7 +291,12 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAxMjdfMTQ3%2FMDAxNjc0Nzk0ODQ3NDgx.WRf0XgqLtUqGLiQuppanl3XFqz-p0ygxavUvJXNxvx4g.rq7IA2qRBgn4dlLczubQUxUwDKqIa1SiMfyufXVHEQkg.JPEG%2F20230127_133906.jpg",
       ],
       phoneNum: "02-815-1065",
-      menu: [],
+      menu: [
+        ["소왕통갈비", "15,000"],
+        ["돼지왕갈비", "10,000"],
+        ["삼겹살", "14,000"],
+        ["수입삼겹살", "7,000"],
+      ],
     },
   ],
   western: [
@@ -1093,7 +1153,12 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA1MzBfMjc0%2FMDAxNjIyMzUyNjg5ODc4._f12x--tm4UQVshPJdNYb0SupkDhlrC0Y7gBr0f-0sEg.e-Sag7tWNdBOtPvlOcWLEsf7kBJZARxGUAGK8WnCiA8g.JPEG.boyoon0125%2F1622352386805.jpg",
       ],
       phoneNum: "02-822-5575",
-      menu: [],
+      menu: [
+        ["짜장면", "5,000"],
+        ["간짜장", "6,000"],
+        ["짬뽕", "5,500"],
+        ["짬짜면", "7,000"],
+      ],
     },
     {
       name: "연래춘",
@@ -1114,7 +1179,12 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20220421_65%2F1650532426286cgQ6J_JPEG%2Fupload_4c56b2ef54d3ec07cfbe37e4af411e1a.jpg",
       ],
       phoneNum: "032-363-2777",
-      menu: [],
+      menu: [
+        ["탕수육+짜장2", "15,000"],
+        ["탕수육+짜장+짬뽕", "16,000"],
+        ["탕수육+짬뽕2", "17,000"],
+        ["깐풍기+쟁반짜장2", "20,000"],
+      ],
     },
     {
       name: "취향",
@@ -1129,7 +1199,12 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjA4MTFfODkg%2FMDAxNjYwMjAyNzk4NDEy.NadNGlNC5T41ft_qgIs7ykeA5_VOMxrblPzoR18yl8sg.R07Pvd3yrNenQD7xn74DEBcbitp12z8UyN3tUsoshI0g.JPEG%2Fupload_124b6b7061e065f1ed5e84a55f04195b.jpg",
       ],
       phoneNum: "0507-1412-5513",
-      menu: [],
+      menu: [
+        ["짜장면", "6,500"],
+        ["짬뽕", "7,500"],
+        ["볶음밥", "7,500"],
+        ["짜장밥", "7,500"],
+      ],
     },
     {
       name: "긴자료코 숭실대입구점",
@@ -1151,7 +1226,12 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjExMDZfNzYg%2FMDAxNjY3NzM4NDQ5MTk0.TWx2hW1QTD3dvRAFO1ufHX62V7bFr_yZcgcdKZYKoVsg.OboJuc8me0Pm54KTfPoc-HpJJTeZwoq3qvOh2Jp8Z4Ig.JPEG.always_stay_home%2FSlide8.JPG",
       ],
       phoneNum: "02-816-8160",
-      menu: [],
+      menu: [
+        ["사케동", "13,000"],
+        ["데미그라스돈까스", "9,000"],
+        ["왕새우튀김우동", "12,000"],
+        ["명란크림우동", "9,000"],
+      ],
     },
     {
       name: "철탄 함바그 텐동",
@@ -1172,7 +1252,12 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjExMThfMjg0%2FMDAxNjY4Nzc0ODA1NjA5.Q6odGxv2aVtH5XHvUKh-KzTgNhjUYEqGQ5O3yWr_NxMg.ojR6tNcRJB-juCylPoGeC-6HusYpp1wWERj4mH8irMYg.JPEG%2F20221102_124458_HDR.jpg",
       ],
       phoneNum: "0507-1305-0504",
-      menu: [],
+      menu: [
+        ["에비텐동", "12,900"],
+        ["아나고텐동", "16,900"],
+        ["철탄오리지널함바그", "12,900"],
+        ["산토리가쿠하이볼", "8,500"],
+      ],
     },
     {
       name: "숑숑돈까스 숭실대점",
@@ -1191,7 +1276,12 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMTJfODMg%2FMDAxNjc4NjE0MzE3NzQ0._B3vdkcxM2kvrQcEOWbM8EJxsSRb1aG-ZHZmF9Hx58Mg._9aFvOgIPa6JvuMy-jOKmrQCYz2Y1I31CAJtmDF2LLgg.JPEG%2F25FED7FC-FDA9-4B80-A19D-50FC28D98F54.jpeg",
       ],
       phoneNum: "02-3280-3944",
-      menu: [],
+      menu: [
+        ["숑숑돈까스", "8,500"],
+        ["경양식 왕돈까스", "9,900"],
+        ["프리미엄 카츠", "9,500"],
+        ["모둠카츠", "11,900"],
+      ],
     },
     {
       name: "은화수식당 숭실대점",
@@ -1211,7 +1301,12 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA5MTBfMTkw%2FMDAxNjMxMjM1OTc0MDAy.kLmp-ab1oP1G8WZ-BR0HiP62eWBt_ug9uJ1UyM7B7Ogg.DZqDayCYDCsJMN5NYsFEs3c504iNKNsm9SVi5nmYGLEg.JPEG.lovelymi_%2FIMG_1965.jpg",
       ],
       phoneNum: "02-3280-3944",
-      menu: [],
+      menu: [
+        ["은화수정식", "11,000"],
+        ["멘치치즈카레", "9,000"],
+        ["고구마매콤이돈까스", "10,500"],
+        ["경양식돈까스", "8,500"],
+      ],
     },
     {
       name: "멘동",
@@ -1233,7 +1328,12 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjExMjhfNjIg%2FMDAxNjY5NjM0NTIzMTY2.niYy0SriHzAEW-1ZMZAHkqQO5BFRwjUkGh76D6JMUQUg.u9HE3IVMipLr7n-pwpR4PWkeb9sFNUwugENgHCO5d6gg.JPEG%2F1669633766446.jpg",
       ],
       phoneNum: "02-821-2146",
-      menu: [],
+      menu: [
+        ["가츠동", "7,500"],
+        ["규동", "7,500"],
+        ["에비동", "7,500"],
+        ["김치가츠동", "7,500"],
+      ],
     },
   ],
 };
