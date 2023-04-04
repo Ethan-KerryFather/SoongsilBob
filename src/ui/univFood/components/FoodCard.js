@@ -5,9 +5,7 @@ import {
   SmallText,
   SmallTitle,
 } from "../../../styled/styledComponents";
-import { Avater, Button, Card } from "react-native-paper";
 import { RFPercentage } from "react-native-responsive-fontsize";
-import Colors from "../../../../assets/Colors";
 
 function FoodCard({ title, text, imageUrl }) {
   if (text === "") {

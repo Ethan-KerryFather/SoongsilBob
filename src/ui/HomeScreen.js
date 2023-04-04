@@ -15,6 +15,8 @@ import Colors from "../../assets/Colors";
 import BottomSheet from "react-native-gesture-bottom-sheet";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { RFPercentage } from "react-native-responsive-fontsize";
+import AnimatedLottieView from "lottie-react-native";
+import CategoryItem from "./CategoryItem";
 
 function HomeScreen({}) {
   const navigation = useNavigation();
@@ -129,126 +131,42 @@ function HomeScreen({}) {
 
       <View style={styles.middleContainer}></View>
       <View style={styles.lowerContainer}>
-        <Pressable
-          style={({ pressed }) =>
-            pressed
-              ? [
-                  styles.itemContainer,
-                  { backgroundColor: Colors.basicColor.magenta },
-                ]
-              : [styles.itemContainer]
-          }
-          onPress={() => {
-            navigation.navigate("StoreList", { category: "한식" });
-          }}
-        >
-          <Text style={[styles.normalText, { fontSize: 30 }]}>한식</Text>
-        </Pressable>
-        <Pressable
-          style={({ pressed }) =>
-            pressed
-              ? [
-                  styles.itemContainer,
-                  { backgroundColor: Colors.basicColor.magenta },
-                ]
-              : [styles.itemContainer]
-          }
-          onPress={() => {
-            navigation.navigate("StoreList", { category: "일식" });
-          }}
-        >
-          <Text style={[styles.normalText, { fontSize: 25 }]}>일식/중식</Text>
-        </Pressable>
-        <Pressable
-          style={({ pressed }) =>
-            pressed
-              ? [
-                  styles.itemContainer,
-                  { backgroundColor: Colors.basicColor.magenta },
-                ]
-              : [styles.itemContainer]
-          }
-          onPress={() => {
-            navigation.navigate("StoreList", { category: "양식" });
-          }}
-        >
-          <Text style={[styles.normalText, { fontSize: 30 }]}>양식</Text>
-        </Pressable>
-        <Pressable
-          style={({ pressed }) =>
-            pressed
-              ? [
-                  styles.itemContainer,
-                  { backgroundColor: Colors.basicColor.magenta },
-                ]
-              : [styles.itemContainer]
-          }
-          onPress={() => {
-            navigation.navigate("StoreList", { category: "아시안" });
-          }}
-        >
-          <Text style={[styles.normalText, { fontSize: 30 }]}>아시안</Text>
-        </Pressable>
-        <Pressable
-          style={({ pressed }) =>
-            pressed
-              ? [
-                  styles.itemContainer,
-                  { backgroundColor: Colors.basicColor.magenta },
-                ]
-              : [styles.itemContainer]
-          }
-          onPress={() => {
-            navigation.navigate("StoreList", { category: "테이크아웃" });
-          }}
-        >
-          <Text style={[styles.normalText, { fontSize: 23 }]}>테이크아웃</Text>
-        </Pressable>
-        <Pressable
-          style={({ pressed }) =>
-            pressed
-              ? [
-                  styles.itemContainer,
-                  { backgroundColor: Colors.basicColor.magenta },
-                ]
-              : [styles.itemContainer]
-          }
-          onPress={() => {
-            navigation.navigate("StoreList", { category: "술집" });
-          }}
-        >
-          <Text style={[styles.normalText, { fontSize: 30 }]}>술집</Text>
-        </Pressable>
-        <Pressable
-          style={({ pressed }) =>
-            pressed
-              ? [
-                  styles.itemContainer,
-                  { backgroundColor: Colors.basicColor.magenta },
-                ]
-              : [styles.itemContainer]
-          }
-          onPress={() => {
-            navigation.navigate("StoreList", { category: "치킨/피자" });
-          }}
-        >
-          <Text style={[styles.normalText, { fontSize: 25 }]}>치킨/피자</Text>
-        </Pressable>
-        <Pressable
-          style={({ pressed }) =>
-            pressed
-              ? [
-                  styles.itemContainer,
-                  { backgroundColor: Colors.basicColor.magenta },
-                ]
-              : [styles.itemContainer]
-          }
-          onPress={() => {
-            navigation.navigate("StoreList", { category: "카페" });
-          }}
-        >
-          <Text style={[styles.normalText, { fontSize: 30 }]}>카페</Text>
-        </Pressable>
+        <CategoryItem
+          category={"한식"}
+          jsonRoute={require("../../assets/kimchi.json")}
+        />
+
+        <CategoryItem
+          category={"일식"}
+          jsonRoute={require("../../assets/japan.json")}
+        />
+        <CategoryItem
+          category={"양식"}
+          jsonRoute={require("../../assets/western.json")}
+        />
+        <CategoryItem
+          category={"아시안"}
+          jsonRoute={require("../../assets/asian.json")}
+        />
+
+        <CategoryItem
+          category={"테이크아웃"}
+          jsonRoute={require("../../assets/takeout.json")}
+        />
+
+        <CategoryItem
+          category={"술집"}
+          jsonRoute={require("../../assets/beer.json")}
+        />
+
+        <CategoryItem
+          category={"치킨/피자"}
+          jsonRoute={require("../../assets/pizza.json")}
+        />
+        <CategoryItem
+          category="카페"
+          jsonRoute={require("../../assets/cafe.json")}
+        />
       </View>
     </View>
   );
@@ -285,7 +203,7 @@ const styles = StyleSheet.create({
   //
   itemContainer: {
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     width: "42%",
     height: "20%",
     backgroundColor: Colors.basicColor.magentaTrans2,
