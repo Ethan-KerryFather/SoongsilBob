@@ -35,6 +35,7 @@ const stores = {
         ["차새대떡볶이(중)", "23,500"],
         ["버터갈릭감자튀김", "5,500"],
       ],
+      event: true,
     },
     {
       name: "신의주찹쌀순대",
@@ -53,6 +54,7 @@ const stores = {
       ],
       phoneNum: "02-822-5862",
       menu: [["순대국", "9,000"]],
+      event: false,
     },
     {
       name: "상도명태명가 본점",
@@ -76,6 +78,7 @@ const stores = {
         ["맵콤명태조림(대)", "65,000"],
         ["해물칼국수", "9,000"],
       ],
+      event: false,
     },
     {
       name: "사리원",
@@ -100,6 +103,7 @@ const stores = {
         ["만두전골(대)", "45,000"],
         ["접시만두(대)", "12,000"],
       ],
+      event: false,
     },
     {
       name: "손칼국수",
@@ -125,6 +129,7 @@ const stores = {
         ["철판떡볶이(2인분기본)", "11,000"],
         ["감자탕(대)", "20,000"],
       ],
+      event: false,
     },
     {
       name: "상도국수",
@@ -149,6 +154,7 @@ const stores = {
         ["열무국수(여름한정)", "7,000"],
         ["날씬멸치김밥", "1,500"],
       ],
+      event: false,
     },
     {
       name: "명태촌",
@@ -168,12 +174,11 @@ const stores = {
       phoneNum: "02-815-2322",
       menu: [
         ["매콤명태조림(대)", "55,000"],
-
         ["매콤명태조림(중)", "45,000"],
-
         ["매콤명태조림(소)", "33,000"],
         ["대구지리탕(대)", "55,000"],
       ],
+      event: false,
     },
     {
       name: "더진국",
@@ -193,14 +198,12 @@ const stores = {
       phoneNum: "0507-1417-1502",
       menu: [
         ["수육국밥", "8,000"],
-
         ["순대국밥", "8,000"],
-
         ["얼큰국밥", "8,500"],
         ["명태회냉면", "8,000"],
-
         ["직화물냉면", "8,000"],
       ],
+      event: false,
     },
     {
       name: "밀알식당",
@@ -225,6 +228,7 @@ const stores = {
         ["제육덮밥", "5,000"],
         ["부대찌개", "5,000"],
       ],
+      event: false,
     },
     {
       name: "명품고향삼계탕",
@@ -248,6 +252,7 @@ const stores = {
         ["명품순대국", "8,000"],
         ["뚝배기불고기", "8,000"],
       ],
+      event: false,
     },
     {
       name: "내가찜한닭",
@@ -273,6 +278,7 @@ const stores = {
         ["로제파스타찜닭(소)", "25,000"],
         ["로제파스타짐닭(대)", "42,000"],
       ],
+      event: false,
     },
     {
       name: "논두렁갈비",
@@ -297,6 +303,7 @@ const stores = {
         ["삼겹살", "14,000"],
         ["수입삼겹살", "7,000"],
       ],
+      event: false,
     },
   ],
   western: [
@@ -317,7 +324,13 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fsearch.pstatic.net%2Fcommon%2F%3FautoRotate%3Dtrue%26quality%3D95%26type%3Dw750%26src%3Dhttps%253A%252F%252Fpup-review-phinf.pstatic.net%252FMjAyMzAyMjdfMjkz%252FMDAxNjc3NTAyMDI5NTk3.D_KzutD6_wNOEjMRhSbKZMwxhlND2uFVBuX5-TPmfX0g.sf_I6qzfv_KyMDa0gmQQ6-B3lgdwi1IGXessUF4GB6Ag.JPEG%252FBE2B81C7-9BB3-4522-9D48-AF3B23B03455.jpeg",
       ],
       phoneNum: "0507-1385-0504",
-      menu: [],
+      menu: [
+        ["립아이스테이크 300g", "59,900"],
+        ["알리오올리오 스파게티", "10,900"],
+        ["명란오일 스파게티", "13,900"],
+        ["부라따뽀모도로 파스타", "15,900"],
+      ],
+      event: false,
     },
     {
       name: "뚝배기 스파게티",
@@ -337,6 +350,7 @@ const stores = {
       ],
       phoneNum: "",
       menu: [],
+      event: false,
     },
     {
       name: "샤로스톤",
@@ -358,6 +372,7 @@ const stores = {
       ],
       phoneNum: "0507-1448-1616",
       menu: [],
+      event: false,
     },
     {
       name: "휘게",
@@ -379,6 +394,7 @@ const stores = {
       ],
       phoneNum: "0507-1346-1232",
       menu: [],
+      event: false,
     },
     {
       name: "프라이밋 스테이크 하우스",
@@ -398,6 +414,7 @@ const stores = {
       ],
       phoneNum: "02-823-6446",
       menu: [],
+      event: false,
     },
     {
       name: "펍캐리온",
@@ -420,6 +437,7 @@ const stores = {
       ],
       phoneNum: "02-823-5360",
       menu: [],
+      event: false,
     },
   ],
   asian: [
@@ -441,6 +459,7 @@ const stores = {
       ],
       phoneNum: "070-8621-0906",
       menu: [],
+      event: false,
     },
   ],
   takeout: [
@@ -463,6 +482,7 @@ const stores = {
       ],
       phoneNum: "02-6012-8246",
       menu: [],
+      event: false,
     },
     {
       name: "밀플랜비 숭실대점",
@@ -481,6 +501,7 @@ const stores = {
       ],
       phoneNum: "010-9100-2536",
       menu: [],
+      event: false,
     },
     {
       name: "맥도날드 숭실대점",
@@ -499,6 +520,7 @@ const stores = {
       ],
       phoneNum: "070-7209-0593",
       menu: [],
+      event: false,
     },
     {
       name: "아리랑컵밥",
@@ -516,6 +538,7 @@ const stores = {
       ],
       phoneNum: "0507-1307-8244",
       menu: [],
+      event: false,
     },
     {
       name: "수수&핫커리 핫도그",
@@ -535,6 +558,7 @@ const stores = {
       ],
       phoneNum: "02-811-0233",
       menu: [],
+      event: false,
     },
   ],
   chickenPizza: [
@@ -555,6 +579,7 @@ const stores = {
       ],
       phoneNum: "02-824-1182",
       menu: [],
+      event: false,
     },
     {
       name: "리얼후라이",
@@ -573,6 +598,7 @@ const stores = {
       ],
       phoneNum: "02-3280-8292",
       menu: [],
+      event: false,
     },
     {
       name: "미쳐버린파닭",
@@ -591,6 +617,7 @@ const stores = {
       ],
       phoneNum: "02-822-9294",
       menu: [],
+      event: false,
     },
     {
       name: "BHC치킨 숭실대점",
@@ -609,6 +636,7 @@ const stores = {
       ],
       phoneNum: "02-815-8799",
       menu: [],
+      event: false,
     },
     {
       name: "디디치킨",
@@ -628,6 +656,7 @@ const stores = {
       ],
       phoneNum: "02-817-9992",
       menu: [],
+      event: false,
     },
     {
       name: "맛닭꼬 숭실대입구역점",
@@ -647,6 +676,7 @@ const stores = {
       ],
       phoneNum: "02-3280-3492",
       menu: [],
+      event: false,
     },
     {
       name: "푸라닭 상도1동점",
@@ -666,6 +696,7 @@ const stores = {
       ],
       phoneNum: "02-823-9206",
       menu: [],
+      event: false,
     },
   ],
   alcohol: [
@@ -690,6 +721,7 @@ const stores = {
       ],
       phoneNum: "02-823-9206",
       menu: [],
+      event: false,
     },
     {
       name: "으리으리",
@@ -713,6 +745,7 @@ const stores = {
       ],
       phoneNum: "0507-1404-4028",
       menu: [],
+      event: false,
     },
     {
       name: "파동추야",
@@ -734,6 +767,7 @@ const stores = {
       ],
       phoneNum: "02-822-5988",
       menu: [],
+      event: false,
     },
     {
       name: "생활맥주 숭실대입구역점",
@@ -753,6 +787,7 @@ const stores = {
       ],
       phoneNum: "02-815-5761",
       menu: [],
+      event: false,
     },
     {
       name: "28청춘포차",
@@ -771,6 +806,7 @@ const stores = {
       ],
       phoneNum: "010-4729-3567",
       menu: [],
+      event: false,
     },
     {
       name: "블루힐",
@@ -789,6 +825,7 @@ const stores = {
       ],
       phoneNum: "02-821-2446",
       menu: [],
+      event: false,
     },
     {
       name: "역전할머니맥주 숭실대점",
@@ -810,6 +847,7 @@ const stores = {
       ],
       phoneNum: "0507-1373-1982",
       menu: [],
+      event: false,
     },
     {
       name: "민속주점 상투골",
@@ -828,6 +866,7 @@ const stores = {
       ],
       phoneNum: "02-822-2958",
       menu: [],
+      event: false,
     },
     {
       name: "봉구비어 숭실대입구역점",
@@ -850,6 +889,7 @@ const stores = {
       ],
       phoneNum: "0507-1404-4354",
       menu: [],
+      event: false,
     },
   ],
   cafe: [
@@ -872,6 +912,7 @@ const stores = {
       ],
       phoneNum: "0507-1373-5532",
       menu: [],
+      event: false,
     },
     {
       name: "카페빌리지",
@@ -894,6 +935,7 @@ const stores = {
       ],
       phoneNum: "0507-1383-1058",
       menu: [],
+      event: false,
     },
     {
       name: "개러지 로스터",
@@ -914,6 +956,7 @@ const stores = {
       ],
       phoneNum: "0506-881-1590",
       menu: [],
+      event: false,
     },
     {
       name: "케이크팝",
@@ -933,6 +976,7 @@ const stores = {
       ],
       phoneNum: "02-825-8799",
       menu: [],
+      event: false,
     },
     {
       name: "달쿠마",
@@ -954,6 +998,7 @@ const stores = {
       ],
       phoneNum: "0507-1497-2001",
       menu: [],
+      event: false,
     },
     {
       name: "eea cafe",
@@ -976,6 +1021,7 @@ const stores = {
       ],
       phoneNum: "0507-1391-1181",
       menu: [],
+      event: false,
     },
     {
       name: "투썸플레이스",
@@ -997,6 +1043,7 @@ const stores = {
       ],
       phoneNum: "010-8425-0246",
       menu: [],
+      event: false,
     },
     {
       name: "슈니퐁당",
@@ -1011,6 +1058,7 @@ const stores = {
       ],
       phoneNum: "",
       menu: [],
+      event: false,
     },
     {
       name: "스터디어스 스터디카페 상도",
@@ -1032,7 +1080,13 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230204_298%2F1675453731012EObOd_JPEG%2FKakaoTalk_20230202_184749412_02.jpg",
       ],
       phoneNum: "0507-1332-1351",
-      menu: [],
+      menu: [
+        ["3시간(시간권/당일권)", "5,000"],
+        ["5시간(시간권/당일권)", "7,000"],
+        ["7시간(시간권/당일권)", "9,000"],
+        ["이벤트(200+50시간)", "220,000"],
+      ],
+      event: true,
     },
     {
       name: "앙러뷰케이크",
@@ -1052,7 +1106,13 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230218_198%2F1676723835847EbhB6_JPEG%2F20230215_133246.jpg",
       ],
       phoneNum: "0507-1419-1253",
-      menu: [],
+      menu: [
+        ["3호 떡케이크", "99,000"],
+        ["2호 떡케이크", "79,000"],
+        ["1호 떡케이크", "59,000"],
+        ["백일떡/돌떡/생일떡", "변동"],
+      ],
+      event: false,
     },
     {
       name: "미학당",
@@ -1060,7 +1120,8 @@ const stores = {
       workingTime: "11:00-20:00, 월화 휴무",
       price: "4000원-",
       location: { X: 126.960538, Y: 37.494543 },
-      description: "",
+      description:
+        "안녕하세요. 맛을 배우는 공간 미학당입니다. 매일매장에서 반죽하여 만드는 신선한 구움과자와 제철재료를 사용하여 만든 잼, 정성을 담은 음료를 판매하는 작고 소박한 카페입니다.",
       imageList: [
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200831_167%2F15988058506004wolJ_JPEG%2FKakaoTalk_20200831_014243865.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220804_190%2F1659622953127DvvtQ_JPEG%2FKakaoTalk_20220804_232023908.jpg",
@@ -1072,7 +1133,13 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDEwMDhfMTc0%2FMDAxNjAyMTQ5NzE4Nzk2.l2BLCLu_Cqn3EQxRUZq8buG_jVk1kK87-g-N2Szmnrcg.HI9CIMZ-EA9__hFEyj9TK8gR26OsL74y5Y0ZYrIX5xcg.JPEG.aintadult%2FIMG_6130.jpg",
       ],
       phoneNum: "0507-1497-2001",
-      menu: [],
+      menu: [
+        ["버터밀크스콘", "2,500"],
+        ["피스타치오비엔나", "5,500"],
+        ["로얄밀크티", "8,000"],
+        ["클래식휘낭시에", "2,000"],
+      ],
+      event: false,
     },
     {
       name: "카페봄봄",
@@ -1088,7 +1155,13 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjA5MjFfNzMg%2FMDAxNjYzNzI5OTI1MjUy.nEuCOOgVZzSpEazHhE68s4jS9T2L7AF5LiuQylzttFwg.RVfeTjJYgA-arx2e4N2IKzSSv3x4yNtXq_5c6yzH4G4g.JPEG%2F20220920_102354.jpg",
       ],
       phoneNum: "02-816-6700",
-      menu: [],
+      menu: [
+        ["아메리카노", "1,300"],
+        ["헤이즐럿 아메리카노", "1,800"],
+        ["더치카페", "3,800"],
+        ["카푸치노", "2,800"],
+      ],
+      event: false,
     },
     {
       name: "하우스무드",
@@ -1110,7 +1183,13 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEyMDhfMTQ4%2FMDAxNjcwNDkyNzk0NDgz.Mqh3G4rMjBZpbW2HLwrkG-Y4GYQYKFzkdPdInoYlggMg.fyjTfkb2f-Xs6DgVhoXHNAON9tuiSnkbs4lvPV6jOBUg.JPEG.jfcmonkey3%2FKakaoTalk_20221208_180308035.jpg",
       ],
       phoneNum: "0507-1319-9404",
-      menu: [],
+      menu: [
+        ["바닐라라떼", "4,500"],
+        ["카페모카", "4,500"],
+        ["아이스아메리카노", "3,500"],
+        ["요거트 보울", "6,500~\n8,500"],
+      ],
+      event: false,
     },
     {
       name: "가춘",
@@ -1132,7 +1211,13 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221208_211%2F16705000372875MJbb_JPEG%2FE1CA19B9-4AA6-4F4A-BB7A-0FBDB41E0F60.jpeg",
       ],
       phoneNum: "0507-1438-3653",
-      menu: [],
+      menu: [
+        ["올리브치아바타", "3,000"],
+        ["가춘샐러드", "5,500"],
+        ["소금빵", "2,000"],
+        ["에그타르트", "2,500"],
+      ],
+      event: false,
     },
   ],
   japanese: [
@@ -1159,6 +1244,7 @@ const stores = {
         ["짬뽕", "5,500"],
         ["짬짜면", "7,000"],
       ],
+      event: false,
     },
     {
       name: "연래춘",
@@ -1185,6 +1271,7 @@ const stores = {
         ["탕수육+짬뽕2", "17,000"],
         ["깐풍기+쟁반짜장2", "20,000"],
       ],
+      event: false,
     },
     {
       name: "취향",
@@ -1205,6 +1292,7 @@ const stores = {
         ["볶음밥", "7,500"],
         ["짜장밥", "7,500"],
       ],
+      event: false,
     },
     {
       name: "긴자료코 숭실대입구점",
@@ -1232,6 +1320,7 @@ const stores = {
         ["왕새우튀김우동", "12,000"],
         ["명란크림우동", "9,000"],
       ],
+      event: false,
     },
     {
       name: "철탄 함바그 텐동",
@@ -1258,6 +1347,7 @@ const stores = {
         ["철탄오리지널함바그", "12,900"],
         ["산토리가쿠하이볼", "8,500"],
       ],
+      event: false,
     },
     {
       name: "숑숑돈까스 숭실대점",
@@ -1282,6 +1372,7 @@ const stores = {
         ["프리미엄 카츠", "9,500"],
         ["모둠카츠", "11,900"],
       ],
+      event: false,
     },
     {
       name: "은화수식당 숭실대점",
@@ -1307,6 +1398,7 @@ const stores = {
         ["고구마매콤이돈까스", "10,500"],
         ["경양식돈까스", "8,500"],
       ],
+      event: false,
     },
     {
       name: "멘동",
@@ -1334,6 +1426,7 @@ const stores = {
         ["에비동", "7,500"],
         ["김치가츠동", "7,500"],
       ],
+      event: false,
     },
   ],
 };

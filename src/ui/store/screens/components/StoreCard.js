@@ -16,7 +16,8 @@ function StoreCard({ item, index, width, latitude, longtitude }) {
         styles.itemContainer,
         {
           width: width * 1,
-          marginBottom: RFPercentage(10),
+          marginBottom: RFPercentage(5),
+          marginTop: RFPercentage(8),
         },
       ]}
       key={index}
@@ -35,6 +36,22 @@ function StoreCard({ item, index, width, latitude, longtitude }) {
         });
       }}
     >
+      {item.event && (
+        <View
+          style={{
+            position: "absolute",
+            zIndex: 10,
+            top: -RFPercentage(10),
+            right: 3,
+          }}
+        >
+          <Image
+            source={require("../../../../../assets/saleIcon.png")}
+            style={{ width: 120, height: 100 }}
+          />
+        </View>
+      )}
+
       <View style={{ marginVertical: RFPercentage(1.3) }}>
         <SmallTitle>
           나로부터{" "}
@@ -110,7 +127,6 @@ function StoreCard({ item, index, width, latitude, longtitude }) {
         <View
           style={{
             flexDirection: "row",
-
             alignSelf: "flex-start",
           }}
         >
@@ -180,7 +196,7 @@ function StoreCard({ item, index, width, latitude, longtitude }) {
                 }}
               >
                 {item.menu.length !== 0 &&
-                  item.menu.map((item) => {
+                  item.menu.map((item, index) => {
                     return (
                       <View
                         style={{
@@ -190,6 +206,7 @@ function StoreCard({ item, index, width, latitude, longtitude }) {
                           marginBottom: RFPercentage(1),
                           marginTop: RFPercentage(2.5),
                         }}
+                        key={index}
                       >
                         <SmallTitle>{item[0]}</SmallTitle>
                         <BigText style={{ textDecorationLine: "underline" }}>
