@@ -1,10 +1,8 @@
 import React from "react";
 import { StyleSheet, StatusBar, View } from "react-native";
-
 import AnimatedLottieView from "lottie-react-native";
 import { useEffect } from "react";
-import { BigTitle, SmallTitle } from "../../styled/styledComponents";
-import { RFPercentage } from "react-native-responsive-fontsize";
+import { BigTitle } from "../../styled/styledComponents";
 
 function RankingHome({ navigation }) {
   useEffect(() => {
@@ -21,6 +19,7 @@ function RankingHome({ navigation }) {
       <AnimatedLottieView
         source={require("../../../assets/cooking.json")}
         style={{ flex: 1 }}
+        autoPlay
       />
     </View>
   );

@@ -48,6 +48,7 @@ function NotificationScreen() {
         <AnimatedLottieView
           source={require("../../assets/cooking.json")}
           style={{ flex: 1 }}
+          autoPlay
         />
       </View>
     </View>
