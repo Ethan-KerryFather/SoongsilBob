@@ -4,7 +4,8 @@ import RootStack from "./src/navigation/RootStack";
 import Colors from "./assets/Colors";
 import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
-import { useEffect, useState } from "react";
+
+import { useEffect, useLayoutEffect, useState } from "react";
 import * as Location from "expo-location";
 // gesture handler 등록
 import "react-native-gesture-handler";
@@ -16,62 +17,50 @@ function App() {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
   const [fontsLoaded] = useFonts({
-    "black-sans": require("./assets/font/black-sans.ttf"),
     "gowun-regular": require("./assets/font/gowun-regular.ttf"),
     "gowun-bold": require("./assets/font/gowun-bold.ttf"),
+    "black-sans": require("./assets/font/black-sans.ttf"),
     MaterialCommunityIcons: require("@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"),
   });
 
   // 위치권한 요청
-  useEffect(() => {
-    try {
-      getLocation();
+  useLayoutEffect(() => {
+    const getLocationAsync = async () => {
+      try {
+        console.log("권한 체크를 시작합니다");
+        const { status } = await Location.requestForegroundPermissionsAsync();
+        // if (status !== "granted") {
+        //   setErrorMsg("위치 권한 문제 발생");
+        //   return;
+        // }
+        if (status === "granted") console.log("권한에 이상이 없습니다");
+      } catch {
+        console.log(errorMsg);
+        console.log("위치 권한을 받아오는 것에 문제가 생겼습니다.");
+      }
+
+      console.log("위치 데이터를 가져옵니다. ");
+      const location = await Location.getCurrentPositionAsync({
+        distanceInterval: 10,
+        timeInterval: 20000,
+        accuracy: Location.Accuracy.Highest,
+      });
+      console.log("위치 가져오기 완료\n위치 데이터: ");
+
+      nextLocation(location);
+    };
+
+    function nextLocation(location) {
+      setLocation(location);
       SplashScreen.hideAsync();
-    } catch (error) {
-      console.log("error");
     }
 
-    return () => {};
+    getLocationAsync();
+    return () => {
+      setLocation(null);
+      setErrorMsg(null);
+    };
   }, []);
-
-  const getLocation = () => {
-    console.log("권한을 체크합니다");
-    Location.requestForegroundPermissionsAsync().then(({ status }) => {
-      if (status !== "granted") {
-        setErrorMsg("위치 권한 문제 발생");
-        return;
-      }
-
-      console.log("위치 권한 이상 없음");
-      console.log("위치를 가져옵니다");
-      try {
-        return Location.getCurrentPositionAsync({
-          distanceInterval: 10,
-          timeInterval: 20000,
-          accuracy: Location.Accuracy.Balanced,
-        })
-          .then((location) => {
-            console.log("위치 가져오기 완료\n위치 데이터: ");
-            setLocation(location);
-          })
-          .catch((error) => console.log(error));
-      } catch (error) {
-        console.log("에러발생. 재시도");
-        return Location.getCurrentPositionAsync({
-          distanceInterval: 10,
-          timeInterval: 20000,
-          accuracy: Location.Accuracy.Balanced,
-        })
-          .then((location) => {
-            console.log("위치 가져오기 완료\n위치 데이터: ");
-            console.log(JSON.stringify(location));
-            setLocation(location);
-          })
-          .catch((error) => console.log(error));
-      } finally {
-      }
-    });
-  };
 
   if (location && fontsLoaded) {
     return (
@@ -96,7 +85,6 @@ function App() {
             backgroundColor: "white",
           }}
         >
-          <Text style={{ fontSize: 20 }}>밥 차리는 중..</Text>
           <Text style={{ fontSize: 15 }}>
             사용자 위치 업데이트가 원활하지 않을 때가 있습니다.
           </Text>

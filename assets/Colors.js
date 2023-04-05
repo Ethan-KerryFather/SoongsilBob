@@ -6,5 +6,9 @@ export default Color = {
     grayTrans1: "#D8D8D850",
     magenta: "#d7533eaa",
     magentaTrans1: "#d7533e80",
+    magentaTrans2: "#d7533e20",
+    green: "#c9e9e4",
+    greenTrans1: "#c9e9e440",
+    gold: "#FFD700",
   },
 };

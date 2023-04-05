@@ -13,6 +13,10 @@ import {
 } from "react-native";
 import Colors from "../../assets/Colors";
 import BottomSheet from "react-native-gesture-bottom-sheet";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { RFPercentage } from "react-native-responsive-fontsize";
+import AnimatedLottieView from "lottie-react-native";
+import CategoryItem from "./CategoryItem";
 
 function HomeScreen({}) {
   const navigation = useNavigation();
@@ -29,6 +33,23 @@ function HomeScreen({}) {
   }, [navigation]);
   return (
     <View style={styles.container}>
+      <Pressable
+        style={{
+          position: "absolute",
+          right: 10,
+          bottom: 10,
+          zIndex: 1,
+        }}
+        onPress={() => {
+          navigation.navigate("Check");
+        }}
+      >
+        <Image
+          source={require("../../assets/identificationIcon.png")}
+          resizeMode="cover"
+          style={{ height: RFPercentage(10), width: RFPercentage(10) }}
+        />
+      </Pressable>
       <BottomSheet hasDraggableIcon ref={bottomSheet} height={300}>
         <View style={styles.bottomsheet}>
           <View
@@ -90,7 +111,13 @@ function HomeScreen({}) {
           </View>
         </View>
       </BottomSheet>
-      <View style={styles.upperContainer}>
+      <Pressable
+        style={styles.upperContainer}
+        onPress={() => {
+          console.log("routtlete");
+          navigation.navigate("RouletteScreen", { category: "밥집 정하기" });
+        }}
+      >
         <Text
           style={{
             fontFamily: "gowun-bold",
@@ -100,129 +127,46 @@ function HomeScreen({}) {
         >
           숭실밥집
         </Text>
-      </View>
+      </Pressable>
+
       <View style={styles.middleContainer}></View>
       <View style={styles.lowerContainer}>
-        <Pressable
-          style={({ pressed }) =>
-            pressed
-              ? [
-                  styles.itemContainer,
-                  { backgroundColor: Colors.basicColor.magenta },
-                ]
-              : [styles.itemContainer]
-          }
-          onPress={() => {
-            navigation.navigate("StoreList", { category: "한식" });
-          }}
-        >
-          <Text style={[styles.normalText, { fontSize: 30 }]}>한식</Text>
-        </Pressable>
-        <Pressable
-          style={({ pressed }) =>
-            pressed
-              ? [
-                  styles.itemContainer,
-                  { backgroundColor: Colors.basicColor.magenta },
-                ]
-              : [styles.itemContainer]
-          }
-          onPress={() => {
-            navigation.navigate("StoreList", { category: "일식" });
-          }}
-        >
-          <Text style={[styles.normalText, { fontSize: 25 }]}>일식/중식</Text>
-        </Pressable>
-        <Pressable
-          style={({ pressed }) =>
-            pressed
-              ? [
-                  styles.itemContainer,
-                  { backgroundColor: Colors.basicColor.magenta },
-                ]
-              : [styles.itemContainer]
-          }
-          onPress={() => {
-            navigation.navigate("StoreList", { category: "양식" });
-          }}
-        >
-          <Text style={[styles.normalText, { fontSize: 30 }]}>양식</Text>
-        </Pressable>
-        <Pressable
-          style={({ pressed }) =>
-            pressed
-              ? [
-                  styles.itemContainer,
-                  { backgroundColor: Colors.basicColor.magenta },
-                ]
-              : [styles.itemContainer]
-          }
-          onPress={() => {
-            navigation.navigate("StoreList", { category: "아시안" });
-          }}
-        >
-          <Text style={[styles.normalText, { fontSize: 30 }]}>아시안</Text>
-        </Pressable>
-        <Pressable
-          style={({ pressed }) =>
-            pressed
-              ? [
-                  styles.itemContainer,
-                  { backgroundColor: Colors.basicColor.magenta },
-                ]
-              : [styles.itemContainer]
-          }
-          onPress={() => {
-            navigation.navigate("StoreList", { category: "테이크아웃" });
-          }}
-        >
-          <Text style={[styles.normalText, { fontSize: 23 }]}>테이크아웃</Text>
-        </Pressable>
-        <Pressable
-          style={({ pressed }) =>
-            pressed
-              ? [
-                  styles.itemContainer,
-                  { backgroundColor: Colors.basicColor.magenta },
-                ]
-              : [styles.itemContainer]
-          }
-          onPress={() => {
-            navigation.navigate("StoreList", { category: "술집" });
-          }}
-        >
-          <Text style={[styles.normalText, { fontSize: 30 }]}>술집</Text>
-        </Pressable>
-        <Pressable
-          style={({ pressed }) =>
-            pressed
-              ? [
-                  styles.itemContainer,
-                  { backgroundColor: Colors.basicColor.magenta },
-                ]
-              : [styles.itemContainer]
-          }
-          onPress={() => {
-            navigation.navigate("StoreList", { category: "치킨/피자" });
-          }}
-        >
-          <Text style={[styles.normalText, { fontSize: 25 }]}>치킨/피자</Text>
-        </Pressable>
-        <Pressable
-          style={({ pressed }) =>
-            pressed
-              ? [
-                  styles.itemContainer,
-                  { backgroundColor: Colors.basicColor.magenta },
-                ]
-              : [styles.itemContainer]
-          }
-          onPress={() => {
-            navigation.navigate("StoreList", { category: "카페" });
-          }}
-        >
-          <Text style={[styles.normalText, { fontSize: 30 }]}>카페</Text>
-        </Pressable>
+        <CategoryItem
+          category={"한식"}
+          jsonRoute={require("../../assets/kimchi.json")}
+        />
+
+        <CategoryItem
+          category={"일식"}
+          jsonRoute={require("../../assets/japan.json")}
+        />
+        <CategoryItem
+          category={"양식"}
+          jsonRoute={require("../../assets/western.json")}
+        />
+        <CategoryItem
+          category={"아시안"}
+          jsonRoute={require("../../assets/asian.json")}
+        />
+
+        <CategoryItem
+          category={"테이크아웃"}
+          jsonRoute={require("../../assets/takeout.json")}
+        />
+
+        <CategoryItem
+          category={"술집"}
+          jsonRoute={require("../../assets/beer.json")}
+        />
+
+        <CategoryItem
+          category={"치킨/피자"}
+          jsonRoute={require("../../assets/pizza.json")}
+        />
+        <CategoryItem
+          category="카페"
+          jsonRoute={require("../../assets/cafe.json")}
+        />
       </View>
     </View>
   );
@@ -233,6 +177,7 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "white",
   },
   upperContainer: {
     flex: 4,
@@ -258,10 +203,10 @@ const styles = StyleSheet.create({
   //
   itemContainer: {
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     width: "42%",
     height: "20%",
-    backgroundColor: Colors.basicColor.gray,
+    backgroundColor: Colors.basicColor.magentaTrans2,
     borderRadius: 20,
     margin: "1%",
     borderWidth: 0.5,

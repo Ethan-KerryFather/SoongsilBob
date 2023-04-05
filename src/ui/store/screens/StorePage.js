@@ -1,39 +1,29 @@
-import { EvilIcons, Entypo } from "@expo/vector-icons";
+import { EvilIcons, Entypo, Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useRef, useState } from "react";
-import { useWindowDimensions, Image, Animated } from "react-native";
+import { useWindowDimensions, Image, Animated, ScrollView } from "react-native";
 import { View, Text, Pressable, StyleSheet, Linking } from "react-native";
 import MapView, { Marker, Polyline } from "react-native-maps";
 import Colors from "../../../../assets/Colors";
 import BottomSheet from "react-native-gesture-bottom-sheet";
+import CustomModal from "../../customComponent/CustomModal";
+import { RFPercentage } from "react-native-responsive-fontsize";
 
-function StorePage({ route }) {
+function StorePage({ route, navigation }) {
   const bottomSheet = useRef();
-  const navigation = useNavigation();
   const { width, height } = useWindowDimensions("window");
   const [storeInfo, setStoreInfo] = useState(route.params.storeInfo);
   const [location, setLocation] = useState(route.params.location);
   const [isBottomsheetShowed, setIsBottomsheetShowed] = useState(true);
+  const [modalShowed, setModalShowed] = useState(false);
+  const [imageUrl, setImageUrl] = useState("");
+  const [isPressNow, setIsPressNow] = useState(false);
+  const [bottomSheetHeight, setBottomSheetHeight] = useState(0);
   // 컴포넌트 보여줄때 한번 위치 초기화
   const [userLocation, setUserLocation] = useState({
     latitude: route.params.latitude,
     longtitude: route.params.longtitude,
   });
-  const translateY = useRef(new Animated.Value(0)).current;
-
-  const startAnimation = () => {
-    Animated.timing(translateY, {
-      toValue: 100,
-      duration: 1000,
-      useNativeDriver: true, // native driver 사용 시 성능이 향상됩니다.
-    }).start(() => {
-      Animated.timing(translateY, {
-        toValue: 10,
-        duration: 1000,
-        useNativeDriver: true,
-      }).start();
-    });
-  };
 
   function callToStore(storeNumber) {
     Linking.openURL(`tel:${storeNumber}`);
@@ -47,47 +37,52 @@ function StorePage({ route }) {
     bottomSheet.current.show();
   }, [navigation]);
 
-  useEffect(() => {
-    if (isBottomsheetShowed == false) {
-      startAnimation();
-    }
-  }, [isBottomsheetShowed]);
-
   return (
     <View style={styles.container}>
-      {!isBottomsheetShowed && (
-        <Animated.View
-          style={{
-            justifyContent: "center",
-            alignItems: "center",
-            position: "absolute",
-            bottom: 10,
-            right: 10,
-            zIndex: 1,
-            transform: [{ translateY }],
+      <CustomModal imageUrl={imageUrl} isVisible={modalShowed} />
+      <View
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          position: "absolute",
+          bottom: 10,
+          right: 10,
+          zIndex: 1,
+        }}
+      >
+        <Pressable
+          onPress={() => {
+            bottomSheet.current.show();
+            setIsBottomsheetShowed(true);
           }}
         >
-          <Pressable
-            onPress={() => {
-              bottomSheet.current.show();
-              setIsBottomsheetShowed(true);
-            }}
-          >
-            <EvilIcons name="arrow-up" size={70} color="black" />
-          </Pressable>
-        </Animated.View>
-      )}
+          <Ionicons
+            name="information-circle"
+            size={70}
+            color={Colors.basicColor.magentaTrans1}
+          />
+        </Pressable>
+      </View>
+
       <BottomSheet
+        snapPoints={[50, bottomSheetHeight]}
+        draggable={true}
         ref={bottomSheet}
+        initialSnap={1}
         onOpen={() => {
           console.log("bottom sheet open");
         }}
         onClose={() => {
           console.log("bottom close event");
         }}
-        height={height * 0.7}
+        height={height * 0.8}
       >
-        <View style={styles.bottomSheetView}>
+        <View
+          style={styles.bottomSheetView}
+          onLayout={({ nativeEvent }) => {
+            setBottomSheetHeight(nativeEvent.layout.height);
+          }}
+        >
           <Pressable
             style={{ position: "absolute", top: 12, right: 12, zIndex: 1 }}
             onPress={() => {
@@ -115,24 +110,34 @@ function StorePage({ route }) {
                 store정보
               </Text>
             </View>
+            <View style={{ width: "100%", alignItems: "center" }}>
+              <Pressable
+                style={{ position: "absolute", right: 10, zIndex: 2, top: 10 }}
+                onPress={() => {
+                  callToStore(storeInfo.storeNumber);
+                }}
+              >
+                <MaterialIcons name="call" color="black" size={40} />
+              </Pressable>
+              <Text
+                style={{
+                  fontFamily: "gowun-regular",
+                  fontSize: 25,
+                  paddingTop: 10,
+                }}
+              >
+                {storeInfo.name}
+              </Text>
+            </View>
 
-            <Text
-              style={{
-                fontFamily: "gowun-regular",
-                fontSize: 25,
-                paddingTop: 10,
-              }}
-            >
-              {storeInfo.name}
-            </Text>
             <View
               style={{
                 flexDirection: "row",
-                alignItems: "center",
                 width: "100%",
                 paddingLeft: 30,
                 paddingTop: 10,
                 paddingBottom: 10,
+                alignItems: "center",
               }}
             >
               <View style={{ flexDirection: "row" }}>
@@ -141,7 +146,7 @@ function StorePage({ route }) {
                 >
                   <Entypo name="star" size={20} color="red" />
                 </View>
-                <Text style={[styles.normalText, { fontSize: 15 }]}> 10</Text>
+                <Text style={[styles.normalText, { fontSize: 15 }]}> 0</Text>
               </View>
 
               <Text style={[styles.normalText, { paddingLeft: 30 }]}>
@@ -172,21 +177,45 @@ function StorePage({ route }) {
           >
             {storeInfo.imageList.map((item, index) => {
               return (
-                <Image
-                  key={index}
-                  source={{ uri: item }}
+                <Pressable
                   style={{
                     width: "30%",
                     height: 100,
                     borderRadius: 10,
                     marginTop: 10,
+                    overflow: "hidden",
                   }}
-                  onLoad={() => (
-                    <View>
-                      <Text>로딩중</Text>
-                    </View>
-                  )}
-                />
+                  onLongPress={() => {
+                    console.log("long press");
+                    setImageUrl(item);
+                    setIsPressNow(!isPressNow);
+                    setModalShowed(!modalShowed);
+                  }}
+                  onPressOut={() => {
+                    if (isPressNow === true) {
+                      console.log("touch end");
+                      setImageUrl("");
+                      setModalShowed(!modalShowed);
+                      setIsPressNow(!isPressNow);
+                    } else {
+                      console.log("another touchout case");
+                    }
+                  }}
+                >
+                  <Image
+                    key={index}
+                    source={{ uri: item }}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                    }}
+                    onLoad={() => (
+                      <View>
+                        <Text>로딩중</Text>
+                      </View>
+                    )}
+                  />
+                </Pressable>
               );
             })}
           </View>

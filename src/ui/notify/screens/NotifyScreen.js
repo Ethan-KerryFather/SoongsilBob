@@ -1,80 +1,38 @@
-import { Entypo } from "@expo/vector-icons";
 import React, { useState, useEffect } from "react";
-import {
-  Pressable,
-  StyleSheet,
-  Text,
-  View,
-  Linking,
-  FlatList,
-  useWindowDimensions,
-} from "react-native";
-import Colors from "../../../../assets/Colors";
+import { View, Text, StyleSheet } from "react-native";
+import axios from "axios";
+import * as cheerio from "cheerio";
 
-function NotifyScreen() {
-  const [notify, setNotify] = useState([]);
+const NotifyScreen = () => {
+  const [source, setSource] = useState(null);
+  useEffect(() => {
+    axios
+      .get("https://scatch.ssu.ac.kr/%ea%b3%b5%ec%a7%80%ec%82%ac%ed%95%ad/")
+      .then((response) => {
+        const html = response.data;
+        const $ = cheerio.load(html);
+
+        const container = $(".notice-lists").html();
+
+        setSource(container);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
   return (
     <View style={styles.container}>
-      <Pressable
-        style={styles.notifyAddBtn}
-        onPress={() => {
-          Linking.openURL("https://forms.gle/Rw8rduVAd26maDxm8");
-        }}
-      >
-        <Text style={{ fontFamily: "gowun-regular" }}>사장님 공지추가</Text>
-
-        <Entypo
-          name="squared-plus"
-          size={40}
-          color="black"
-          style={{ margin: 3 }}
-        />
-      </Pressable>
-      <View style={styles.notifyContainer}>
-        <Text style={{ fontFamily: "gowun-bold", fontSize: 40 }}>공지</Text>
-      </View>
-
-      <View style={styles.notifyContentContainer}>
-        <Text style={{ fontSize: 25, fontFamily: "gowun-regular" }}>
-          등록된 공지가 없습니다
-        </Text>
+      <View>
+        <Text>{source}</Text>
       </View>
     </View>
   );
-}
+};
+
 export default NotifyScreen;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  notifyContainer: {
-    flex: 2,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: Colors.basicColor.magenta,
-  },
-  notifyContentContainer: {
-    flex: 10,
-    justifyContent: "center",
-    alignItems: "center",
-  },
+  container: { flex: 1, backgroundColor: "white" },
   //
-  notifyAddBtn: {
-    position: "absolute",
-    bottom: 10,
-    right: 10,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: Colors.basicColor.gray,
-    padding: 10,
-    borderRadius: 10,
-    zIndex: 1,
-  },
-
-  //
-  normalText: {
-    fontFamily: "gowun-regular",
-  },
 });

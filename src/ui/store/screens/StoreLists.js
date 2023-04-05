@@ -1,23 +1,28 @@
-import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React, { useState, useEffect } from "react";
 import {
   FlatList,
   Pressable,
   StyleSheet,
-  Text,
   useWindowDimensions,
   View,
 } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
+import { RFPercentage } from "react-native-responsive-fontsize";
 import Colors from "../../../../assets/Colors";
 import stores from "../../../resource/stores";
+import { SmallTitle } from "../../../styled/styledComponents";
 import { GetDistance } from "./components/GetDistance";
+import CustomSnackbar from "../../../styled/CustomSnackbar";
+import StoreCard from "./components/StoreCard";
 
 function StoreLists({ route }) {
   // 컴포넌트 보여줄때 한번 위치 초기화
   const navigation = useNavigation();
   const { width } = useWindowDimensions("window");
   const { latitude, longtitude } = route.params;
+  const [arrangeMode, setArrangeMode] = useState("거리순");
+  const [snackbarVisible, setSnackbarVisible] = useState(false);
 
   useEffect(() => {
     navigation.setOptions({
@@ -26,31 +31,101 @@ function StoreLists({ route }) {
   }, [navigation]);
 
   const getCategoryStores = (category) => {
+    let storesArray = [];
     switch (category) {
       case "한식":
-        return stores.korean;
+        storesArray = stores.korean;
+        break;
       case "양식":
-        return stores.western;
+        storesArray = stores.western;
+        break;
       case "아시안":
-        return stores.asian;
+        storesArray = stores.asian;
+        break;
       case "치킨/피자":
-        return stores.chickenPizza;
+        storesArray = stores.chickenPizza;
+        break;
       case "테이크아웃":
-        return stores.takeout;
+        storesArray = stores.takeout;
+        break;
       case "술집":
-        return stores.alcohol;
+        storesArray = stores.alcohol;
+        break;
       case "카페":
-        return stores.cafe;
+        storesArray = stores.cafe;
+        break;
       case "일식":
-        return stores.japanese;
+        storesArray = stores.japanese;
+        break;
       default:
-        return [];
+        storesArray = [];
     }
+
+    if (arrangeMode === "거리순") {
+      storesArray.sort((a, b) => {
+        const distanceA = GetDistance(
+          latitude,
+          longtitude,
+          a.location.Y,
+          a.location.X
+        );
+        const distanceB = GetDistance(
+          latitude,
+          longtitude,
+          b.location.Y,
+          b.location.X
+        );
+        return distanceA - distanceB;
+      });
+    }
+
+    return storesArray;
   };
 
   return (
     <View style={styles.container}>
+      <CustomSnackbar
+        visible={snackbarVisible}
+        setVisible={setSnackbarVisible}
+      />
       <FlatList
+        ListHeaderComponent={
+          <View
+            style={{
+              marginTop: 20,
+              marginBottom: 10,
+              alignSelf: "flex-end",
+              width: "100%",
+              height: RFPercentage(5),
+            }}
+          >
+            <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+            >
+              <Pressable
+                style={
+                  arrangeMode === "거리순"
+                    ? [
+                        styles.arrangeSelectIcon,
+                        { backgroundColor: Colors.basicColor.magenta },
+                      ]
+                    : [styles.arrangeSelectIcon]
+                }
+              >
+                <SmallTitle>가까운밥집부터</SmallTitle>
+              </Pressable>
+              <Pressable
+                style={styles.arrangeSelectIcon}
+                onPress={() => {
+                  setSnackbarVisible(true);
+                }}
+              >
+                <SmallTitle>인기많은밥집부터</SmallTitle>
+              </Pressable>
+            </ScrollView>
+          </View>
+        }
         style={styles.flatListContainer}
         contentContainerStyle={{
           alignItems: "center",
@@ -58,71 +133,16 @@ function StoreLists({ route }) {
         }}
         //data={stores.korean}
         data={getCategoryStores(route.params.category)}
-        renderItem={({ item }) => {
+        renderItem={({ item, index }) => {
           return (
-            <Pressable
-              style={[styles.itemContainer, { width: width * 0.8 }]}
-              onPress={() => {
-                navigation.navigate("StorePage", {
-                  storeInfo: {
-                    name: item.name,
-                    price: item.price,
-                    area: item.area,
-                    workingTime: item.workingTime,
-                    description: item.description,
-                    imageList: item.imageList,
-                  },
-                  location: item.location,
-                });
-              }}
-            >
-              <View
-                style={{
-                  flexDirection: "column",
-                  alignItems: "center",
-                  borderBottomWidth: 0.5,
-                  borderBottomColor: "black",
-                  paddingBottom: 5,
-                  marginBottom: 5,
-                }}
-              >
-                <Text style={[styles.normalText, { fontSize: 25 }]}>
-                  {item.name}
-                </Text>
-                <Text style={[styles.normalText, { fontSize: 10 }]}>
-                  {item.description}
-                </Text>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    paddingVertical: 10,
-                    alignSelf: "flex-start",
-                    paddingLeft: 10,
-                  }}
-                >
-                  <Ionicons
-                    name="star"
-                    color="red"
-                    size={15}
-                    style={{ paddingLeft: 5 }}
-                  />
-                  <Text> 10</Text>
-                </View>
-              </View>
-
-              <Text style={[styles.normalText, { fontSize: 15 }]}>
-                {item.area}근처에 있어요
-                {"\n"}가격대는 {item.price}이에요
-                {"\n"}내 위치에서{" "}
-                {GetDistance(
-                  latitude,
-                  longtitude,
-                  item.location.Y,
-                  item.location.X
-                ).toFixed(2)}
-                km 떨어져있어요
-              </Text>
-            </Pressable>
+            <StoreCard
+              item={item}
+              index={index}
+              width={width}
+              latitude={latitude}
+              longtitude={longtitude}
+              key={index}
+            />
           );
         }}
       />
@@ -135,21 +155,45 @@ export default StoreLists;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingVertical: 20,
+    backgroundColor: "white",
   },
   //
+  itemImageView: {
+    width: "100%",
+    height: 150,
+    resizeMode: "cover",
+    marginBottom: 10,
+  },
+  itemImage: {
+    width: "100%",
+    height: "100%",
+    borderRadius: 3,
+  },
+
   flatListContainer: {
     flex: 1,
   },
   itemContainer: {
-    padding: 20,
-    backgroundColor: Colors.basicColor.gray,
+    // padding: 20,
+    backgroundColor: Colors.basicColor.magentaTrans2,
     marginTop: 10,
     marginBottom: 10,
     borderRadius: 10,
     borderColor: Colors.basicColor.magenta,
     borderWidth: 1,
   },
+  arrangeSelectIcon: {
+    backgroundColor: "white",
+    paddingHorizontal: 10,
+    height: "100%",
+    borderRadius: 30,
+    alignItems: "center",
+    justifyContent: "center",
+    marginHorizontal: RFPercentage(1),
+    borderColor: "black",
+    borderWidth: 2,
+  },
+
   //
   normalText: {
     fontFamily: "gowun-regular",
