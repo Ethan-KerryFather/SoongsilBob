@@ -5,20 +5,22 @@ import HomeScreen from "../ui/HomeScreen";
 import EnvironmenScreen from "../ui/environment/screens/EnvironmenScreen";
 import Colors from "../../assets/Colors";
 import NotifyScreen from "../ui/notify/screens/NotifyScreen";
-import { AntDesign, Entypo } from "@expo/vector-icons";
-import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import EventScreen from "../ui/notify/screens/EventScreen";
+import { Entypo } from "@expo/vector-icons";
+
 import StoreLists from "../ui/store/screens/StoreLists";
 import StorePage from "../ui/store/screens/StorePage";
-import { useRoute } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import RankingHome from "../ui/ranking/RankingHome";
 import UnivFoodScreen from "../ui/univFood/UnivFoodScreen";
 import { RFPercentage } from "react-native-responsive-fontsize";
 import RouletteScreen from "../ui/roulette/RouletteScreen";
-import { Image, StyleSheet, View } from "react-native";
+import { Image, StatusBar, StyleSheet, View } from "react-native";
 import AllianceScreen from "../ui/ranking/AllianceScreen";
 import Check from "../ui/check/Check";
 import Check2 from "../ui/check/Check2";
+import { useEffect } from "react";
+import { BigTitle } from "../styled/styledComponents";
+import AnimatedLottieView from "lottie-react-native";
 
 const HomeStack = createNativeStackNavigator();
 const EnvironmentStack = createNativeStackNavigator();
@@ -26,57 +28,27 @@ const RankingStack = createNativeStackNavigator();
 const UnivFoodStack = createNativeStackNavigator();
 
 const Tab = createBottomTabNavigator();
-const NotifyTab = createMaterialTopTabNavigator();
 
 function NotificationScreen() {
-  const images = [
-    "https://photos.app.goo.gl/sqW6q1Jt74GDU8Hp6",
-    "https://lh3.googleusercontent.com/pw/AMWts8B6dSZJSsIsFY3iExPMEQ51M8KGAmjc_Dt59NkClNdPY0SOnTmLOCVWz0CjAnMgXgOYZ9M-uXMzSupiC6_GFq-2ucEoiqUt0ZGUgHTld7fVlwZLZiMC9qXdynGQrwEF30ahdvSzGvo1iYK670kiaBc=w933-h933-s-no?authuser=0",
-  ];
+  const navigation = useNavigation();
+  useEffect(() => {
+    navigation.setOptions({
+      headerShown: false,
+    });
+  }, []);
+
+  const height = StatusBar.currentHeight;
+
   return (
     <View style={notificationStyles.container}>
-      <View style={{ height: RFPercentage(30) }}>
-        <Image
-          source={{ uri: images[1] }}
-          style={{ width: "100%", height: "100%" }}
-          resizeMode="stretch"
-        />
-      </View>
-      <View style={{ flex: 1 }}>
-        <NotifyTab.Navigator
+      <View style={[{ paddingTop: height, flex: 1 }]}>
+        <View style={{ paddingTop: 100 }}>
+          <BigTitle>준비중이에요</BigTitle>
+        </View>
+        <AnimatedLottieView
+          source={require("../../assets/cooking.json")}
           style={{ flex: 1 }}
-          tabBarPosition="top"
-          screenOptions={{
-            tabBarStyle: {
-              height: RFPercentage(6),
-              justifyContent: "flex-start",
-            },
-            tabBarIndicatorContainerStyle: {
-              backgroundColor: Colors.basicColor.magentaTrans2,
-            },
-            tabBarActiveTintColor: "black",
-            tabBarLabelStyle: {
-              fontSize: 15,
-              fontFamily: "gowun-bold",
-            },
-            tabBarBounces: true,
-          }}
-        >
-          <NotifyTab.Screen
-            name="notify"
-            component={NotifyScreen}
-            options={{
-              title: "공지",
-            }}
-          />
-          <NotifyTab.Screen
-            name="event"
-            component={EventScreen}
-            options={{
-              title: "이벤트",
-            }}
-          />
-        </NotifyTab.Navigator>
+        />
       </View>
     </View>
   );
