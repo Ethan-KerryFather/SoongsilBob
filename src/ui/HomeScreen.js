@@ -50,34 +50,31 @@ function HomeScreen({}) {
               style={{ height: RFPercentage(10), width: RFPercentage(10) }}
             />
           </Pressable>
-          <BottomSheet hasDraggableIcon ref={bottomSheet} height={300}>
+          <BottomSheet hasDraggableIcon ref={bottomSheet} height={250}>
             <View style={styles.bottomsheet}>
               <View
                 style={{
                   alignItems: "center",
                 }}
               >
+                <Text
+                  style={{
+                    fontFamily: "gowun-bold",
+                    fontSize: 30,
+                    marginBottom: 10,
+                    letterSpacing: 3,
+                  }}
+                >
+                  알려드립니다
+                </Text>
                 <View
                   style={{
                     width: "80%",
                     borderBottomColor: "black",
                     borderBottomWidth: 0.5,
-                    alignItems: "center",
-                    marginBottom: 30,
-                    marginTop: 20,
+                    marginBottom: 10,
                   }}
-                >
-                  <Text
-                    style={{
-                      fontFamily: "gowun-bold",
-                      fontSize: 30,
-                      marginBottom: 10,
-                      letterSpacing: 3,
-                    }}
-                  >
-                    알려드립니다
-                  </Text>
-                </View>
+                />
 
                 <View style={{ alignItems: "flex-start" }}>
                   <Text
