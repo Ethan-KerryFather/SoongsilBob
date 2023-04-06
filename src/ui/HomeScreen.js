@@ -18,6 +18,7 @@ import { RFPercentage } from "react-native-responsive-fontsize";
 import AnimatedLottieView from "lottie-react-native";
 import CategoryItem from "./CategoryItem";
 import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
 
 function HomeScreen({}) {
   const navigation = useNavigation();
@@ -35,9 +36,13 @@ function HomeScreen({}) {
     navigation.setOptions({
       headerShown: false,
     });
-
-    //bottomSheet.current.show();
   }, [navigation]);
+
+  useEffect(() => {
+    if (fontsLoaded) {
+      bottomSheet.current.show();
+    }
+  }, [fontsLoaded]);
   return (
     <View style={styles.container}>
       {fontsLoaded ? (
@@ -182,19 +187,11 @@ function HomeScreen({}) {
         </View>
       ) : (
         <View style={styles.container}>
-          <View
-            style={{
-              flex: 1,
-              justifyContent: "center",
-              alignItems: "center",
-              backgroundColor: "white",
-            }}
-          >
-            <Text style={{ fontSize: 15 }}>
-              사용자 위치 업데이트가 원활하지 않을 때가 있습니다.
-            </Text>
-            <Text style={{ fontSize: 15 }}>종료 후 재시작해주세요:)</Text>
-          </View>
+          <AnimatedLottieView
+            source={require("../../assets/loading.json")}
+            autoPlay
+            style={{ flex: 1 }}
+          />
         </View>
       )}
     </View>

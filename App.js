@@ -3,13 +3,9 @@ import { StyleSheet, Text, View } from "react-native";
 import RootStack from "./src/navigation/RootStack";
 import Colors from "./assets/Colors";
 import * as SplashScreen from "expo-splash-screen";
-import { useFonts } from "expo-font";
-
 import { useEffect, useLayoutEffect, useState } from "react";
 import * as Location from "expo-location";
-// gesture handler 등록
 import "react-native-gesture-handler";
-// react native paper
 import { Provider as PaperProvider } from "react-native-paper";
 SplashScreen.preventAutoHideAsync();
 
