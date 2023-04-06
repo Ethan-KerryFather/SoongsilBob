@@ -53,7 +53,10 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fsearch.pstatic.net%2Fcommon%2F%3FautoRotate%3Dtrue%26quality%3D95%26type%3Dw750%26src%3Dhttps%253A%252F%252Fmyplace-phinf.pstatic.net%252F20220403_117%252F1648982555399xGxnQ_JPEG%252Fupload_58786233ffd49c0b534e08752a0077cd.jpg",
       ],
       phoneNum: "02-822-5862",
-      menu: [["순대국", "9,000"]],
+      menu: [
+        ["순대국", "9,000"],
+        ["순대국정식", "12,000"],
+      ],
       event: false,
     },
     {
@@ -720,7 +723,13 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA1MjFfOTAg%2FMDAxNjUzMDYwMjg0MzU1.qBAI6G386L3n6Zl3MbqBhOXzgE1v2Rs29mGlLBcqNhUg.5Z4OppkI_IM52jh1ZQlFsaq6aVnklD3f_-OL2SSwMQkg.JPEG.ywoo121%2FIMG_3913.jpg",
       ],
       phoneNum: "02-823-9206",
-      menu: [],
+      menu: [
+        ["칵테일", "7,500"],
+        ["카스6병+오징어땅콩", "42,000"],
+        ["카프리6병+한치아몬즈", "42,000"],
+        ["훈제치킨&과일", "16,000"],
+        ["훈제치킨", "14,000"],
+      ],
       event: false,
     },
     {
@@ -744,7 +753,13 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTEyMDlfMyAg%2FMDAxNTc1ODk5NDQ0MDQ3.sRi2XCJaF30Gqy_BAyyTm7XWFUvBtNDFyfsG7E1Oq1cg.SfUcknj_npF0K04YzTLlpL8zbaN1HYIN7ZM8KsRxd0Mg.JPEG.by_ongdew%2F1575899442974.jpg",
       ],
       phoneNum: "0507-1404-4028",
-      menu: [],
+      menu: [
+        ["닭도리탕", "27,000"],
+        ["순두부찌개(1인)", "9,000"],
+        ["오뎅탕", "14,000"],
+        ["중화불고기", "15,000"],
+        ["치즈/크림떡볶이", "15,000"],
+      ],
       event: false,
     },
     {
@@ -766,7 +781,14 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20211008_226%2F16336937171487KIr9_JPEG%2Fupload_ca046eaec27518eca91285e05f17047a.jpeg",
       ],
       phoneNum: "02-822-5988",
-      menu: [],
+      menu: [
+        ["솥뚜껑 무우전", "12,000"],
+        ["솥뚜껑 해물파전", "15,000"],
+        ["솥뚜껑 김치전", "14,000"],
+        ["솥뚜껑 감자전", "16,000"],
+        ["두부김치", "15,000"],
+      ],
+
       event: false,
     },
     {
@@ -786,7 +808,12 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjA2MTZfMjYy%2FMDAxNjU1Mzc5NzU5OTE2.2XTzh1O9XAF5dsZSG00VkNrL76ZUjNz_ZDTvnPNSFDQg.Lh0EUx80WuYN9RnAfvlEST1EGkLnApYl5Vlr1xczngog.JPEG%2Fupload_c572f8dee29a587bd893ae4a581195ed.jpeg",
       ],
       phoneNum: "02-815-5761",
-      menu: [],
+      menu: [
+        ["앵그리버드", "17,000"],
+        ["앵그리버드와감자", "20,000"],
+        ["오리지널 감자", "8,000"],
+        ["버팔로윙과 감자", "15,000"],
+      ],
       event: false,
     },
     {
@@ -805,7 +832,14 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODA5MDVfMjE5%2FMDAxNTM2MDgxNjExOTYz.EBVNU-3hApqvqJGEPy1On3IBY7kjMN6uGjGvWPtcBsEg.t0RwqNIKZcsehLT8tAeuuhXBOrhRd4nx7ed3PVugDVYg.JPEG.tkdwns5261%2FKakaoTalk_Moim_4YZ8WGDrorVJPWf0CUgN0F50CiYutP.jpg",
       ],
       phoneNum: "010-4729-3567",
-      menu: [],
+      menu: [
+        ["순두부찌개", "4,800"],
+        ["묵사발", "5,800"],
+        ["쫄순이", "5,800"],
+        ["오뎅탕", "6,800"],
+        ["청춘막국수", "6,800"],
+        ["치킨너겟", "8,800"],
+      ],
       event: false,
     },
     {
@@ -824,7 +858,14 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODA5MDVfMjE5%2FMDAxNTM2MDgxNjExOTYz.EBVNU-3hApqvqJGEPy1On3IBY7kjMN6uGjGvWPtcBsEg.t0RwqNIKZcsehLT8tAeuuhXBOrhRd4nx7ed3PVugDVYg.JPEG.tkdwns5261%2FKakaoTalk_Moim_4YZ8WGDrorVJPWf0CUgN0F50CiYutP.jpg",
       ],
       phoneNum: "02-821-2446",
-      menu: [],
+      menu: [
+        ["칠면조구이", "15,000"],
+        ["김치볶음밥", "5,000"],
+        ["모둠 소시지", "15,000"],
+        ["순살바베큐", "18,000"],
+        ["칵테일소주 420ml", "4,500"],
+        ["칵테일소주 1500ml", "13,000"],
+      ],
       event: false,
     },
     {
@@ -846,7 +887,14 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAxMjlfMjcg%2FMDAxNjc0OTkzNzk3OTYy.ylYMVld9ak3_QwGRZDzy9xz5sUgzqPZl_Z1igizIpzEg.hENbGkAX7wvtcJ0qNY6bTupL0vFGXIyTRfxaI5v4oYAg.JPEG%2FAD7CB93C-34CE-40A5-9E4D-CE3DCD58B80A.jpeg",
       ],
       phoneNum: "0507-1373-1982",
-      menu: [],
+      menu: [
+        ["할맥500cc", "3,700"],
+        ["역전하이볼", "4,300"],
+        ["치즈라볶이", "9,000"],
+        ["짜빠구리", "9,000"],
+        ["살얼음파인애플", "7,000"],
+        ["30cm롱치즈돈까스", "10,000"],
+      ],
       event: false,
     },
     {
@@ -865,7 +913,12 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20150430_54%2Fvini2u_1430397863194RKGfQ_JPEG%2F20150430_190513.jpg",
       ],
       phoneNum: "02-822-2958",
-      menu: [],
+      menu: [
+        ["모듬전", "15,000"],
+        ["감자전", "10,000"],
+        ["닭볶음탕", "17,000"],
+        ["삼겹김치볶음", "15,000"],
+      ],
       event: false,
     },
     {
@@ -888,7 +941,12 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODAxMTFfMjkw%2FMDAxNTE1NjQyMTk5MzMy.FpAkRlOVyb0fKWl_cteCEHUsgPYEY2K9onx92YBW52wg.OwtdeYqvptfglovjot9ag5VcBxD-6Hw407PAs67VwKUg.JPEG.meke_meke%2F1515629024487.jpg",
       ],
       phoneNum: "0507-1404-4354",
-      menu: [],
+      menu: [
+        ["감자튀김", "6,000"],
+        ["치즈스틱", "3,500"],
+        ["봉구알소세지", "6,000"],
+        ["오바디튀김", "7,500"],
+      ],
       event: false,
     },
   ],
@@ -953,9 +1011,15 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220722_299%2F1658446416755aPNll_JPEG%2FIMG_9011_%25BA%25B9%25BB%25E7.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMTJfMzAg%2FMDAxNjc4NjE2Njg4NzYw.piA9yFavf9lT8tNBQSa2mYcdxDis2zgyUzVCbZnjTvIg.l9x4VGzRaeCML-VE155Q0sGGezP1wMl8pc5B38DoU04g.JPEG%2F6C69882B-9030-4867-88C8-F643C0D01D67.jpeg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAzMDlfMTY1%2FMDAxNjc4MzU3NTczMDUz.eWKrHRb-ahdAcVqG8dW2m75AKCdMfC2Ya7brWCQxPPwg.OWJM061rREc2R-DVeoxkjTacfMH0PpwU_P-LO0NuAHEg.JPEG%2F1FB810B7-A5BE-4033-96E2-7488C9AFBF20.jpeg",
+        ,
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230101_1%2F1672546137722op3uE_PNG%2F%25BD%25BA%25C5%25A9%25B8%25B0%25BC%25A6_2023-01-01_%25BF%25C0%25C8%25C4_1.06.19.png",
       ],
       phoneNum: "0506-881-1590",
-      menu: [],
+      menu: [
+        ["아인슈페너", "6,000"],
+        ["카페라떼", "5,000"],
+        ["필터커피", "5,000"],
+      ],
       event: false,
     },
     {
@@ -997,7 +1061,13 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEyMjdfODcg%2FMDAxNjcyMTE4NTUwNzkw.2hCk0VTwj9UFVsApfQ2vJvI7sI4QcPialc8uJL9VCYQg.GXOpYy6NO7pYalqIQTw-nbOjVONba9bea1eJoS7FtQMg.JPEG%2F20221227_100415.jpg,",
       ],
       phoneNum: "0507-1497-2001",
-      menu: [],
+      menu: [
+        ["카페라떼", "4,000"],
+        ["바닐라라떼", "4,500"],
+        ["연유라떼", "4,500"],
+        ["초콜릿라떼", "4,500"],
+        ["청귤에이드", "4,800"],
+      ],
       event: false,
     },
     {
@@ -1020,13 +1090,17 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA5MTdfMjEx%2FMDAxNjYzMzU3NjUzOTI5.KbiAiEdU9LCLJlZ1Lbm2u6H3KCO_GJ0ONY1foHJYDoAg.3gX75evS_clP0LvKGQeOno-9CvsqmI8XjNd86UXpAdEg.JPEG.kkimming__%2F20220916_190922.jpg",
       ],
       phoneNum: "0507-1391-1181",
-      menu: [],
+      menu: [
+        ["너티크림라떼", "6,000"],
+        ["바스크치즈케이크", "5,000"],
+        ["아인슈페너 블랙", "5,500"],
+      ],
       event: false,
     },
     {
       name: "투썸플레이스",
       area: "중문\n숭실대입구역 4번 출구에서389m",
-      workingTime: "",
+      workingTime: "매일 10:00-22:00, 21:45 lastOrder",
       price: "4500원-",
       location: { X: 126.957439, Y: 37.4949383 },
       description: "10:00-22:00, 21:45 lastOrder ",
@@ -1042,7 +1116,7 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTEwMTVfNTgg%2FMDAxNTcxMDY1Mzk2MDk3.qG_BatP6aLnWUg9kd4HnhpKh47PXvxOSmNs5oBh4sAsg.aWZTu7uXVWmbNkEsz-xcqcWroi1DQi44_1OIyglfzh4g.JPEG.jjoooni1004%2FIMG_7262.jpg",
       ],
       phoneNum: "010-8425-0246",
-      menu: [],
+      menu: [["아메리카노", "4,500"]],
       event: false,
     },
     {
@@ -1056,8 +1130,14 @@ const stores = {
       imageList: [
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAyMDdfMTg4%2FMDAxNjc1NzYzNzgzNTA4.dp2HrYd8zxynyUIJ34Fb1aSm0njyi8WGPPc_StpctuYg.8P_n42CwokHms4qYQCpaLtYtar9_RFaek6JdioAOOyMg.JPEG.144767%2F20230203%25A3%25DF170932.jpg",
       ],
-      phoneNum: "",
-      menu: [],
+      phoneNum: "0507-1360-0304",
+      menu: [
+        ["우유생크림와플", "3,600"],
+        ["생딸기생크림와플", "5,300"],
+        ["아이스아메리카노(L)", "3,500"],
+        ["청도홍시실타래빙수", "14,900"],
+        ["플레인크로플", "3,800"],
+      ],
       event: false,
     },
     {
@@ -1418,6 +1498,8 @@ const stores = {
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220730_48%2F1659144159888zibbV_JPEG%2F1659143981444-1.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20150831_109%2F144101033058726czm_JPEG%2FSUBMIT_1363326537370_31818931.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjExMjhfNjIg%2FMDAxNjY5NjM0NTIzMTY2.niYy0SriHzAEW-1ZMZAHkqQO5BFRwjUkGh76D6JMUQUg.u9HE3IVMipLr7n-pwpR4PWkeb9sFNUwugENgHCO5d6gg.JPEG%2F1669633766446.jpg",
+        ,
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230308_264%2F1678254079704C1Qxw_JPEG%2FA317CF7F-B729-48FA-9671-4212BD737BB4.jpeg",
       ],
       phoneNum: "02-821-2146",
       menu: [

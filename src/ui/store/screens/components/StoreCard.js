@@ -1,6 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Pressable, Text, Image, StyleSheet, View } from "react-native";
 import { BigText, SmallTitle } from "../../../../styled/styledComponents";
 import { GetDistance } from "./GetDistance";

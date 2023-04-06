@@ -4,11 +4,7 @@ import { Linking } from "react-native";
 import { Pressable } from "react-native";
 import { Text, View, SafeAreaView, StyleSheet, ScrollView } from "react-native";
 import Colors from "../../../../assets/Colors";
-import {
-  BigTitle,
-  SmallSmallText,
-  SmallTitle,
-} from "../../../styled/styledComponents";
+import { BigTitle, SmallSmallText } from "../../../styled/styledComponents";
 import * as Animatable from "react-native-animatable";
 
 function EnvironmenScreen() {

@@ -1,29 +1,15 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useRef, useEffect, useMemo, useLayoutEffect } from "react";
-import {
-  FlatList,
-  Image,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  useWindowDimensions,
-  View,
-} from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import Colors from "../../assets/Colors";
 import BottomSheet from "react-native-gesture-bottom-sheet";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { RFPercentage } from "react-native-responsive-fontsize";
 import AnimatedLottieView from "lottie-react-native";
 import CategoryItem from "./CategoryItem";
 import { useFonts } from "expo-font";
-import * as SplashScreen from "expo-splash-screen";
 
 function HomeScreen({}) {
   const navigation = useNavigation();
-  const { width, height } = useWindowDimensions("window");
-  const snapPoints = React.useMemo(() => ["20%", "100%"], []);
 
   const [fontsLoaded] = useFonts({
     "gowun-regular": require("../../assets/font/gowun-regular.ttf"),
