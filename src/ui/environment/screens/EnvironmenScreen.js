@@ -63,10 +63,17 @@ function EnvironmenScreen() {
         </Animatable.View>
         <Animatable.View style={styles.itemContainer} animation="slideInRight">
           <Text style={styles.normalText}>
+            같이 만들어나가요{"\n"}
+            <Text style={styles.boldText}>인스타그램 dm주세요(≧∇≦)</Text>
+          </Text>
+        </Animatable.View>
+        <Animatable.View style={styles.itemContainer} animation="slideInRight">
+          <Text style={styles.normalText}>
             가게 소개에 개인적인 의견이 포함될 수 있습니다
           </Text>
         </Animatable.View>
       </View>
+
       <View style={styles.subContainer}>
         <Animatable.View
           style={[
@@ -79,16 +86,15 @@ function EnvironmenScreen() {
           ]}
           animation="slideInLeft"
         >
-          <Text style={styles.normalText}>알림</Text>
+          <Text style={styles.normalText}>도움주신분들</Text>
         </Animatable.View>
         <Animatable.View style={styles.itemContainer} animation="slideInRight">
           <Text style={styles.normalText}>
-            같이 만들어나가요{"\n"}
-            <Text style={styles.boldText}>인스타그램 dm주세요(≧∇≦)</Text>
+            물리학과 이인용{"\n"}전기정보공학과 문승환{"\n"}회계학과 정재형
+            {"\n"}소프트웨어학부 이재혁{"\n"}컴퓨터학부 사하
           </Text>
         </Animatable.View>
       </View>
-
       <View style={styles.subContainer}>
         <Animatable.View
           style={[
@@ -127,6 +133,7 @@ function EnvironmenScreen() {
           </Text>
         </Animatable.View>
       </View>
+
       <SmallSmallText style={{ alignSelf: "flex-end", padding: 5 }}>
         숭실밥집은 React Native로 빌드되었습니다
       </SmallSmallText>

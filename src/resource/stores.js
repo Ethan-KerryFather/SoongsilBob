@@ -544,9 +544,13 @@ const stores = {
       location: { X: 126.955143, Y: 37.4953339 },
       description: "시설 깔끔한 중국집 가고 싶으면 추천!",
       imageList: [
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAyMjdfMzAg%2FMDAxNjc3NDc2NTE2MTI3.hlr-tMA3lEJBIAXIQVK6LM66_jFwiQ-M9NSJ17O2v9Ug.L5xoFEuSlr_G0ElhGfFmUZqczrZfk0xnLUin0PFs18Qg.JPEG.wlfjd12%2FKakaoTalk_20230227_110139326_14.jpg",
+        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200418_265%2F15871804134542ooOd_JPEG%2FLG6L0Q9lKj-tF1qNTxXu7Cds.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA0MDlfNTMg%2FMDAxNjE3OTQ4NDc3Njky.Eem9eaFEkgbeIxXhX2eOoZej2ShOfN11BZk08VFoFBog.HurK95BkyiQUlTOlDBsIqdbOg4vsaEy75giDpgGNCiog.JPEG.lovesome_day%2F04090602.JPG",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAyMThfMjAw%2FMDAxNjc2Njg3MDg2NDMx.QCWgrDY6rhMJJJJaK7p88KO0mANTeFhwENmIR-UMSxUg.j6oeDXw7p7EbjYllCEsYw0BaHGZFksnvrNSGCgXCmGsg.JPEG%2FECF385F1-4815-4BEF-AC9F-8B47281B60AC.jpeg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzAyMDRfNzcg%2FMDAxNjc1NTA2NDQ0MjE2.cBWeWGK3-fX-UqKb5ZHCdrU72o6dN4OlyfwFvmU6DNsg.yoEbqCHCQmU5-uPTBgTvH2yR9uyyJyxshMQs4VLpXVQg.JPEG%2F20230204_121525.jpg",
         "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjA4MTFfODkg%2FMDAxNjYwMjAyNzk4NDEy.NadNGlNC5T41ft_qgIs7ykeA5_VOMxrblPzoR18yl8sg.R07Pvd3yrNenQD7xn74DEBcbitp12z8UyN3tUsoshI0g.JPEG%2Fupload_124b6b7061e065f1ed5e84a55f04195b.jpg",
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAyMjVfMjcy%2FMDAxNjc3MzE5NjQxMzM5.RV5hVJcTK7djQlUt4AJ5tLCE2mpjjS5Iv-AcFTXzdu8g.UkGPudHY2AxbiLo8cewgKrjcTy-_phFIRzySGmA7JCEg.JPEG.soclsrn267%2FIMG_6336.jpg",
       ],
       phoneNum: "0507-1412-5513",
       menu: [
@@ -1233,7 +1237,8 @@ const stores = {
       workingTime: "10:00-20:00, 매주 일월화 휴무",
       price: "2000원-",
       location: { X: 126.951025, Y: 37.4982605 },
-      description: "디저드 맛집! 빵 종류가 매우 다양하고 이쁘게 생겼다.",
+      description:
+        "우리 밀, 무항생제 달걀, 크림치즈(프랑스), 우유버터(프랑스), 생과일퓨레(프랑스), 초콜릿(프랑스), 생크림(국내산) 등 신선한 재료로 직접 만드는, 달지 않은 주전부리",
       imageList: [
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA2MThfNzAg%2FMDAxNjU1NTIxMzg4ODY3.9z5b-YvL9owTZsvMegb0IIRPcyJbrf_ed_OoKKDtjjIg.S59E4l--FMTfXxIUKUjtV_019CpmN0sc905ibOt9zNIg.JPEG.gim263%2FIMG_3444.jpg",
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA4MTlfNTEg%2FMDAxNjI5MzQyOTkwMjIz.Wm54TECJF8rXn3sVEhDyC08u8icSvRa2cMlEhM3zmwIg.0CcJjRzBwOcfJTnbRECROe6RUEAUXIBRd7EwGj6Go0og.JPEG.rypy27%2FIMG_4322.jpg",
@@ -1245,7 +1250,17 @@ const stores = {
         "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAxMDdfNSAg%2FMDAxNjczMDk1NTQ4OTk2.uXbAigEoWuZlOYKaAZ1CIUR8Ry6sZuDlbCdTmJ28U3kg.sqAu-Ts4sFKJpnZmzO6872DOKYYr64_8-tWTGyEk71Mg.JPEG.rladbal6935%2FIMG_1817.jpg",
       ],
       phoneNum: "0507-1373-5532",
-      menu: [],
+      menu: [
+        ["Oh!Pie! 오리지널", "2,000"],
+        ["Oh!Pie! 쇼콜라", "2,500"],
+        ["Oh!Pie! 넛츠", "2,500"],
+        ["Oh!Pie! 흑임자", "2,500"],
+        ["Oh!Pie! 코코넛", "2,500"],
+
+        ["티라미수케이크", "6,800"],
+        ["생과일케이크", "5,500"],
+        ["갈레트 쿠키", "2,500"],
+      ],
       event: false,
     },
     {

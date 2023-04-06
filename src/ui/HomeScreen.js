@@ -50,7 +50,7 @@ function HomeScreen({}) {
               style={{ height: RFPercentage(10), width: RFPercentage(10) }}
             />
           </Pressable>
-          <BottomSheet hasDraggableIcon ref={bottomSheet} height={250}>
+          <BottomSheet hasDraggableIcon ref={bottomSheet} height={290}>
             <View style={styles.bottomsheet}>
               <View
                 style={{
