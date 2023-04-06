@@ -13,27 +13,35 @@ function App() {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
 
-  // 위치권한 요청
+  async function getLastLocation() {
+    const lastKnownLocation = await Location.getBackgroundPermissionsAsync({
+      maxAge: 5 * 60 * 1000, // 5 minutes
+      requiredAccuracy: 100, // 100 meters
+    });
+    console.log("lastKnown Location", JSON.stringify(lastKnownLocation));
+    return lastKnownLocation;
+  }
+
   useLayoutEffect(() => {
     const getLocationAsync = async () => {
       try {
         console.log("권한 체크를 시작합니다");
         const { status } = await Location.requestForegroundPermissionsAsync();
-
         if (status === "granted") console.log("권한에 이상이 없습니다");
       } catch {
         console.log(errorMsg);
         console.log("위치 권한을 받아오는 것에 문제가 생겼습니다.");
       }
-
       console.log("위치 데이터를 가져옵니다. ");
-      const location = await Location.getCurrentPositionAsync({
-        distanceInterval: 10,
-        timeInterval: 20000,
-        accuracy: Location.Accuracy.Highest,
-      });
+      const location = getLastLocation();
       console.log("위치 가져오기 완료\n위치 데이터: ");
-
+      setLocation(
+        await Location.getCurrentPositionAsync({
+          distanceInterval: 10,
+          timeInterval: 20000,
+          accuracy: Location.Accuracy.Highest,
+        })
+      );
       nextLocation(location);
     };
 
@@ -43,10 +51,6 @@ function App() {
     }
 
     getLocationAsync();
-    return () => {
-      setLocation(null);
-      setErrorMsg(null);
-    };
   }, []);
 
   if (location) {

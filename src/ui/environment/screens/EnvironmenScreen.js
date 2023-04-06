@@ -4,7 +4,12 @@ import { Linking } from "react-native";
 import { Pressable } from "react-native";
 import { Text, View, SafeAreaView, StyleSheet, ScrollView } from "react-native";
 import Colors from "../../../../assets/Colors";
-import { BigTitle, SmallTitle } from "../../../styled/styledComponents";
+import {
+  BigTitle,
+  SmallSmallText,
+  SmallTitle,
+} from "../../../styled/styledComponents";
+import * as Animatable from "react-native-animatable";
 
 function EnvironmenScreen() {
   const navigation = useNavigation();
@@ -16,21 +21,24 @@ function EnvironmenScreen() {
   }, [navigation]);
   return (
     <ScrollView content={styles.container}>
-      <Text
-        style={[
-          styles.normalText,
-          {
-            fontSize: 30,
-            marginBottom: 10,
-            alignSelf: "center",
-            marginTop: 40,
-          },
-        ]}
-      >
-        Information
-      </Text>
+      <Animatable.View animation="slideInUp">
+        <Text
+          style={[
+            styles.normalText,
+            {
+              fontSize: 30,
+              marginBottom: 10,
+              alignSelf: "center",
+              marginTop: 40,
+            },
+          ]}
+        >
+          Information
+        </Text>
+      </Animatable.View>
+
       <View style={styles.subContainer}>
-        <View
+        <Animatable.View
           style={[
             styles.itemContainer,
             {
@@ -39,12 +47,13 @@ function EnvironmenScreen() {
               elevation: 1,
             },
           ]}
+          animation="slideInLeft"
         >
-          <SmallTitle>숭실밥집을 다운로드해주셔서 감사합니다</SmallTitle>
-        </View>
-        <View style={styles.itemContainer}>
-          <SmallTitle>
-            @instagram 클릭!{"\n"}
+          <Text style={styles.normalText}>다운로드해주셔서 감사합니다</Text>
+        </Animatable.View>
+        <Animatable.View style={styles.itemContainer} animation="slideInRight">
+          <Text style={styles.normalText}>
+            @instagram (클릭){"\n"}
             <Pressable
               onPress={() => {
                 Linking.openURL(
@@ -54,16 +63,16 @@ function EnvironmenScreen() {
             >
               <BigTitle>@bobofsoongsil</BigTitle>
             </Pressable>
-          </SmallTitle>
-        </View>
-        <View style={styles.itemContainer}>
+          </Text>
+        </Animatable.View>
+        <Animatable.View style={styles.itemContainer} animation="slideInRight">
           <Text style={styles.normalText}>
             가게 소개에 개인적인 의견이 포함될 수 있습니다
           </Text>
-        </View>
+        </Animatable.View>
       </View>
       <View style={styles.subContainer}>
-        <View
+        <Animatable.View
           style={[
             styles.itemContainer,
             {
@@ -72,52 +81,59 @@ function EnvironmenScreen() {
               elevation: 1,
             },
           ]}
+          animation="slideInLeft"
         >
           <Text style={styles.normalText}>알림</Text>
-        </View>
-        <View style={styles.itemContainer}>
+        </Animatable.View>
+        <Animatable.View style={styles.itemContainer} animation="slideInRight">
           <Text style={styles.normalText}>
-            같이 으쌰으쌰해볼 사람은 {"\n"}
-            <Text style={styles.boldText}>DM 주세요</Text>
+            같이 만들어나가요{"\n"}
+            <Text style={styles.boldText}>인스타그램 dm주세요(≧∇≦)</Text>
           </Text>
-        </View>
+        </Animatable.View>
       </View>
 
       <View style={styles.subContainer}>
-        <View
+        <Animatable.View
           style={[
             styles.itemContainer,
             { alignItems: "flex-start", paddingLeft: 20 },
           ]}
+          animation="slideInRight"
         >
           <Text style={styles.normalText}>
             버전{"\n"}
-            <Text style={styles.boldText}>Beta</Text>
+            <Text style={[styles.boldText]}>Beta</Text>
           </Text>
-        </View>
-        <View
+        </Animatable.View>
+        <Animatable.View
           style={[
             styles.itemContainer,
             { alignItems: "flex-start", paddingLeft: 20 },
           ]}
+          animation="slideInRight"
         >
           <Text style={styles.normalText}>
-            버전배포일{"\n"}
-            <Text style={styles.boldText}>23-03-31</Text>
+            배포일{"\n"}
+            <Text style={styles.boldText}>23-04-10</Text>
           </Text>
-        </View>
-        <View
+        </Animatable.View>
+        <Animatable.View
           style={[
             styles.itemContainer,
             { alignItems: "flex-start", paddingLeft: 20 },
           ]}
+          animation="slideInRight"
         >
           <Text style={styles.normalText}>
             버그제보{"\n"}
-            <Text style={styles.boldText}>bobofsoongsil@gmail.com</Text>
+            <Text style={styles.boldText}>dm주세요</Text>
           </Text>
-        </View>
+        </Animatable.View>
       </View>
+      <SmallSmallText style={{ alignSelf: "flex-end", padding: 5 }}>
+        숭실밥집은 React Native로 빌드되었습니다
+      </SmallSmallText>
     </ScrollView>
   );
 }

@@ -16,8 +16,8 @@ function StoreCard({ item, index, width, latitude, longtitude }) {
         styles.itemContainer,
         {
           width: width * 1,
-          marginBottom: RFPercentage(5),
-          marginTop: RFPercentage(8),
+          marginBottom: RFPercentage(3),
+          marginTop: RFPercentage(3),
         },
       ]}
       key={index}
@@ -219,21 +219,43 @@ function StoreCard({ item, index, width, latitude, longtitude }) {
             </View>
           </View>
           <View style={{ padding: 20 }}>
-            <View style={{ alignSelf: "center", marginBottom: 30 }}>
+            <View
+              style={{
+                alignSelf: "center",
+                marginBottom: 30,
+                borderBottomColor: "black",
+                borderBottomWidth: 0.5,
+                paddingBottom: 10,
+                width: "100%",
+              }}
+            >
               <SmallTitle>밥집 살펴보기</SmallTitle>
             </View>
-            <Text style={[styles.normalText, { fontSize: 15 }]}>
-              {item.area} 근처에 있어요
-              {"\n"}가격대는 {item.price}이에요
-              {"\n"}내 위치에서{" "}
-              {GetDistance(
-                latitude,
-                longtitude,
-                item.location.Y,
-                item.location.X
-              ).toFixed(2)}
-              km 떨어져있어요
-            </Text>
+            <View
+              style={{
+                borderWidth: 0.5,
+                borderColor: "black",
+                width: "100%",
+                paddingHorizontal: 15,
+                paddingVertical: 20,
+                borderRadius: 20,
+              }}
+            >
+              <Text
+                style={[styles.normalText, { fontSize: 15, lineHeight: 28 }]}
+              >
+                {item.area} 근처에 있어요
+                {"\n"}가격대는 대략 {item.price}이에요
+                {"\n"}내 위치에서{" "}
+                {GetDistance(
+                  latitude,
+                  longtitude,
+                  item.location.Y,
+                  item.location.X
+                ).toFixed(2)}
+                km 떨어져있어요
+              </Text>
+            </View>
           </View>
           <Pressable
             onPress={() => {
@@ -244,7 +266,7 @@ function StoreCard({ item, index, width, latitude, longtitude }) {
             }}
           >
             <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <Text>간략히보기 </Text>
+              <Text>메뉴판 닫기 </Text>
               <Ionicons
                 name="arrow-up-circle-outline"
                 size={40}

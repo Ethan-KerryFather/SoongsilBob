@@ -71,16 +71,28 @@ function HomeScreen({}) {
                   alignItems: "center",
                 }}
               >
-                <Text
+                <View
                   style={{
-                    fontFamily: "gowun-bold",
-                    fontSize: 30,
-                    marginBottom: 10,
-                    letterSpacing: 3,
+                    width: "80%",
+                    borderBottomColor: "black",
+                    borderBottomWidth: 0.5,
+                    alignItems: "center",
+                    marginBottom: 30,
+                    marginTop: 20,
                   }}
                 >
-                  알려드립니다
-                </Text>
+                  <Text
+                    style={{
+                      fontFamily: "gowun-bold",
+                      fontSize: 30,
+                      marginBottom: 10,
+                      letterSpacing: 3,
+                    }}
+                  >
+                    알려드립니다
+                  </Text>
+                </View>
+
                 <View style={{ alignItems: "flex-start" }}>
                   <Text
                     style={{
@@ -89,38 +101,11 @@ function HomeScreen({}) {
                       letterSpacing: 1,
                     }}
                   >
-                    현재 사용하시는 숭실밥집 어플리케이션은{"\n"}베타테스트
-                    중입니다
+                    해당 버전은 베타테스트 중입니다
                     {"\n"}
                     베타 서비스 중에는 사용이 불안정할 수 있습니다{"\n"}
-                    양해부탁드립니다
-                  </Text>
-                </View>
-              </View>
-              <View
-                style={{
-                  flex: 1,
-                  justifyContent: "flex-start",
-                  alignItems: "center",
-                  flexDirection: "row",
-                  opacity: 1,
-                }}
-              >
-                <Image
-                  source={require("../../assets/horseIcon2.png")}
-                  style={{ width: "40%", height: "90%" }}
-                />
-                <View
-                  style={{
-                    borderWidth: 2,
-                    padding: 20,
-                    borderRadius: 20,
-                    borderColor: "blue",
-                    backgroundColor: Colors.basicColor.gray,
-                  }}
-                >
-                  <Text style={{ fontFamily: "gowun-regular", fontSize: 15 }}>
-                    곧 이벤트가 진행됩니다!
+                    양해부탁드립니다(*´∪`)
+                    {"\n\n"}다운로드해주셔서 감사해요:)
                   </Text>
                 </View>
               </View>

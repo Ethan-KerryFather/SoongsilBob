@@ -93,7 +93,7 @@ function StoreLists({ route }) {
           <View
             style={{
               marginTop: 20,
-              marginBottom: 10,
+              marginBottom: 30,
               alignSelf: "flex-end",
               width: "100%",
               height: RFPercentage(5),
