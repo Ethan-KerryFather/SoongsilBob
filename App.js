@@ -16,12 +16,6 @@ SplashScreen.preventAutoHideAsync();
 function App() {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
-  const [fontsLoaded] = useFonts({
-    "gowun-regular": require("./assets/font/gowun-regular.ttf"),
-    "gowun-bold": require("./assets/font/gowun-bold.ttf"),
-    "black-sans": require("./assets/font/black-sans.ttf"),
-    MaterialCommunityIcons: require("@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"),
-  });
 
   // 위치권한 요청
   useLayoutEffect(() => {
@@ -29,10 +23,7 @@ function App() {
       try {
         console.log("권한 체크를 시작합니다");
         const { status } = await Location.requestForegroundPermissionsAsync();
-        // if (status !== "granted") {
-        //   setErrorMsg("위치 권한 문제 발생");
-        //   return;
-        // }
+
         if (status === "granted") console.log("권한에 이상이 없습니다");
       } catch {
         console.log(errorMsg);
@@ -62,7 +53,7 @@ function App() {
     };
   }, []);
 
-  if (location && fontsLoaded) {
+  if (location) {
     return (
       <PaperProvider>
         <View style={styles.container}>
