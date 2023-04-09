@@ -11,9 +11,7 @@ const NotifyScreen = () => {
       .then((response) => {
         const html = response.data;
         const $ = cheerio.load(html);
-
         const container = $(".notice-lists").html();
-
         setSource(container);
       })
       .catch((error) => {

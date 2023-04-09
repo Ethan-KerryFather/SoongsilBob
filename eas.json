@@ -23,12 +23,18 @@
       }
     },
     "production": {
-      "ios": {
-        "resourceClass": "m1-medium"
+      "android": {
+        "buildType": "app-bundle"
       }
     }
   },
   "submit": {
-    "production": {}
+    "production": {
+      "android": {
+        "serviceAccountKeyPath": "<path_to_key_file>",
+        "track": "internal",
+        "changesNotSentForReview": true
+      }
+    }
   }
 }

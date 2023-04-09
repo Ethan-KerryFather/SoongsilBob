@@ -8,17 +8,18 @@ import Colors from "../../../../assets/Colors";
 import BottomSheet from "react-native-gesture-bottom-sheet";
 import CustomModal from "../../customComponent/CustomModal";
 import { RFPercentage } from "react-native-responsive-fontsize";
+import { SmallSmallText } from "../../../styled/styledComponents";
 
 function StorePage({ route, navigation }) {
-  const bottomSheet = useRef();
-  const { width, height } = useWindowDimensions("window");
+  const bottomSheet = useRef(null);
+  const bottomSheetHeight = useRef(null);
+  const { height } = useWindowDimensions("window");
   const [storeInfo, setStoreInfo] = useState(route.params.storeInfo);
   const [location, setLocation] = useState(route.params.location);
   const [isBottomsheetShowed, setIsBottomsheetShowed] = useState(true);
   const [modalShowed, setModalShowed] = useState(false);
   const [imageUrl, setImageUrl] = useState("");
   const [isPressNow, setIsPressNow] = useState(false);
-  const [bottomSheetHeight, setBottomSheetHeight] = useState(0);
   // 컴포넌트 보여줄때 한번 위치 초기화
   const [userLocation, setUserLocation] = useState({
     latitude: route.params.latitude,
@@ -65,24 +66,17 @@ function StorePage({ route, navigation }) {
       </View>
 
       <BottomSheet
-        snapPoints={[50, bottomSheetHeight]}
         draggable={true}
         ref={bottomSheet}
-        initialSnap={1}
         onOpen={() => {
           console.log("bottom sheet open");
         }}
         onClose={() => {
           console.log("bottom close event");
         }}
-        height={height * 0.8}
+        height={RFPercentage(93)}
       >
-        <View
-          style={styles.bottomSheetView}
-          onLayout={({ nativeEvent }) => {
-            setBottomSheetHeight(nativeEvent.layout.height);
-          }}
-        >
+        <View style={styles.bottomSheetView}>
           <Pressable
             style={{ position: "absolute", top: 12, right: 12, zIndex: 1 }}
             onPress={() => {
@@ -159,11 +153,16 @@ function StorePage({ route, navigation }) {
               운영시간 | {storeInfo.workingTime}
             </Text>
           </View>
-          <View style={{}}>
+          <View>
             <View style={{ paddingLeft: 30, paddingRight: 20 }}>
               <Text style={styles.normalText}>{storeInfo.description}</Text>
             </View>
           </View>
+          <SmallSmallText
+            style={{ alignSelf: "flex-end", paddingRight: 2, paddingTop: 3 }}
+          >
+            이미지 꾹 누르기
+          </SmallSmallText>
           <View
             style={{
               flexDirection: "row",
@@ -201,9 +200,9 @@ function StorePage({ route, navigation }) {
                       console.log("another touchout case");
                     }
                   }}
+                  key={index}
                 >
                   <Image
-                    key={index}
                     source={{ uri: item }}
                     style={{
                       width: "100%",

@@ -1,65 +1,45 @@
 import { useNavigation } from "@react-navigation/native";
+import AnimatedLottieView from "lottie-react-native";
 import React, { useEffect, useRef } from "react";
 import { View, Text, StyleSheet, Pressable } from "react-native";
 //@ts-ignore
 import SlotMachine from "react-native-slot-machine";
+import { BigTitle } from "../../styled/styledComponents";
+import * as Animatable from "react-native-animatable";
 
 function RouletteScreen({ route }) {
   const navigation = useNavigation();
 
   useEffect(() => {
     navigation.setOptions({
-      title: `${route.params.category}`,
       headerShown: false,
     });
-  }, [navigation]);
-
-  const slotRef = useRef();
-
-  const startSlot = () => {
-    if (slotRef.current) {
-      slotRef.current.spin();
-    } else {
-      console.log("slotRef is null");
-    }
-  };
-
+  }, []);
   return (
     <View style={styles.container}>
-      <SlotMachine
-        ref={slotRef}
-        initialAnimation={false}
-        textStyles={{ fontSize: 30, color: "white" }}
-        reels={[
-          {
-            values: ["A", "B", "C"],
-            loop: 5,
-            speed: 200,
-            textStyle: { fontWeight: "bold" },
-          },
-          {
-            values: ["1", "2", "3"],
-            loop: 5,
-            speed: 200,
-            textStyle: { fontWeight: "bold" },
-          },
-          {
-            values: ["X", "Y", "Z"],
-            loop: 5,
-            speed: 200,
-            textStyle: { fontWeight: "bold" },
-          },
-        ]}
-        reelConfig={{ tension: 200, friction: 10, mass: 0.5 }}
-        style={{ height: 600 }}
-      />
-      <Pressable
-        onPress={() => {
-          startSlot();
+      <Animatable.Text
+        animation="slideInDown"
+        iterationCount={5}
+        direction="alternate"
+        style={{
+          fontFamily: "black-sans",
+          fontSize: 30,
+          alignSelf: "center",
+          marginTop: 80,
+          color: "white",
+          zIndex: 3,
+          backgroundColor: "brown",
+          padding: 30,
+          borderRadius: 50,
         }}
       >
-        <Text>시작</Text>
-      </Pressable>
+        밥집 룰렛 준비중
+      </Animatable.Text>
+      <AnimatedLottieView
+        style={{ flex: 1, borderWidth: 0.5, backgroundColor: "blue" }}
+        source={require("../../../assets/roulette.json")}
+        autoPlay
+      />
     </View>
   );
 }
@@ -69,7 +49,5 @@ export default RouletteScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
   },
 });
