@@ -89,6 +89,7 @@ function StoreLists({ route }) {
         setVisible={setSnackbarVisible}
       />
       <FlatList
+        showsVerticalScrollIndicator={false}
         ListHeaderComponent={
           <View
             style={{
