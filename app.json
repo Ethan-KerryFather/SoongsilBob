@@ -2,7 +2,7 @@
   "expo": {
     "name": "숭실밥집",
     "slug": "SoongsilBob",
-    "version": "2.0.0",
+    "version": "3.0.0",
     "orientation": "portrait",
     "icon": "./assets/horseIcon.png",
     "userInterfaceStyle": "light",
@@ -15,6 +15,7 @@
       "supportsTablet": true
     },
     "android": {
+      "versionCode": 3,
       "adaptiveIcon": {
         "foregroundImage": "./assets/horseIcon.png",
         "backgroundColor": "#ffffff"
@@ -34,15 +35,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      [
-        "expo-location",
-        {
-          "locationAlwaysAndWhenInUsePermission": "숭실밥집이 위치권한을 요청합니다:)",
-          "isAndroidBackgroundLocationEnabled": "숭실밥집이 위치권한을 요청합니다:)"
-        }
-      ]
-    ],
+
     "extra": {
       "eas": {
         "projectId": "168ce610-520e-4c98-b954-4236e6fc5a69"

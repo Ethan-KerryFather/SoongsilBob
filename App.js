@@ -7,6 +7,7 @@ import { useLayoutEffect, useState } from "react";
 import * as Location from "expo-location";
 import "react-native-gesture-handler";
 import { Provider as PaperProvider } from "react-native-paper";
+
 SplashScreen.preventAutoHideAsync();
 
 function App() {
