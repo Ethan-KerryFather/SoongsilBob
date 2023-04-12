@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import RootStack from "./src/navigation/RootStack";
 import Colors from "./assets/Colors";
 import * as SplashScreen from "expo-splash-screen";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import * as Location from "expo-location";
 import "react-native-gesture-handler";
 import { Provider as PaperProvider } from "react-native-paper";
@@ -12,15 +12,6 @@ SplashScreen.preventAutoHideAsync();
 function App() {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
-
-  async function getLastLocation() {
-    const lastKnownLocation = await Location.getBackgroundPermissionsAsync({
-      maxAge: 5 * 60 * 1000, // 5 minutes
-      requiredAccuracy: 100, // 100 meters
-    });
-    console.log("lastKnown Location", JSON.stringify(lastKnownLocation));
-    return lastKnownLocation;
-  }
 
   useLayoutEffect(() => {
     const getLocationAsync = async () => {
@@ -33,8 +24,7 @@ function App() {
         console.log("위치 권한을 받아오는 것에 문제가 생겼습니다.");
       }
       console.log("위치 데이터를 가져옵니다. ");
-      const location = getLastLocation();
-      console.log("위치 가져오기 완료\n위치 데이터: ");
+
       setLocation(
         await Location.getCurrentPositionAsync({
           distanceInterval: 10,
@@ -42,13 +32,9 @@ function App() {
           accuracy: Location.Accuracy.Highest,
         })
       );
-      nextLocation(location);
-    };
-
-    function nextLocation(location) {
-      setLocation(location);
+      console.log("위치 가져오기 완료\n위치 데이터: ");
       SplashScreen.hideAsync();
-    }
+    };
 
     getLocationAsync();
   }, []);
