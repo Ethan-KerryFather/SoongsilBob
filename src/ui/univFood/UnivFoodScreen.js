@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  Pressable,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import axios from "axios";
 import * as cheerio from "cheerio";
 import { BigTitle, SmallText, SmallTitle } from "../../styled/styledComponents";
@@ -8,8 +15,11 @@ import FoodCard from "./components/FoodCard";
 import { RFPercentage } from "react-native-responsive-fontsize";
 import Colors from "../../../assets/Colors";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import DormFood from "./components/DormFood";
+import DodamFood from "./components/DodamFood";
 
 function UnivFoodScreen({ navigation }) {
+  const [screenMenu, setScreenMenu] = useState(2);
   const [studentLunch, setStudentLunch] = useState({
     lunch1: { menu: "로딩중" },
     lunch2: "로딩중",
@@ -19,6 +29,7 @@ function UnivFoodScreen({ navigation }) {
     lunch2: "로딩중",
     dinner1: "로딩중",
   });
+
   useEffect(() => {
     navigation.setOptions({
       headerShown: false,
@@ -26,18 +37,18 @@ function UnivFoodScreen({ navigation }) {
     axios
       .get("https://soongguri.com/main.php?mkey=2&w=3")
       .then((response) => {
-        fetchImageUrl()
-          .then((imageUrl) => {
-            setStudentLunch((prevState) => {
-              return {
-                ...prevState,
-                lunch1: { imageUrl: imageUrl, ...prevState.lunch1 },
-              };
-            });
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+        // fetchImageUrl()
+        //   .then((imageUrl) => {
+        //     setStudentLunch((prevState) => {
+        //       return {
+        //         ...prevState,
+        //         lunch1: { imageUrl: imageUrl, ...prevState.lunch1 },
+        //       };
+        //     });
+        //   })
+        //   .catch((error) => {
+        //     console.log(error);
+        //   });
 
         // parsing
         const html = response.data;
@@ -67,27 +78,6 @@ function UnivFoodScreen({ navigation }) {
             lunch2: element2.text(),
           };
         });
-
-        const element3 = cheerioedHtml(
-          "body > div.sub_layout > div.sub_mid > div.smid > div.detail_center > div > table > tbody > tr:nth-child(7) > td > table > tbody > tr:nth-child(3) > td:nth-child(1) > table > tbody > tr > td:nth-child(1) > div"
-        );
-        setDodamLunch({ lunch1: element3.text() });
-
-        const element4 = cheerioedHtml(
-          "body > div.sub_layout > div.sub_mid > div.smid > div.detail_center > div > table > tbody > tr:nth-child(7) > td > table > tbody > tr:nth-child(3) > td:nth-child(2) > table > tbody > tr > td:nth-child(1) > div"
-        );
-        setDodamLunch((prevState) => ({
-          ...prevState,
-          lunch2: element4.text(),
-        }));
-
-        const element5 = cheerioedHtml(
-          "body > div.sub_layout > div.sub_mid > div.smid > div.detail_center > div > table > tbody > tr:nth-child(7) > td > table > tbody > tr:nth-child(3) > td:nth-child(3) > table > tbody > tr > td:nth-child(1)  > div"
-        );
-        setDodamLunch((prevState) => ({
-          ...prevState,
-          dinner1: element5.text(),
-        }));
       })
       .catch((error) => {
         console.log(error);
@@ -98,24 +88,6 @@ function UnivFoodScreen({ navigation }) {
     };
   }, []);
 
-  // fetch studentlunch1
-  const fetchImageUrl = async () => {
-    try {
-      const response = await axios.get(
-        "https://soongguri.com/main.php?mkey=2&w=3"
-      );
-      const $ = cheerio.load(response.data);
-      const imageUrl = $('img[src*="menu_file"]').attr("src");
-      const baseUrl = $("base").attr("href");
-      const absoluteUrl = baseUrl + imageUrl;
-      console.log(`가져온 imageUrl : ${absoluteUrl}`);
-      return absoluteUrl;
-    } catch (error) {
-      console.error(error);
-      return null;
-    }
-  };
-
   return (
     <SafeAreaView style={[styles.container]}>
       <ScrollView>
@@ -123,56 +95,78 @@ function UnivFoodScreen({ navigation }) {
           <BigTitle>숭실밥집 _학식</BigTitle>
           <MaterialCommunityIcons name="silverware-spoon" size={30} />
         </View>
-        <View style={styles.foodCardWrapper}>
-          <View>
-            <View style={styles.menuTitle}>
-              <BigTitle style={styles.bigTitle}>학생식당</BigTitle>
-              <SmallTitle>Students Cafeteria</SmallTitle>
-              <SmallText>학생회관 지하1층</SmallText>
-            </View>
-
-            {studentLunch === "로딩중" ? (
-              <ActivityIndicator animating={true} color={MD2Colors.red800} />
-            ) : (
-              <FoodCard
-                title="점심1코너"
-                text={studentLunch.lunch1.menu}
-                imageUrl={studentLunch.lunch1.imageUrl}
-              />
-            )}
-
-            {studentLunch === "로딩중" ? (
-              <ActivityIndicator animating={true} color={MD2Colors.red800} />
-            ) : (
-              <FoodCard title="점심2코너" text={studentLunch.lunch2} />
-            )}
-          </View>
+        <View
+          style={{
+            width: "95%",
+            alignSelf: "center",
+            flexDirection: "row",
+            marginBottom: 10,
+            justifyContent: "space-around",
+            borderWidth: 1,
+            borderColor: Colors.basicColor.greenTrans1,
+            paddingVertical: 5,
+            borderRadius: 20,
+          }}
+        >
+          <Pressable
+            style={styles.menuButton}
+            onPress={() => {
+              setScreenMenu(2);
+            }}
+          >
+            <Text>학생식당</Text>
+          </Pressable>
+          <Pressable
+            style={styles.menuButton}
+            onPress={() => {
+              setScreenMenu(3);
+            }}
+          >
+            <Text>도담식당</Text>
+          </Pressable>
+          <Pressable
+            style={styles.menuButton}
+            onPress={() => {
+              setScreenMenu(4);
+            }}
+          >
+            <Text>기숙사식당</Text>
+          </Pressable>
         </View>
-
-        <View>
+        {screenMenu === 2 && (
           <View style={styles.foodCardWrapper}>
-            <View style={styles.menuTitle}>
-              <BigTitle style={styles.bigTitle}>도담식당</BigTitle>
-              <SmallTitle>Dodam Cafeteria</SmallTitle>
-              <SmallText>신양관 2층</SmallText>
+            <View>
+              <View style={styles.menuTitle}>
+                <BigTitle style={styles.bigTitle}>학생식당</BigTitle>
+                <SmallTitle>Students Cafeteria</SmallTitle>
+                <SmallText>학생회관 지하1층</SmallText>
+              </View>
+
+              {studentLunch === "로딩중" ? (
+                <ActivityIndicator animating={true} color={MD2Colors.red800} />
+              ) : (
+                <FoodCard
+                  title="점심1코너"
+                  text={studentLunch.lunch1.menu}
+                  imageUrl={studentLunch.lunch1.imageUrl}
+                />
+              )}
+
+              {studentLunch === "로딩중" ? (
+                <ActivityIndicator animating={true} color={MD2Colors.red800} />
+              ) : (
+                <FoodCard title="점심2코너" text={studentLunch.lunch2} />
+              )}
             </View>
-            {studentLunch === "로딩중" ? (
-              <ActivityIndicator animating={true} color={MD2Colors.red800} />
-            ) : (
-              <FoodCard title="점심1코너" text={dodamLunch.lunch1} />
-            )}
-            {studentLunch === "로딩중" ? (
-              <ActivityIndicator animating={true} color={MD2Colors.red800} />
-            ) : (
-              <FoodCard title="점심2코너" text={dodamLunch.lunch2} />
-            )}
-            {studentLunch === "로딩중" ? (
-              <ActivityIndicator animating={true} color={MD2Colors.red800} />
-            ) : (
-              <FoodCard title="저녁1코너" text={dodamLunch.dinner1} />
-            )}
           </View>
-        </View>
+        )}
+
+        {screenMenu === 3 && <DodamFood />}
+        {screenMenu === 4 && (
+          <View>
+            <DormFood />
+          </View>
+        )}
       </ScrollView>
     </SafeAreaView>
   );
@@ -206,6 +200,14 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
+  },
+  menuButton: {
+    backgroundColor: Colors.basicColor.magentaTrans2,
+    height: 50,
+    width: "30%",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 30,
   },
   //
   normalText: {
