@@ -109,7 +109,15 @@ function UnivFoodScreen({ navigation }) {
           }}
         >
           <Pressable
-            style={styles.menuButton}
+            style={[
+              styles.menuButton,
+              {
+                backgroundColor:
+                  screenMenu === 2
+                    ? Colors.basicColor.magentaTrans1
+                    : Colors.basicColor.magentaTrans2,
+              },
+            ]}
             onPress={() => {
               setScreenMenu(2);
             }}
@@ -117,7 +125,15 @@ function UnivFoodScreen({ navigation }) {
             <Text>학생식당</Text>
           </Pressable>
           <Pressable
-            style={styles.menuButton}
+            style={[
+              styles.menuButton,
+              {
+                backgroundColor:
+                  screenMenu === 3
+                    ? Colors.basicColor.magentaTrans1
+                    : Colors.basicColor.magentaTrans2,
+              },
+            ]}
             onPress={() => {
               setScreenMenu(3);
             }}
@@ -125,7 +141,15 @@ function UnivFoodScreen({ navigation }) {
             <Text>도담식당</Text>
           </Pressable>
           <Pressable
-            style={styles.menuButton}
+            style={[
+              styles.menuButton,
+              {
+                backgroundColor:
+                  screenMenu === 4
+                    ? Colors.basicColor.magentaTrans1
+                    : Colors.basicColor.magentaTrans2,
+              },
+            ]}
             onPress={() => {
               setScreenMenu(4);
             }}
