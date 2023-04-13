@@ -63,7 +63,7 @@ function EnvironmenScreen() {
         </Animatable.View>
         <Animatable.View style={styles.itemContainer} animation="slideInRight">
           <Text style={styles.normalText}>
-            같이 만들어나가요{"\n"}
+            같이 만들어나가요 ux/ui,FE(RN),BE{"\n"}
             <Text style={styles.boldText}>인스타그램 dm주세요(≧∇≦)</Text>
           </Text>
         </Animatable.View>
@@ -105,7 +105,9 @@ function EnvironmenScreen() {
         >
           <Text style={styles.normalText}>
             버전{"\n"}
-            <Text style={[styles.boldText]}>Beta</Text>
+            <Text style={[styles.boldText]}>
+              Beta (+ 기식조회, 글씨체 변경)
+            </Text>
           </Text>
         </Animatable.View>
         <Animatable.View
@@ -117,7 +119,7 @@ function EnvironmenScreen() {
         >
           <Text style={styles.normalText}>
             배포일{"\n"}
-            <Text style={styles.boldText}>23-04-10</Text>
+            <Text style={styles.boldText}>23-04-14</Text>
           </Text>
         </Animatable.View>
         <Animatable.View
@@ -128,7 +130,7 @@ function EnvironmenScreen() {
           animation="slideInRight"
         >
           <Text style={styles.normalText}>
-            버그제보{"\n"}
+            버그제보/개발제안{"\n"}
             <Text style={styles.boldText}>dm주세요</Text>
           </Text>
         </Animatable.View>
@@ -170,7 +172,7 @@ const styles = StyleSheet.create({
   },
   //
   normalText: {
-    fontFamily: "gowun-bold",
+    fontFamily: "gangwon-bold",
   },
   boldText: {
     fontWeight: "bold",
