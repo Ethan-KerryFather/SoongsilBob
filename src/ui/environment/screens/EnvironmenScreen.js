@@ -90,7 +90,7 @@ function EnvironmenScreen() {
         </Animatable.View>
         <Animatable.View style={styles.itemContainer} animation="slideInRight">
           <Text style={styles.normalText}>
-            물리학과 이인용{"\n"}전기정보공학과 문승환{"\n"}회계학과 정재형
+            물리학과 이인용{"\n"}전자정보공학과 문승환{"\n"}회계학과 정재형
             {"\n"}소프트웨어학부 이재혁{"\n"}컴퓨터학부 사하
           </Text>
         </Animatable.View>

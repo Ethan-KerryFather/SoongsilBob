@@ -62,6 +62,23 @@ function DodamFood() {
           <BigTitle style={styles.bigTitle}>도담식당</BigTitle>
           <SmallTitle>Dodam Cafeteria</SmallTitle>
           <SmallText>신양관 2층</SmallText>
+          <View
+            style={{
+              borderWidth: 0.5,
+              width: "95%",
+              alignItems: "center",
+              paddingVertical: 5,
+              marginTop: 5,
+              marginBottom: 5,
+              borderRadius: 20,
+            }}
+          >
+            <SmallText>평일</SmallText>
+            <SmallText>점심 11:20 - 14:00</SmallText>
+            <SmallText>저녁 17:00 - 18:30</SmallText>
+            <SmallText>{"\n"}주말</SmallText>
+            <SmallText>점심 11:30 - 13:30</SmallText>
+          </View>
         </View>
 
         <FoodCard title="점심1코너" text={dodamLunch.lunch1} />

@@ -21,7 +21,7 @@ function CategoryItem({ category, jsonRoute }) {
     >
       <Text
         style={{
-          fontFamily: "gowun-regular",
+          fontFamily: "gangwon-bold",
           fontSize: 25,
           zIndex: 2,
           position: "absolute",

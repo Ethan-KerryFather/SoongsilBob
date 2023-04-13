@@ -37,19 +37,6 @@ function UnivFoodScreen({ navigation }) {
     axios
       .get("https://soongguri.com/main.php?mkey=2&w=3")
       .then((response) => {
-        // fetchImageUrl()
-        //   .then((imageUrl) => {
-        //     setStudentLunch((prevState) => {
-        //       return {
-        //         ...prevState,
-        //         lunch1: { imageUrl: imageUrl, ...prevState.lunch1 },
-        //       };
-        //     });
-        //   })
-        //   .catch((error) => {
-        //     console.log(error);
-        //   });
-
         // parsing
         const html = response.data;
         const cheerioedHtml = cheerio.load(html);
@@ -122,7 +109,9 @@ function UnivFoodScreen({ navigation }) {
               setScreenMenu(2);
             }}
           >
-            <Text>학생식당</Text>
+            <Text style={{ fontFamily: "gangwon-bold", fontSize: 18 }}>
+              학생식당
+            </Text>
           </Pressable>
           <Pressable
             style={[
@@ -138,7 +127,9 @@ function UnivFoodScreen({ navigation }) {
               setScreenMenu(3);
             }}
           >
-            <Text>도담식당</Text>
+            <Text style={{ fontFamily: "gangwon-bold", fontSize: 18 }}>
+              도담식당
+            </Text>
           </Pressable>
           <Pressable
             style={[
@@ -154,7 +145,9 @@ function UnivFoodScreen({ navigation }) {
               setScreenMenu(4);
             }}
           >
-            <Text>기숙사식당</Text>
+            <Text style={{ fontFamily: "gangwon-bold", fontSize: 18 }}>
+              기숙사식당
+            </Text>
           </Pressable>
         </View>
         {screenMenu === 2 && (
@@ -164,6 +157,21 @@ function UnivFoodScreen({ navigation }) {
                 <BigTitle style={styles.bigTitle}>학생식당</BigTitle>
                 <SmallTitle>Students Cafeteria</SmallTitle>
                 <SmallText>학생회관 지하1층</SmallText>
+                <View
+                  style={{
+                    borderWidth: 0.5,
+                    width: "95%",
+                    alignItems: "center",
+                    paddingVertical: 5,
+                    marginTop: 5,
+                    marginBottom: 5,
+                    borderRadius: 20,
+                  }}
+                >
+                  <SmallText>식사 11:20 - 13:30</SmallText>
+                  <SmallText>공간개방 11:20 - 13:30</SmallText>
+                  <SmallText>주말은 휴무 (도담식당 이용바람)</SmallText>
+                </View>
               </View>
 
               {studentLunch === "로딩중" ? (
@@ -224,6 +232,8 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
+    paddingTop: 10,
+    paddingBottom: 10,
   },
   menuButton: {
     backgroundColor: Colors.basicColor.magentaTrans2,

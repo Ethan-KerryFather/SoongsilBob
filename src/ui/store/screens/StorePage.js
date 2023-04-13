@@ -100,7 +100,7 @@ function StorePage({ route, navigation }) {
                 borderBottomColor: "black",
               }}
             >
-              <Text style={{ fontFamily: "gowun-bold", fontSize: 15 }}>
+              <Text style={{ fontFamily: "gangwon-bold", fontSize: 15 }}>
                 store정보
               </Text>
             </View>
@@ -115,7 +115,7 @@ function StorePage({ route, navigation }) {
               </Pressable>
               <Text
                 style={{
-                  fontFamily: "gowun-regular",
+                  fontFamily: "gangwon-bold",
                   fontSize: 25,
                   paddingTop: 10,
                 }}
@@ -317,10 +317,10 @@ const styles = StyleSheet.create({
   },
   //
   normalText: {
-    fontFamily: "gowun-regular",
+    fontFamily: "gangwon-bold",
   },
   boldText: {
-    fontFamily: "gowun-bold",
+    fontFamily: "gangwon-bold",
   },
   iconContainer: {
     alignItems: "center",

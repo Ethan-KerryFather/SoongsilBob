@@ -13,6 +13,7 @@ import axios from "axios";
 import * as cheerio from "cheerio";
 import iconv from "iconv-lite";
 import { prev } from "cheerio/lib/api/traversing";
+import { Divider } from "react-native-paper";
 function DormFood() {
   const [dormMenu, setDormMenu] = useState({
     monday: {
@@ -74,18 +75,26 @@ function DormFood() {
 
         const date = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(25) > th"
-        ).text();
+        )
+          .text()
+          .trim();
         const morning = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(25) > td:nth-child(2)"
-        ).text();
+        )
+          .text()
+          .trim();
 
         const lunch = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(25) > td:nth-child(3)"
-        ).text();
+        )
+          .text()
+          .trim();
 
         const dinner = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(25) > td:nth-child(4)"
-        ).text();
+        )
+          .text()
+          .trim();
 
         setDormMenu((prevState) => {
           return {
@@ -102,18 +111,26 @@ function DormFood() {
 
         const date2 = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(26) > th"
-        ).text();
+        )
+          .text()
+          .trim();
         const morning2 = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(26) > td:nth-child(2)"
-        ).text();
+        )
+          .text()
+          .trim();
 
         const lunch2 = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(26) > td:nth-child(3)"
-        ).text();
+        )
+          .text()
+          .trim();
 
         const dinner2 = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(26) > td:nth-child(4)"
-        ).text();
+        )
+          .text()
+          .trim();
 
         setDormMenu((prevState) => {
           return {
@@ -129,18 +146,26 @@ function DormFood() {
 
         const date3 = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(27) > th"
-        ).text();
+        )
+          .text()
+          .trim();
         const morning3 = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(27) > td:nth-child(2)"
-        ).text();
+        )
+          .text()
+          .trim();
 
         const lunch3 = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(27) > td:nth-child(3)"
-        ).text();
+        )
+          .text()
+          .trim();
 
         const dinner3 = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(27) > td:nth-child(4)"
-        ).text();
+        )
+          .text()
+          .trim();
 
         setDormMenu((prevState) => {
           return {
@@ -156,18 +181,26 @@ function DormFood() {
 
         const date4 = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(28) > th"
-        ).text();
+        )
+          .text()
+          .trim();
         const morning4 = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(28) > td:nth-child(2)"
-        ).text();
+        )
+          .text()
+          .trim();
 
         const lunch4 = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(28) > td:nth-child(3)"
-        ).text();
+        )
+          .text()
+          .trim();
 
         const dinner4 = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(28) > td:nth-child(4)"
-        ).text();
+        )
+          .text()
+          .trim();
 
         setDormMenu((prevState) => {
           return {
@@ -183,18 +216,26 @@ function DormFood() {
 
         const date5 = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(29) > th"
-        ).text();
+        )
+          .text()
+          .trim();
         const morning5 = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(29) > td:nth-child(2)"
-        ).text();
+        )
+          .text()
+          .trim();
 
         const lunch5 = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(29) > td:nth-child(3)"
-        ).text();
+        )
+          .text()
+          .trim();
 
         const dinner5 = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(29) > td:nth-child(4)"
-        ).text();
+        )
+          .text()
+          .trim();
 
         setDormMenu((prevState) => {
           return {
@@ -210,18 +251,26 @@ function DormFood() {
 
         const date6 = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(30) > th"
-        ).text();
+        )
+          .text()
+          .trim();
         const morning6 = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(30) > td:nth-child(2)"
-        ).text();
+        )
+          .text()
+          .trim();
 
         const lunch6 = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(30) > td:nth-child(3)"
-        ).text();
+        )
+          .text()
+          .trim();
 
         const dinner6 = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(30) > td:nth-child(4)"
-        ).text();
+        )
+          .text()
+          .trim();
 
         setDormMenu((prevState) => {
           return {
@@ -237,18 +286,26 @@ function DormFood() {
 
         const date7 = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(31) > th"
-        ).text();
+        )
+          .text()
+          .trim();
         const morning7 = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(31) > td:nth-child(2)"
-        ).text();
+        )
+          .text()
+          .trim();
 
         const lunch7 = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(31) > td:nth-child(3)"
-        ).text();
+        )
+          .text()
+          .trim();
 
         const dinner7 = $(
           "body > table:nth-child(4) > tbody > tr > td > table > tbody > tr > td:nth-child(3) > table.boxstyle02 > tbody > tr:nth-child(31) > td:nth-child(4)"
-        ).text();
+        )
+          .text()
+          .trim();
 
         setDormMenu((prevState) => {
           return {
@@ -275,13 +332,31 @@ function DormFood() {
           <BigTitle style={styles.bigTitle}>기숙사식당</BigTitle>
           <SmallTitle>Dormitory Cafeteria</SmallTitle>
           <SmallText>기숙사</SmallText>
-        </View>
+          <View
+            style={{
+              borderWidth: 0.5,
+              width: "95%",
+              alignItems: "center",
+              paddingVertical: 5,
+              marginTop: 5,
 
+              borderRadius: 20,
+            }}
+          >
+            <SmallText>조식 08:00 - 09:30</SmallText>
+            <SmallText>중식 11:00 - 14:00</SmallText>
+            <SmallText>석식 17:00 - 18:30</SmallText>
+          </View>
+        </View>
+        <Divider style={{ marginVertical: 15 }} />
         <View style={{ alignItems: "flex-start" }}>
-          <View>
+          <View style={{ alignItems: "center", width: "100%" }}>
             <SmallText
               style={{
-                fontSize: 20,
+                fontSize: 23,
+                textDecorationColor: "red",
+                textDecorationStyle: "solid",
+                textDecorationLine: "underline",
               }}
             >
               {dormMenu.monday.date}
@@ -291,11 +366,15 @@ function DormFood() {
           <FoodCard title="점심" text={dormMenu.monday.lunch} />
           <FoodCard title="저녁" text={dormMenu.monday.dinner} />
         </View>
+        <Divider style={{ marginVertical: 15 }} />
         <View style={{ alignItems: "flex-start" }}>
-          <View>
+          <View style={{ alignItems: "center", width: "100%" }}>
             <SmallText
               style={{
-                fontSize: 20,
+                fontSize: 23,
+                textDecorationColor: "red",
+                textDecorationStyle: "solid",
+                textDecorationLine: "underline",
               }}
             >
               {dormMenu.tuesday.date}
@@ -305,11 +384,15 @@ function DormFood() {
           <FoodCard title="점심" text={dormMenu.tuesday.lunch} />
           <FoodCard title="저녁" text={dormMenu.tuesday.dinner} />
         </View>
+        <Divider style={{ marginVertical: 15 }} />
         <View style={{ alignItems: "flex-start" }}>
-          <View>
+          <View style={{ alignItems: "center", width: "100%" }}>
             <SmallText
               style={{
-                fontSize: 20,
+                fontSize: 23,
+                textDecorationColor: "red",
+                textDecorationStyle: "solid",
+                textDecorationLine: "underline",
               }}
             >
               {dormMenu.wednesday.date}
@@ -319,11 +402,15 @@ function DormFood() {
           <FoodCard title="점심" text={dormMenu.wednesday.lunch} />
           <FoodCard title="저녁" text={dormMenu.wednesday.dinner} />
         </View>
+        <Divider style={{ marginVertical: 15 }} />
         <View style={{ alignItems: "flex-start" }}>
-          <View>
+          <View style={{ alignItems: "center", width: "100%" }}>
             <SmallText
               style={{
-                fontSize: 20,
+                fontSize: 23,
+                textDecorationColor: "red",
+                textDecorationStyle: "solid",
+                textDecorationLine: "underline",
               }}
             >
               {dormMenu.thursday.date}
@@ -333,11 +420,15 @@ function DormFood() {
           <FoodCard title="점심" text={dormMenu.thursday.lunch} />
           <FoodCard title="저녁" text={dormMenu.thursday.dinner} />
         </View>
+        <Divider style={{ marginVertical: 15 }} />
         <View style={{ alignItems: "flex-start" }}>
-          <View>
+          <View style={{ alignItems: "center", width: "100%" }}>
             <SmallText
               style={{
-                fontSize: 20,
+                fontSize: 23,
+                textDecorationColor: "red",
+                textDecorationStyle: "solid",
+                textDecorationLine: "underline",
               }}
             >
               {dormMenu.friday.date}
@@ -347,11 +438,15 @@ function DormFood() {
           <FoodCard title="점심" text={dormMenu.friday.lunch} />
           <FoodCard title="저녁" text={dormMenu.friday.dinner} />
         </View>
+        <Divider style={{ marginVertical: 15 }} />
         <View style={{ alignItems: "flex-start" }}>
-          <View>
+          <View style={{ alignItems: "center", width: "100%" }}>
             <SmallText
               style={{
-                fontSize: 20,
+                fontSize: 23,
+                textDecorationColor: "red",
+                textDecorationStyle: "solid",
+                textDecorationLine: "underline",
               }}
             >
               {dormMenu.saturday.date}
@@ -361,11 +456,15 @@ function DormFood() {
           <FoodCard title="점심" text={dormMenu.saturday.lunch} />
           <FoodCard title="저녁" text={dormMenu.saturday.dinner} />
         </View>
+        <Divider style={{ marginVertical: 15 }} />
         <View style={{ alignItems: "flex-start" }}>
-          <View>
+          <View style={{ alignItems: "center", width: "100%" }}>
             <SmallText
               style={{
-                fontSize: 20,
+                fontSize: 23,
+                textDecorationColor: "red",
+                textDecorationStyle: "solid",
+                textDecorationLine: "underline",
               }}
             >
               {dormMenu.sunday.date}
@@ -408,6 +507,8 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
+    paddingTop: 10,
+    paddingBottom: 10,
   },
   menuButton: {
     backgroundColor: Colors.basicColor.magentaTrans2,

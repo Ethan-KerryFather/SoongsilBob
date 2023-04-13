@@ -197,7 +197,7 @@ const styles = StyleSheet.create({
 
   //
   normalText: {
-    fontFamily: "gowun-regular",
+    fontFamily: "gangwon-bold",
     color: "black",
     fontSize: 20,
   },

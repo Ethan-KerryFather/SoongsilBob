@@ -15,6 +15,7 @@ function HomeScreen({}) {
     "gowun-regular": require("../../assets/font/gowun-regular.ttf"),
     "gowun-bold": require("../../assets/font/gowun-bold.ttf"),
     "black-sans": require("../../assets/font/black-sans.ttf"),
+    "gangwon-bold": require("../../assets/font/gangwon-bold.ttf"),
   });
 
   const bottomSheet = useRef();
@@ -105,7 +106,7 @@ function HomeScreen({}) {
           >
             <Text
               style={{
-                fontFamily: "gowun-bold",
+                fontFamily: "gangwon-bold",
                 fontSize: 50,
                 letterSpacing: 13,
               }}
