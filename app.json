@@ -2,7 +2,7 @@
   "expo": {
     "name": "숭실밥집",
     "slug": "SoongsilBob",
-    "version": "3.0.0",
+    "version": "4.0.0",
     "orientation": "portrait",
     "icon": "./assets/horseIcon.png",
     "userInterfaceStyle": "light",
@@ -15,7 +15,7 @@
       "supportsTablet": true
     },
     "android": {
-      "versionCode": 3,
+      "versionCode": 4,
       "adaptiveIcon": {
         "foregroundImage": "./assets/horseIcon.png",
         "backgroundColor": "#ffffff"
