@@ -6,6 +6,8 @@ import stores from "../../resource/stores";
 import Colors from "../../../assets/Colors";
 import { BigTitle, SmallTitle } from "../../styled/styledComponents";
 
+// 전체추가 버튼
+// 카테고리 선택 후 매장 빼고 넣을 수 있게
 function RouletteScreen() {
   const navigation = useNavigation();
   const [names, setNames] = useState("");
@@ -25,7 +27,7 @@ function RouletteScreen() {
     navigation.setOptions({
       headerShown: false,
     });
-    let temp = "";
+    let temp = "뭐먹을래요?";
     let name = [];
     stores.alcohol.forEach((element) => {
       temp = temp.concat(element.name);
@@ -69,7 +71,18 @@ function RouletteScreen() {
 
   return (
     <View style={styles.container}>
-      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+      <View
+        style={{
+          flex: 1.5,
+          backgroundColor: Colors.basicColor.magentaTrans1,
+          borderBottomRightRadius: 40,
+        }}
+      ></View>
+      <ScrollView
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        style={{ position: "absolute", zIndex: 3, top: "20%" }}
+      >
         {categoryList.map((element) => {
           return (
             <Pressable
@@ -78,31 +91,68 @@ function RouletteScreen() {
                 height: 100,
                 justifyContent: "center",
                 alignItems: "center",
-                backgroundColor: Colors.basicColor.grayTrans1,
+                backgroundColor: "white",
                 margin: 5,
                 borderRadius: 20,
+                borderWidth: 0.5,
+                borderColor: "black",
               }}
               onPress={() => {
-                console.log(element);
+                console.log(element.name);
               }}
             >
-              <SmallTitle>{element.name}</SmallTitle>
+              <SmallTitle style={{ marginBottom: 10 }}>
+                {element.name}
+              </SmallTitle>
+              <Pressable
+                style={{
+                  width: "80%",
+                  alignItems: "center",
+                  borderRadius: 30,
+                  backgroundColor: Colors.basicColor.green,
+                }}
+              >
+                <SmallTitle>추가</SmallTitle>
+              </Pressable>
             </Pressable>
           );
         })}
       </ScrollView>
-
-      <View>
-        <BigTitle>오늘</BigTitle>
-        <SlotMachine
-          text="JM호프바"
-          range={uniqueWords}
-          width={50}
-          height={80}
-        />
-        <BigTitle>어때요</BigTitle>
+      <View
+        style={{ flex: 3, backgroundColor: Colors.basicColor.magentaTrans1 }}
+      >
+        <View
+          style={{
+            height: "100%",
+            width: "100%",
+            borderTopLeftRadius: 40,
+            backgroundColor: "white",
+            paddingTop: "20%",
+          }}
+        >
+          <View style={{ alignItems: "center" }}>
+            <BigTitle>오늘</BigTitle>
+            <SlotMachine
+              text="으리으리"
+              range={uniqueWords}
+              width={50}
+              height={80}
+              duration={3000}
+              delay={1}
+            />
+          </View>
+        </View>
       </View>
-      <Text>{uniqueWords}</Text>
+      <View style={{ flex: 1, backgroundColor: "white" }}>
+        <View
+          style={{
+            height: "100%",
+            width: "100%",
+            backgroundColor: Colors.basicColor.magentaTrans1,
+            borderTopLeftRadius: 40,
+          }}
+        ></View>
+      </View>
     </View>
   );
 }
@@ -112,8 +162,5 @@ export default RouletteScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "white",
   },
 });
