@@ -6,12 +6,46 @@ import stores from "../../resource/stores";
 import Colors from "../../../assets/Colors";
 import { BigTitle, SmallTitle } from "../../styled/styledComponents";
 
-// 전체추가 버튼
-// 카테고리 선택 후 매장 빼고 넣을 수 있게
+/*
+TODO:
+1. 전체추가버튼
+2. 카테고리 선택 후 매장 빼고 넣을 수 있게
+*/
+
 function RouletteScreen() {
+  const getUniqueWord = (words) => {
+    // 공백제거
+    let removedName = words.replace(/\s/g, "");
+    // 중복글자 제거
+    result = [...new Set(removedName)].join("");
+    return result;
+  };
+
+  const addCategoryStores = (element, store) => {
+    if (!element.isSelected) {
+      store.map((element) => {
+        setUniqueWords((prevState) => {
+          return UniqueWords.concat(getUniqueWord(element.name));
+        });
+        setNames((prevState) => {
+          return prevState.concat(element.name);
+        });
+      });
+    } else {
+      console.log("already Selected");
+    }
+  };
+
   const navigation = useNavigation();
-  const [names, setNames] = useState("");
-  const [uniqueWords, setUniqueWords] = useState("");
+
+  // states
+  // names : array[string] - 선택된 카테고리의 밥집을 모은 배열
+  const [names, setNames] = useState(["학식"]);
+  // uniqueWords : String - 선택된 카테고리의 모든 밥집에 들어가는 유니크한 글자이다.
+  const [uniqueWords, setUniqueWords] = useState("학식");
+
+  // temp에는 Unique한 글자들의 모음이 들어와야한다.
+  let UniqueWords = "뭐먹을래요?";
 
   const [categoryList, setCategoryList] = useState([
     { name: "한식", isSelected: false },
@@ -23,51 +57,57 @@ function RouletteScreen() {
     { name: "치킨/피자", isSelected: false },
     { name: "카페", isSelected: false },
   ]);
+
   useEffect(() => {
     navigation.setOptions({
       headerShown: false,
     });
-    let temp = "뭐먹을래요?";
-    let name = [];
-    stores.alcohol.forEach((element) => {
-      temp = temp.concat(element.name);
-      name.push(element.name);
-    });
-    // stores.asian.forEach((element) => {
-    //   temp = temp.concat(element.name);
-    //   name.push(element.name);
-    // });
-    // stores.western.forEach((element) => {
-    //   temp = temp.concat(element.name);
-    //   name.push(element.name);
-    // });
-    // stores.cafe.forEach((element) => {
-    //   temp = temp.concat(element.name);
-    //   name.push(element.name);
-    // });
-    // stores.chickenPizza.forEach((element) => {
-    //   temp = temp.concat(element.name);
-    //   name.push(element.name);
-    // });
-    // stores.japanese.forEach((element) => {
-    //   temp = temp.concat(element.name);
-    //   name.push(element.name);
-    // });
-    // stores.korean.forEach((element) => {
-    //   temp = temp.concat(element.name);
-    //   name.push(element.name);
-    // });
-    // stores.takeout.forEach((element) => {
-    //   temp = temp.concat(element.name);
-    //   name.push(element.name);
-    // });
 
-    const removedName = temp.replace(/\s/g, "");
-    result = [...new Set(removedName)].join("");
-    console.log(name);
-    setUniqueWords(result);
-    setNames(name);
-  }, []);
+    categoryList.map((element) => {
+      if (element.isSelected === true) {
+        switch (element.name) {
+          case "한식":
+            console.log("한식");
+            addCategoryStores(element, stores.korean);
+            break;
+          case "양식":
+            console.log("양식추가");
+            addCategoryStores(element, stores.western);
+            break;
+          case "아시안":
+            console.log("아시안 추가");
+            addCategoryStores(element, stores.asian);
+            break;
+          case "일식":
+            console.log("일식추가");
+            addCategoryStores(element, stores.japanese);
+            break;
+          case "술집":
+            console.log("술집추가");
+            addCategoryStores(element, stores.alcohol);
+            break;
+          case "테이크아웃":
+            console.log("takeout 추가");
+            addCategoryStores(element, stores.takeout);
+            break;
+          case "치킨/피자":
+            console.log("치킨/피자 추가");
+            addCategoryStores(element, stores.chickenPizza);
+            break;
+          case "카페":
+            console.log("카페추가");
+            addCategoryStores(element, stores.cafe);
+            break;
+
+          default:
+            console.log("**category select exception**");
+            break;
+        }
+        console.log(names);
+        console.log(uniqueWords);
+      }
+    });
+  }, [categoryList]);
 
   return (
     <View style={styles.container}>
@@ -97,9 +137,6 @@ function RouletteScreen() {
                 borderWidth: 0.5,
                 borderColor: "black",
               }}
-              onPress={() => {
-                console.log(element.name);
-              }}
             >
               <SmallTitle style={{ marginBottom: 10 }}>
                 {element.name}
@@ -107,9 +144,20 @@ function RouletteScreen() {
               <Pressable
                 style={{
                   width: "80%",
+                  height: "50%",
                   alignItems: "center",
                   borderRadius: 30,
                   backgroundColor: Colors.basicColor.green,
+                }}
+                onPress={() => {
+                  console.log(element.name);
+                  setCategoryList((prevState) =>
+                    prevState.map((category) =>
+                      category.name === element.name
+                        ? { ...category, isSelected: true }
+                        : category
+                    )
+                  );
                 }}
               >
                 <SmallTitle>추가</SmallTitle>
@@ -133,14 +181,14 @@ function RouletteScreen() {
           <View style={{ alignItems: "center" }}>
             <BigTitle>오늘</BigTitle>
             <SlotMachine
-              text="으리으리"
+              text={names[Math.floor(Math.random() * names.length)]}
               range={uniqueWords}
-              width={50}
               height={80}
               duration={3000}
               delay={1}
             />
           </View>
+          <BigTitle>어때요?</BigTitle>
         </View>
       </View>
       <View style={{ flex: 1, backgroundColor: "white" }}>
