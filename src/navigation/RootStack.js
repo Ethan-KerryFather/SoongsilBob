@@ -155,7 +155,7 @@ function RootStack({ userLocation }) {
           headerShown: false,
           tabBarShowLabel: false,
           tabBarIcon: () => (
-            <MaterialCommunityIcons name="medal" size={40} color="black" />
+            <MaterialCommunityIcons name="youtube-tv" size={40} color="black" />
           ),
           tabBarActiveBackgroundColor: Colors.basicColor.magenta,
           tabBarItemStyle: {
