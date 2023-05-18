@@ -107,7 +107,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   //
-  bigTitle: {},
+  bigTitle: {
+    paddingTop: 10,
+  },
   foodCardWrapper: {
     backgroundColor: Colors.basicColor.magentaTrans2,
     borderRadius: 20,

@@ -6,6 +6,7 @@ import { Text, View, SafeAreaView, StyleSheet, ScrollView } from "react-native";
 import Colors from "../../../../assets/Colors";
 import { BigTitle, SmallSmallText } from "../../../styled/styledComponents";
 import * as Animatable from "react-native-animatable";
+import { RFPercentage } from "react-native-responsive-fontsize";
 
 function EnvironmenScreen() {
   const navigation = useNavigation();
@@ -74,6 +75,32 @@ function EnvironmenScreen() {
         </Animatable.View>
       </View>
 
+      {
+        // TODO: Coupon Book
+      }
+      <View style={styles.subContainer}>
+        <Animatable.View animation="slideInRight" style={{ width: "100%" }}>
+          <Pressable
+            style={{
+              width: "80%",
+              height: RFPercentage(5),
+              alignSelf: "center",
+              backgroundColor: Colors.basicColor.greenTrans1,
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: 20,
+              borderWidth: 1,
+              borderColor: "black",
+            }}
+            onPress={() => {
+              navigation.navigate("couponScreen");
+            }}
+          >
+            <Text style={styles.normalText}>쿠폰북</Text>
+          </Pressable>
+        </Animatable.View>
+      </View>
+
       <View style={styles.subContainer}>
         <Animatable.View
           style={[
@@ -95,6 +122,7 @@ function EnvironmenScreen() {
           </Text>
         </Animatable.View>
       </View>
+
       <View style={styles.subContainer}>
         <Animatable.View
           style={[
