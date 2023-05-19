@@ -21,6 +21,7 @@ import Check2 from "../ui/check/Check2";
 import { useEffect } from "react";
 import { BigTitle } from "../styled/styledComponents";
 import AnimatedLottieView from "lottie-react-native";
+import CouponScreen from "../ui/environment/screens/CouponScreen";
 
 const HomeStack = createNativeStackNavigator();
 const EnvironmentStack = createNativeStackNavigator();
@@ -110,6 +111,7 @@ function EnvironmentScreen() {
         name="environmentScreen"
         component={EnvironmenScreen}
       />
+      <EnvironmentStack.Screen name="couponScreen" component={CouponScreen} />
     </EnvironmentStack.Navigator>
   );
 }
@@ -155,7 +157,7 @@ function RootStack({ userLocation }) {
           headerShown: false,
           tabBarShowLabel: false,
           tabBarIcon: () => (
-            <MaterialCommunityIcons name="medal" size={40} color="black" />
+            <MaterialCommunityIcons name="youtube-tv" size={40} color="black" />
           ),
           tabBarActiveBackgroundColor: Colors.basicColor.magenta,
           tabBarItemStyle: {
