@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import React, { useRef, useEffect, useMemo, useLayoutEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import Colors from "../../assets/Colors";
 import BottomSheet from "react-native-gesture-bottom-sheet";
