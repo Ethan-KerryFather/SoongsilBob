@@ -1,11 +1,18 @@
 import React, { useState } from "react";
-import { StyleSheet, StatusBar, View, Text, Pressable } from "react-native";
-import AnimatedLottieView from "lottie-react-native";
+import { StyleSheet, StatusBar, View, Pressable } from "react-native";
 import { useEffect } from "react";
-import { BigTitle } from "../../styled/styledComponents";
 import WebView from "react-native-webview";
 import Colors from "../../../assets/Colors";
 import MarqueeText from "react-native-marquee";
+
+/*
+RankingHome 
+  제휴 컨텐츠 유튜브 채널을 웹뷰로 업로드하는 컴포넌트 
+  탭 5개 중 가운데 탭 
+FIXME:
+  학교 밥집에 대한 랭킹을 담아야하는데 애초에 기능을 변경함
+  컨텐츠 뷰에 대한 컴포넌트
+*/
 
 function RankingHome({ navigation }) {
   const [youtubeUri, setYoutubeUri] = useState(

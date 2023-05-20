@@ -8,14 +8,23 @@ import AnimatedLottieView from "lottie-react-native";
 import CategoryItem from "./CategoryItem";
 import { useFonts } from "expo-font";
 
+/*
+HomeScreen
+  페이지 처음 들어가면 보이는 화면
+  1. Font upload
+  2. Bottom Sheet
+TODO:
+  1. Bottom Sheet 파이어베이스 연결 및 페깅
+*/
+
 function HomeScreen({}) {
   const navigation = useNavigation();
 
   const [fontsLoaded] = useFonts({
     "gowun-regular": require("../../assets/font/gowun-regular.ttf"),
     "gowun-bold": require("../../assets/font/gowun-bold.ttf"),
-    "black-sans": require("../../assets/font/black-sans.ttf"),
     "gangwon-bold": require("../../assets/font/gangwon-bold.ttf"),
+    yangjin: require("../../assets/font/yangjin.ttf"),
   });
 
   const bottomSheet = useRef();

@@ -3,6 +3,12 @@ import { View, Text, StyleSheet, Image } from "react-native";
 import { RFPercentage } from "react-native-responsive-fontsize";
 import { SmallTitle } from "../../styled/styledComponents";
 
+/*
+AllianceScreen
+  사실상 사용하지 않는 컴포넌트
+  원래 제휴 탭에 관한 걸 넣으려고 했음
+*/
+
 function AllianceScreen({ navigation }) {
   useEffect(() => {
     navigation.setOptions({

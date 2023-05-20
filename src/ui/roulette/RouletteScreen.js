@@ -7,9 +7,12 @@ import Colors from "../../../assets/Colors";
 import { BigTitle, SmallTitle } from "../../styled/styledComponents";
 
 /*
+RouletteScreen
+  밥집 카테고리 별 랜덤추천 컴포넌트
 TODO:
-1. 전체추가버튼
-2. 카테고리 선택 후 매장 빼고 넣을 수 있게
+  1. 전체추가버튼
+  2. 카테고리 선택 후 매장 빼고 넣을 수 있게
+  3. 디자인 수정
 */
 
 function RouletteScreen() {

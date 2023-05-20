@@ -10,10 +10,20 @@ import CustomModal from "../../customComponent/CustomModal";
 import { RFPercentage } from "react-native-responsive-fontsize";
 import { SmallSmallText } from "../../../styled/styledComponents";
 
+/*
+StorePage
+  HomeScreen -> StoreLists 에서 가게를 하나고르면 나오는 가게 상세창
+TODO:
+  1. Bottom Sheet SnapTo point 설정
+  2. Navigation View 폴리라인 세세하게 그려넣어야
+  3. 직선거리 뷰에 같이 포함할 것
+FIXME:
+  1. Bottom Sheet SnapTo point 설정해야하는데
+    30% / 50% / 100% 로 설정
+ */
+
 function StorePage({ route, navigation }) {
   const bottomSheet = useRef(null);
-  const bottomSheetHeight = useRef(null);
-  const { height } = useWindowDimensions("window");
   const [storeInfo, setStoreInfo] = useState(route.params.storeInfo);
   const [location, setLocation] = useState(route.params.location);
   const [isBottomsheetShowed, setIsBottomsheetShowed] = useState(true);

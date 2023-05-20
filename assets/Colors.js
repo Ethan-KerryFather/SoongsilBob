@@ -10,5 +10,7 @@ export default Color = {
     green: "#c9e9e4",
     greenTrans1: "#c9e9e440",
     gold: "#FFD700",
+    pink: "#ffccff90",
+    pastelYellow: "#ffdd9980",
   },
 };

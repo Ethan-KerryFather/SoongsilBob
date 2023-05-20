@@ -16,6 +16,14 @@ import { GetDistance } from "./components/GetDistance";
 import CustomSnackbar from "../../../styled/CustomSnackbar";
 import StoreCard from "./components/StoreCard";
 
+/*
+StoreLists
+  HomeScreen에서 양식/일식 등 카테고리를 하나 고르면 들어가는 밥집 목록 컴포넌트
+TODO:
+  1. 디자인 조금만 더 이쁘게...
+  2. 인기순 - 파이어베이스 가게 별 연결 및 인기 star 데이터 페깅
+
+*/
 function StoreLists({ route }) {
   // 컴포넌트 보여줄때 한번 위치 초기화
   const navigation = useNavigation();

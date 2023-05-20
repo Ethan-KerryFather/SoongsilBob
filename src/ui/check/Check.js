@@ -4,9 +4,19 @@ import Colors from "../../../assets/Colors";
 import AnimatedLottieView from "lottie-react-native";
 import { BigTitle, SmallTitle } from "../../styled/styledComponents";
 import { AntDesign } from "@expo/vector-icons";
+
+/*
+Check 
+  소속의 서비스에서 벤치마킹해서 따온 것으로 제휴할인 적용 전 서비스 사용자인지 확인
+TODO:
+  1. sosok도 마찬가지지만, 검증 작업에서 실제 서비스 사용자인지 확인할 방법이 원시적이다
+FIXME:
+  1. 검증방법 구체화
+  2. Moving Gradient background 적용
+*/
+
 function Check({ navigation }) {
   const animationRef = useRef(null);
-
   useEffect(() => {
     navigation.setOptions({
       headerShown: false,

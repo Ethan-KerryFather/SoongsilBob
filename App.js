@@ -8,6 +8,16 @@ import * as Location from "expo-location";
 import "react-native-gesture-handler";
 import { Provider as PaperProvider } from "react-native-paper";
 
+/*
+App.js
+  어플리케이션 실행 시에 가장 먼저 실행되는 코드
+  1. 권한 확인
+  2. 사용자 위치 연결
+  FIXME:
+    1. Expo Location 을 사용해서 위치를 가져오는데
+      특정 기기에서 위치를 가져오는 것이 불안정함 - React native 고유 라이브러리 사용해봐야
+ */
+
 SplashScreen.preventAutoHideAsync();
 
 function App() {
