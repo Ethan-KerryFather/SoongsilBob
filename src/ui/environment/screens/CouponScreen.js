@@ -169,6 +169,30 @@ function Coupons() {
                 >
                   Coupon
                 </BigTitle>
+                <View
+                  style={{
+                    position: "absolute",
+                    top: -15,
+                    right: -15,
+                    backgroundColor: Colors.basicColor.pink,
+                    width: 30,
+                    height: 30,
+                    borderRadius: 20,
+                    opacity: 1,
+                  }}
+                />
+                <View
+                  style={{
+                    position: "absolute",
+                    bottom: -15,
+                    right: -15,
+                    backgroundColor: Colors.basicColor.pink,
+                    width: 30,
+                    height: 30,
+                    borderRadius: 20,
+                    opacity: 1,
+                  }}
+                />
               </View>
               <View style={{ flex: 4 }}>
                 <View style={{ flex: 4 }}>
@@ -176,7 +200,6 @@ function Coupons() {
                     style={{
                       flex: 2,
                       paddingTop: 2,
-
                       flexDirection: "row",
                     }}
                   >
@@ -195,7 +218,6 @@ function Coupons() {
                       </View>
                     </View>
                     <View style={{ flex: 1 }}>
-                      <Text>dd</Text>
                       <QRCode
                         value="12312"
                         size={70}
