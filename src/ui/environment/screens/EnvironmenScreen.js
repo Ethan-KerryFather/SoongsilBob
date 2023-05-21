@@ -2,7 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Linking } from "react-native";
 import { Pressable } from "react-native";
-import { Text, View, SafeAreaView, StyleSheet, ScrollView } from "react-native";
+import { Text, View, StyleSheet, ScrollView } from "react-native";
 import Colors from "../../../../assets/Colors";
 import { BigTitle, SmallSmallText } from "../../../styled/styledComponents";
 import * as Animatable from "react-native-animatable";

@@ -10,6 +10,7 @@ import {
   SmallTitle,
 } from "../../../styled/styledComponents";
 import { RFPercentage } from "react-native-responsive-fontsize";
+import QRCode from "react-native-qrcode";
 
 const tab = createMaterialTopTabNavigator();
 
@@ -110,14 +111,19 @@ function Coupons() {
   }, []);
   return (
     <View style={styles.container}>
-      <View style={{ alignItems: "center", marginVertical: RFPercentage(3) }}>
+      <View
+        style={{
+          alignItems: "center",
+          marginVertical: RFPercentage(3),
+        }}
+      >
         <MarqueeText
           style={{
             fontFamily: "yangjin",
-            fontSize: 30,
+            fontSize: 20,
             color: "yellow",
             textShadowColor: "black",
-            textShadowRadius: 10,
+            textShadowRadius: 5,
           }}
           speed={0.3}
           marqueeOnStart={true}
@@ -178,13 +184,37 @@ function Coupons() {
                       <BigTitle style={{ fontSize: 40 }}>
                         {element.main}
                       </BigTitle>
+                      <View
+                        style={{
+                          alignItems: "center",
+                          justifyContent: "center",
+                          paddingTop: 5,
+                        }}
+                      >
+                        <SmallText>{element.detail}</SmallText>
+                      </View>
                     </View>
-                    <View style={{ flex: 1 }}></View>
+                    <View style={{ flex: 1 }}>
+                      <Text>dd</Text>
+                      <QRCode
+                        value="12312"
+                        size={70}
+                        bgColor={Colors.basicColor.green}
+                        fgColor="white"
+                      />
+                    </View>
                   </View>
                   <View style={{}}></View>
                 </View>
-                <View style={{ flex: 1.3, alignItems: "center" }}>
-                  <SmallText>{element.detail}</SmallText>
+                <View
+                  style={{
+                    flex: 1.3,
+                    alignItems: "center",
+                  }}
+                >
+                  <SmallTitle style={{ letterSpacing: 3 }}>
+                    {element.name}
+                  </SmallTitle>
                 </View>
               </View>
             </View>
