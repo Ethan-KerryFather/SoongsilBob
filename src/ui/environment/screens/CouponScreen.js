@@ -1,7 +1,15 @@
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { useNavigation } from "@react-navigation/native";
 import { useEffect } from "react";
-import { StyleSheet, Text, View, StatusBar, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  StatusBar,
+  Image,
+  ScrollView,
+  Pressable,
+} from "react-native";
 import Colors from "../../../../assets/Colors";
 import MarqueeText from "react-native-marquee";
 import {
@@ -10,35 +18,11 @@ import {
   SmallTitle,
 } from "../../../styled/styledComponents";
 import { RFPercentage } from "react-native-responsive-fontsize";
-import QRCode from "react-native-qrcode";
+import { useAtom } from "jotai";
+import { couponAtom } from "../../../jotai/root";
+import initData from "../../../jotai/root";
 
 const tab = createMaterialTopTabNavigator();
-
-const coupons = [
-  {
-    name: "PUB730",
-    main: "10%할인",
-    detail: "주류포함 전메뉴 10% 할인",
-    period: "23/4/26 ~ 6/24",
-  },
-  {
-    name: "화품닭",
-    main: "이천원할인",
-    detail: "메인메뉴 1개 당 2000원 할인\n(A/B/C 코스포함)",
-    period: "무제한",
-    image:
-      "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEyMjBfMjcw%2FMDAxNjcxNTEyODYyMTQ3.7BK_rZ7IohyTZSrKTw3Y82NG6G1NqfLefcboorDiOv4g.GWze6LqprAxlMtWosLu6laeVxO6mNKhYaqgdVDlIgisg.JPEG%2F253C588F-6422-4869-8496-F051B734BA5A.jpeg",
-  },
-  {
-    name: "스터디어스 상도",
-    main: "시간증정",
-    detail:
-      "당일권 구매시 1시간 연장 무료\n시간권 구매시 10% 증정\n기간권 구매시 10% 연장 무료",
-    period: "23/03/23 ~ 6/30",
-    image:
-      "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMjEyMjBfMjcw%2FMDAxNjcxNTEyODYyMTQ3.7BK_rZ7IohyTZSrKTw3Y82NG6G1NqfLefcboorDiOv4g.GWze6LqprAxlMtWosLu6laeVxO6mNKhYaqgdVDlIgisg.JPEG%2F253C588F-6422-4869-8496-F051B734BA5A.jpeg",
-  },
-];
 
 /*
 CouponScreen
@@ -50,7 +34,6 @@ TODO:
     - Refresh Control View 사용하면 될듯
 FIXME:
 */
-
 function CouponScreen() {
   const navigation = useNavigation();
   const height = StatusBar.currentHeight;
@@ -102,6 +85,8 @@ const styles = StyleSheet.create({
 
 function Coupons() {
   const navigation = useNavigation();
+  const [coupons, setCoupons] = useAtom(couponAtom);
+
   useEffect(() => {
     navigation.setOptions({
       FocusEvent: () => {
@@ -130,14 +115,18 @@ function Coupons() {
           loop={true}
           delay={2000}
         >
-          사용가능한 쿠폰이 {coupons.length}장 있습니다. 누르셔서 qr확인으로
-          사용하시면 됩니다
+          사용가능한 쿠폰이 {coupons.length}장 있습니다. 누르셔서 사용하시면
+          됩니다
         </MarqueeText>
       </View>
-      <View style={{ width: "100%", alignItems: "center" }}>
+      <ScrollView
+        style={{ width: "100%" }}
+        contentContainerStyle={{ alignItems: "center" }}
+        showsVerticalScrollIndicator={false}
+      >
         {coupons.map((element, index) => {
           return (
-            <View
+            <Pressable
               key={index}
               style={{
                 flexDirection: "row",
@@ -148,6 +137,9 @@ function Coupons() {
                 borderRadius: 6,
                 borderColor: "black",
                 borderWidth: 1,
+              }}
+              onPress={() => {
+                navigation.navigate("HomeTab", { screen: "Check" });
               }}
             >
               <View
@@ -169,30 +161,6 @@ function Coupons() {
                 >
                   Coupon
                 </BigTitle>
-                <View
-                  style={{
-                    position: "absolute",
-                    top: -15,
-                    right: -15,
-                    backgroundColor: Colors.basicColor.pink,
-                    width: 30,
-                    height: 30,
-                    borderRadius: 20,
-                    opacity: 1,
-                  }}
-                />
-                <View
-                  style={{
-                    position: "absolute",
-                    bottom: -15,
-                    right: -15,
-                    backgroundColor: Colors.basicColor.pink,
-                    width: 30,
-                    height: 30,
-                    borderRadius: 20,
-                    opacity: 1,
-                  }}
-                />
               </View>
               <View style={{ flex: 4 }}>
                 <View style={{ flex: 4 }}>
@@ -217,14 +185,7 @@ function Coupons() {
                         <SmallText>{element.detail}</SmallText>
                       </View>
                     </View>
-                    <View style={{ flex: 1 }}>
-                      <QRCode
-                        value="12312"
-                        size={70}
-                        bgColor={Colors.basicColor.green}
-                        fgColor="white"
-                      />
-                    </View>
+                    <View style={{ flex: 1 }}></View>
                   </View>
                   <View style={{}}></View>
                 </View>
@@ -239,10 +200,10 @@ function Coupons() {
                   </SmallTitle>
                 </View>
               </View>
-            </View>
+            </Pressable>
           );
         })}
-      </View>
+      </ScrollView>
     </View>
   );
 }

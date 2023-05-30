@@ -13,9 +13,30 @@ HomeScreen
   페이지 처음 들어가면 보이는 화면
   1. Font upload
   2. Bottom Sheet
+  3. Firebase 초기화
 TODO:
   1. Bottom Sheet 파이어베이스 연결 및 페깅
 */
+
+// FireBase
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAaUudwkSWT-1d541WAUSGwX1fwnpSoAvU",
+  authDomain: "soongsilbob-a5800.firebaseapp.com",
+  databaseURL: "https://soongsilbob-a5800-default-rtdb.firebaseio.com",
+  projectId: "soongsilbob-a5800",
+  storageBucket: "soongsilbob-a5800.appspot.com",
+  messagingSenderId: "513272092717",
+  appId: "1:513272092717:web:3359430222f9fd0ee6c0a4",
+};
+// Initialize Firebase
+export const app = initializeApp(firebaseConfig);
 
 function HomeScreen({}) {
   const navigation = useNavigation();
@@ -25,6 +46,7 @@ function HomeScreen({}) {
     "gowun-bold": require("../../assets/font/gowun-bold.ttf"),
     "gangwon-bold": require("../../assets/font/gangwon-bold.ttf"),
     yangjin: require("../../assets/font/yangjin.ttf"),
+    "black-sans": require("../../assets/font/black-sans.ttf"),
   });
 
   const bottomSheet = useRef();

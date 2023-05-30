@@ -10,7 +10,9 @@ npm-debug.*
 *.orig.*
 web-build/
 
-src/resource
+#not
+src/resource/
+App.js
 
 # macOS
 .DS_Store
