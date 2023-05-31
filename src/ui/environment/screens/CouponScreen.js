@@ -177,6 +177,7 @@ function Coupons() {
                       </BigTitle>
                       <View
                         style={{
+                          paddingHorizontal: 3,
                           alignItems: "center",
                           justifyContent: "center",
                           paddingTop: 5,
@@ -185,9 +186,8 @@ function Coupons() {
                         <SmallText>{element.detail}</SmallText>
                       </View>
                     </View>
-                    <View style={{ flex: 1 }}></View>
                   </View>
-                  <View style={{}}></View>
+                  <View style={{ backgroundColor: "red" }}></View>
                 </View>
                 <View
                   style={{

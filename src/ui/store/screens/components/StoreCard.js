@@ -108,6 +108,46 @@ function StoreCard({ item, index, width, latitude, longtitude }) {
       </View>
       <View
         style={{
+          width: "90%",
+          height: RFPercentage(5),
+          alignSelf: "center",
+          flexDirection: "row",
+          justifyContent: "center",
+          marginVertical: RFPercentage(2),
+        }}
+      >
+        <Pressable
+          onPress={() => {
+            console.log("pressed");
+          }}
+          style={({ pressed }) =>
+            pressed ? styles.deliveryBtnClicked : styles.deliveryBtnDefault
+          }
+        >
+          <SmallTitle>구현예정</SmallTitle>
+        </Pressable>
+        <Pressable
+          onPress={() => {
+            console.log("pressed");
+            navigation.navigate("PickUp", {
+              orderInfo: {
+                name: item.name,
+                area: item.area,
+                phoneNum: item.phoneNum,
+                location: item.location,
+                menu: item.menu,
+              },
+            });
+          }}
+          style={({ pressed }) =>
+            pressed ? styles.deliveryBtnClicked : styles.deliveryBtnDefault
+          }
+        >
+          <SmallTitle>포장주문</SmallTitle>
+        </Pressable>
+      </View>
+      <View
+        style={{
           paddingTop: 10,
           flexDirection: "column",
           alignItems: "center",
@@ -336,4 +376,26 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   itemToggleBtn: {},
+
+  deliveryBtnClicked: {
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100%",
+    width: "30%",
+    backgroundColor: Colors.basicColor.pastelBlueStrong,
+    borderRadius: 10,
+    borderColor: "blue",
+    borderWidth: 1,
+    marginHorizontal: 20,
+  },
+  deliveryBtnDefault: {
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100%",
+    width: "30%",
+    backgroundColor: Colors.basicColor.pastelBlue,
+    borderRadius: 10,
+    borderWidth: 1,
+    marginHorizontal: 20,
+  },
 });

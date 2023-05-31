@@ -22,6 +22,7 @@ import { useEffect } from "react";
 import { BigTitle } from "../styled/styledComponents";
 import AnimatedLottieView from "lottie-react-native";
 import CouponScreen from "../ui/environment/screens/CouponScreen";
+import PickUpScreen from "../ui/pickup/Screens/PickUpScreen";
 
 const HomeStack = createNativeStackNavigator();
 const EnvironmentStack = createNativeStackNavigator();
@@ -83,6 +84,7 @@ function HomeStackScreen() {
       <HomeStack.Screen name="RouletteScreen" component={RouletteScreen} />
       <HomeStack.Screen name="Check" component={Check} />
       <HomeStack.Screen name="Check2" component={Check2} />
+      <HomeStack.Screen name="PickUp" component={PickUpScreen} />
     </HomeStack.Navigator>
   );
 }

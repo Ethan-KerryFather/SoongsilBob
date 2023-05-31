@@ -12,5 +12,7 @@ export default Color = {
     gold: "#FFD700",
     pink: "#ffccff90",
     pastelYellow: "#ffdd9980",
+    pastelBlue: "#9CD8FF40",
+    pastelBlueStrong: "#9CD8FF90",
   },
 };
