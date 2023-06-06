@@ -1,16 +1,25 @@
 import { useNavigation } from "@react-navigation/native";
-import React from "react";
+import React, { useState } from "react";
 import { Linking } from "react-native";
 import { Pressable } from "react-native";
 import { Text, View, StyleSheet, ScrollView } from "react-native";
 import Colors from "../../../../assets/Colors";
-import { BigTitle, SmallSmallText } from "../../../styled/styledComponents";
+import { LinearGradient } from "expo-linear-gradient";
+import {
+  BigTitle,
+  SmallSmallText,
+  SmallTitle,
+} from "../../../styled/styledComponents";
 import * as Animatable from "react-native-animatable";
 import { RFPercentage } from "react-native-responsive-fontsize";
+import { Login } from "./Login";
+import CustomSnackbar from "../../../styled/CustomSnackbar";
 
 function EnvironmenScreen() {
   const navigation = useNavigation();
-
+  const [modalVisible, setModalVisible] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
+  const [snackbarVisible, setSnackbarVisible] = useState(false);
   React.useEffect(() => {
     navigation.setOptions({
       headerShown: false,
@@ -18,6 +27,11 @@ function EnvironmenScreen() {
   }, [navigation]);
   return (
     <ScrollView content={styles.container}>
+      <CustomSnackbar
+        visible={snackbarVisible}
+        setVisible={setSnackbarVisible}
+        contentText="로그인 후 사용가능합니다"
+      />
       <Animatable.View animation="slideInUp">
         <Text
           style={[
@@ -27,11 +41,66 @@ function EnvironmenScreen() {
               marginBottom: 10,
               alignSelf: "center",
               marginTop: 40,
+              letterSpacing: 3,
             },
           ]}
         >
           Information
         </Text>
+      </Animatable.View>
+
+      <Animatable.View
+        animation="slideInLeft"
+        style={[
+          styles.subContainer,
+          {
+            paddingLeft: 20,
+            flexDirection: "row",
+          },
+        ]}
+      >
+        <Pressable
+          onPress={() => {
+            console.log("login");
+            setModalVisible(true);
+          }}
+        >
+          <LinearGradient // Button Linear Gradient
+            colors={["#FF000040", "#FFFF0040", "#4285F440", "#34A85340"]}
+            style={{
+              width: "100%",
+              borderRadius: 5,
+              paddingHorizontal: 10,
+              paddingVertical: 10,
+            }}
+          >
+            <SmallTitle style={{ letterSpacing: 2 }}>로그인</SmallTitle>
+          </LinearGradient>
+
+          <Login isVisible={modalVisible} setModalVisible={setModalVisible} />
+        </Pressable>
+
+        <Pressable
+          style={{
+            height: RFPercentage(5),
+            backgroundColor: Colors.basicColor.greenTrans1,
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: 5,
+            borderWidth: 1,
+            borderColor: "black",
+            flex: 1,
+            marginLeft: 10,
+            marginRight: 10,
+          }}
+          onPress={() => {
+            isLogin
+              ? navigation.navigate("couponScreen")
+              : setSnackbarVisible(true);
+          }}
+        >
+          <SmallTitle style={{ letterSpacing: 5 }}>쿠폰북</SmallTitle>
+        </Pressable>
       </Animatable.View>
 
       <View style={styles.subContainer}>
@@ -72,32 +141,6 @@ function EnvironmenScreen() {
           <Text style={styles.normalText}>
             가게 소개에 개인적인 의견이 포함될 수 있습니다
           </Text>
-        </Animatable.View>
-      </View>
-
-      {
-        // TODO: Coupon Book
-      }
-      <View style={styles.subContainer}>
-        <Animatable.View animation="slideInRight" style={{ width: "100%" }}>
-          <Pressable
-            style={{
-              width: "80%",
-              height: RFPercentage(5),
-              alignSelf: "center",
-              backgroundColor: Colors.basicColor.greenTrans1,
-              justifyContent: "center",
-              alignItems: "center",
-              borderRadius: 20,
-              borderWidth: 1,
-              borderColor: "black",
-            }}
-            onPress={() => {
-              navigation.navigate("couponScreen");
-            }}
-          >
-            <Text style={styles.normalText}>쿠폰북</Text>
-          </Pressable>
         </Animatable.View>
       </View>
 
@@ -183,7 +226,7 @@ const styles = StyleSheet.create({
   subContainer: {
     marginTop: 10,
     width: "100%",
-    paddingVertical: 20,
+    paddingVertical: RFPercentage(1.3),
     alignItems: "center",
     backgroundColor: "white",
   },

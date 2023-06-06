@@ -95,6 +95,7 @@ function StoreLists({ route }) {
       <CustomSnackbar
         visible={snackbarVisible}
         setVisible={setSnackbarVisible}
+        contentText='금방 준비해서 돌아올게요!'
       />
       <FlatList
         showsVerticalScrollIndicator={false}

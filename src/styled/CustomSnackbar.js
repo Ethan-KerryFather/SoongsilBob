@@ -1,6 +1,6 @@
 import { Snackbar } from "react-native-paper";
 
-function CustomSnackbar({ visible, setVisible }) {
+function CustomSnackbar({ visible, setVisible, contentText }) {
   return (
     <Snackbar
       visible={visible}
@@ -8,7 +8,7 @@ function CustomSnackbar({ visible, setVisible }) {
         setVisible(false);
       }}
     >
-      금방 준비해서 돌아올게요!
+      {contentText}
     </Snackbar>
   );
 }
