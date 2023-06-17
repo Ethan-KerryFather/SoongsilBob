@@ -14,6 +14,7 @@ import * as Animatable from "react-native-animatable";
 import { RFPercentage } from "react-native-responsive-fontsize";
 import { Login } from "./Login";
 import CustomSnackbar from "../../../styled/CustomSnackbar";
+import { MinorContainer } from "../../customComponent/MinorContainer";
 
 function EnvironmenScreen() {
   const navigation = useNavigation();
@@ -49,61 +50,65 @@ function EnvironmenScreen() {
         </Text>
       </Animatable.View>
 
-      <Animatable.View
-        animation="slideInLeft"
-        style={[
-          styles.subContainer,
-          {
-            paddingLeft: 20,
-            flexDirection: "row",
-          },
-        ]}
-      >
-        <Pressable
-          onPress={() => {
-            console.log("login");
-            setModalVisible(true);
-          }}
+      <MinorContainer>
+        <Animatable.View
+          animation="slideInLeft"
+          style={[
+            styles.subContainer,
+            {
+              paddingLeft: 20,
+              flexDirection: "row",
+            },
+          ]}
         >
-          <LinearGradient // Button Linear Gradient
-            colors={["#FF000040", "#FFFF0040", "#4285F440", "#34A85340"]}
-            style={{
-              width: "100%",
-              borderRadius: 5,
-              paddingHorizontal: 10,
-              paddingVertical: 10,
+          <Pressable
+            onPress={() => {
+              console.log("login");
+              setModalVisible(true);
             }}
           >
-            <SmallTitle style={{ letterSpacing: 2 }}>로그인</SmallTitle>
-          </LinearGradient>
+            <LinearGradient // Button Linear Gradient
+              colors={["#FF000040", "#FFFF0040", "#4285F440", "#34A85340"]}
+              style={{
+                width: "100%",
+                borderRadius: 5,
+                paddingHorizontal: 10,
+                paddingVertical: 10,
+              }}
+              start={{ x: 0.0, y: 0.0 }}
+              end={{ x: 1.0, y: 1.0 }}
+            >
+              <SmallTitle style={{ letterSpacing: 2 }}>로그인</SmallTitle>
+            </LinearGradient>
 
-          <Login isVisible={modalVisible} setModalVisible={setModalVisible} />
-        </Pressable>
+            <Login isVisible={modalVisible} setModalVisible={setModalVisible} />
+          </Pressable>
 
-        <Pressable
-          style={{
-            height: RFPercentage(5),
-            backgroundColor: Colors.basicColor.greenTrans1,
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: 5,
-            borderWidth: 1,
-            borderColor: "black",
-            flex: 1,
-            marginLeft: 10,
-            marginRight: 10,
-          }}
-          onPress={() => {
-            isLogin
-              ? navigation.navigate("couponScreen")
-              : setSnackbarVisible(true);
-          }}
-        >
-          <SmallTitle style={{ letterSpacing: 5 }}>쿠폰북</SmallTitle>
-        </Pressable>
-      </Animatable.View>
+          <Pressable
+            style={{
+              height: RFPercentage(5),
+              backgroundColor: Colors.basicColor.greenTrans1,
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: 5,
+              borderWidth: 1,
+              borderColor: "black",
+              flex: 1,
+              marginLeft: 10,
+              marginRight: 10,
+            }}
+            onPress={() => {
+              isLogin
+                ? navigation.navigate("couponScreen")
+                : setSnackbarVisible(true);
+            }}
+          >
+            <SmallTitle style={{ letterSpacing: 5 }}>쿠폰북</SmallTitle>
+          </Pressable>
+        </Animatable.View>
+      </MinorContainer>
 
-      <View style={styles.subContainer}>
+      <MinorContainer>
         <Animatable.View
           style={[
             styles.itemContainer,
@@ -142,9 +147,9 @@ function EnvironmenScreen() {
             가게 소개에 개인적인 의견이 포함될 수 있습니다
           </Text>
         </Animatable.View>
-      </View>
+      </MinorContainer>
 
-      <View style={styles.subContainer}>
+      <MinorContainer>
         <Animatable.View
           style={[
             styles.itemContainer,
@@ -164,9 +169,9 @@ function EnvironmenScreen() {
             {"\n"}소프트웨어학부 이재혁{"\n"}컴퓨터학부 사하
           </Text>
         </Animatable.View>
-      </View>
+      </MinorContainer>
 
-      <View style={styles.subContainer}>
+      <MinorContainer>
         <Animatable.View
           style={[
             styles.itemContainer,
@@ -205,7 +210,7 @@ function EnvironmenScreen() {
             <Text style={styles.boldText}>dm주세요</Text>
           </Text>
         </Animatable.View>
-      </View>
+      </MinorContainer>
 
       <SmallSmallText style={{ alignSelf: "flex-end", padding: 5 }}>
         숭실밥집은 React Native로 빌드되었습니다

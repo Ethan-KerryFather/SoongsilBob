@@ -1,24 +1,17 @@
 import React, { useEffect, useMemo, useState } from "react";
-import {
-  StyleSheet,
-  Dimensions,
-  Text,
-  View,
-  StatusBar,
-  ScrollView,
-  Pressable,
-} from "react-native";
-import Colors from "../../../../assets/Colors";
+import { StyleSheet, Text, View, ScrollView, Pressable } from "react-native";
 import { RFPercentage } from "react-native-responsive-fontsize";
-import { Divider, RadioButton, TextInput } from "react-native-paper";
+import { Checkbox, Divider, RadioButton, TextInput } from "react-native-paper";
 import { SmallTitle } from "../../../styled/styledComponents";
 import { LinearGradient } from "expo-linear-gradient";
+import { MinorContainer } from "../../customComponent/MinorContainer";
+import addUser from "../component/addUser";
 
 const gradientColors = ["rgba(238,174,202,0.4)", "rgba(148,187,233,0.4)"];
 
 function AddAccount({ navigation }) {
   const [userGender, setUserGender] = useState("woman");
-
+  const [warnWords, setWarnWords] = useState("");
   const [userInfo, setUserInfo] = useState({
     name: "",
     gender: "",
@@ -29,6 +22,17 @@ function AddAccount({ navigation }) {
     },
   });
 
+  const [userAgree, setUserAgree] = useState({
+    first: false,
+    second: false,
+    third: false,
+  });
+
+  useEffect(() => {
+    console.log("changed warnWords");
+    console.log(warnWords);
+  }, [warnWords]);
+
   useEffect(() => {
     console.log("add account");
     navigation.setOptions({
@@ -38,15 +42,13 @@ function AddAccount({ navigation }) {
   }, []);
 
   return (
-    <ScrollView
-      style={[styles.container, { height: Dimensions.get("window").height }]}
-    >
-      <LinearGradient
-        colors={["#E4E4E430", "#00C6CF30", "#7FD1AE30"]}
-        style={{ height: RFPercentage(100) }}
-      >
+    <ScrollView style={[styles.container]}>
+      <LinearGradient colors={["#E4E4E430", "#00C6CF30", "#7FD1AE30"]} s>
+        <View style={{ marginTop: 30 }}>
+          <SmallTitle>회원가입 해주셔서 감사합니다</SmallTitle>
+        </View>
         <View style={styles.upperContainer}>
-          <SubContainer>
+          <MinorContainer>
             <TextInput
               label="이름"
               value={userInfo.name}
@@ -88,8 +90,8 @@ function AddAccount({ navigation }) {
                 <SmallTitle>남자</SmallTitle>
               </View>
             </View>
-          </SubContainer>
-          <SubContainer>
+          </MinorContainer>
+          <MinorContainer>
             <TextInput
               label="사용하실 ID"
               value={userInfo.account.id}
@@ -152,21 +154,46 @@ function AddAccount({ navigation }) {
                 </Text>
               </LinearGradient>
             </Pressable>
-          </SubContainer>
-        </View>
-        <View style={styles.lowerContainer}>
-          <View>
-            <Text style={{ fontFamily: "gangwon-bold", fontSize: 20 }}>
-              모두 동의합니다
-            </Text>
-            <Text style={{ fontFamily: "gangwon-bold", fontSize: 15 }}>
-              이용약관동의
-            </Text>
-            <Text style={{ fontFamily: "gangwon-bold", fontSize: 15 }}>
-              개인정보처리방침 동의
-            </Text>
+          </MinorContainer>
+          <View
+            style={{
+              width: "100%",
+            }}
+          >
+            <View
+              style={{
+                alignItems: "flex-start",
+                paddingLeft: "5%",
+                marginBottom: 10,
+              }}
+            >
+              <Text style={{ fontFamily: "gangwon-bold", fontSize: 20 }}>
+                모두 동의합니다
+              </Text>
+              <Checkbox
+                status={userAgree.first ? "checked" : "unchecked"}
+                onPress={() => {
+                  setUserAgree((prevState) => ({
+                    ...prevState,
+                    first: !prevState.first,
+                  }));
+                }}
+              />
+              <Text style={{ fontFamily: "gangwon-bold", fontSize: 15 }}>
+                이용약관동의
+              </Text>
+              <Text style={{ fontFamily: "gangwon-bold", fontSize: 15 }}>
+                개인정보처리방침 동의
+              </Text>
+            </View>
+            <GradientBtn
+              text="회원가입 완료하기"
+              colors={gradientColors}
+              onPress={() => {
+                addUser(userInfo, setWarnWords);
+              }}
+            />
           </View>
-          <GradientBtn text="회원가입 완료하기" colors={gradientColors} />
         </View>
       </LinearGradient>
     </ScrollView>
@@ -176,46 +203,45 @@ function AddAccount({ navigation }) {
 const styles = StyleSheet.create({
   container: {},
   upperContainer: {
-    flex: 5,
+    flex: 1,
     alignItems: "center",
-  },
-  lowerContainer: {
-    flex: 5,
   },
 });
 
 export default AddAccount;
-
-const SubContainer = ({ children }) => {
-  return <View style={styles2.container}>{children}</View>;
-};
 
 const styles2 = StyleSheet.create({
   container: {
     width: "90%",
     backgroundColor: "white",
     borderRadius: 15,
-    marginVertical: RFPercentage(3),
+    marginVertical: RFPercentage(2),
     padding: 14,
   },
-  gradientBtnStyle: {},
+  gradientBtnStyle: {
+    width: "95%",
+    height: RFPercentage(5),
+    justifyContent: "center",
+    alignItems: "center",
+    alignSelf: "center",
+    marginBottom: 10,
+    borderRadius: 15,
+  },
 });
 
-const GradientBtn = ({ colors, text }) => (
-  <Pressable>
+const GradientBtn = ({ colors, text, onPress }) => (
+  <Pressable
+    onPress={() => {
+      if (onPress) {
+        onPress();
+      }
+    }}
+  >
     <LinearGradient
       colors={colors}
       start={{ x: 0.0, y: 0.0 }}
       end={{ x: 1.0, y: 1.0 }}
-      style={{
-        width: "95%",
-        height: RFPercentage(8),
-        justifyContent: "center",
-        alignItems: "center",
-        alignSelf: "center",
-        marginBottom: 10,
-        borderRadius: 15,
-      }}
+      style={styles2.gradientBtnStyle}
     >
       {text && <SmallTitle style={{ letterSpacing: 3 }}>{text}</SmallTitle>}
     </LinearGradient>
