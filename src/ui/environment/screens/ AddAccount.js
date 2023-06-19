@@ -11,7 +11,7 @@ const gradientColors = ["rgba(238,174,202,0.4)", "rgba(148,187,233,0.4)"];
 
 function AddAccount({ navigation }) {
   const [userGender, setUserGender] = useState("woman");
-  const [warnWords, setWarnWords] = useState("");
+  const [isAddFinished, setIsAddFinished] = useState(false);
   const [userInfo, setUserInfo] = useState({
     name: "",
     gender: "",
@@ -27,11 +27,6 @@ function AddAccount({ navigation }) {
     second: false,
     third: false,
   });
-
-  useEffect(() => {
-    console.log("changed warnWords");
-    console.log(warnWords);
-  }, [warnWords]);
 
   useEffect(() => {
     console.log("add account");
@@ -190,7 +185,7 @@ function AddAccount({ navigation }) {
               text="회원가입 완료하기"
               colors={gradientColors}
               onPress={() => {
-                addUser(userInfo, setWarnWords);
+                addUser(userInfo, setIsAddFinished);
               }}
             />
           </View>

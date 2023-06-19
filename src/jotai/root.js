@@ -52,3 +52,7 @@ export default initData;
 
 export const couponAtom = atom(initData());
 
+const accountInfo = atom({
+  id: "Not Logined",
+  name: "낮선 숭숭이",
+});

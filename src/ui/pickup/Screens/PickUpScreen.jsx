@@ -59,6 +59,11 @@ function PickUpScreen() {
         </View>
       </View>
       <View style={{ flex: 4.5 }}>
+        <View
+          style={{ width: "100%", height: "10%", backgroundColor: "white" }}
+        >
+          <SmallTitle>임수원님</SmallTitle>
+        </View>
         <SmallText>{JSON.stringify(orderInfo)}</SmallText>
         <View>
           <SmallTitle>가게는 여기에 있어요!</SmallTitle>
@@ -100,9 +105,9 @@ function PickUpScreen() {
             <SmallText>주문자</SmallText>
           </View>
           <View>
-            {orderInfo.menu.map((element) => {
+            {orderInfo.menu.map((element, index) => {
               return (
-                <View>
+                <View key={index}>
                   <Text>{element[0]}</Text>
                   <Text>{element[1]}</Text>
                   <Checkbox
