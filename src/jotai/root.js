@@ -32,9 +32,7 @@ async function initData() {
         const temp = [];
         Object.keys(snapshot.val()).map((key) => {
           temp.push(snapshot.val()[key]);
-          console.log("pushed");
         });
-        console.log(`temp is ${JSON.stringify(temp)}`);
         storeData = [...temp];
         return storeData;
       } else {
@@ -44,7 +42,7 @@ async function initData() {
     .catch((error) => {
       console.error(error);
     });
-  console.log(`*** storeData ***\n${JSON.stringify(storeData)}`);
+
   return storeData;
 }
 export default initData;
@@ -52,7 +50,7 @@ export default initData;
 
 export const couponAtom = atom(initData());
 
-const accountInfo = atom({
+export const accountInfo = atom({
   id: "Not Logined",
   name: "낮선 숭숭이",
 });

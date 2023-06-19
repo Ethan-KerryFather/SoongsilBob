@@ -16,7 +16,7 @@ import { RFPercentage } from "react-native-responsive-fontsize";
 import AnimatedLottieView from "lottie-react-native";
 import CategoryItem from "./CategoryItem";
 import { useFonts } from "expo-font";
-
+import { disassemble, assemble } from "hangul-js";
 /*
 HomeScreen
   페이지 처음 들어가면 보이는 화면
@@ -33,6 +33,7 @@ import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 import { Searchbar } from "react-native-paper";
 import stores from "../resource/stores";
+import { BigText, BigTitle, SmallText } from "../styled/styledComponents";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -53,24 +54,27 @@ function HomeScreen({}) {
   const navigation = useNavigation();
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchBarFocused, setIsSearchBarFocused] = useState(false);
-  const onChangeSearch = (query) => setSearchQuery(query);
+  const [allStores, setAllStores] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
 
-  const allStores = [];
   useEffect(() => {
+    const temp = [];
     const keys = Object.keys(stores);
-
     const mappedArray = keys.map((key) => {
-      return stores[key];
+      stores[key].map((element) => {
+        temp.push(element.name);
+        setAllStores(temp);
+      });
     });
 
-    mappedArray.map((element) => {
-      allStores.push(element);
-    });
+    console.log(allStores);
   }, []);
 
-  const filteredData = allStores.filter((item) =>
-    item.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  useEffect(() => {
+    setSearchResults(
+      allStores.filter((element) => element.includes(searchQuery))
+    );
+  }, [searchQuery]);
 
   const [fontsLoaded] = useFonts({
     "gowun-regular": require("../../assets/font/gowun-regular.ttf"),
@@ -140,7 +144,9 @@ function HomeScreen({}) {
             <View style={{ width: "100%" }}>
               <TextInput
                 placeholder="밥집을 검색해보세요!"
-                onChangeText={onChangeSearch}
+                onChangeText={(text) => {
+                  setSearchQuery(text);
+                }}
                 value={searchQuery}
                 inputMode="text"
                 textAlign="center"
@@ -160,11 +166,39 @@ function HomeScreen({}) {
           </View>
           <View style={styles.lowerContainer}>
             {isSearchBarFocused ? (
-              <View>
+              <View style={{ width: "100%" }}>
                 <FlatList
-                  data={filteredData}
-                  renderItem={({ item }) => <Text>{item}</Text>}
+                  data={searchResults}
+                  renderItem={({ item }) => (
+                    <View
+                      style={{
+                        backgroundColor: Colors.basicColor.magentaTrans2,
+                        height: RFPercentage(5),
+                        width: "90%",
+                        alignSelf: "center",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        marginVertical: 2,
+                        borderRadius: 15,
+                      }}
+                    >
+                      <SmallText>{item}</SmallText>
+                    </View>
+                  )}
                   keyExtractor={(item, index) => index.toString()}
+                  ListHeaderComponent={() => {
+                    return (
+                      <View
+                        style={{
+                          width: "100%",
+                          alignItems: "center",
+                          marginBottom: 20,
+                        }}
+                      >
+                        <BigTitle>검색결과</BigTitle>
+                      </View>
+                    );
+                  }}
                 />
               </View>
             ) : (

@@ -25,6 +25,7 @@
     "expo-splash-screen": "~0.18.2",
     "expo-status-bar": "~1.4.4",
     "firebase": "^9.17.1",
+    "hangul-js": "^0.2.6",
     "iconv-lite": "^0.6.3",
     "jotai": "^2.1.0",
     "lottie-react-native": "5.1.4",
