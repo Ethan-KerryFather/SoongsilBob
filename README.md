@@ -53,4 +53,7 @@
   <h4>체크포인트</h4><p>checkPoint : nth phrase</p>
   </pre>
 
+<hr/>
+  <p>result : A0</p>
+
   
