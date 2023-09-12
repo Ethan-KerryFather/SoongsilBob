@@ -14,6 +14,8 @@ web-build/
 src/resource/
 App.js
 
+#data
+./resource/store.js
 # macOS
 .DS_Store
 

@@ -164,6 +164,15 @@ function HomeScreen({}) {
               />
             </View>
           </View>
+          <View
+            style={{
+              width: "100%",
+              backgroundColor: "blue",
+              alignItems: "center",
+            }}
+          >
+            <BigTitle>광고란</BigTitle>
+          </View>
           <View style={styles.lowerContainer}>
             {isSearchBarFocused ? (
               <View style={{ width: "100%" }}>
