@@ -106,46 +106,31 @@ function StoreCard({ item, index, width, latitude, longtitude }) {
           </View>
         </View>
       </View>
-      <View
-        style={{
-          width: "90%",
-          height: RFPercentage(5),
-          alignSelf: "center",
-          flexDirection: "row",
-          justifyContent: "center",
-          marginVertical: RFPercentage(2),
+      <Pressable
+        style={({ pressed }) => {
+          return pressed
+            ? [
+                styles.upperDeliveryBtn,
+                { backgroundColor: Colors.basicColor.magenta },
+              ]
+            : styles.upperDeliveryBtn;
+        }}
+        onPress={() => {
+          console.log("pressed");
+          navigation.navigate("PickUp", {
+            orderInfo: {
+              name: item.name,
+              area: item.area,
+              phoneNum: item.phoneNum,
+              location: item.location,
+              menu: item.menu,
+            },
+          });
         }}
       >
-        <Pressable
-          onPress={() => {
-            console.log("pressed");
-          }}
-          style={({ pressed }) =>
-            pressed ? styles.deliveryBtnClicked : styles.deliveryBtnDefault
-          }
-        >
-          <SmallTitle>구현예정</SmallTitle>
-        </Pressable>
-        <Pressable
-          onPress={() => {
-            console.log("pressed");
-            navigation.navigate("PickUp", {
-              orderInfo: {
-                name: item.name,
-                area: item.area,
-                phoneNum: item.phoneNum,
-                location: item.location,
-                menu: item.menu,
-              },
-            });
-          }}
-          style={({ pressed }) =>
-            pressed ? styles.deliveryBtnClicked : styles.deliveryBtnDefault
-          }
-        >
-          <SmallTitle>포장주문</SmallTitle>
-        </Pressable>
-      </View>
+        <SmallTitle style={{ letterSpacing: 5 }}>포장 주문하기</SmallTitle>
+      </Pressable>
+
       <View
         style={{
           paddingTop: 10,
@@ -377,25 +362,17 @@ const styles = StyleSheet.create({
   },
   itemToggleBtn: {},
 
-  deliveryBtnClicked: {
+  upperDeliveryBtn: {
+    width: "90%",
     alignItems: "center",
+    alignSelf: "center",
     justifyContent: "center",
-    height: "100%",
-    width: "30%",
-    backgroundColor: Colors.basicColor.pastelBlueStrong,
-    borderRadius: 10,
-    borderColor: "blue",
+    backgroundColor: "white",
+    height: RFPercentage(5),
     borderWidth: 1,
-    marginHorizontal: 20,
-  },
-  deliveryBtnDefault: {
-    alignItems: "center",
-    justifyContent: "center",
-    height: "100%",
-    width: "30%",
-    backgroundColor: Colors.basicColor.pastelBlue,
-    borderRadius: 10,
-    borderWidth: 1,
-    marginHorizontal: 20,
+    borderColor: "#ff343450",
+    marginBottom: 20,
+    borderRadius: 5,
+    elevation: 5,
   },
 });

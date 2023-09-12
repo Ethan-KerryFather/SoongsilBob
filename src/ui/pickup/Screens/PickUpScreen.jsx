@@ -1,4 +1,11 @@
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Pressable,
+  Image,
+  ScrollView,
+} from "react-native";
 import {
   BigTitle,
   SmallText,
@@ -12,8 +19,11 @@ import { RFPercentage } from "react-native-responsive-fontsize";
 import MapView, { Marker } from "react-native-maps";
 import { Checkbox } from "react-native-paper";
 import React from "react";
+import { useAtom } from "jotai";
+import { accountInfo } from "../../../jotai/root";
 
 function PickUpScreen() {
+  const [userInfo] = useAtom(accountInfo);
   const navigation = useNavigation();
   const orderInfo = useRoute().params.orderInfo;
   const [checked, setChecked] = React.useState(false);
@@ -59,13 +69,42 @@ function PickUpScreen() {
         </View>
       </View>
       <View style={{ flex: 4.5 }}>
-        <SmallText>{JSON.stringify(orderInfo)}</SmallText>
+        <View
+          style={{
+            width: "100%",
+            height: "13%",
+            flexDirection: "row",
+          }}
+        >
+          <View
+            style={{
+              flex: 3,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Image
+              source={require("../../../../assets/horseIcon.png")}
+              style={{ width: "70%", height: "90%", borderRadius: 30 }}
+            />
+          </View>
+          <View
+            style={{
+              flex: 5,
+              alignItems: "flex-start",
+              justifyContent: "center",
+            }}
+          >
+            <SmallTitle>{userInfo.name}님</SmallTitle>
+            <SmallTitle>{userInfo.id}</SmallTitle>
+          </View>
+          <View style={{ flex: 4 }}></View>
+        </View>
         <View>
-          <SmallTitle>가게는 여기에 있어요!</SmallTitle>
           <MapView
             style={{
-              width: "95%",
-              height: "40%",
+              width: "100%",
+              height: "30%",
               borderRadius: 30,
               alignSelf: "center",
             }}
@@ -96,22 +135,32 @@ function PickUpScreen() {
               description={orderInfo.name}
             />
           </MapView>
-          <View>
-            <SmallText>주문자</SmallText>
-          </View>
-          <View>
-            {orderInfo.menu.map((element) => {
+
+          <View
+            style={{
+              padding: 10,
+              alignItems: "center",
+            }}
+          >
+            <View style={{ marginBottom: 10 }}>
+              <BigTitle>메뉴</BigTitle>
+            </View>
+            {orderInfo.menu.map((element, index) => {
               return (
-                <View>
-                  <Text>{element[0]}</Text>
-                  <Text>{element[1]}</Text>
-                  <Checkbox
-                    status={checked ? "checked" : "unchecked"}
-                    onPress={() => {
-                      setChecked(!checked);
-                    }}
-                    color="red"
-                  />
+                <View
+                  key={index}
+                  style={{
+                    width: "90%",
+                    height: "14%",
+                    backgroundColor: Colors.basicColor.magentaTrans2,
+                    marginBottom: 5,
+                    borderRadius: 15,
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <SmallText style={{ fontSize: 20 }}>{element[0]}</SmallText>
+                  <SmallText style={{ fontSize: 15 }}>{element[1]}원</SmallText>
                 </View>
               );
             })}

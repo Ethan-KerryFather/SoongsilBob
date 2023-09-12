@@ -23,6 +23,7 @@ import { BigTitle } from "../styled/styledComponents";
 import AnimatedLottieView from "lottie-react-native";
 import CouponScreen from "../ui/environment/screens/CouponScreen";
 import PickUpScreen from "../ui/pickup/Screens/PickUpScreen";
+import AddAccount from "../ui/environment/screens/ AddAccount";
 
 const HomeStack = createNativeStackNavigator();
 const EnvironmentStack = createNativeStackNavigator();
@@ -114,6 +115,7 @@ function EnvironmentScreen() {
         component={EnvironmenScreen}
       />
       <EnvironmentStack.Screen name="couponScreen" component={CouponScreen} />
+      <EnvironmentStack.Screen name="addAccountScreen" component={AddAccount} />
     </EnvironmentStack.Navigator>
   );
 }

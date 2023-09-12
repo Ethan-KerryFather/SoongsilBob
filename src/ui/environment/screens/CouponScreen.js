@@ -20,7 +20,6 @@ import {
 import { RFPercentage } from "react-native-responsive-fontsize";
 import { useAtom } from "jotai";
 import { couponAtom } from "../../../jotai/root";
-import initData from "../../../jotai/root";
 
 const tab = createMaterialTopTabNavigator();
 
